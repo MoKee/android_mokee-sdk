@@ -237,6 +237,7 @@ LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= external/doclava/res/assets/templates-sdk
 LOCAL_DROIDDOC_STUB_OUT_DIR := $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/mokee-sdk_stubs_current_intermediates/src
 
 LOCAL_DROIDDOC_OPTIONS:= \
+        -referenceonly \
         -stubpackages $(mokee_stub_packages) \
         -exclude org.mokee.platform.internal \
         -api $(INTERNAL_MOKEE_PLATFORM_API_FILE) \
