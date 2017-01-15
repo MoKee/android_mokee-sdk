@@ -52,7 +52,7 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "mksettings.db";
-    private static final int DATABASE_VERSION = 11;
+    private static final int DATABASE_VERSION = 12;
 
     public static class MKTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -351,6 +351,43 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
                 }
             }
             upgradeVersion = 11;
+        }
+
+        if (upgradeVersion < 12) {
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    stmt = db.compileStatement("SELECT value FROM system WHERE name=?");
+                    stmt.bindString(1, MKSettings.System.STATUS_BAR_BATTERY_STYLE);
+                    long value = stmt.simpleQueryForLong();
+
+                    long newValue = 0;
+                    switch ((int) value) {
+                        case 2:
+                            newValue = 1;
+                            break;
+                        case 5:
+                            newValue = 0;
+                            break;
+                        case 6:
+                            newValue = 2;
+                            break;
+                    }
+
+                    stmt = db.compileStatement("UPDATE system SET value=? WHERE name=?");
+                    stmt.bindLong(1, newValue);
+                    stmt.bindString(2, MKSettings.System.STATUS_BAR_BATTERY_STYLE);
+                    stmt.execute();
+                    db.setTransactionSuccessful();
+                } catch (SQLiteDoneException ex) {
+                    // MKSettings.System.STATUS_BAR_BATTERY_STYLE is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+            }
+            upgradeVersion = 12;
         }
         // *** Remember to update DATABASE_VERSION above!
     }
