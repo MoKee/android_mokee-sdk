@@ -274,6 +274,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := \
 LOCAL_JAVA_LIBRARIES := $(mokee_platform_docs_java_libraries)
 
 LOCAL_DROIDDOC_OPTIONS := \
+        -android \
         -offlinemode \
         -exclude org.mokee.platform.internal \
         -hidePackage org.mokee.platform.internal \
