@@ -31,12 +31,6 @@
     <!-- Default for MKSettings.Secure.ADVANCED_MODE -->
     <bool name="def_advanced_mode">true</bool>
 
-    <!-- Default for MKSettings.Secure.DEFAULT_THEME_COMPONENTS -->
-    <string name="def_theme_components"></string>
-
-    <!-- Default for MKSettings.Secure.DEFAULT_THEME_PACKAGE -->
-    <string name="def_theme_package"></string>
-
     <!-- Defaults for MKSettings.Secure.DEV_FORCE_SHOW_NAVBAR -->
     <integer name="def_force_show_navbar">0</integer>
 

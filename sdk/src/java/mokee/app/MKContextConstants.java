@@ -96,13 +96,6 @@ public final class MKContextConstants {
     public static final String MK_PERFORMANCE_SERVICE = "mkperformance";
 
     /**
-     * Controls changing and applying themes
-     *
-     * @hide
-     */
-    public static final String MK_THEME_SERVICE = "mkthemes";
-
-    /**
      * Manages composed icons
      *
      * @hide
@@ -176,14 +169,6 @@ public final class MKContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String TELEPHONY = "org.mokee.telephony";
-
-        /**
-         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
-         * {@link PackageManager#hasSystemFeature}: The device includes the mk theme service
-         * utilized by the mksdk.
-         */
-        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
-        public static final String THEMES = "org.mokee.theme";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and

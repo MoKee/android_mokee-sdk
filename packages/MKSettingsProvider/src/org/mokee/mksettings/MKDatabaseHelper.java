@@ -366,12 +366,6 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             loadBooleanSetting(stmt, MKSettings.Secure.ADVANCED_MODE,
                     R.bool.def_advanced_mode);
 
-            loadRegionLockedStringSetting(stmt,
-                    MKSettings.Secure.DEFAULT_THEME_COMPONENTS, R.string.def_theme_components);
-
-            loadRegionLockedStringSetting(stmt,
-                    MKSettings.Secure.DEFAULT_THEME_PACKAGE, R.string.def_theme_package);
-
             loadIntegerSetting(stmt, MKSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
                     R.integer.def_force_show_navbar);
 

@@ -2646,24 +2646,6 @@ public final class MKSettings {
         public static final String BUTTON_BRIGHTNESS = "button_brightness";
 
         /**
-         * A '|' delimited list of theme components to apply from the default theme on first boot.
-         * Components can be one or more of the "mods_XXXXXXX" found in
-         * {@link ThemesContract$ThemesColumns}.  Leaving this field blank assumes all components
-         * will be applied.
-         *
-         * ex: mods_icons|mods_overlays|mods_homescreen
-         *
-         * @hide
-         */
-        public static final String DEFAULT_THEME_COMPONENTS = "default_theme_components";
-
-        /**
-         * Default theme to use.  If empty, use holo.
-         * @hide
-         */
-        public static final String DEFAULT_THEME_PACKAGE = "default_theme_package";
-
-        /**
          * Developer options - Navigation Bar show switch
          * @deprecated
          * @hide
@@ -2838,17 +2820,6 @@ public final class MKSettings {
         public static final String ADVANCED_REBOOT = "advanced_reboot";
 
         /**
-         * This will be set to the system's current theme API version when ThemeService starts.
-         * It is useful for when an upgrade from one version of MK to another occurs.
-         * For example, after a user upgrades from MK44 to MK50, the value of this field
-         * might be 19. ThemeService would then change the value to 21. This is useful
-         * when an API change breaks a theme. Themeservice can identify old themes and
-         * unapply them from the system.
-         * @hide
-         */
-        public static final String THEME_PREV_BOOT_API_LEVEL = "theme_prev_boot_api_level";
-
-        /**
          * Whether detail view for the location tile is enabled
          * @hide
          */
@@ -2973,8 +2944,6 @@ public final class MKSettings {
                 MKSettings.Secure.ADVANCED_MODE,
                 MKSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
                 MKSettings.Secure.BUTTON_BRIGHTNESS,
-                MKSettings.Secure.DEFAULT_THEME_COMPONENTS,
-                MKSettings.Secure.DEFAULT_THEME_PACKAGE,
                 MKSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
                 MKSettings.Secure.KEYBOARD_BRIGHTNESS,
                 MKSettings.Secure.POWER_MENU_ACTIONS,
@@ -2992,7 +2961,6 @@ public final class MKSettings {
                 MKSettings.Secure.PROTECTED_COMPONENTS,
                 MKSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX,
                 MKSettings.Secure.ADVANCED_REBOOT,
-                MKSettings.Secure.THEME_PREV_BOOT_API_LEVEL,
                 MKSettings.Secure.LOCKSCREEN_TARGETS,
                 MKSettings.Secure.RING_HOME_BUTTON_BEHAVIOR,
                 MKSettings.Secure.PRIVACY_GUARD_DEFAULT,
