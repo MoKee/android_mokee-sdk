@@ -1,6 +1,7 @@
 /**
  * Copyright (c) 2015, The CyanogenMod Project
- * Copyright (c) 2015, The MoKee Open Source Project
+ * Copyright (c) 2015-2018, The MoKee Open Source Project
+ * Copyright (c) 2017, The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +36,10 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+
 import mokee.providers.MKSettings;
+
+import org.mokee.internal.util.FileUtils;
 
 import java.io.File;
 
@@ -79,18 +83,18 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
      * @param userId The database path for this user
      * @return The database path string
      */
-    static String dbNameForUser(final int userId) {
-        // The owner gets the unadorned db name;
+    private static String dbNameForUser(Context context, int userId, String baseName) {
         if (userId == UserHandle.USER_OWNER) {
-            return DATABASE_NAME;
+            return context.getDatabasePath(baseName).getPath();
         } else {
             // Place the database in the user-specific data tree so that it's
             // cleaned up automatically when the user is deleted.
             File databaseFile = new File(
-                    Environment.getUserSystemDirectory(userId), DATABASE_NAME);
+                    Environment.getUserSystemDirectory(userId), baseName);
             return databaseFile.getPath();
         }
     }
+
 
     /**
      * Creates an instance of {@link MKDatabaseHelper}
@@ -98,7 +102,7 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
      * @param userId
      */
     public MKDatabaseHelper(Context context, int userId) {
-        super(context, dbNameForUser(userId), null, DATABASE_VERSION);
+        super(context, dbNameForUser(context, userId, DATABASE_NAME), null, DATABASE_VERSION);
         mContext = context;
         mUserHandle = userId;
 

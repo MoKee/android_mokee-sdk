@@ -64,7 +64,8 @@ public class MKSettingsProvider extends ContentProvider {
 
     private static final boolean USER_CHECK_THROWS = true;
 
-    public static final String PREF_HAS_MIGRATED_MK_SETTINGS = "has_migrated_mkm_settings";
+    public static final String PREF_HAS_MIGRATED_MK_SETTINGS =
+            "migrated_settings_to_mko-mr1";
 
     private static final Bundle NULL_SETTING = Bundle.forPair("value", null);
 
@@ -168,6 +169,18 @@ public class MKSettingsProvider extends ContentProvider {
     private void migrateMKSettingsForUser(int userId) {
         synchronized (this) {
             if (LOCAL_LOGV) Log.d(TAG, "MK settings will be migrated for user id: " + userId);
+
+            // Rename database files (if needed)
+            MKDatabaseHelper dbHelper = mDbHelpers.get(userId);
+            if (dbHelper != null) {
+                dbHelper.close();
+                mDbHelpers.delete(userId);
+            }
+
+            if (dbHelper != null) {
+                establishDbTracking(userId);
+                dbHelper = null;
+            }
 
             // Migrate system settings
             int rowsMigrated = migrateMKSettingsForTable(userId,
@@ -287,22 +300,6 @@ public class MKSettingsProvider extends ContentProvider {
                         "get/set setting for user", null);
                 if (LOCAL_LOGV) Log.v(TAG, "   access setting for user " + callingUserId);
             }
-        }
-
-        boolean hasMigratedMKSettings = mSharedPrefs.getBoolean(PREF_HAS_MIGRATED_MK_SETTINGS,
-                false);
-        final ComponentName preBootReceiver = new ComponentName("org.mokee.mksettings",
-                "org.mokee.mksettings.PreBootReceiver");
-        final PackageManager packageManager = getContext().getPackageManager();
-        if (!hasMigratedMKSettings &&
-                packageManager.getComponentEnabledSetting(preBootReceiver)
-                        == PackageManager.COMPONENT_ENABLED_STATE_DISABLED ) {
-            if (LOCAL_LOGV) {
-                Log.d(TAG, "Reenabling component preboot receiver");
-            }
-            packageManager.setComponentEnabledSetting(preBootReceiver,
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-                    PackageManager.DONT_KILL_APP);
         }
 
         // Migrate methods
