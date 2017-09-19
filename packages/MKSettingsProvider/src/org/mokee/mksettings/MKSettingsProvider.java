@@ -51,10 +51,12 @@ import org.mokee.internal.util.QSUtils;
 
 import mokee.providers.MKSettings;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /**
  * The MKSettingsProvider serves as a {@link ContentProvider} for MK specific settings
@@ -219,8 +221,8 @@ public class MKSettingsProvider extends ContentProvider {
                                 + settingsValue);
                     }
 
-                    final List<String> tiles = Settings.Secure.getDelimitedStringAsList(
-                            contentResolver, settingsKey, ",");
+                    final List<String> tiles = delimitedStringToList(
+                            Settings.Secure.getString(contentResolver, settingsKey), ",");
 
                     if (!tiles.contains(QSConstants.TILE_DND)) {
                         tiles.add(QSConstants.TILE_DND);
@@ -275,6 +277,20 @@ public class MKSettingsProvider extends ContentProvider {
         }
 
         return rowsInserted;
+    }
+
+    private List<String> delimitedStringToList(String s, String delimiter) {
+        List<String> list = new ArrayList<String>();
+        if (!TextUtils.isEmpty(s)) {
+            final String[] array = TextUtils.split(s, Pattern.quote(delimiter));
+            for (String item : array) {
+                if (TextUtils.isEmpty(item)) {
+                    continue;
+                }
+                list.add(item);
+            }
+        }
+        return list;
     }
 
     /**
