@@ -39,6 +39,7 @@ LOCAL_MODULE := org.mokee.platform
 LOCAL_MODULE_TAGS := optional
 
 mokee_sdk_LOCAL_JAVA_LIBRARIES := \
+    android-support-annotations \
     android-support-v7-preference \
     android-support-v7-recyclerview \
     android-support-v14-preference
@@ -157,6 +158,9 @@ mokee_sdk_exclude_files := 'mokee/library'
 LOCAL_JAR_EXCLUDE_PACKAGES := $(mokee_sdk_exclude_files)
 LOCAL_JAR_EXCLUDE_FILES := none
 
+LOCAL_JAVA_LIBRARIES := \
+    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
+
 LOCAL_STATIC_JAVA_LIBRARIES := org.mokee.platform.sdk
 
 include $(BUILD_STATIC_JAVA_LIBRARY)
@@ -203,7 +207,9 @@ mokee_platform_docs_src_files := \
     $(call all-html-files-under, $(mokee_sdk_src))
 
 mokee_platform_docs_java_libraries := \
-    org.mokee.platform.sdk
+    android-support-v4 \
+    org.mokee.platform.sdk \
+    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
 
 # SDK version as defined
 mokee_platform_docs_SDK_VERSION := 81.0
@@ -216,7 +222,8 @@ mokee_platform_docs_LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 mokee_platform_docs_LOCAL_DROIDDOC_SOURCE_PATH := \
     $(mokee_platform_docs_src_files)
 
-intermediates.COMMON := $(call intermediates-dir-for,$(LOCAL_MODULE_CLASS),org.mokee.platform.sdk,,COMMON)
+mokee_platform_docs_LOCAL_ADDITIONAL_JAVA_DIR := \
+    $(call intermediates-dir-for,JAVA_LIBRARIES,org.mokee.platform.sdk,,COMMON)
 
 # ====  the api stubs and current.xml ===========================
 include $(CLEAR_VARS)
@@ -227,7 +234,7 @@ LOCAL_INTERMEDIATE_SOURCES:= $(mokee_platform_LOCAL_INTERMEDIATE_SOURCES)
 LOCAL_JAVA_LIBRARIES:= $(mokee_platform_docs_java_libraries)
 LOCAL_MODULE_CLASS:= $(mokee_platform_docs_LOCAL_MODULE_CLASS)
 LOCAL_DROIDDOC_SOURCE_PATH:= $(mokee_platform_docs_LOCAL_DROIDDOC_SOURCE_PATH)
-LOCAL_ADDITIONAL_JAVA_DIR:= $(intermediates.COMMON)/src
+LOCAL_ADDITIONAL_JAVA_DIR:= $(mokee_platform_docs_LOCAL_ADDITIONAL_JAVA_DIR)
 LOCAL_ADDITIONAL_DEPENDENCIES:= $(mokee_platform_docs_LOCAL_ADDITIONAL_DEPENDENCIES)
 
 LOCAL_MODULE := mokee-api-stubs
@@ -264,7 +271,7 @@ LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := $(mokee_platform_docs_src_files)
-LOCAL_ADDITONAL_JAVA_DIR := $(intermediates.COMMON)/src
+LOCAL_ADDITONAL_JAVA_DIR := $(mokee_platform_docs_LOCAL_ADDITIONAL_JAVA_DIR)
 
 LOCAL_IS_HOST_MODULE := false
 LOCAL_ADDITIONAL_DEPENDENCIES := \
@@ -300,4 +307,4 @@ include $(call first-makefiles-under,$(LOCAL_PATH))
 # ===========================================================
 mokee_platform_docs_src_files :=
 mokee_platform_docs_java_libraries :=
-intermediates.COMMON :=
+mokee_platform_docs_LOCAL_ADDITIONAL_JAVA_DIR :=
