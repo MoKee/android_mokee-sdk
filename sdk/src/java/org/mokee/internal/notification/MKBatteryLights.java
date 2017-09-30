@@ -1,5 +1,6 @@
 /**
  * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.notification;
+package org.mokee.internal.notification;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,13 +26,13 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.util.Slog;
 
-import lineageos.providers.LineageSettings;
+import mokee.providers.MKSettings;
 
-import org.lineageos.internal.notification.LedValues;
-import org.lineageos.internal.notification.LightsCapabilities;
+import org.mokee.internal.notification.LedValues;
+import org.mokee.internal.notification.LightsCapabilities;
 
-public final class LineageBatteryLights {
-    private final String TAG = "LineageBatteryLights";
+public final class MKBatteryLights {
+    private final String TAG = "MKBatteryLights";
     private final boolean DEBUG = false;
 
     // Battery light capabilities.
@@ -52,7 +53,7 @@ public final class LineageBatteryLights {
     }
     private final LedUpdater mLedUpdater;
 
-    public LineageBatteryLights(Context context, LedUpdater ledUpdater) {
+    public MKBatteryLights(Context context, LedUpdater ledUpdater) {
         mContext = context;
         mLedUpdater = ledUpdater;
 
@@ -128,25 +129,25 @@ public final class LineageBatteryLights {
             ContentResolver resolver = mContext.getContentResolver();
 
             // Battery light enabled
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.BATTERY_LIGHT_ENABLED), false, this,
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.BATTERY_LIGHT_ENABLED), false, this,
                    UserHandle.USER_ALL);
 
             // Low battery pulse
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.BATTERY_LIGHT_PULSE), false, this,
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.BATTERY_LIGHT_PULSE), false, this,
                 UserHandle.USER_ALL);
 
             // Light colors
             if (mMultiColorLed) {
-                resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                        LineageSettings.System.BATTERY_LIGHT_LOW_COLOR), false, this,
+                resolver.registerContentObserver(MKSettings.System.getUriFor(
+                        MKSettings.System.BATTERY_LIGHT_LOW_COLOR), false, this,
                         UserHandle.USER_ALL);
-                resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                        LineageSettings.System.BATTERY_LIGHT_MEDIUM_COLOR), false, this,
+                resolver.registerContentObserver(MKSettings.System.getUriFor(
+                        MKSettings.System.BATTERY_LIGHT_MEDIUM_COLOR), false, this,
                         UserHandle.USER_ALL);
-                resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                        LineageSettings.System.BATTERY_LIGHT_FULL_COLOR), false, this,
+                resolver.registerContentObserver(MKSettings.System.getUriFor(
+                        MKSettings.System.BATTERY_LIGHT_FULL_COLOR), false, this,
                         UserHandle.USER_ALL);
             }
 
@@ -163,22 +164,22 @@ public final class LineageBatteryLights {
             Resources res = mContext.getResources();
 
             // Battery light enabled
-            mLightEnabled = LineageSettings.System.getInt(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_ENABLED, 1) != 0;
+            mLightEnabled = MKSettings.System.getInt(resolver,
+                    MKSettings.System.BATTERY_LIGHT_ENABLED, 1) != 0;
 
             // Low battery pulse
-            mLedPulseEnabled = LineageSettings.System.getInt(resolver,
-                        LineageSettings.System.BATTERY_LIGHT_PULSE, 1) != 0;
+            mLedPulseEnabled = MKSettings.System.getInt(resolver,
+                        MKSettings.System.BATTERY_LIGHT_PULSE, 1) != 0;
 
             // Light colors
-            mBatteryLowARGB = LineageSettings.System.getInt(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_LOW_COLOR, res.getInteger(
+            mBatteryLowARGB = MKSettings.System.getInt(resolver,
+                    MKSettings.System.BATTERY_LIGHT_LOW_COLOR, res.getInteger(
                     com.android.internal.R.integer.config_notificationsBatteryLowARGB));
-            mBatteryMediumARGB = LineageSettings.System.getInt(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_MEDIUM_COLOR, res.getInteger(
+            mBatteryMediumARGB = MKSettings.System.getInt(resolver,
+                    MKSettings.System.BATTERY_LIGHT_MEDIUM_COLOR, res.getInteger(
                     com.android.internal.R.integer.config_notificationsBatteryMediumARGB));
-            mBatteryFullARGB = LineageSettings.System.getInt(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_FULL_COLOR, res.getInteger(
+            mBatteryFullARGB = MKSettings.System.getInt(resolver,
+                    MKSettings.System.BATTERY_LIGHT_FULL_COLOR, res.getInteger(
                     com.android.internal.R.integer.config_notificationsBatteryFullARGB));
 
             mLedUpdater.update();

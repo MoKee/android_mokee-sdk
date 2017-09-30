@@ -1,5 +1,6 @@
 /**
  * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.notification;
+package org.mokee.internal.notification;
 
 import android.content.Context;
 
@@ -44,7 +45,7 @@ public final class LightsCapabilities {
 
     public static boolean supports(Context context, final int capability) {
         final int capabilities = context.getResources().getInteger(
-                org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities);
+                org.mokee.platform.internal.R.integer.config_deviceLightCapabilities);
         return (capabilities & capability) != 0;
     }
 }

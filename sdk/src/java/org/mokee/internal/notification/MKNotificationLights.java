@@ -1,6 +1,7 @@
 /**
  * Copyright (C) 2015 The CyanogenMod Project
  * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.notification;
+package org.mokee.internal.notification;
 
 import static android.service.notification.NotificationListenerService.SUPPRESSED_EFFECT_SCREEN_OFF;
 import static android.service.notification.NotificationListenerService.SUPPRESSED_EFFECT_SCREEN_ON;
@@ -36,16 +37,16 @@ import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Slog;
 
-import lineageos.providers.LineageSettings;
-import lineageos.util.ColorUtils;
+import mokee.providers.MKSettings;
+import mokee.util.ColorUtils;
 
-import org.lineageos.internal.notification.LedValues;
-import org.lineageos.internal.notification.LightsCapabilities;
+import org.mokee.internal.notification.LedValues;
+import org.mokee.internal.notification.LightsCapabilities;
 
 import java.util.Map;
 
-public final class LineageNotificationLights {
-    private static final String TAG = "LineageNotificationLights";
+public final class MKNotificationLights {
+    private static final String TAG = "MKNotificationLights";
     private static final boolean DEBUG = false;
 
     // Light capabilities
@@ -77,7 +78,7 @@ public final class LineageNotificationLights {
     }
     private final LedUpdater mLedUpdater;
 
-    public LineageNotificationLights(Context context, LedUpdater ledUpdater) {
+    public MKNotificationLights(Context context, LedUpdater ledUpdater) {
         mContext = context;
         mLedUpdater = ledUpdater;
 
@@ -100,7 +101,7 @@ public final class LineageNotificationLights {
 
         mPackageNameMappings = new ArrayMap<String, String>();
         final String[] defaultMapping = res.getStringArray(
-                org.lineageos.platform.internal.R.array.notification_light_package_mapping);
+                org.mokee.platform.internal.R.array.notification_light_package_mapping);
         for (String mapping : defaultMapping) {
             String[] map = mapping.split("\\|");
             mPackageNameMappings.put(map[0], map[1]);
@@ -264,30 +265,30 @@ public final class LineageNotificationLights {
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
 
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR),
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON),
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF),
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE),
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES),
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.NOTIFICATION_LIGHT_SCREEN_ON),
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.NOTIFICATION_LIGHT_SCREEN_ON),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.NOTIFICATION_LIGHT_COLOR_AUTO), false,
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.NOTIFICATION_LIGHT_COLOR_AUTO), false,
                     this, UserHandle.USER_ALL);
             if (mAdjustableNotificationLedBrightness) {
-                resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                        LineageSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL),
+                resolver.registerContentObserver(MKSettings.System.getUriFor(
+                        MKSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL),
                         false, this, UserHandle.USER_ALL);
             }
 
@@ -304,23 +305,23 @@ public final class LineageNotificationLights {
             Resources res = mContext.getResources();
 
             // Automatically pick a color for LED if not set
-            mAutoGenerateNotificationColor = LineageSettings.System.getIntForUser(resolver,
-                    LineageSettings.System.NOTIFICATION_LIGHT_COLOR_AUTO,
+            mAutoGenerateNotificationColor = MKSettings.System.getIntForUser(resolver,
+                    MKSettings.System.NOTIFICATION_LIGHT_COLOR_AUTO,
                     1, UserHandle.USER_CURRENT) != 0;
 
             // LED default color
-            mDefaultNotificationColor = LineageSettings.System.getIntForUser(resolver,
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
+            mDefaultNotificationColor = MKSettings.System.getIntForUser(resolver,
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
                     mDefaultNotificationColor, UserHandle.USER_CURRENT);
 
             // LED default on MS
-            mDefaultNotificationLedOn = LineageSettings.System.getIntForUser(resolver,
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
+            mDefaultNotificationLedOn = MKSettings.System.getIntForUser(resolver,
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
                     mDefaultNotificationLedOn, UserHandle.USER_CURRENT);
 
             // LED default off MS
-            mDefaultNotificationLedOff = LineageSettings.System.getIntForUser(resolver,
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
+            mDefaultNotificationLedOff = MKSettings.System.getIntForUser(resolver,
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
                     mDefaultNotificationLedOff, UserHandle.USER_CURRENT);
 
             // LED generated notification colors
@@ -328,24 +329,24 @@ public final class LineageNotificationLights {
 
             // LED custom notification colors
             mNotificationPulseCustomLedValues.clear();
-            if (LineageSettings.System.getIntForUser(resolver,
-                    LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE, 0,
+            if (MKSettings.System.getIntForUser(resolver,
+                    MKSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE, 0,
                     UserHandle.USER_CURRENT) != 0) {
-                parseNotificationPulseCustomValuesString(LineageSettings.System.getStringForUser(
-                        resolver, LineageSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
+                parseNotificationPulseCustomValuesString(MKSettings.System.getStringForUser(
+                        resolver, MKSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                         UserHandle.USER_CURRENT));
             }
 
             // Notification LED brightness
             if (mAdjustableNotificationLedBrightness) {
-                mNotificationLedBrightnessLevel = LineageSettings.System.getIntForUser(resolver,
-                        LineageSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
+                mNotificationLedBrightnessLevel = MKSettings.System.getIntForUser(resolver,
+                        MKSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
                         LedValues.LIGHT_BRIGHTNESS_MAXIMUM, UserHandle.USER_CURRENT);
             }
 
             // Notification lights with screen on
-            mScreenOnEnabled = (LineageSettings.System.getIntForUser(resolver,
-                    LineageSettings.System.NOTIFICATION_LIGHT_SCREEN_ON, 0,
+            mScreenOnEnabled = (MKSettings.System.getIntForUser(resolver,
+                    MKSettings.System.NOTIFICATION_LIGHT_SCREEN_ON, 0,
                     UserHandle.USER_CURRENT) != 0);
 
             mLedUpdater.update();
