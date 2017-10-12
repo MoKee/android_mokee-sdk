@@ -97,13 +97,6 @@ public class Intent {
     public static final String ACTION_APP_FAILURE = "mokee.intent.action.APP_FAILURE";
 
     /**
-     * Implicit action to open live lock screen settings.
-     * @hide
-     */
-    public static final String ACTION_OPEN_LIVE_LOCKSCREEN_SETTINGS =
-            "mokee.intent.action.OPEN_LIVE_LOCKSCREEN_SETTINGS";
-
-    /**
      * Broadcast action: lid state changed
      * @hide
      */

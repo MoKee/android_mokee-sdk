@@ -93,7 +93,6 @@ public class Build {
          * <li>Hardware Abstraction Framework Access via
          * {@link mokee.hardware.MKHardwareManager} (Not for use by 3rd parties)
          * <li>MSIM API via {@link mokee.app.MKTelephonyManager}
-         * <li>Interface for partners via {@link mokee.app.PartnerInterface}
          * <li>Introductory Settings Provider {@link mokee.providers.MKSettings}
          * <li>AlarmClock API via {@link mokee.alarmclock.MoKeeAlarmClock}
          * </ul>

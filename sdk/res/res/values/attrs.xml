@@ -16,14 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:mk="http://schemas.android.com/apk/res/mokee.platform">
-    <declare-styleable name="LiveLockScreen">
-        <attr name="settingsActivity" format="string" />
-        <attr name="type">
-            <flag name="experience" value="1"/>
-            <flag name="event" value="2"/>
-        </attr>
-    </declare-styleable>
-
     <declare-styleable name="mk:SelfRemovingPreference">
         <attr name="requiresPackage" format="string" />
         <attr name="requiresFeature" format="string" />
