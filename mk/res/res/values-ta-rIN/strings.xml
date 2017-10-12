@@ -59,8 +59,6 @@
   <string name="live_display_day">பகல்</string>
   <string name="live_display_day_summary">பகல் நேர அமைப்புகளை மட்டும் பயன்படுத்து</string>
   <string name="live_display_night">இரவு</string>
-  <!-- Third party keyguard permission label -->
-  <!-- Third party keyguard permission description -->
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

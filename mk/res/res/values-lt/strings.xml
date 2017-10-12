@@ -77,8 +77,6 @@
   <string name="live_display_day_summary">Naudoti tik dienos nustatymus</string>
   <string name="live_display_night">Naktis</string>
   <string name="live_display_night_summary">Naudoti tik nakties nustatymus</string>
-  <!-- Third party keyguard permission label -->
-  <!-- Third party keyguard permission description -->
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

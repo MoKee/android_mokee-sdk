@@ -645,7 +645,6 @@ package mokee.platform {
     field public static final java.lang.String READ_PHONE_LOCATION = "mokee.permission.READ_PHONE_LOCATION";
     field public static final java.lang.String READ_THEMES = "lineageos.permission.READ_THEMES";
     field public static final java.lang.String READ_WEATHER = "mokee.permission.READ_WEATHER";
-    field public static final java.lang.String THIRD_PARTY_KEYGUARD = "mokee.permission.THIRD_PARTY_KEYGUARD";
     field public static final java.lang.String WRITE_ALARMS = "mokee.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_DATAUSAGE = "mokee.permission.WRITE_DATAUSAGE";
     field public static final java.lang.String WRITE_PHONE_LOCATION = "mokee.permission.WRITE_PHONE_LOCATION";
