@@ -364,37 +364,6 @@ package mokee.content {
 
 }
 
-package mokee.externalviews {
-
-  public abstract class KeyguardExternalViewProviderService extends android.app.Service {
-    ctor public KeyguardExternalViewProviderService();
-    method protected abstract mokee.externalviews.KeyguardExternalViewProviderService.Provider createExternalView(android.os.Bundle);
-    method public final android.os.IBinder onBind(android.content.Intent);
-    field public static final java.lang.String META_DATA = "mokee.externalviews.keyguard";
-    field public static final java.lang.String SERVICE_INTERFACE = "mokee.externalviews.KeyguardExternalViewProviderService";
-  }
-
-  protected abstract class KeyguardExternalViewProviderService.Provider {
-    ctor protected KeyguardExternalViewProviderService.Provider(android.os.Bundle);
-    method protected final deprecated void collapseNotificationPanel();
-    method protected android.os.Bundle getOptions();
-    method protected void onAttach();
-    method protected abstract void onBouncerShowing(boolean);
-    method protected abstract android.view.View onCreateView();
-    method protected void onDetach();
-    method protected abstract void onKeyguardDismissed();
-    method protected abstract void onKeyguardShowing(boolean);
-    method protected void onLockscreenSlideOffsetChanged(float);
-    method protected abstract void onScreenTurnedOff();
-    method protected abstract void onScreenTurnedOn();
-    method protected final boolean requestDismiss();
-    method protected final boolean requestDismissAndStartActivity(android.content.Intent);
-    method protected final void setInteractivity(boolean);
-    method protected final void slideLockscreenIn();
-  }
-
-}
-
 package mokee.hardware {
 
   public final class MKHardwareManager {
