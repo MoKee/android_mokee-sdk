@@ -569,9 +569,9 @@ package mokee.media {
 
   public class MediaRecorder {
     ctor public MediaRecorder();
-    field public static final java.lang.String ACTION_HOTWORD_INPUT_CHANGED = "com.mokee.intent.action.HOTWORD_INPUT_CHANGED";
+    field public static final java.lang.String ACTION_HOTWORD_INPUT_CHANGED = "org.mokee.intent.action.HOTWORD_INPUT_CHANGED";
     field public static final java.lang.String CAPTURE_AUDIO_HOTWORD_PERMISSION = "android.permission.CAPTURE_AUDIO_HOTWORD";
-    field public static final java.lang.String EXTRA_CURRENT_PACKAGE_NAME = "com.mokee.intent.extra.CURRENT_PACKAGE_NAME";
+    field public static final java.lang.String EXTRA_CURRENT_PACKAGE_NAME = "org.mokee.intent.extra.CURRENT_PACKAGE_NAME";
   }
 
   public static class MediaRecorder.AudioSource {
@@ -643,14 +643,12 @@ package mokee.platform {
     field public static final java.lang.String READ_DATAUSAGE = "mokee.permission.READ_DATAUSAGE";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "mokee.permission.READ_MSIM_PHONE_STATE";
     field public static final java.lang.String READ_PHONE_LOCATION = "mokee.permission.READ_PHONE_LOCATION";
-    field public static final java.lang.String READ_THEMES = "lineageos.permission.READ_THEMES";
     field public static final java.lang.String READ_WEATHER = "mokee.permission.READ_WEATHER";
     field public static final java.lang.String WRITE_ALARMS = "mokee.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_DATAUSAGE = "mokee.permission.WRITE_DATAUSAGE";
     field public static final java.lang.String WRITE_PHONE_LOCATION = "mokee.permission.WRITE_PHONE_LOCATION";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "mokee.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "mokee.permission.WRITE_SETTINGS";
-    field public static final java.lang.String WRITE_THEMES = "lineageos.permission.WRITE_THEMES";
     field public static final java.lang.String WRITE_WEATHER = "mokee.permission.WRITE_WEATHER";
   }
 
@@ -816,8 +814,8 @@ package mokee.preference {
     field public static final java.lang.String EXTRA_ENABLED = ":mk:pref_enabled";
     field public static final java.lang.String EXTRA_KEY = ":mk:pref_key";
     field public static final java.lang.String EXTRA_SUMMARY = ":mk:pref_summary";
-    field public static final java.lang.String META_REMOTE_KEY = "org.cyanogenmod.settings.summary.key";
-    field public static final java.lang.String META_REMOTE_RECEIVER = "org.cyanogenmod.settings.summary.receiver";
+    field public static final java.lang.String META_REMOTE_KEY = "org.mokee.settings.summary.key";
+    field public static final java.lang.String META_REMOTE_RECEIVER = "org.mokee.settings.summary.receiver";
     field protected final android.content.Context mContext;
   }
 
@@ -1202,7 +1200,7 @@ package mokee.providers {
 
   public class WeatherContract {
     ctor public WeatherContract();
-    field public static final java.lang.String AUTHORITY = "com.mokee.weather";
+    field public static final java.lang.String AUTHORITY = "org.mokee.weather";
     field public static final android.net.Uri AUTHORITY_URI;
   }
 
@@ -1309,7 +1307,7 @@ package mokee.util {
     method public static int findPerceptuallyNearestColor(int, int[]);
     method public static int findPerceptuallyNearestSolidColor(int);
     method public static int generateAlertColorFromDrawable(android.graphics.drawable.Drawable);
-    method public static lineageos.util.palette.Palette.Swatch getDominantSwatch(lineageos.util.palette.Palette);
+    method public static mokee.util.palette.Palette.Swatch getDominantSwatch(mokee.util.palette.Palette);
     method public static float[] temperatureToRGB(int);
   }
 

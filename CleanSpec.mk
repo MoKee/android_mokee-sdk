@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2016 The MoKee Open Source Project
+# Copyright (C) 2015-2017 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/APPS/org.mokee.platfo
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.mokee.platform_intermediates)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.mokee.platform.sdk_intermediates)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.mokee.platform.internal_intermediates)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/mksdk_stubs_current_intermediates)
+$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/mokee-sdk_stubs_current_intermediates)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.mokee.platform_intermediates)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.mokee.platform.sdk_intermediates)
-# Purge out the api stubs timestamp files (they're used as a dependency for checkapi-mk)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/docs/mk-api-stubs*)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/docs/mk-system-api-stubs*)
+# Purge out the api stubs timestamp files (they're used as a dependency for checkapi-mokee)
+$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/docs/mokee-api-stubs*)
+$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/docs/mokee-system-api-stubs*)

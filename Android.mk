@@ -1,4 +1,5 @@
-# Copyright (C) 2015-2016 The MoKee Open Source Project
+# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2015-2017 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,10 +22,10 @@ LOCAL_PATH := $(call my-dir)
 # did, the PRIVATE_* vars for R.java wouldn't be guaranteed to be correct.
 # Instead, it depends on the R.stamp file, which lists the corresponding
 # R.java file as a prerequisite.
-mk_platform_res := APPS/org.mokee.platform-res_intermediates/src
+mokee_platform_res := APPS/org.mokee.platform-res_intermediates/src
 
-# List of packages used in mk-api-stubs
-mk_stub_packages := mokee.alarmclock:mokee.app:mokee.content:mokee.externalviews:mokee.hardware:mokee.media:mokee.os:mokee.preference:mokee.profiles:mokee.providers:mokee.platform:mokee.power:mokee.util:mokee.weather:mokee.weatherservice
+# List of packages used in mokee-api-stubs
+mokee_stub_packages := mokee.alarmclock:mokee.app:mokee.content:mokee.externalviews:mokee.hardware:mokee.media:mokee.os:mokee.preference:mokee.profiles:mokee.providers:mokee.platform:mokee.power:mokee.util:mokee.weather:mokee.weatherservice
 
 # The MoKee Platform Framework Library
 # ============================================================
@@ -37,7 +38,7 @@ library_src := mk/lib/main/java
 LOCAL_MODULE := org.mokee.platform
 LOCAL_MODULE_TAGS := optional
 
-mksdk_LOCAL_JAVA_LIBRARIES := \
+mokee_sdk_LOCAL_JAVA_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-recyclerview \
     android-support-v14-preference
@@ -45,7 +46,7 @@ mksdk_LOCAL_JAVA_LIBRARIES := \
 LOCAL_JAVA_LIBRARIES := \
     services \
     org.mokee.hardware \
-    $(mksdk_LOCAL_JAVA_LIBRARIES)
+    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
 
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, $(mokee_sdk_src)) \
@@ -66,31 +67,30 @@ LOCAL_SRC_FILES += \
     $(call all-Iaidl-files-under, $(mokee_sdk_src)) \
     $(call all-Iaidl-files-under, $(mokee_sdk_internal_src))
 
-mkplat_LOCAL_INTERMEDIATE_SOURCES := \
-    $(mk_platform_res)/mokee/platform/R.java \
-    $(mk_platform_res)/mokee/platform/Manifest.java \
-    $(mk_platform_res)/org/mokee/platform/internal/R.java
+mokee_platform_LOCAL_INTERMEDIATE_SOURCES := \
+    $(mokee_platform_res)/mokee/platform/R.java \
+    $(mokee_platform_res)/mokee/platform/Manifest.java \
+    $(mokee_platform_res)/org/mokee/platform/internal/R.java
 
 LOCAL_INTERMEDIATE_SOURCES := \
-    $(mkplat_LOCAL_INTERMEDIATE_SOURCES)
+    $(mokee_platform_LOCAL_INTERMEDIATE_SOURCES)
 
 # Include aidl files from mokee.app namespace as well as internal src aidl files
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
 LOCAL_AIDL_FLAGS := -n
 
 include $(BUILD_JAVA_LIBRARY)
-mk_framework_module := $(LOCAL_INSTALLED_MODULE)
+mokee_framework_module := $(LOCAL_INSTALLED_MODULE)
 
 # Make sure that R.java and Manifest.java are built before we build
 # the source for this library.
-mk_framework_res_R_stamp := \
+mokee_framework_res_R_stamp := \
     $(call intermediates-dir-for,APPS,org.mokee.platform-res,,COMMON)/src/R.stamp
-$(full_classes_compiled_jar): $(mk_framework_res_R_stamp)
-$(built_dex_intermediate): $(mk_framework_res_R_stamp)
+LOCAL_ADDITIONAL_DEPENDENCIES := $(mokee_framework_res_R_stamp)
 
-$(mk_framework_module): | $(dir $(mk_framework_module))org.mokee.platform-res.apk
+$(mokee_framework_module): | $(dir $(mokee_framework_module))org.mokee.platform-res.apk
 
-mk_framework_built := $(call java-lib-deps, org.mokee.platform)
+mokee_framework_built := $(call java-lib-deps, org.mokee.platform)
 
 # ====  org.mokee.platform.xml lib def  ========================
 include $(CLEAR_VARS)
@@ -122,23 +122,21 @@ LOCAL_SRC_FILES := \
 # Included aidl files from mokee.app namespace
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
 
-mksdk_LOCAL_INTERMEDIATE_SOURCES := \
-    $(mk_platform_res)/mokee/platform/R.java \
-    $(mk_platform_res)/mokee/platform/Manifest.java
+mokee_sdk_LOCAL_INTERMEDIATE_SOURCES := \
+    $(mokee_platform_res)/mokee/platform/R.java \
+    $(mokee_platform_res)/mokee/platform/Manifest.java
 
 LOCAL_INTERMEDIATE_SOURCES := \
-    $(mksdk_LOCAL_INTERMEDIATE_SOURCES)
+    $(mokee_sdk_LOCAL_INTERMEDIATE_SOURCES)
 
 LOCAL_JAVA_LIBRARIES := \
-    $(mksdk_LOCAL_JAVA_LIBRARIES)
+    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
 
 # Make sure that R.java and Manifest.java are built before we build
 # the source for this library.
-mk_framework_res_R_stamp := \
+mokee_framework_res_R_stamp := \
     $(call intermediates-dir-for,APPS,org.mokee.platform-res,,COMMON)/src/R.stamp
-$(full_classes_compiled_jar): $(mk_framework_res_R_stamp)
-$(built_dex_intermediate): $(mk_framework_res_R_stamp)
-$(full_target): $(mk_framework_built) $(gen)
+LOCAL_ADDITIONAL_DEPENDENCIES := $(mokee_framework_res_R_stamp)
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # the sdk as an aar for publish, not built as part of full target
@@ -157,8 +155,8 @@ LOCAL_CONSUMER_PROGUARD_FILE := $(LOCAL_PATH)/sdk/proguard.txt
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, sdk/res/res)
 LOCAL_MANIFEST_FILE := sdk/AndroidManifest.xml
 
-mksdk_exclude_files := 'mokee/library'
-LOCAL_JAR_EXCLUDE_PACKAGES := $(mksdk_exclude_files)
+mokee_sdk_exclude_files := 'mokee/library'
+LOCAL_JAR_EXCLUDE_PACKAGES := $(mokee_sdk_exclude_files)
 LOCAL_JAR_EXCLUDE_FILES := none
 
 LOCAL_STATIC_JAVA_LIBRARIES := org.mokee.platform.sdk
@@ -184,41 +182,41 @@ LOCAL_SRC_FILES := \
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
 LOCAL_AIDL_FLAGS := -n
 
-mksdk_LOCAL_INTERMEDIATE_SOURCES := \
-    $(mk_platform_res)/mokee/platform/R.java \
-    $(mk_platform_res)/mokee/platform/Manifest.java \
-    $(mk_platform_res)/org/mokee/platform/internal/R.java \
-    $(mk_platform_res)/org/mokee/platform/internal/Manifest.java
+mokee_sdk_LOCAL_INTERMEDIATE_SOURCES := \
+    $(mokee_platform_res)/mokee/platform/R.java \
+    $(mokee_platform_res)/mokee/platform/Manifest.java \
+    $(mokee_platform_res)/org/mokee/platform/internal/R.java \
+    $(mokee_platform_res)/org/mokee/platform/internal/Manifest.java
 
 LOCAL_INTERMEDIATE_SOURCES := \
-    $(mksdk_LOCAL_INTERMEDIATE_SOURCES)
+    $(mokee_sdk_LOCAL_INTERMEDIATE_SOURCES)
 
 LOCAL_JAVA_LIBRARIES := \
-    $(mksdk_LOCAL_JAVA_LIBRARIES)
+    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
 
-$(full_target): $(mk_framework_built) $(gen)
+$(full_target): $(mokee_framework_built) $(gen)
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 
 # ===========================================================
 # Common Droiddoc vars
-mkplat_docs_src_files := \
+mokee_platform_docs_src_files := \
     $(call all-java-files-under, $(mokee_sdk_src)) \
     $(call all-html-files-under, $(mokee_sdk_src))
 
-mkplat_docs_java_libraries := \
+mokee_platform_docs_java_libraries := \
     org.mokee.platform.sdk
 
 # SDK version as defined
-mkplat_docs_SDK_VERSION := 70.0
+mokee_platform_docs_SDK_VERSION := 71.2
 
 # release version
-mkplat_docs_SDK_REL_ID := 7
+mokee_platform_docs_SDK_REL_ID := 7
 
-mkplat_docs_LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+mokee_platform_docs_LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 
-mkplat_docs_LOCAL_DROIDDOC_SOURCE_PATH := \
-    $(mkplat_docs_src_files)
+mokee_platform_docs_LOCAL_DROIDDOC_SOURCE_PATH := \
+    $(mokee_platform_docs_src_files)
 
 intermediates.COMMON := $(call intermediates-dir-for,$(LOCAL_MODULE_CLASS),org.mokee.platform.sdk,,COMMON)
 
@@ -226,24 +224,24 @@ intermediates.COMMON := $(call intermediates-dir-for,$(LOCAL_MODULE_CLASS),org.m
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= \
-    $(mkplat_docs_src_files)
-LOCAL_INTERMEDIATE_SOURCES:= $(mkplat_LOCAL_INTERMEDIATE_SOURCES)
-LOCAL_JAVA_LIBRARIES:= $(mkplat_docs_java_libraries)
-LOCAL_MODULE_CLASS:= $(mkplat_docs_LOCAL_MODULE_CLASS)
-LOCAL_DROIDDOC_SOURCE_PATH:= $(mkplat_docs_LOCAL_DROIDDOC_SOURCE_PATH)
+    $(mokee_platform_docs_src_files)
+LOCAL_INTERMEDIATE_SOURCES:= $(mokee_platform_LOCAL_INTERMEDIATE_SOURCES)
+LOCAL_JAVA_LIBRARIES:= $(mokee_platform_docs_java_libraries)
+LOCAL_MODULE_CLASS:= $(mokee_platform_docs_LOCAL_MODULE_CLASS)
+LOCAL_DROIDDOC_SOURCE_PATH:= $(mokee_platform_docs_LOCAL_DROIDDOC_SOURCE_PATH)
 LOCAL_ADDITIONAL_JAVA_DIR:= $(intermediates.COMMON)/src
-LOCAL_ADDITIONAL_DEPENDENCIES:= $(mkplat_docs_LOCAL_ADDITIONAL_DEPENDENCIES)
+LOCAL_ADDITIONAL_DEPENDENCIES:= $(mokee_platform_docs_LOCAL_ADDITIONAL_DEPENDENCIES)
 
-LOCAL_MODULE := mk-api-stubs
+LOCAL_MODULE := mokee-api-stubs
 
 LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= build/tools/droiddoc/templates-sdk
 
 LOCAL_DROIDDOC_OPTIONS:= \
-        -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/mksdk_stubs_current_intermediates/src \
-        -stubpackages $(mk_stub_packages) \
+        -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/mokee-sdk_stubs_current_intermediates/src \
+        -stubpackages $(mokee_stub_packages) \
         -exclude org.mokee.platform.internal \
-        -api $(INTERNAL_MK_PLATFORM_API_FILE) \
-        -removedApi $(INTERNAL_MK_PLATFORM_REMOVED_API_FILE) \
+        -api $(INTERNAL_MOKEE_PLATFORM_API_FILE) \
+        -removedApi $(INTERNAL_MOKEE_PLATFORM_REMOVED_API_FILE) \
         -nodocs
 
 LOCAL_UNINSTALLABLE_MODULE := true
@@ -251,9 +249,9 @@ LOCAL_UNINSTALLABLE_MODULE := true
 include $(BUILD_DROIDDOC)
 
 # $(gen), i.e. framework.aidl, is also needed while building against the current stub.
-$(full_target): $(mk_framework_built) $(gen)
-$(INTERNAL_MK_PLATFORM_API_FILE): $(full_target)
-$(call dist-for-goals,sdk,$(INTERNAL_MK_PLATFORM_API_FILE))
+$(full_target): $(mokee_framework_built) $(gen)
+$(INTERNAL_MOKEE_PLATFORM_API_FILE): $(full_target)
+$(call dist-for-goals,sdk,$(INTERNAL_MOKEE_PLATFORM_API_FILE))
 
 
 # Documentation
@@ -261,11 +259,11 @@ $(call dist-for-goals,sdk,$(INTERNAL_MK_PLATFORM_API_FILE))
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := org.mokee.platform.sdk
-LOCAL_INTERMEDIATE_SOURCES:= $(mkplat_LOCAL_INTERMEDIATE_SOURCES)
+LOCAL_INTERMEDIATE_SOURCES:= $(mokee_platform_LOCAL_INTERMEDIATE_SOURCES)
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SRC_FILES := $(mkplat_docs_src_files)
+LOCAL_SRC_FILES := $(mokee_platform_docs_src_files)
 LOCAL_ADDITONAL_JAVA_DIR := $(intermediates.COMMON)/src
 
 LOCAL_IS_HOST_MODULE := false
@@ -273,31 +271,31 @@ LOCAL_ADDITIONAL_DEPENDENCIES := \
     services \
     org.mokee.hardware
 
-LOCAL_JAVA_LIBRARIES := $(mkplat_docs_java_libraries)
+LOCAL_JAVA_LIBRARIES := $(mokee_platform_docs_java_libraries)
 
 LOCAL_DROIDDOC_OPTIONS := \
         -offlinemode \
         -exclude org.mokee.platform.internal \
         -hidePackage org.mokee.platform.internal \
         -hdf android.whichdoc offline \
-        -hdf sdk.version $(mkplat_docs_docs_SDK_VERSION) \
-        -hdf sdk.rel.id $(mkplat_docs_docs_SDK_REL_ID) \
+        -hdf sdk.version $(mokee_platform_docs_docs_SDK_VERSION) \
+        -hdf sdk.rel.id $(mokee_platform_docs_docs_SDK_REL_ID) \
         -hdf sdk.preview 0 \
-        -since $(MK_SRC_API_DIR)/1.txt 1 \
-        -since $(MK_SRC_API_DIR)/2.txt 2 \
-        -since $(MK_SRC_API_DIR)/3.txt 3 \
-        -since $(MK_SRC_API_DIR)/4.txt 4 \
-        -since $(MK_SRC_API_DIR)/5.txt 5 \
-        -since $(MK_SRC_API_DIR)/6.txt 6 \
-        -since $(MK_SRC_API_DIR)/7.txt 7
+        -since $(MOKEE_SRC_API_DIR)/1.txt 1 \
+        -since $(MOKEE_SRC_API_DIR)/2.txt 2 \
+        -since $(MOKEE_SRC_API_DIR)/3.txt 3 \
+        -since $(MOKEE_SRC_API_DIR)/4.txt 4 \
+        -since $(MOKEE_SRC_API_DIR)/5.txt 5 \
+        -since $(MOKEE_SRC_API_DIR)/6.txt 6 \
+        -since $(MOKEE_SRC_API_DIR)/7.txt 7
 
-$(full_target): $(mk_framework_built) $(gen)
+$(full_target): $(mokee_framework_built) $(gen)
 include $(BUILD_DROIDDOC)
 
 include $(call first-makefiles-under,$(LOCAL_PATH))
 
 # Cleanup temp vars
 # ===========================================================
-mkplat.docs.src_files :=
-mkplat.docs.java_libraries :=
+mokee_platform_docs_src_files :=
+mokee_platform_docs_java_libraries :=
 intermediates.COMMON :=
