@@ -403,9 +403,6 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             loadIntegerSetting(stmt, MKSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
                     R.integer.def_notification_brightness_level);
 
-            loadBooleanSetting(stmt, MKSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
-                    R.bool.def_notification_multiple_leds);
-
             loadBooleanSetting(stmt, MKSettings.System.SYSTEM_PROFILES_ENABLED,
                     R.bool.def_profiles_enabled);
 

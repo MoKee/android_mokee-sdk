@@ -1704,17 +1704,6 @@ public final class MKSettings {
                 new InclusiveIntegerRangeValidator(1, 255);
 
         /**
-         * Whether to use the all the LEDs for the notifications or just one.
-         * 0 = 0ff, 1 = on
-         */
-        public static final String NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE =
-                "notification_light_multiple_leds_enable";
-
-        /** @hide */
-        public static final Validator NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE_VALIDATOR =
-                sBooleanValidator;
-
-        /**
          * Whether to allow notifications with the screen on or DayDreams.
          * The value is boolean (1 or 0). Default will always be false.
          */
@@ -2018,7 +2007,6 @@ public final class MKSettings {
                 MKSettings.System.STATUS_BAR_NOTIF_COUNT,
                 MKSettings.System.CALL_RECORDING_FORMAT,
                 MKSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
-                MKSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
                 MKSettings.System.NOTIFICATION_LIGHT_SCREEN_ON,
                 MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
                 MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
@@ -2182,8 +2170,6 @@ public final class MKSettings {
             VALIDATORS.put(CALL_RECORDING_FORMAT, CALL_RECORDING_FORMAT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
                     NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_VALIDATOR);
-            VALIDATORS.put(NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
-                    NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_SCREEN_ON,
                     NOTIFICATION_LIGHT_SCREEN_ON_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
