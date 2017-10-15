@@ -44,7 +44,7 @@
 
     <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
     <string name="permlab_useHardwareFramework">use hardware framework</string>
-    <string name="permdesc_useHardwareFramework">Allows an app access to the MK hardware framework.</string>
+    <string name="permdesc_useHardwareFramework">Allows an app access to the MoKee hardware framework.</string>
 
     <!-- Labels for the WRITE_ALARMS permission. -->
     <string name="permlab_write_alarms">directly change alarms</string>
@@ -59,12 +59,12 @@
     <string name="permdesc_read_alarms">Allows an app to read your scheduled alarms.</string>
 
     <!-- Labels for the WRITE_SETTINGS permission -->
-    <string name="permlab_writeSettings">modify MK system settings</string>
-    <string name="permdesc_writeSettings">Allows an app to modify MK system settings.</string>
+    <string name="permlab_writeSettings">modify MoKee system settings</string>
+    <string name="permdesc_writeSettings">Allows an app to modify MoKee system settings.</string>
 
     <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-    <string name="permlab_writeSecureSettings">modify MK secure system settings</string>
-    <string name="permdesc_writeSecureSettings">Allows an app to modify MK secure system settings. Not for use by normal apps.</string>
+    <string name="permlab_writeSecureSettings">modify MoKee secure system settings</string>
+    <string name="permdesc_writeSecureSettings">Allows an app to modify MoKee secure system settings. Not for use by normal apps.</string>
 
     <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
     <string name="permlab_managePersistentStorage">manage persistent storage</string>

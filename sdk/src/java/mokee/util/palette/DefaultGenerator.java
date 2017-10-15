@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package lineageos.util.palette;
+package mokee.util.palette;
 
-import lineageos.util.palette.Palette.Swatch;
+import mokee.util.palette.Palette.Swatch;
 
 import java.util.List;
 

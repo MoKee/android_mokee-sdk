@@ -47,7 +47,7 @@ public class MediaRecorder {
      */
     //@SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String ACTION_HOTWORD_INPUT_CHANGED
-            = "com.mokee.intent.action.HOTWORD_INPUT_CHANGED";
+            = "org.mokee.intent.action.HOTWORD_INPUT_CHANGED";
 
     /**
      * Extra for {@link #ACTION_HOTWORD_INPUT_CHANGED} that provides the package name of the
@@ -55,7 +55,7 @@ public class MediaRecorder {
      * purposes.
      */
     public static final String EXTRA_CURRENT_PACKAGE_NAME =
-            "com.mokee.intent.extra.CURRENT_PACKAGE_NAME";
+            "org.mokee.intent.extra.CURRENT_PACKAGE_NAME";
 
     /**
      * Extra for {@link #ACTION_HOTWORD_INPUT_CHANGED} that provides the state of
@@ -63,7 +63,7 @@ public class MediaRecorder {
      * @hide
      */
     public static final String EXTRA_HOTWORD_INPUT_STATE =
-            "com.mokee.intent.extra.HOTWORD_INPUT_STATE";
+            "org.mokee.intent.extra.HOTWORD_INPUT_STATE";
 
 
     public static class AudioSource {

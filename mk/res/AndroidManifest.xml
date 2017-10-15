@@ -42,7 +42,7 @@
     <protected-broadcast android:name="mokee.intent.action.ACTION_AUDIO_SESSIONS_CHANGED"
                          android:permission="mokee.permission.MANAGE_AUDIO_SESSIONS" />
     <protected-broadcast android:name="mokee.platform.intent.action.PROFILE_SELECTED" />
-    <protected-broadcast android:name="com.mokee.intent.action.HOTWORD_INPUT_CHANGED" />
+    <protected-broadcast android:name="org.mokee.intent.action.HOTWORD_INPUT_CHANGED" />
 
     <protected-broadcast android:name="mokee.intent.action.UPDATE_PREFERENCE" />
     <protected-broadcast android:name="mokee.intent.action.REFRESH_PREFERENCE" />

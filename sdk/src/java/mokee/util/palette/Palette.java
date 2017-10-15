@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lineageos.util.palette;
+package mokee.util.palette;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;

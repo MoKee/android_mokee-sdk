@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package org.lineageos.internal.graphics.drawable;
+package org.mokee.internal.graphics.drawable;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;

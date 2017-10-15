@@ -72,10 +72,10 @@ public class RemotePreference extends SelfRemovingPreference
             "mokee.intent.action.UPDATE_PREFERENCE";
 
     public static final String META_REMOTE_RECEIVER =
-            "org.cyanogenmod.settings.summary.receiver";
+            "org.mokee.settings.summary.receiver";
 
     public static final String META_REMOTE_KEY =
-            "org.cyanogenmod.settings.summary.key";
+            "org.mokee.settings.summary.key";
 
     public static final String EXTRA_ENABLED = ":mk:pref_enabled";
     public static final String EXTRA_KEY = ":mk:pref_key";
