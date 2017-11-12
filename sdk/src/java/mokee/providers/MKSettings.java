@@ -806,6 +806,16 @@ public final class MKSettings {
         // region System Settings
 
         /**
+         * Receiver mokee push notifications 
+         * @hide
+         */
+        public static final String RECEIVE_PUSH_NOTIFICATIONS = "receive_push_notifications";
+
+        /** @hide */
+        public static final Validator RECEIVE_PUSH_NOTIFICATIONS_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Force stop restricted app when leaving
          * @hide
          */
@@ -1945,6 +1955,7 @@ public final class MKSettings {
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
+                MKSettings.System.RECEIVE_PUSH_NOTIFICATIONS,
                 MKSettings.System.AEGIS_WARDEN_FORCE_STOP,
                 MKSettings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE,
                 MKSettings.System.NAVIGATION_BAR_HEIGHT,
@@ -2070,6 +2081,7 @@ public final class MKSettings {
         public static final Map<String, Validator> VALIDATORS =
                 new ArrayMap<String, Validator>();
         static {
+            VALIDATORS.put(RECEIVE_PUSH_NOTIFICATIONS, RECEIVE_PUSH_NOTIFICATIONS_VALIDATOR);
             VALIDATORS.put(AEGIS_WARDEN_FORCE_STOP, AEGIS_WARDEN_FORCE_STOP_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_NETWORK_TRAFFIC_STYLE, STATUS_BAR_NETWORK_TRAFFIC_STYLE_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_HEIGHT, NAVIGATION_BAR_HEIGHT_VALIDATOR);
