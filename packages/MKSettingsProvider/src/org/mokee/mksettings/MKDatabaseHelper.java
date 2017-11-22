@@ -393,8 +393,17 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             loadIntegerSetting(stmt, MKSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     R.integer.def_qs_quick_pulldown);
 
+            loadIntegerSetting(stmt, MKSettings.System.BATTERY_LIGHT_BRIGHTNESS_LEVEL,
+                    R.integer.def_battery_brightness_level);
+
+            loadIntegerSetting(stmt, MKSettings.System.BATTERY_LIGHT_BRIGHTNESS_LEVEL_ZEN,
+                    R.integer.def_battery_brightness_level_zen);
+
             loadIntegerSetting(stmt, MKSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
                     R.integer.def_notification_brightness_level);
+
+            loadIntegerSetting(stmt, MKSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_ZEN,
+                    R.integer.def_notification_brightness_level_zen);
 
             loadBooleanSetting(stmt, MKSettings.System.SYSTEM_PROFILES_ENABLED,
                     R.bool.def_profiles_enabled);
