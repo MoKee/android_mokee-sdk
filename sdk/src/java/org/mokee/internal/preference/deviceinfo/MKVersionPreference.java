@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.preference.deviceinfo;
+package org.mokee.internal.preference.deviceinfo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,32 +24,31 @@ import android.support.v7.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
 
-import lineageos.preference.SelfRemovingPreference;
+import mokee.preference.SelfRemovingPreference;
 
-import org.lineageos.platform.internal.R;
+import org.mokee.platform.internal.R;
 
-public class LineageVersionPreference extends SelfRemovingPreference
+public class MKVersionPreference extends SelfRemovingPreference
         implements Preference.OnPreferenceClickListener {
 
-    private static final String TAG = "LineageVersionPreference";
+    private static final String TAG = "MKVersionPreference";
 
-    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.version";
+    private static final String KEY_MK_VERSION_PROP = "ro.mk.version";
 
-    private static final String PLATLOGO_PACKAGE_NAME = "org.lineageos.lineageparts";
-    private static final String PLATLOGO_ACTIVITY_CLASS =
-            PLATLOGO_PACKAGE_NAME + ".logo.PlatLogoActivity";
+    private static final String PLATLOGO_PACKAGE_NAME = "android";
+    private static final String PLATLOGO_ACTIVITY_CLASS = com.android.internal.app.PlatLogoActivity.class.getName();
 
     private long[] mHits = new long[3];
 
-    public LineageVersionPreference(Context context, AttributeSet attrs, int defStyle) {
+    public MKVersionPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public LineageVersionPreference(Context context, AttributeSet attrs) {
+    public MKVersionPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public LineageVersionPreference(Context context) {
+    public MKVersionPreference(Context context) {
         super(context);
     }
 
@@ -58,8 +57,8 @@ public class LineageVersionPreference extends SelfRemovingPreference
         super.onAttached();
 
         setOnPreferenceClickListener(this);
-        setTitle(R.string.lineage_version);
-        setSummary(SystemProperties.get(KEY_LINEAGE_VERSION_PROP,
+        setTitle(R.string.mk_version);
+        setSummary(SystemProperties.get(KEY_MK_VERSION_PROP,
                 getContext().getResources().getString(R.string.unknown)));
     }
 
