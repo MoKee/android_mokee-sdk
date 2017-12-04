@@ -2616,6 +2616,13 @@ public final class MKSettings {
         public static final String THREE_FINGER_SCREENSHOT_ENABLED = "three_finger_screenshot_enabled";
 
         /**
+         * Unique registration ids for MoKee
+         *
+         * @hide
+         */
+        public static final Seting UNIQUE_REGISTRATION_IDS = "unique_registration_ids";
+
+        /**
          * Locked task list in recent view
          * @hide
          */
