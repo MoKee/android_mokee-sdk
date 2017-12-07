@@ -234,7 +234,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES:= $(mokee_platform_docs_LOCAL_ADDITIONAL_DEPENDENC
 
 LOCAL_MODULE := mokee-api-stubs
 
-LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= build/tools/droiddoc/templates-sdk
+LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= external/doclava/res/assets/templates-sdk
 
 LOCAL_DROIDDOC_OPTIONS:= \
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/mokee-sdk_stubs_current_intermediates/src \
