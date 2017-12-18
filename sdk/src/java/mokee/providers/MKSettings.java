@@ -1952,6 +1952,23 @@ public final class MKSettings {
                 };
 
         /**
+         * Control the type of rotation which can be performed using the accelerometer
+         * if ACCELEROMETER_ROTATION is enabled.
+         * Value is a bitwise combination of
+         * 1 = 0 degrees (portrait)
+         * 2 = 90 degrees (left)
+         * 4 = 180 degrees (inverted portrait)
+         * 8 = 270 degrees (right)
+         * Setting to 0 is effectively orientation lock
+         * @hide
+         */
+        public static final String ACCELEROMETER_ROTATION_ANGLES = "accelerometer_rotation_angles";
+
+        /** @hide */
+        public static final Validator ACCELEROMETER_ROTATION_ANGLES_VALIDATOR =
+                sNonNegativeIntegerValidator;
+
+        /**
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
@@ -2045,6 +2062,7 @@ public final class MKSettings {
                 MKSettings.System.HEADSET_CONNECT_PLAYER,
                 MKSettings.System.ZEN_ALLOW_LIGHTS,
                 MKSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK,
+                MKSettings.System.ACCELEROMETER_ROTATION_ANGLES,
         };
 
         /**
@@ -2216,6 +2234,8 @@ public final class MKSettings {
                     TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK_VALIDATOR);
             VALIDATORS.put(DISPLAY_PICTURE_ADJUSTMENT,
                     DISPLAY_PICTURE_ADJUSTMENT_VALIDATOR);
+            VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES,
+                    ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
         };
         // endregion
     }
