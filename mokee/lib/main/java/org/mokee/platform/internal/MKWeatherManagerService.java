@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal;
+package org.mokee.platform.internal;
 
 import android.app.AppGlobals;
 import android.content.ComponentName;
@@ -37,26 +37,26 @@ import android.util.Slog;
 import com.android.internal.content.PackageMonitor;
 import com.android.internal.os.BackgroundThread;
 import com.android.server.SystemService;
-import lineageos.app.LineageContextConstants;
-import lineageos.platform.Manifest;
-import lineageos.providers.LineageSettings;
-import lineageos.providers.WeatherContract.WeatherColumns;
-import lineageos.weather.LineageWeatherManager;
-import lineageos.weather.ILineageWeatherManager;
-import lineageos.weather.IRequestInfoListener;
-import lineageos.weather.IWeatherServiceProviderChangeListener;
-import lineageos.weather.RequestInfo;
-import lineageos.weather.WeatherInfo;
-import lineageos.weatherservice.IWeatherProviderService;
-import lineageos.weatherservice.IWeatherProviderServiceClient;
-import lineageos.weatherservice.ServiceRequestResult;
+import mokee.app.MKContextConstants;
+import mokee.platform.Manifest;
+import mokee.providers.MKSettings;
+import mokee.providers.WeatherContract.WeatherColumns;
+import mokee.weather.MKWeatherManager;
+import mokee.weather.IMKWeatherManager;
+import mokee.weather.IRequestInfoListener;
+import mokee.weather.IWeatherServiceProviderChangeListener;
+import mokee.weather.RequestInfo;
+import mokee.weather.WeatherInfo;
+import mokee.weatherservice.IWeatherProviderService;
+import mokee.weatherservice.IWeatherProviderServiceClient;
+import mokee.weatherservice.ServiceRequestResult;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LineageWeatherManagerService extends LineageSystemService {
+public class MKWeatherManagerService extends MKSystemService {
 
-    private static final String TAG = LineageWeatherManagerService.class.getSimpleName();
+    private static final String TAG = MKWeatherManagerService.class.getSimpleName();
 
     private IWeatherProviderService mWeatherProviderService;
     private boolean mIsWeatherProviderServiceBound;
@@ -90,13 +90,13 @@ public class LineageWeatherManagerService extends LineageSystemService {
                     case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
                     case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                         WeatherInfo weatherInfo = null;
-                        if (status == LineageWeatherManager.RequestStatus.COMPLETED) {
+                        if (status == MKWeatherManager.RequestStatus.COMPLETED) {
                             weatherInfo = (result != null) ? result.getWeatherInfo() : null;
                             if (weatherInfo == null) {
                                 //This should never happen! WEATHER_REQUEST_COMPLETED is set
                                 //only if the weatherinfo object was not null when the request
                                 //was marked as completed
-                                status = LineageWeatherManager.RequestStatus.FAILED;
+                                status = MKWeatherManager.RequestStatus.FAILED;
                             } else {
                                 if (!requestInfo.isQueryOnlyWeatherRequest()) {
                                     final long identity = Binder.clearCallingIdentity();
@@ -133,11 +133,11 @@ public class LineageWeatherManagerService extends LineageSystemService {
 
     private boolean isValidRequestInfoStatus(int state) {
         switch (state) {
-            case LineageWeatherManager.RequestStatus.COMPLETED:
-            case LineageWeatherManager.RequestStatus.ALREADY_IN_PROGRESS:
-            case LineageWeatherManager.RequestStatus.FAILED:
-            case LineageWeatherManager.RequestStatus.NO_MATCH_FOUND:
-            case LineageWeatherManager.RequestStatus.SUBMITTED_TOO_SOON:
+            case MKWeatherManager.RequestStatus.COMPLETED:
+            case MKWeatherManager.RequestStatus.ALREADY_IN_PROGRESS:
+            case MKWeatherManager.RequestStatus.FAILED:
+            case MKWeatherManager.RequestStatus.NO_MATCH_FOUND:
+            case MKWeatherManager.RequestStatus.SUBMITTED_TOO_SOON:
                 return true;
             default:
                 return false;
@@ -153,7 +153,7 @@ public class LineageWeatherManagerService extends LineageSystemService {
                 Manifest.permission.ACCESS_WEATHER_MANAGER, null);
     }
 
-    private final IBinder mService = new ILineageWeatherManager.Stub() {
+    private final IBinder mService = new IMKWeatherManager.Stub() {
 
         @Override
         public void updateWeather(RequestInfo info) {
@@ -186,8 +186,8 @@ public class LineageWeatherManagerService extends LineageSystemService {
             enforcePermission();
             final long identity = Binder.clearCallingIdentity();
             try {
-                String enabledProviderService = LineageSettings.Secure.getString(
-                        mContext.getContentResolver(), LineageSettings.Secure.WEATHER_PROVIDER_SERVICE);
+                String enabledProviderService = MKSettings.Secure.getString(
+                        mContext.getContentResolver(), MKSettings.Secure.WEATHER_PROVIDER_SERVICE);
                 if (enabledProviderService != null) {
                     return getComponentLabel(
                             ComponentName.unflattenFromString(enabledProviderService));
@@ -216,19 +216,19 @@ public class LineageWeatherManagerService extends LineageSystemService {
         return null;
     }
 
-    public LineageWeatherManagerService(Context context) {
+    public MKWeatherManagerService(Context context) {
         super(context);
         mContext = context;
     }
 
     @Override
     public String getFeatureDeclaration() {
-        return LineageContextConstants.Features.WEATHER_SERVICES;
+        return MKContextConstants.Features.WEATHER_SERVICES;
     }
 
     @Override
     public void onStart() {
-        publishBinderService(LineageContextConstants.LINEAGE_WEATHER_SERVICE, mService);
+        publishBinderService(MKContextConstants.MK_WEATHER_SERVICE, mService);
         registerPackageMonitor();
         registerSettingsObserver();
     }
@@ -241,8 +241,8 @@ public class LineageWeatherManagerService extends LineageSystemService {
     }
 
     private void bindActiveWeatherProviderService() {
-        String activeProviderService = LineageSettings.Secure.getString(mContext.getContentResolver(),
-                LineageSettings.Secure.WEATHER_PROVIDER_SERVICE);
+        String activeProviderService = MKSettings.Secure.getString(mContext.getContentResolver(),
+                MKSettings.Secure.WEATHER_PROVIDER_SERVICE);
         if (activeProviderService != null) {
             if (!getContext().bindServiceAsUser(new Intent().setComponent(
                     ComponentName.unflattenFromString(activeProviderService)),
@@ -260,7 +260,7 @@ public class LineageWeatherManagerService extends LineageSystemService {
             if (listener != null && listener.asBinder().pingBinder()) {
                 try {
                     listener.onWeatherRequestCompleted(info,
-                            LineageWeatherManager.RequestStatus.FAILED, null);
+                            MKWeatherManager.RequestStatus.FAILED, null);
                 } catch (RemoteException e) {
                 }
             }
@@ -283,7 +283,7 @@ public class LineageWeatherManagerService extends LineageSystemService {
             if (listener != null && listener.asBinder().pingBinder()) {
                 try {
                     listener.onLookupCityRequestCompleted(info,
-                            LineageWeatherManager.RequestStatus.FAILED, null);
+                            MKWeatherManager.RequestStatus.FAILED, null);
                 } catch (RemoteException e) {
                 }
             }
@@ -385,8 +385,8 @@ public class LineageWeatherManagerService extends LineageSystemService {
         PackageMonitor monitor = new PackageMonitor() {
             @Override
             public void onPackageModified(String packageName) {
-                String enabledProviderService = LineageSettings.Secure.getString(
-                        mContext.getContentResolver(), LineageSettings.Secure.WEATHER_PROVIDER_SERVICE);
+                String enabledProviderService = MKSettings.Secure.getString(
+                        mContext.getContentResolver(), MKSettings.Secure.WEATHER_PROVIDER_SERVICE);
                 if (enabledProviderService == null) return;
                 ComponentName cn = ComponentName.unflattenFromString(enabledProviderService);
                 if (!TextUtils.equals(packageName, cn.getPackageName())) return;
@@ -397,8 +397,8 @@ public class LineageWeatherManagerService extends LineageSystemService {
                     if (!getContext().bindServiceAsUser(new Intent().setComponent(cn),
                             mWeatherServiceProviderConnection, Context.BIND_AUTO_CREATE,
                             UserHandle.CURRENT)) {
-                        LineageSettings.Secure.putStringForUser( mContext.getContentResolver(),
-                                LineageSettings.Secure.WEATHER_PROVIDER_SERVICE, null,
+                        MKSettings.Secure.putStringForUser( mContext.getContentResolver(),
+                                MKSettings.Secure.WEATHER_PROVIDER_SERVICE, null,
                                 getChangingUserId());
                         Slog.w(TAG, "Unable to rebind " + cn.flattenToString() + " after receiving"
                                 + " package modified notification. Settings updated.");
@@ -410,8 +410,8 @@ public class LineageWeatherManagerService extends LineageSystemService {
 
             @Override
             public boolean onPackageChanged(String packageName, int uid, String[] components) {
-                String enabledProviderService = LineageSettings.Secure.getString(
-                        mContext.getContentResolver(), LineageSettings.Secure.WEATHER_PROVIDER_SERVICE);
+                String enabledProviderService = MKSettings.Secure.getString(
+                        mContext.getContentResolver(), MKSettings.Secure.WEATHER_PROVIDER_SERVICE);
                 if (enabledProviderService == null) return false;
 
                 boolean packageChanged = false;
@@ -434,9 +434,9 @@ public class LineageWeatherManagerService extends LineageSystemService {
                         } else {
                             disconnectClient();
                             //The package is not enabled so we can't use it anymore
-                            LineageSettings.Secure.putStringForUser(
+                            MKSettings.Secure.putStringForUser(
                                     mContext.getContentResolver(),
-                                    LineageSettings.Secure.WEATHER_PROVIDER_SERVICE, null,
+                                    MKSettings.Secure.WEATHER_PROVIDER_SERVICE, null,
                                     getChangingUserId());
                             Slog.w(TAG, "Active provider " + cn.flattenToString() + " disabled");
                             notifyProviderChanged(null);
@@ -452,16 +452,16 @@ public class LineageWeatherManagerService extends LineageSystemService {
 
             @Override
             public void onPackageRemoved(String packageName, int uid) {
-                String enabledProviderService = LineageSettings.Secure.getString(
-                        mContext.getContentResolver(), LineageSettings.Secure.WEATHER_PROVIDER_SERVICE);
+                String enabledProviderService = MKSettings.Secure.getString(
+                        mContext.getContentResolver(), MKSettings.Secure.WEATHER_PROVIDER_SERVICE);
                 if (enabledProviderService == null) return;
 
                 ComponentName cn = ComponentName.unflattenFromString(enabledProviderService);
                 if (!TextUtils.equals(packageName, cn.getPackageName())) return;
 
                 disconnectClient();
-                LineageSettings.Secure.putStringForUser(
-                        mContext.getContentResolver(), LineageSettings.Secure.WEATHER_PROVIDER_SERVICE,
+                MKSettings.Secure.putStringForUser(
+                        mContext.getContentResolver(), MKSettings.Secure.WEATHER_PROVIDER_SERVICE,
                         null, getChangingUserId());
                 notifyProviderChanged(null);
             }
@@ -471,14 +471,14 @@ public class LineageWeatherManagerService extends LineageSystemService {
     }
 
     private void registerSettingsObserver() {
-        final Uri enabledWeatherProviderServiceUri = LineageSettings.Secure.getUriFor(
-                LineageSettings.Secure.WEATHER_PROVIDER_SERVICE);
+        final Uri enabledWeatherProviderServiceUri = MKSettings.Secure.getUriFor(
+                MKSettings.Secure.WEATHER_PROVIDER_SERVICE);
         ContentObserver observer = new ContentObserver(BackgroundThread.getHandler()) {
             @Override
             public void onChange(boolean selfChange, Uri uri, int userId) {
                 if (enabledWeatherProviderServiceUri.equals(uri)) {
-                    String activeSrvc = LineageSettings.Secure.getString(mContext.getContentResolver(),
-                            LineageSettings.Secure.WEATHER_PROVIDER_SERVICE);
+                    String activeSrvc = MKSettings.Secure.getString(mContext.getContentResolver(),
+                            MKSettings.Secure.WEATHER_PROVIDER_SERVICE);
                     disconnectClient();
                     if (activeSrvc != null) {
                         ComponentName cn = ComponentName.unflattenFromString(activeSrvc);
