@@ -21,7 +21,7 @@
 
 namespace android {
 
-int register_org_lineageos_platform_internal_LineageAudioService(JNIEnv* env);
+int register_org_mokee_platform_internal_MKAudioService(JNIEnv* env);
 
 };
 
@@ -38,7 +38,7 @@ extern "C" jint JNI_OnLoad(JavaVM* vm, void* /* reserved */)
     }
     ALOG_ASSERT(env, "Could not retrieve the env!");
 
-    register_org_lineageos_platform_internal_LineageAudioService(env);
+    register_org_mokee_platform_internal_MKAudioService(env);
 
     return JNI_VERSION_1_4;
 }

@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal;
+package org.mokee.platform.internal;
 
 import android.util.Log;
 
 class NativeHelper {
 
-    private static final String TAG = "Lineage-SDK-JNI";
+    private static final String TAG = "MoKee-SDK-JNI";
 
     private static Boolean sNativeLibraryLoaded;
 
@@ -31,12 +31,12 @@ class NativeHelper {
     synchronized static boolean isNativeLibraryAvailable() {
         if (sNativeLibraryLoaded == null) {
             try {
-                System.loadLibrary("lineage-sdk_platform_jni");
+                System.loadLibrary("mokee-sdk_platform_jni");
                 sNativeLibraryLoaded = true;
 
             } catch (Throwable t) {
                 sNativeLibraryLoaded = false;
-                Log.w(TAG, "Lineage-SDK native library unavailable");
+                Log.w(TAG, "MoKee-SDK native library unavailable");
             }
         }
         return sNativeLibraryLoaded;

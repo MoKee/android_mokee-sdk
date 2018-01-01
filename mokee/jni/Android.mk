@@ -17,7 +17,7 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    src/org_lineageos_platform_internal_LineageAudioService.cpp \
+    src/org_mokee_platform_internal_MKAudioService.cpp \
     src/onload.cpp
 
 LOCAL_C_INCLUDES := \
@@ -35,7 +35,7 @@ LOCAL_SHARED_LIBRARIES := \
     libmedia \
     libutils
 
-LOCAL_MODULE := liblineage-sdk_platform_jni
+LOCAL_MODULE := libmokee-sdk_platform_jni
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter
 

@@ -17,7 +17,7 @@
 
 //#define LOG_NDEBUG 0
 
-#define LOG_TAG "LineageAudioService-JNI"
+#define LOG_TAG "MKAudioService-JNI"
 
 #include <utils/Log.h>
 
@@ -36,7 +36,7 @@
 
 namespace android {
 
-static const char* const kClassPathName = "org/lineageos/platform/internal/LineageAudioService";
+static const char* const kClassPathName = "org/mokee/platform/internal/MKAudioService";
 
 static jclass gArrayListClass;
 static struct {
@@ -58,7 +58,7 @@ static Mutex gCallbackLock;
 // ----------------------------------------------------------------------------
 
 static void
-org_lineageos_platform_internal_LineageAudioService_session_info_callback(int event,
+org_mokee_platform_internal_MKAudioService_session_info_callback(int event,
         sp<AudioSessionInfo>& info, bool added)
 {
     AutoMutex _l(gCallbackLock);
@@ -79,7 +79,7 @@ org_lineageos_platform_internal_LineageAudioService_session_info_callback(int ev
 }
 
 static void
-org_lineageos_platform_internal_LineageAudioService_registerAudioSessionCallback(
+org_mokee_platform_internal_MKAudioService_registerAudioSessionCallback(
         JNIEnv *env, jobject thiz, jboolean enabled)
 {
     if (gThiz == NULL) {
@@ -87,11 +87,11 @@ org_lineageos_platform_internal_LineageAudioService_registerAudioSessionCallback
     }
 
     AudioSystem::setAudioSessionCallback( enabled ?
-            org_lineageos_platform_internal_LineageAudioService_session_info_callback : NULL);
+            org_mokee_platform_internal_MKAudioService_session_info_callback : NULL);
 }
 
 static jint
-org_lineageos_platform_internal_LineageAudioService_listAudioSessions(JNIEnv *env, jobject thiz,
+org_mokee_platform_internal_MKAudioService_listAudioSessions(JNIEnv *env, jobject thiz,
         jint streams, jobject jSessions)
 {
     ALOGV("listAudioSessions");
@@ -144,25 +144,25 @@ exit:
 
 static JNINativeMethod gMethods[] = {
      {"native_listAudioSessions", "(ILjava/util/ArrayList;)I",
-            (void *)org_lineageos_platform_internal_LineageAudioService_listAudioSessions},
+            (void *)org_mokee_platform_internal_MKAudioService_listAudioSessions},
      {"native_registerAudioSessionCallback", "(Z)V",
-            (void *)org_lineageos_platform_internal_LineageAudioService_registerAudioSessionCallback},
+            (void *)org_mokee_platform_internal_MKAudioService_registerAudioSessionCallback},
 };
 
-int register_org_lineageos_platform_internal_LineageAudioService(JNIEnv *env)
+int register_org_mokee_platform_internal_MKAudioService(JNIEnv *env)
 {
     jclass arrayListClass = FindClassOrDie(env, "java/util/ArrayList");
     gArrayListClass = MakeGlobalRefOrDie(env, arrayListClass);
     gArrayListMethods.add = GetMethodIDOrDie(env, arrayListClass, "add", "(Ljava/lang/Object;)Z");
     gArrayListMethods.toArray = GetMethodIDOrDie(env, arrayListClass, "toArray", "()[Ljava/lang/Object;");
 
-    jclass audioSessionInfoClass = FindClassOrDie(env, "lineageos/media/AudioSessionInfo");
+    jclass audioSessionInfoClass = FindClassOrDie(env, "mokee/media/AudioSessionInfo");
     gAudioSessionInfoClass = MakeGlobalRefOrDie(env, audioSessionInfoClass);
     gAudioSessionInfoCstor = GetMethodIDOrDie(env, audioSessionInfoClass, "<init>", "(IIIII)V");
 
     gAudioSessionEventHandlerMethods.postAudioSessionEventFromNative =
             GetMethodIDOrDie(env, env->FindClass(kClassPathName),
-            "audioSessionCallbackFromNative", "(ILlineageos/media/AudioSessionInfo;Z)V");
+            "audioSessionCallbackFromNative", "(ILmokee/media/AudioSessionInfo;Z)V");
 
     return RegisterMethodsOrDie(env, kClassPathName, gMethods, NELEM(gMethods));
 }

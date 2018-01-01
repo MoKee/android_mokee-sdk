@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal;
+package org.mokee.platform.internal;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,15 +30,15 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import lineageos.app.LineageContextConstants;
-import lineageos.media.AudioSessionInfo;
-import lineageos.media.LineageAudioManager;
-import lineageos.media.ILineageAudioService;
-import lineageos.platform.Manifest;
+import mokee.app.MKContextConstants;
+import mokee.media.AudioSessionInfo;
+import mokee.media.MKAudioManager;
+import mokee.media.IMKAudioService;
+import mokee.platform.Manifest;
 
-public class LineageAudioService extends LineageSystemService {
+public class MKAudioService extends MKSystemService {
 
-    private static final String TAG = "LineageAudioService";
+    private static final String TAG = "MKAudioService";
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
     private final Context mContext;
@@ -48,7 +48,7 @@ public class LineageAudioService extends LineageSystemService {
     //keep in sync with include/media/AudioPolicy.h
     private final static int AUDIO_OUTPUT_SESSION_EFFECTS_UPDATE = 10;
 
-    public LineageAudioService(Context context) {
+    public MKAudioService(Context context) {
         super(context);
 
         mContext = context;
@@ -56,17 +56,17 @@ public class LineageAudioService extends LineageSystemService {
 
     @Override
     public String getFeatureDeclaration() {
-        return LineageContextConstants.Features.AUDIO;
+        return MKContextConstants.Features.AUDIO;
     }
 
     @Override
     public void onStart() {
         if (!NativeHelper.isNativeLibraryAvailable()) {
-            Log.wtf(TAG, "Lineage Audio service started by system server by native library is" +
+            Log.wtf(TAG, "MoKee Audio service started by system server by native library is" +
                     "unavailable. Service will be unavailable.");
             return;
         }
-        publishBinderService(LineageContextConstants.LINEAGE_AUDIO_SERVICE, mBinder);
+        publishBinderService(MKContextConstants.MK_AUDIO_SERVICE, mBinder);
     }
 
     @Override
@@ -78,7 +78,7 @@ public class LineageAudioService extends LineageSystemService {
         }
     }
 
-    private final IBinder mBinder = new ILineageAudioService.Stub() {
+    private final IBinder mBinder = new IMKAudioService.Stub() {
 
         @Override
         public List<AudioSessionInfo> listAudioSessions(int streamType) throws RemoteException {
@@ -101,7 +101,7 @@ public class LineageAudioService extends LineageSystemService {
             mContext.enforceCallingOrSelfPermission(android.Manifest.permission.DUMP, TAG);
 
             pw.println();
-            pw.println("Lineage Audio Service State:");
+            pw.println("MoKee Audio Service State:");
             try {
                 List<AudioSessionInfo> sessions = listAudioSessions(-1);
                 if (sessions.size() > 0) {
@@ -119,9 +119,9 @@ public class LineageAudioService extends LineageSystemService {
     };
 
     private void broadcastSessionChanged(boolean added, AudioSessionInfo sessionInfo) {
-        Intent i = new Intent(LineageAudioManager.ACTION_AUDIO_SESSIONS_CHANGED);
-        i.putExtra(LineageAudioManager.EXTRA_SESSION_INFO, sessionInfo);
-        i.putExtra(LineageAudioManager.EXTRA_SESSION_ADDED, added);
+        Intent i = new Intent(MKAudioManager.ACTION_AUDIO_SESSIONS_CHANGED);
+        i.putExtra(MKAudioManager.EXTRA_SESSION_INFO, sessionInfo);
+        i.putExtra(MKAudioManager.EXTRA_SESSION_ADDED, added);
 
         sendBroadcastToAll(i, Manifest.permission.OBSERVE_AUDIO_SESSIONS);
     }
