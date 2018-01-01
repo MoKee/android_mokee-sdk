@@ -38,6 +38,7 @@ public class Build {
         sdkMap.put(MK_VERSION_CODES.ELDERBERRY, "Elderberry");
         sdkMap.put(MK_VERSION_CODES.FIG, "Fig");
         sdkMap.put(MK_VERSION_CODES.GUAVA, "Guava");
+        sdkMap.put(MK_VERSION_CODES.HACKBERRY, "Hackberry");
     }
 
     /** Various version strings. */
@@ -168,6 +169,11 @@ public class Build {
          * Unreleased preliminary version starting from MK70
          */
         public static final int GUAVA = 7;
+
+        /**
+         * Unreleased preliminary version starting from LineageOS 15.1
+         */
+        public static final int HACKBERRY = 8;
     }
 
     /**

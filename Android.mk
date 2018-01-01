@@ -206,10 +206,10 @@ mokee_platform_docs_java_libraries := \
     org.mokee.platform.sdk
 
 # SDK version as defined
-mokee_platform_docs_SDK_VERSION := 71.2
+mokee_platform_docs_SDK_VERSION := 81.0
 
 # release version
-mokee_platform_docs_SDK_REL_ID := 7
+mokee_platform_docs_SDK_REL_ID := 8
 
 mokee_platform_docs_LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 
@@ -285,7 +285,8 @@ LOCAL_DROIDDOC_OPTIONS := \
         -since $(MOKEE_SRC_API_DIR)/4.txt 4 \
         -since $(MOKEE_SRC_API_DIR)/5.txt 5 \
         -since $(MOKEE_SRC_API_DIR)/6.txt 6 \
-        -since $(MOKEE_SRC_API_DIR)/7.txt 7
+        -since $(MOKEE_SRC_API_DIR)/7.txt 7 \
+        -since $(MOKEE_SRC_API_DIR)/8.txt 8 \
 
 $(full_target): $(mokee_framework_built) $(gen)
 include $(BUILD_DROIDDOC)
