@@ -865,7 +865,7 @@ public class MKHardwareService extends MKSystemService implements ThermalUpdateC
         public float[] getPictureAdjustmentRanges() {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (isSupported(MKHardwareManager.FEATURE_COLOR_BALANCE)) {
+            if (isSupported(MKHardwareManager.FEATURE_PICTURE_ADJUSTMENT)) {
                 final List<Range<Float>> r = mMkHwImpl.getPictureAdjustmentRanges();
                 return new float[] {
                         r.get(0).getLower(), r.get(0).getUpper(),
