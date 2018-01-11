@@ -296,7 +296,7 @@ LOCAL_DROIDDOC_OPTIONS := \
         -since $(MOKEE_SRC_API_DIR)/5.txt 5 \
         -since $(MOKEE_SRC_API_DIR)/6.txt 6 \
         -since $(MOKEE_SRC_API_DIR)/7.txt 7 \
-        -since $(MOKEE_SRC_API_DIR)/8.txt 8 \
+        -since $(MOKEE_SRC_API_DIR)/8.txt 8
 
 $(full_target): $(mokee_framework_built) $(gen)
 include $(BUILD_DROIDDOC)
