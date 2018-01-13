@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +15,17 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.util;
+package org.mokee.internal.util;
 
 import android.content.ContentResolver;
 import android.os.UserHandle;
 
-import lineageos.providers.LineageSettings;
+import mokee.providers.MKSettings;
 
 public class DeviceKeysConstants {
     // Available custom actions to perform on a key press.
     // Must match values for KEY_HOME_LONG_PRESS_ACTION in:
-    //   sdk/src/java/lineageos/providers/LineageSettings.java
+    //   sdk/src/java/mokee/providers/MKSettings.java
     public enum Action {
         NOTHING,
         MENU,
@@ -47,14 +48,14 @@ public class DeviceKeysConstants {
         }
 
         public static Action fromSettings(ContentResolver cr, String setting, Action def) {
-            return fromIntSafe(LineageSettings.System.getIntForUser(cr,
+            return fromIntSafe(MKSettings.System.getIntForUser(cr,
                     setting, def.ordinal(), UserHandle.USER_CURRENT));
         }
     }
 
     // Masks for checking presence of hardware keys.
     // Must match values in:
-    //   lineage/res/res/values/config.xml
+    //   mk/res/res/values/config.xml
     public static final int KEY_MASK_HOME = 0x01;
     public static final int KEY_MASK_BACK = 0x02;
     public static final int KEY_MASK_MENU = 0x04;

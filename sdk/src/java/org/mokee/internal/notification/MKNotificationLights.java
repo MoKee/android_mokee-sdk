@@ -200,7 +200,7 @@ public final class MKNotificationLights {
 
     // Called by NotificationManagerService updateLightsLocked().
     // Takes the lights values as requested by a notification and
-    // updates them according to the active Lineage feature settings.
+    // updates them according to the active mokee feature settings.
     public void calcLights(LedValues ledValues, String packageName, boolean forcedOn,
             boolean screenOn, boolean inCall, boolean isDefaultLights, int suppressedEffects) {
         if (DEBUG) {

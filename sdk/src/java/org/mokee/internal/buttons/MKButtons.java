@@ -1,5 +1,6 @@
 /**
  * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.buttons;
+package org.mokee.internal.buttons;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -29,10 +30,10 @@ import android.util.Slog;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 
-import lineageos.providers.LineageSettings;
+import mokee.providers.MKSettings;
 
-public final class LineageButtons {
-    private final String TAG = "LineageButtons";
+public final class MKButtons {
+    private final String TAG = "MKButtons";
     private final boolean DEBUG = false;
 
     private static final int MSG_DISPATCH_VOLKEY_WITH_WAKELOCK = 1;
@@ -61,7 +62,7 @@ public final class LineageButtons {
         }
     }
 
-    public LineageButtons(Context context) {
+    public MKButtons(Context context) {
         mContext = context;
         mHandler = new ButtonHandler();
 
@@ -144,8 +145,8 @@ public final class LineageButtons {
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
 
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
-                    LineageSettings.System.VOLBTN_MUSIC_CONTROLS),
+            resolver.registerContentObserver(MKSettings.System.getUriFor(
+                    MKSettings.System.VOLBTN_MUSIC_CONTROLS),
                             false, this, UserHandle.USER_ALL);
 
             update();
@@ -160,8 +161,8 @@ public final class LineageButtons {
             ContentResolver resolver = mContext.getContentResolver();
             Resources res = mContext.getResources();
 
-            mVolBtnMusicControls = LineageSettings.System.getIntForUser(
-                    resolver, LineageSettings.System.VOLBTN_MUSIC_CONTROLS, 1,
+            mVolBtnMusicControls = MKSettings.System.getIntForUser(
+                    resolver, MKSettings.System.VOLBTN_MUSIC_CONTROLS, 1,
                     UserHandle.USER_CURRENT) == 1;
 
             if (DEBUG) {

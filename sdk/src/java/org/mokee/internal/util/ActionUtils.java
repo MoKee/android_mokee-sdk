@@ -1,4 +1,4 @@
-package org.lineageos.internal.util;
+package org.mokee.internal.util;
 
 import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
@@ -15,7 +15,7 @@ import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.widget.Toast;
 
-import org.lineageos.platform.internal.R;
+import org.mokee.platform.internal.R;
 
 import java.util.List;
 
@@ -108,8 +108,8 @@ public class ActionUtils {
         final String packageName = lastTask.baseIntent.getComponent().getPackageName();
         final IActivityManager am = ActivityManagerNative.getDefault();
         final ActivityOptions opts = ActivityOptions.makeCustomAnimation(context,
-                org.lineageos.platform.internal.R.anim.last_app_in,
-                org.lineageos.platform.internal.R.anim.last_app_out);
+                org.mokee.platform.internal.R.anim.last_app_in,
+                org.mokee.platform.internal.R.anim.last_app_out);
 
         if (DEBUG) Log.d(TAG, "switching to " + packageName);
         am.moveTaskToFront(lastTask.id, ActivityManager.MOVE_TASK_NO_USER_ACTION, opts.toBundle());

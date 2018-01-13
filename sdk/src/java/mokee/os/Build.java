@@ -171,7 +171,7 @@ public class Build {
         public static final int GUAVA = 7;
 
         /**
-         * Unreleased preliminary version starting from LineageOS 15.1
+         * Unreleased preliminary version starting from MK80.1
          */
         public static final int HACKBERRY = 8;
     }
