@@ -234,10 +234,7 @@ public class PerformanceManagerService extends MKSystemService {
         if (phase == PHASE_SYSTEM_SERVICES_READY && !mSystemReady) {
             synchronized (mLock) {
                 mPm = getLocalService(PowerManagerInternal.class);
-                /* BRINGUP: requires https://review.lineageos.org/#/c/65793/
                 mNumProfiles = mPm.getFeature(POWER_FEATURE_SUPPORTED_PROFILES);
-                */
-                mNumProfiles = 0;
 
                 if (hasProfiles()) {
                     populateProfilesLocked();
@@ -295,9 +292,7 @@ public class PerformanceManagerService extends MKSystemService {
         if (!isProfileSame && profile != PROFILE_POWER_SAVE &&
                 mActiveProfile == PROFILE_POWER_SAVE) {
             long token = Binder.clearCallingIdentity();
-            /* BRINGUP: requires https://review.lineageos.org/#/c/65793/
             mPm.setPowerSaveMode(false);
-            */
             Binder.restoreCallingIdentity(token);
         }
 
