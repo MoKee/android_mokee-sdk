@@ -371,6 +371,12 @@ public class LiveDisplayService extends MKSystemService {
                 mFeatures.get(i).dump(pw);
             }
         }
+
+        @Override
+        public boolean isNight() {
+            final TwilightState twilight = mTwilightTracker.getCurrentState();
+            return twilight != null && twilight.isNight();
+        }
     };
 
     // Listener for screen on/off events
