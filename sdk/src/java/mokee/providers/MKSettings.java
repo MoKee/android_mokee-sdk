@@ -2018,6 +2018,16 @@ public final class MKSettings {
                 };
 
         /**
+         * Whether or not to show a toast when starting a fingerprint shortcut
+         */
+        public static final String FINGERPRINT_SHORTCUT_SHOW_FEEDBACK =
+                "fingerprint_shortcut_show_feedback";
+
+        /** @hide */
+        public static final Validator FINGERPRINT_SHORTCUT_SHOW_FEEDBACK_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
@@ -2286,6 +2296,7 @@ public final class MKSettings {
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES,
                     ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
             VALIDATORS.put(FINGERPRINT_SHORTCUTS, FINGERPRINT_SHORTCUTS_VALIDATOR);
+            VALIDATORS.put(FINGERPRINT_SHORTCUT_SHOW_FEEDBACK, FINGERPRINT_SHORTCUT_SHOW_FEEDBACK_VALIDATOR);
         };
         // endregion
     }
