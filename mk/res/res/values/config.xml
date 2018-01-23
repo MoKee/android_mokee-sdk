@@ -93,7 +93,6 @@
          should publish as a binder services in its onStart -->
     <string-array name="config_externalMKServices">
         <item>org.mokee.platform.internal.ProfileManagerService</item>
-        <item>org.mokee.platform.internal.MKTelephonyManagerService</item>
         <item>org.mokee.platform.internal.MKHardwareService</item>
         <item>org.mokee.platform.internal.PerformanceManagerService</item>
         <item>org.mokee.platform.internal.MKWeatherManagerService</item>

@@ -45,18 +45,6 @@ public final class MKContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
-     * {@link mokee.app.MKTelephonyManager} to manage the phone and
-     * data connection.
-     *
-     * @see android.content.Context#getSystemService
-     * @see mokee.app.MKTelephonyManager
-     *
-     * @hide
-     */
-    public static final String MK_TELEPHONY_MANAGER_SERVICE = "mktelephonymanager";
-
-    /**
-     * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link mokee.hardware.MKHardwareManager} to manage the extended
      * hardware features of the device.
      *
@@ -127,14 +115,6 @@ public final class MKContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String PROFILES = "org.mokee.profiles";
-
-        /**
-         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
-         * {@link PackageManager#hasSystemFeature}: The device includes the mk telephony service
-         * utilized by the mksdk.
-         */
-        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
-        public static final String TELEPHONY = "org.mokee.telephony";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
