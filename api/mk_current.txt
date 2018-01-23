@@ -1,70 +1,3 @@
-package mokee.alarmclock {
-
-  public final class ClockContract {
-    field public static final java.lang.String AUTHORITY = "com.android.deskclock";
-  }
-
-  public static abstract interface ClockContract.AlarmSettingColumns {
-    field public static final java.lang.String INCREASING_VOLUME = "incvol";
-    field public static final java.lang.String LABEL = "label";
-    field public static final java.lang.String NO_RINGTONE;
-    field public static final android.net.Uri NO_RINGTONE_URI;
-    field public static final java.lang.String PROFILE = "profile";
-    field public static final java.lang.String RINGTONE = "ringtone";
-    field public static final java.lang.String VIBRATE = "vibrate";
-    field public static final java.lang.String WORKDAY = "workday";
-  }
-
-  public static abstract interface ClockContract.AlarmsColumns implements mokee.alarmclock.ClockContract.AlarmSettingColumns {
-    field public static final android.net.Uri CONTENT_URI;
-    field public static final java.lang.String DAYS_OF_WEEK = "daysofweek";
-    field public static final java.lang.String DELETE_AFTER_USE = "delete_after_use";
-    field public static final java.lang.String ENABLED = "enabled";
-    field public static final java.lang.String HOUR = "hour";
-    field public static final java.lang.String MINUTES = "minutes";
-  }
-
-  public static abstract interface ClockContract.CitiesColumns {
-    field public static final java.lang.String CITY_ID = "city_id";
-    field public static final java.lang.String CITY_NAME = "city_name";
-    field public static final android.net.Uri CONTENT_URI;
-    field public static final java.lang.String TIMEZONE_NAME = "timezone_name";
-    field public static final java.lang.String TIMEZONE_OFFSET = "timezone_offset";
-  }
-
-  public static abstract interface ClockContract.InstancesColumns implements mokee.alarmclock.ClockContract.AlarmSettingColumns {
-    field public static final java.lang.String ALARM_ID = "alarm_id";
-    field public static final java.lang.String ALARM_STATE = "alarm_state";
-    field public static final android.net.Uri CONTENT_URI;
-    field public static final java.lang.String DAY = "day";
-    field public static final int DISMISSED_STATE = 7; // 0x7
-    field public static final int FIRED_STATE = 5; // 0x5
-    field public static final int HIDE_NOTIFICATION_STATE = 2; // 0x2
-    field public static final int HIGH_NOTIFICATION_STATE = 3; // 0x3
-    field public static final java.lang.String HOUR = "hour";
-    field public static final int LOW_NOTIFICATION_STATE = 1; // 0x1
-    field public static final java.lang.String MINUTES = "minutes";
-    field public static final int MISSED_STATE = 6; // 0x6
-    field public static final java.lang.String MONTH = "month";
-    field public static final int POWER_OFF_ALARM_STATE = -1; // 0xffffffff
-    field public static final int PREDISMISSED_STATE = 8; // 0x8
-    field public static final int SILENT_STATE = 0; // 0x0
-    field public static final int SNOOZE_STATE = 4; // 0x4
-    field public static final java.lang.String YEAR = "year";
-  }
-
-  public class MoKeeAlarmClock {
-    ctor public MoKeeAlarmClock();
-    method public static android.content.Intent createAlarmIntent(android.content.Context);
-    field public static final java.lang.String ACTION_SET_ALARM_ENABLED = "mokee.alarmclock.SET_ALARM_ENABLED";
-    field public static final java.lang.String EXTRA_ALARM_ID = "mokee.intent.extra.alarmclock.ID";
-    field public static final java.lang.String EXTRA_ENABLED = "mokee.intent.extra.alarmclock.ENABLED";
-    field public static final java.lang.String MODIFY_ALARMS_PERMISSION = "mokee.alarmclock.permission.MODIFY_ALARMS";
-    field public static final java.lang.String READ_ALARMS_PERMISSION = "mokee.alarmclock.permission.READ_ALARMS";
-  }
-
-}
-
 package mokee.app {
 
   public final class Profile implements java.lang.Comparable android.os.Parcelable {
@@ -440,7 +373,6 @@ package mokee.platform {
     field public static final java.lang.String ACCESS_WEATHER_MANAGER = "mokee.permission.ACCESS_WEATHER_MANAGER";
     field public static final java.lang.String BIND_WEATHER_PROVIDER_SERVICE = "mokee.permission.BIND_WEATHER_PROVIDER_SERVICE";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "mokee.permission.HARDWARE_ABSTRACTION_ACCESS";
-    field public static final java.lang.String MANAGE_ALARMS = "mokee.permission.MANAGE_ALARMS";
     field public static final java.lang.String MANAGE_LIVEDISPLAY = "mokee.permission.MANAGE_LIVEDISPLAY";
     field public static final java.lang.String MANAGE_REMOTE_PREFERENCES = "mokee.permission.MANAGE_REMOTE_PREFERENCES";
     field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "mokee.permission.MODIFY_MSIM_PHONE_STATE";
@@ -449,12 +381,10 @@ package mokee.platform {
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "mokee.permission.MODIFY_SOUND_SETTINGS";
     field public static final java.lang.String PERFORMANCE_ACCESS = "mokee.permission.PERFORMANCE_ACCESS";
     field public static final java.lang.String PROTECTED_APP = "mokee.permission.PROTECTED_APP";
-    field public static final java.lang.String READ_ALARMS = "mokee.permission.READ_ALARMS";
     field public static final java.lang.String READ_DATAUSAGE = "mokee.permission.READ_DATAUSAGE";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "mokee.permission.READ_MSIM_PHONE_STATE";
     field public static final java.lang.String READ_PHONE_LOCATION = "mokee.permission.READ_PHONE_LOCATION";
     field public static final java.lang.String READ_WEATHER = "mokee.permission.READ_WEATHER";
-    field public static final java.lang.String WRITE_ALARMS = "mokee.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_DATAUSAGE = "mokee.permission.WRITE_DATAUSAGE";
     field public static final java.lang.String WRITE_PHONE_LOCATION = "mokee.permission.WRITE_PHONE_LOCATION";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "mokee.permission.WRITE_SECURE_SETTINGS";

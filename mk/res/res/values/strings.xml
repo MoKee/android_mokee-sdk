@@ -18,7 +18,6 @@
     <!-- Label for the MoKee system components when they are shown to the user. -->
     <string name="mokee_system_label">MoKee System</string>
 
-
     <!-- Labels for the MODIFY_PROFILES permission. -->
     <string name="permlab_modifyProfiles">modify system profiles</string>
     <string name="permdesc_modifyProfiles">Allows an app to modify system profiles.</string>
@@ -26,18 +25,6 @@
     <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
     <string name="permlab_useHardwareFramework">use hardware framework</string>
     <string name="permdesc_useHardwareFramework">Allows an app access to the MoKee hardware framework.</string>
-
-    <!-- Labels for the WRITE_ALARMS permission. -->
-    <string name="permlab_write_alarms">directly change alarms</string>
-    <string name="permdesc_write_alarms">Allows an app to add, modify or delete all of your alarms.</string>
-
-    <!-- Labels for the MANAGE_ALARMS permission. -->
-    <string name="permlab_manage_alarms">toggle scheduled alarms</string>
-    <string name="permdesc_manage_alarms">Allows an app to turn on or off your scheduled alarms.</string>
-
-    <!-- Labels for the READ_ALARMS permission. -->
-    <string name="permlab_read_alarms">access scheduled alarms</string>
-    <string name="permdesc_read_alarms">Allows an app to read your scheduled alarms.</string>
 
     <!-- Labels for the WRITE_SETTINGS permission -->
     <string name="permlab_writeSettings">modify MoKee system settings</string>
@@ -118,15 +105,6 @@
     <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay changed to day mode.</string>
     <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay changed to night mode.</string>
     <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay changed to outdoor mode.</string>
-
-    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-
-    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-
-    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 
     <!-- Performance manager permission title -->
     <string name="permlab_perfAccess">access performance manager</string>
