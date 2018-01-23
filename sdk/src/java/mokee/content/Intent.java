@@ -90,13 +90,6 @@ public class Intent {
             "mokee.intent.action.INITIALIZE_MK_HARDWARE";
 
     /**
-     * Broadcast Action: Indicate that an unrecoverable error happened during app launch.
-     * Could indicate that curently applied theme is malicious.
-     * @hide
-     */
-    public static final String ACTION_APP_FAILURE = "mokee.intent.action.APP_FAILURE";
-
-    /**
      * Broadcast action: lid state changed
      * @hide
      */
