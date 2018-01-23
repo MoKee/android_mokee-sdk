@@ -41,7 +41,6 @@
     <protected-broadcast android:name="mokee.intent.action.INITIALIZE_MK_HARDWARE" />
     <protected-broadcast android:name="mokee.intent.action.ACTION_AUDIO_SESSIONS_CHANGED" />
     <protected-broadcast android:name="mokee.platform.intent.action.PROFILE_SELECTED" />
-    <protected-broadcast android:name="org.mokee.intent.action.HOTWORD_INPUT_CHANGED" />
 
     <protected-broadcast android:name="mokee.intent.action.UPDATE_PREFERENCE" />
     <protected-broadcast android:name="mokee.intent.action.REFRESH_PREFERENCE" />
