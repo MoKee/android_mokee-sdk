@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-2017, The MoKee Open Source Project
+ * Copyright (c) 2015-2018, The MoKee Open Source Project
  *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,6 @@ package mokee.hardware;
 
 import mokee.hardware.DisplayMode;
 import mokee.hardware.HSIC;
-import mokee.hardware.IThermalListenerCallback;
 import mokee.hardware.TouchscreenGesture;
 
 /** @hide */
@@ -52,9 +51,6 @@ interface IMKHardwareService {
     DisplayMode getDefaultDisplayMode();
     boolean setDisplayMode(in DisplayMode mode, boolean makeDefault);
 
-    int getThermalState();
-    boolean registerThermalListener(IThermalListenerCallback callback);
-    boolean unRegisterThermalListener(IThermalListenerCallback callback);
     boolean isSunlightEnhancementSelfManaged();
 
     int getColorBalanceMin();

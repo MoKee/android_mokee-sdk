@@ -32,8 +32,6 @@ import mokee.app.MKContextConstants;
 import mokee.hardware.IMKHardwareService;
 import mokee.hardware.MKHardwareManager;
 import mokee.hardware.DisplayMode;
-import mokee.hardware.IThermalListenerCallback;
-import mokee.hardware.ThermalListenerCallback;
 import mokee.hardware.HSIC;
 import mokee.hardware.TouchscreenGesture;
 
@@ -55,22 +53,18 @@ import org.mokee.hardware.LongTermOrbits;
 import org.mokee.hardware.PictureAdjustment;
 import org.mokee.hardware.SerialNumber;
 import org.mokee.hardware.SunlightEnhancement;
-import org.mokee.hardware.ThermalMonitor;
-import org.mokee.hardware.ThermalUpdateCallback;
 import org.mokee.hardware.TouchscreenGestures;
 import org.mokee.hardware.TouchscreenHovering;
 import org.mokee.hardware.VibratorHW;
 
 /** @hide */
-public class MKHardwareService extends MKSystemService implements ThermalUpdateCallback {
+public class MKHardwareService extends MKSystemService {
 
     private static final boolean DEBUG = true;
     private static final String TAG = MKHardwareService.class.getSimpleName();
 
     private final Context mContext;
     private final MKHardwareInterface mMkHwImpl;
-    private int mCurrentThermalState = ThermalListenerCallback.State.STATE_UNKNOWN;
-    private RemoteCallbackList<IThermalListenerCallback> mRemoteCallbackList;
 
     private final ArrayMap<String, String> mDisplayModeMappings =
             new ArrayMap<String, String>();
@@ -150,8 +144,6 @@ public class MKHardwareService extends MKSystemService implements ThermalUpdateC
                 mSupportedFeatures |= MKHardwareManager.FEATURE_AUTO_CONTRAST;
             if (DisplayModeControl.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_DISPLAY_MODES;
-            if (ThermalMonitor.isSupported())
-                mSupportedFeatures |= MKHardwareManager.FEATURE_THERMAL_MONITOR;
             if (ColorBalance.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_COLOR_BALANCE;
             if (PictureAdjustment.isSupported())
@@ -180,8 +172,6 @@ public class MKHardwareService extends MKSystemService implements ThermalUpdateC
                     return TouchscreenHovering.isEnabled();
                 case MKHardwareManager.FEATURE_AUTO_CONTRAST:
                     return AutoContrast.isEnabled();
-                case MKHardwareManager.FEATURE_THERMAL_MONITOR:
-                    return ThermalMonitor.isEnabled();
                 default:
                     Log.e(TAG, "feature " + feature + " is not a boolean feature");
                     return false;
@@ -421,26 +411,6 @@ public class MKHardwareService extends MKSystemService implements ThermalUpdateC
 
     @Override
     public void onStart() {
-        if (ThermalMonitor.isSupported()) {
-            ThermalMonitor.initialize(this);
-            mRemoteCallbackList = new RemoteCallbackList<IThermalListenerCallback>();
-        }
-    }
-
-    @Override
-    public void setThermalState(int state) {
-        mCurrentThermalState = state;
-        int i = mRemoteCallbackList.beginBroadcast();
-        while (i > 0) {
-            i--;
-            try {
-                mRemoteCallbackList.getBroadcastItem(i).onThermalChanged(state);
-            } catch (RemoteException e) {
-                // The RemoteCallbackList will take care of removing
-                // the dead object for us.
-            }
-        }
-        mRemoteCallbackList.finishBroadcast();
     }
 
     private DisplayMode remapDisplayMode(DisplayMode in) {
@@ -691,36 +661,6 @@ public class MKHardwareService extends MKSystemService implements ThermalUpdateC
                 return false;
             }
             return mMkHwImpl.setDisplayMode(mode, makeDefault);
-        }
-
-        @Override
-        public int getThermalState() {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (isSupported(MKHardwareManager.FEATURE_THERMAL_MONITOR)) {
-                return mCurrentThermalState;
-            }
-            return ThermalListenerCallback.State.STATE_UNKNOWN;
-        }
-
-        @Override
-        public boolean registerThermalListener(IThermalListenerCallback callback) {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (isSupported(MKHardwareManager.FEATURE_THERMAL_MONITOR)) {
-                return mRemoteCallbackList.register(callback);
-            }
-            return false;
-        }
-
-        @Override
-        public boolean unRegisterThermalListener(IThermalListenerCallback callback) {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (isSupported(MKHardwareManager.FEATURE_THERMAL_MONITOR)) {
-                return mRemoteCallbackList.unregister(callback);
-            }
-            return false;
         }
 
         @Override
