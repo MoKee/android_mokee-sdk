@@ -18,14 +18,6 @@
     <!-- Label for the MoKee system components when they are shown to the user. -->
     <string name="mokee_system_label">MoKee System</string>
 
-
-    <string name="permlab_modifyNetworkSettings">change system network settings</string>
-    <string name="permdesc_modifyNetworkSettings">Allows an app to make changes to the airplane mode and mobile data network settings.</string>
-
-    <string name="permlab_modifySoundSettings">change system sound settings</string>
-    <string name="permdesc_modifySoundSettings">Allows an app to make changes to the interruption mode sound settings.</string>
-
-
     <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
     <string name="permlab_readMSPhoneState">view the phone state and data connection with support to multiple SIMs</string>
     <string name="permdesc_readMSPhoneState">Allows an app to view the phone state and data connection with support to multiple SIMs.</string>
@@ -61,7 +53,6 @@
     <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
     <string name="permlab_writeSecureSettings">modify MoKee secure system settings</string>
     <string name="permdesc_writeSecureSettings">Allows an app to modify MoKee secure system settings. Not for use by normal apps.</string>
-
 
     <!-- Labels for the PROTECTED_APP permission. -->
     <string name="permlab_protectedApp">add and remove apps to protected apps</string>
@@ -110,7 +101,6 @@
     <string name="perf_profile_bias_power_summary">Favor power savings. Limit maximum CPU power and optimize for power saving at the cost of higher latency</string>
     <string name="perf_profile_bias_perf_summary">Favor performance. Reduces latency with slightly increased power consumption</string>
 
-
     <!-- LiveDisplay strings -->
     <string name="live_display_title" translatable="false">LiveDisplay</string>
     <string name="live_display_auto">Automatic</string>
@@ -136,9 +126,6 @@
     <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay changed to night mode.</string>
     <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay changed to outdoor mode.</string>
 
-
-
-
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 
@@ -152,7 +139,6 @@
     <string name="permlab_perfAccess">access performance manager</string>
     <!-- Performance manager permission description -->
     <string name="permdesc_perfAccessDesc">Allows an app to access the performance service. Should never be needed for normal apps.</string>
-
 
     <!-- Weather Service strings -->
     <string name="permlab_weather_read">read weather</string>
@@ -199,4 +185,5 @@
 
     <!-- Long-press back kill application -->
     <string name="app_killed_message">Application killed</string>
+
 </resources>
