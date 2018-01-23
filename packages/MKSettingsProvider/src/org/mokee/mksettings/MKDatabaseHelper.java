@@ -369,13 +369,6 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             loadIntegerSetting(stmt, MKSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
                     R.integer.def_force_show_navbar);
 
-            loadStringSetting(stmt, MKSettings.Secure.QS_TILES,
-                    org.mokee.platform.internal.
-                            R.string.config_defaultQuickSettingsTiles);
-
-            loadBooleanSetting(stmt, MKSettings.Secure.QS_USE_MAIN_TILES,
-                    R.bool.def_sysui_qs_main_tiles);
-
             loadBooleanSetting(stmt, MKSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
                     R.bool.def_lockscreen_visualizer);
 

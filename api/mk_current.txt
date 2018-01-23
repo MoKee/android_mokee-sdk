@@ -67,123 +67,6 @@ package mokee.alarmclock {
 
 package mokee.app {
 
-  public class CustomTile implements android.os.Parcelable {
-    ctor public CustomTile(android.os.Parcel);
-    ctor public CustomTile();
-    method public mokee.app.CustomTile clone();
-    method public int describeContents();
-    method public void writeToParcel(android.os.Parcel, int);
-    field public static final android.os.Parcelable.Creator<mokee.app.CustomTile> CREATOR;
-    field public static final int PSEUDO_GRID_ITEM_MAX_COUNT = 9; // 0x9
-    field public boolean collapsePanel;
-    field public java.lang.String contentDescription;
-    field public android.app.PendingIntent deleteIntent;
-    field public mokee.app.CustomTile.ExpandedStyle expandedStyle;
-    field public int icon;
-    field public java.lang.String label;
-    field public android.app.PendingIntent onClick;
-    field public android.net.Uri onClickUri;
-    field public android.app.PendingIntent onLongClick;
-    field public android.content.Intent onSettingsClick;
-    field public android.graphics.Bitmap remoteIcon;
-    field public boolean sensitiveData;
-  }
-
-  public static class CustomTile.Builder {
-    ctor public CustomTile.Builder(android.content.Context);
-    method public mokee.app.CustomTile build();
-    method public mokee.app.CustomTile.Builder hasSensitiveData(boolean);
-    method public mokee.app.CustomTile.Builder setContentDescription(java.lang.String);
-    method public mokee.app.CustomTile.Builder setContentDescription(int);
-    method public mokee.app.CustomTile.Builder setDeleteIntent(android.app.PendingIntent);
-    method public mokee.app.CustomTile.Builder setExpandedStyle(mokee.app.CustomTile.ExpandedStyle);
-    method public mokee.app.CustomTile.Builder setIcon(int);
-    method public mokee.app.CustomTile.Builder setIcon(android.graphics.Bitmap);
-    method public mokee.app.CustomTile.Builder setLabel(java.lang.String);
-    method public mokee.app.CustomTile.Builder setLabel(int);
-    method public mokee.app.CustomTile.Builder setOnClickIntent(android.app.PendingIntent);
-    method public mokee.app.CustomTile.Builder setOnClickUri(android.net.Uri);
-    method public mokee.app.CustomTile.Builder setOnLongClickIntent(android.app.PendingIntent);
-    method public mokee.app.CustomTile.Builder setOnSettingsClickIntent(android.content.Intent);
-    method public mokee.app.CustomTile.Builder shouldCollapsePanel(boolean);
-  }
-
-  public static class CustomTile.ExpandedGridItem extends mokee.app.CustomTile.ExpandedItem {
-    ctor public CustomTile.ExpandedGridItem();
-    method public void setExpandedGridItemBitmap(android.graphics.Bitmap);
-    method public void setExpandedGridItemDrawable(int);
-    method public void setExpandedGridItemOnClickIntent(android.app.PendingIntent);
-    method public void setExpandedGridItemTitle(java.lang.String);
-  }
-
-  public static class CustomTile.ExpandedItem implements android.os.Parcelable {
-    ctor protected CustomTile.ExpandedItem(android.os.Parcel);
-    method public int describeContents();
-    method public void writeToParcel(android.os.Parcel, int);
-    field public static final android.os.Parcelable.Creator<mokee.app.CustomTile.ExpandedItem> CREATOR;
-    field public android.graphics.Bitmap itemBitmapResource;
-    field public int itemDrawableResourceId;
-    field public java.lang.String itemSummary;
-    field public java.lang.String itemTitle;
-    field public android.app.PendingIntent onClickPendingIntent;
-  }
-
-  public static class CustomTile.ExpandedListItem extends mokee.app.CustomTile.ExpandedItem {
-    ctor public CustomTile.ExpandedListItem();
-    method public void setExpandedListItemBitmap(android.graphics.Bitmap);
-    method public void setExpandedListItemDrawable(int);
-    method public void setExpandedListItemOnClickIntent(android.app.PendingIntent);
-    method public void setExpandedListItemSummary(java.lang.String);
-    method public void setExpandedListItemTitle(java.lang.String);
-  }
-
-  public static class CustomTile.ExpandedStyle implements android.os.Parcelable {
-    method public int describeContents();
-    method public android.widget.RemoteViews getContentViews();
-    method public mokee.app.CustomTile.ExpandedItem[] getExpandedItems();
-    method public int getStyle();
-    method public void writeToParcel(android.os.Parcel, int);
-    field public static final android.os.Parcelable.Creator<mokee.app.CustomTile.ExpandedStyle> CREATOR;
-    field public static final int GRID_STYLE = 0; // 0x0
-    field public static final int LIST_STYLE = 1; // 0x1
-    field public static final int REMOTE_STYLE = 2; // 0x2
-  }
-
-  public static class CustomTile.GridExpandedStyle extends mokee.app.CustomTile.ExpandedStyle {
-    ctor public CustomTile.GridExpandedStyle();
-    method public void setGridItems(java.util.ArrayList<mokee.app.CustomTile.ExpandedGridItem>);
-  }
-
-  public static class CustomTile.ListExpandedStyle extends mokee.app.CustomTile.ExpandedStyle {
-    ctor public CustomTile.ListExpandedStyle();
-    method public void setListItems(java.util.ArrayList<mokee.app.CustomTile.ExpandedListItem>);
-  }
-
-  public static class CustomTile.RemoteExpandedStyle extends mokee.app.CustomTile.ExpandedStyle {
-    ctor public CustomTile.RemoteExpandedStyle();
-    method public void setRemoteViews(android.widget.RemoteViews);
-  }
-
-  public class CustomTileListenerService extends android.app.Service {
-    ctor public CustomTileListenerService();
-    method public android.os.IBinder onBind(android.content.Intent);
-    method public void onCustomTilePosted(mokee.app.StatusBarPanelCustomTile);
-    method public void onCustomTileRemoved(mokee.app.StatusBarPanelCustomTile);
-    method public void onListenerConnected();
-    method public final void removeCustomTile(java.lang.String, java.lang.String, int);
-    field public static final java.lang.String SERVICE_INTERFACE = "mokee.app.CustomTileListenerService";
-  }
-
-  public class MKStatusBarManager {
-    method public static mokee.app.MKStatusBarManager getInstance(android.content.Context);
-    method public void publishTile(int, mokee.app.CustomTile);
-    method public void publishTile(java.lang.String, int, mokee.app.CustomTile);
-    method public void publishTileAsUser(java.lang.String, int, mokee.app.CustomTile, android.os.UserHandle);
-    method public void removeTile(int);
-    method public void removeTile(java.lang.String, int);
-    method public void removeTileAsUser(java.lang.String, int, android.os.UserHandle);
-  }
-
   public class MKTelephonyManager {
     method public static mokee.app.MKTelephonyManager getInstance(android.content.Context);
     method public java.util.List<android.telephony.SubscriptionInfo> getSubInformation();
@@ -329,24 +212,6 @@ package mokee.app {
     field public static final java.lang.String PROFILES_STATE_CHANGED_ACTION = "mokee.platform.app.profiles.PROFILES_STATE_CHANGED";
     field public static final int PROFILES_STATE_DISABLED = 0; // 0x0
     field public static final int PROFILES_STATE_ENABLED = 1; // 0x1
-  }
-
-  public class StatusBarPanelCustomTile implements android.os.Parcelable {
-    ctor public StatusBarPanelCustomTile(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, int, int, mokee.app.CustomTile, android.os.UserHandle);
-    ctor public StatusBarPanelCustomTile(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, int, int, mokee.app.CustomTile, android.os.UserHandle, long);
-    ctor public StatusBarPanelCustomTile(android.os.Parcel);
-    method public mokee.app.StatusBarPanelCustomTile clone();
-    method public int describeContents();
-    method public mokee.app.CustomTile getCustomTile();
-    method public int getId();
-    method public java.lang.String getKey();
-    method public java.lang.String getPackage();
-    method public long getPostTime();
-    method public java.lang.String getTag();
-    method public android.os.UserHandle getUser();
-    method public int getUserId();
-    method public void writeToParcel(android.os.Parcel, int);
-    field public static final android.os.Parcelable.Creator<mokee.app.StatusBarPanelCustomTile> CREATOR;
   }
 
 }
@@ -597,7 +462,6 @@ package mokee.platform {
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "mokee.permission.MODIFY_SOUND_SETTINGS";
     field public static final java.lang.String PERFORMANCE_ACCESS = "mokee.permission.PERFORMANCE_ACCESS";
     field public static final java.lang.String PROTECTED_APP = "mokee.permission.PROTECTED_APP";
-    field public static final java.lang.String PUBLISH_CUSTOM_TILE = "mokee.permission.PUBLISH_CUSTOM_TILE";
     field public static final java.lang.String READ_ALARMS = "mokee.permission.READ_ALARMS";
     field public static final java.lang.String READ_DATAUSAGE = "mokee.permission.READ_DATAUSAGE";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "mokee.permission.READ_MSIM_PHONE_STATE";

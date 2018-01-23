@@ -33,16 +33,6 @@ public final class MKContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
-     * {@link mokee.app.MKStatusBarManager} for informing the user of
-     * background events.
-     *
-     * @see android.content.Context#getSystemService
-     * @see mokee.app.MKStatusBarManager
-     */
-    public static final String MK_STATUS_BAR_SERVICE = "mkstatusbar";
-
-    /**
-     * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link mokee.app.ProfileManager} for informing the user of
      * background events.
      *
@@ -129,14 +119,6 @@ public final class MKContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String HARDWARE_ABSTRACTION = "org.mokee.hardware";
-
-        /**
-         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
-         * {@link PackageManager#hasSystemFeature}: The device includes the mk status bar service
-         * utilzed by the mksdk.
-         */
-        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
-        public static final String STATUSBAR = "org.mokee.statusbar";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and

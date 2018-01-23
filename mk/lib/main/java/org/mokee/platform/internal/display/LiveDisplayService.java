@@ -19,16 +19,12 @@ package org.mokee.platform.internal.display;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.hardware.display.DisplayManager;
 import android.net.Uri;
-import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManagerInternal;
@@ -37,15 +33,11 @@ import android.os.Process;
 import android.os.UserHandle;
 import android.view.Display;
 
-import com.android.internal.util.ArrayUtils;
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
 import com.android.server.power.BatterySaverPolicy.ServiceType;
 
-import org.mokee.internal.util.QSConstants;
-import org.mokee.internal.util.QSUtils;
 import org.mokee.platform.internal.MKSystemService;
-import org.mokee.platform.internal.R;
 import org.mokee.platform.internal.common.UserContentObserver;
 import org.mokee.platform.internal.display.TwilightTracker.TwilightListener;
 import org.mokee.platform.internal.display.TwilightTracker.TwilightState;
@@ -59,8 +51,6 @@ import java.util.List;
 import java.util.Locale;
 
 import mokee.app.MKContextConstants;
-import mokee.app.MKStatusBarManager;
-import mokee.app.CustomTile;
 import mokee.hardware.HSIC;
 import mokee.hardware.ILiveDisplayService;
 import mokee.hardware.LiveDisplayConfig;
@@ -106,15 +96,6 @@ public class LiveDisplayService extends MKSystemService {
 
     private LiveDisplayConfig mConfig;
 
-    // QS tile
-    private String[] mTileEntries;
-    private String[] mTileDescriptionEntries;
-    private String[] mTileAnnouncementEntries;
-    private String[] mTileValues;
-    private int[] mTileEntryIconRes;
-
-    private static String ACTION_NEXT_MODE = "mokee.hardware.NEXT_LIVEDISPLAY_MODE";
-
     static int MODE_CHANGED = 1;
     static int DISPLAY_CHANGED = 2;
     static int TWILIGHT_CHANGED = 4;
@@ -152,8 +133,6 @@ public class LiveDisplayService extends MKSystemService {
         mHandler = new Handler(mHandlerThread.getLooper());
 
         mTwilightTracker = new TwilightTracker(context);
-
-        updateCustomTileEntries();
     }
 
     @Override
@@ -230,9 +209,6 @@ public class LiveDisplayService extends MKSystemService {
             if (mConfig.hasModeSupport()) {
                 mModeObserver = new ModeObserver(mHandler);
                 mState.mMode = mModeObserver.getMode();
-                mContext.registerReceiver(mNextModeReceiver,
-                        new IntentFilter(ACTION_NEXT_MODE));
-                publishCustomTile();
             }
 
             // start and update all features
@@ -254,120 +230,6 @@ public class LiveDisplayService extends MKSystemService {
             }
         });
     }
-
-    private void updateCustomTileEntries() {
-        Resources res = mContext.getResources();
-        mTileEntries = res.getStringArray(R.array.live_display_entries);
-        mTileDescriptionEntries = res.getStringArray(R.array.live_display_description);
-        mTileAnnouncementEntries = res.getStringArray(R.array.live_display_announcement);
-        mTileValues = res.getStringArray(R.array.live_display_values);
-        TypedArray typedArray = res.obtainTypedArray(R.array.live_display_drawables);
-        mTileEntryIconRes = new int[typedArray.length()];
-        for (int i = 0; i < mTileEntryIconRes.length; i++) {
-            mTileEntryIconRes[i] = typedArray.getResourceId(i, 0);
-        }
-        typedArray.recycle();
-    }
-
-    private int getCurrentModeIndex() {
-        return ArrayUtils.indexOf(mTileValues, String.valueOf(mModeObserver.getMode()));
-    }
-
-    private int getNextModeIndex() {
-        int next = getCurrentModeIndex() + 1;
-
-        if (next >= mTileValues.length) {
-            next = 0;
-        }
-
-        int nextMode;
-
-        while (true) {
-            nextMode = Integer.valueOf(mTileValues[next]);
-            if (nextMode == MODE_OUTDOOR) {
-                // Only accept outdoor mode if it's supported by the hardware
-                if (mConfig.hasFeature(MODE_OUTDOOR)
-                        && !mConfig.hasFeature(FEATURE_MANAGED_OUTDOOR_MODE)) {
-                    break;
-                }
-            } else if (nextMode == MODE_DAY) {
-                // Skip the day setting if it's the same as the off setting
-                if (mCTC.getDayColorTemperature() != mConfig.getDefaultDayTemperature()) {
-                    break;
-                }
-            } else {
-                // every other mode doesn't have any preconstraints
-                break;
-            }
-
-            // If we come here, we decided to skip the mode
-            next++;
-            if (next >= mTileValues.length) {
-                next = 0;
-            }
-        }
-
-        return nextMode;
-    }
-
-    private void publishCustomTile() {
-        // This action should be performed as system
-        final int userId = UserHandle.myUserId();
-        long token = Binder.clearCallingIdentity();
-        try {
-            int idx = getCurrentModeIndex();
-            final UserHandle user = new UserHandle(userId);
-            final Context resourceContext = QSUtils.getQSTileContext(mContext, userId);
-
-            MKStatusBarManager statusBarManager = MKStatusBarManager.getInstance(mContext);
-            CustomTile tile = new CustomTile.Builder(resourceContext)
-                    .setLabel(mTileEntries[idx])
-                    .setContentDescription(mTileDescriptionEntries[idx])
-                    .setIcon(mTileEntryIconRes[idx])
-                    .setOnLongClickIntent(getCustomTileLongClickPendingIntent())
-                    .setOnClickIntent(getCustomTileNextModePendingIntent())
-                    .shouldCollapsePanel(false)
-                    .build();
-            statusBarManager.publishTileAsUser(QSConstants.DYNAMIC_TILE_LIVE_DISPLAY,
-                    LiveDisplayService.class.hashCode(), tile, user);
-        } finally {
-            Binder.restoreCallingIdentity(token);
-        }
-    }
-
-    private void unpublishCustomTile() {
-        // This action should be performed as system
-        final int userId = UserHandle.myUserId();
-        long token = Binder.clearCallingIdentity();
-        try {
-            MKStatusBarManager statusBarManager = MKStatusBarManager.getInstance(mContext);
-            statusBarManager.removeTileAsUser(QSConstants.DYNAMIC_TILE_LIVE_DISPLAY,
-                    LiveDisplayService.class.hashCode(), new UserHandle(userId));
-        } finally {
-            Binder.restoreCallingIdentity(token);
-        }
-    }
-
-    private PendingIntent getCustomTileNextModePendingIntent() {
-        Intent i = new Intent(ACTION_NEXT_MODE);
-        return PendingIntent.getBroadcastAsUser(mContext, 0, i,
-                PendingIntent.FLAG_UPDATE_CURRENT, UserHandle.CURRENT);
-    }
-
-    private PendingIntent getCustomTileLongClickPendingIntent() {
-        Intent i = new Intent(MKSettings.ACTION_LIVEDISPLAY_SETTINGS);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        return PendingIntent.getActivityAsUser(mContext, 0, i,
-                PendingIntent.FLAG_UPDATE_CURRENT, null, UserHandle.CURRENT);
-    }
-
-    private final BroadcastReceiver mNextModeReceiver = new BroadcastReceiver() {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            mModeObserver.setMode(getNextModeIndex());
-        }
-    };
 
     private final IBinder mBinder = new ILiveDisplayService.Stub() {
 
@@ -575,7 +437,6 @@ public class LiveDisplayService extends MKSystemService {
                 mState.mMode = mode;
 
                 updateFeatures(MODE_CHANGED);
-                publishCustomTile();
             }
         }
 

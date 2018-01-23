@@ -2763,17 +2763,6 @@ public final class MKSettings {
         public static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
 
         /**
-         * List of QS tile names
-         * @hide
-         */
-        public static final String QS_TILES = "sysui_qs_tiles";
-
-        /**
-         * Use "main" tiles on the first row of the quick settings panel
-         * 0 = no, 1 = yes
-         * @hide
-         */
-        public static final String QS_USE_MAIN_TILES = "sysui_qs_main_tiles";
 
         /**
          * Whether newly installed apps should run with privacy guard by default
@@ -3003,8 +2992,6 @@ public final class MKSettings {
                 MKSettings.Secure.KEYBOARD_BRIGHTNESS,
                 MKSettings.Secure.POWER_MENU_ACTIONS,
                 MKSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
-                MKSettings.Secure.QS_TILES,
-                MKSettings.Secure.QS_USE_MAIN_TILES,
                 MKSettings.Secure.NAVIGATION_RING_TARGETS[0],
                 MKSettings.Secure.NAVIGATION_RING_TARGETS[1],
                 MKSettings.Secure.NAVIGATION_RING_TARGETS[2],

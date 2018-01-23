@@ -34,14 +34,6 @@
     <!-- Defaults for MKSettings.Secure.DEV_FORCE_SHOW_NAVBAR -->
     <integer name="def_force_show_navbar">0</integer>
 
-    <!-- THESE DEFAULTS COME FROM org.mokee.platform.internal's config_defaultQuickSettingsTiles
-         AND SHOULD BE OVERLAID THERE.
-
-         DO NOT USE:
-         Default for MKSettings.Secure.QS_TILES
-         Comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles
-    <string name="def_qs_tiles">wifi,bt,cell,airplane,rotation,flashlight,location,cast,hotspot,live_display</string> -->
-
     <!-- Default for MKSettings.System.STATUS_BAR_BATTERY_STYLE
          * 0: Display the battery as icon in portrait mode
          * 2: Display the battery as a circle
@@ -51,9 +43,6 @@
          * default: 0
          -->
     <integer name="def_battery_style">0</integer>
-
-    <!-- Default for MKSettings.Secure.QS_USE_MAIN_TILES -->
-    <bool name="def_sysui_qs_main_tiles">true</bool>
 
     <!-- Default for MKSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED -->
     <bool name="def_lockscreen_visualizer">true</bool>
