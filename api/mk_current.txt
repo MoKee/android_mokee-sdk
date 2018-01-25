@@ -174,6 +174,17 @@ package mokee.hardware {
     method public void writeToParcel(android.os.Parcel, int);
   }
 
+  public abstract interface IThermalListenerCallback implements android.os.IInterface {
+    method public abstract void onThermalChanged(int) throws android.os.RemoteException;
+  }
+
+  public static abstract class IThermalListenerCallback.Stub extends android.os.Binder implements mokee.hardware.IThermalListenerCallback {
+    ctor public IThermalListenerCallback.Stub();
+    method public android.os.IBinder asBinder();
+    method public static mokee.hardware.IThermalListenerCallback asInterface(android.os.IBinder);
+    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+  }
+
   public class LiveDisplayConfig implements android.os.Parcelable {
     ctor public LiveDisplayConfig(java.util.BitSet, int, int, int, boolean, boolean, boolean, boolean, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>);
     method public int describeContents();
@@ -359,14 +370,10 @@ package mokee.platform {
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "mokee.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MANAGE_LIVEDISPLAY = "mokee.permission.MANAGE_LIVEDISPLAY";
     field public static final java.lang.String MANAGE_REMOTE_PREFERENCES = "mokee.permission.MANAGE_REMOTE_PREFERENCES";
-    field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "mokee.permission.MODIFY_MSIM_PHONE_STATE";
-    field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "mokee.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_PROFILES = "mokee.permission.MODIFY_PROFILES";
-    field public static final java.lang.String MODIFY_SOUND_SETTINGS = "mokee.permission.MODIFY_SOUND_SETTINGS";
     field public static final java.lang.String PERFORMANCE_ACCESS = "mokee.permission.PERFORMANCE_ACCESS";
     field public static final java.lang.String PROTECTED_APP = "mokee.permission.PROTECTED_APP";
     field public static final java.lang.String READ_DATAUSAGE = "mokee.permission.READ_DATAUSAGE";
-    field public static final java.lang.String READ_MSIM_PHONE_STATE = "mokee.permission.READ_MSIM_PHONE_STATE";
     field public static final java.lang.String READ_PHONE_LOCATION = "mokee.permission.READ_PHONE_LOCATION";
     field public static final java.lang.String READ_WEATHER = "mokee.permission.READ_WEATHER";
     field public static final java.lang.String WRITE_DATAUSAGE = "mokee.permission.WRITE_DATAUSAGE";
@@ -378,6 +385,10 @@ package mokee.platform {
 
   public final class R {
     ctor public R();
+  }
+
+  public static final class R.anim {
+    ctor public R.anim();
   }
 
   public static final class R.array {
