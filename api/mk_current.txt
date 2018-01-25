@@ -174,17 +174,6 @@ package mokee.hardware {
     method public void writeToParcel(android.os.Parcel, int);
   }
 
-  public abstract interface IThermalListenerCallback implements android.os.IInterface {
-    method public abstract void onThermalChanged(int) throws android.os.RemoteException;
-  }
-
-  public static abstract class IThermalListenerCallback.Stub extends android.os.Binder implements mokee.hardware.IThermalListenerCallback {
-    ctor public IThermalListenerCallback.Stub();
-    method public android.os.IBinder asBinder();
-    method public static mokee.hardware.IThermalListenerCallback asInterface(android.os.IBinder);
-    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
-  }
-
   public class LiveDisplayConfig implements android.os.Parcelable {
     ctor public LiveDisplayConfig(java.util.BitSet, int, int, int, boolean, boolean, boolean, boolean, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>);
     method public int describeContents();
