@@ -17,27 +17,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
-  <string name="permlab_modifyNetworkSettings">ändra system-nätverksinställningar</string>
-  <string name="permlab_modifySoundSettings">ändra systemljudsinställningar</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modifiera systemprofiler</string>
   <string name="permdesc_modifyProfiles">Tillåter en app att ändra systemprofiler.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">använd hårdvaru-ramverk</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">ändra alarm direkt</string>
-  <string name="permdesc_write_alarms">Tillåter en app att lägga till, modifiera eller ta bort alla dina alarm.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">växla schemalagda alarm</string>
-  <string name="permdesc_manage_alarms">Tillåter en app att slå på eller av dina schemalagda alarm.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">nå schemalagda alarm</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">lägg till och ta bort appar ur skyddade appar</string>
   <!-- Profiles -->
@@ -86,12 +72,6 @@
   <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay ändrad till auto-läge.</string>
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay ändrad till dagläge.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay ändrad till utomhusläge.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->

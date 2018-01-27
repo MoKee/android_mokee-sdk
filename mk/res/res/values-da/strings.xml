@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee System</string>
-  <string name="permlab_publishCustomTile">oprette en tilpasset flise i selve hurtigindstillingspanelet</string>
-  <string name="permdesc_publishCustomTile">Lader en app udgive en hurtigindstillingsflise.</string>
-  <string name="permlab_modifyNetworkSettings">Ændre netværksindstillingerne</string>
-  <string name="permdesc_modifyNetworkSettings">Lader en app foretage ændringer i Flytilstand og netværksindstillinger for mobildata.</string>
-  <string name="permlab_modifySoundSettings">ændre systemlydindstillinger</string>
-  <string name="permdesc_modifySoundSettings">Lader en app foretage ændringer i lydindstillingernes afbrydelsestilstand.</string>
-  <string name="permlab_bindCustomTileListenerService">knytte til en tilpasset flises lyttertjeneste</string>
-  <string name="permdesc_bindCustomTileListenerService">Lader en app knytte sig til topniveau grænsefladen af en tilpasset flises lyttetjeneste.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">se telefontilstand og dataforbindelse med understøttelse af flere SIM-kort</string>
-  <string name="permdesc_readMSPhoneState">Lader en app se telefontilstand og dataforbindelse med understøttelse af flere SIM-kort.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">ændre telefontilstand og dataforbindelse med understøttelse af flere SIM-kort</string>
-  <string name="permdesc_modifyMSPhoneState">Lader en app ændre telefontilstand og dataforbindelse med understøttelse af flere SIM-kort.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">ændre systemprofiler</string>
   <string name="permdesc_modifyProfiles">Tillader at en app kan ændre systemprofiler.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">anvend hardware framework</string>
   <string name="permdesc_useHardwareFramework">Giv en app tilladelse til at bruge MK hardware framework.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">direkte ændre alarmer</string>
-  <string name="permdesc_write_alarms">Tillader en app at tilføje, ændre eller slette alle dine alarmer.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">slå planlagte alarmer Til/Fra</string>
-  <string name="permdesc_manage_alarms">Lader en app slå dine planlagte alarmer Til/Fra.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">tilgå planlagte alarmer</string>
-  <string name="permdesc_read_alarms">Tillad app at læse dine planlagte alarmer.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">ændre MK-systemindstillinger</string>
   <string name="permdesc_writeSettings">Lader en app ændre MK-systemindstillinger.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">ændre MK sikre systemindstillinger</string>
   <string name="permdesc_writeSecureSettings">Lader en app ændre MK sikre systemindstillinger. Ikke til brug for normale apps.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">administrere faste lager</string>
-  <string name="permdesc_managePersistentStorage">Lader en app læse eller skrive egenskaber, som kan overleve en nulstilling til fabriksstandard.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Tilpasset flise lytter</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">tilføje og fjerne apps til beskyttede apps</string>
   <string name="permdesc_protectedApp">Lader en app markere andre apps som beskyttede og låse dem.</string>
@@ -114,12 +86,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay skiftede til dagtilstand.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay skiftede til nattilstand.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay skiftede til udendørstilstand.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">tilgå ydelseshåndteringen</string>
   <!-- Performance manager permission description -->

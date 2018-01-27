@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee-System</string>
-  <string name="permlab_publishCustomTile">erstelle eine Benutzerdefinierte Kachel in den Schnelleinstellungen</string>
-  <string name="permdesc_publishCustomTile">Erlaubt einer App, Kacheln zu veröffentlichen.</string>
-  <string name="permlab_modifyNetworkSettings">System-Netzwerkeinstellungen ändern</string>
-  <string name="permdesc_modifyNetworkSettings">Ermöglicht einer App eingeschränkten Zugriff auf die System-Netzwerkeinstellungen.</string>
-  <string name="permlab_modifySoundSettings">Ton Einstellungen ändern</string>
-  <string name="permdesc_modifySoundSettings">Ermöglicht einer App eingeschränkten Zugriff auf die Ton Einstellungen.</string>
-  <string name="permlab_bindCustomTileListenerService">An einen benutzerdefinierten Kachel-Listener-Dienst binden</string>
-  <string name="permdesc_bindCustomTileListenerService">Ermöglicht der App, auf die oberste Ebene eines benutzerdefinierten Kachel-Listener-Dienstes zu klemmen.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">Einsehen des Telefonstatus und Datenverbindung mit Unterstützung für mehrere SIMs</string>
-  <string name="permdesc_readMSPhoneState">Erlaubt einer App, Telefonstatus und Datenverbindung für mehrere SIMs einzusehen.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">Änderung des Telefonstatus und Datenverbindung mit Unterstützung für mehrere SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Erlaubt einer App, Telefonstatus und Datenverbindung für mehrere SIMs zu ändern.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">Systemprofile ändern</string>
   <string name="permdesc_modifyProfiles">Erlaubt einer App, Systemprofile zu ändern.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">Benutze Hardwareframework</string>
   <string name="permdesc_useHardwareFramework">Erlaubt einer App Zugriff auf das MK Hardwareframework.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">Alarme direkt ändern</string>
-  <string name="permdesc_write_alarms">Erlaubt einer App das Hinzufügen, Ändern oder Löschen von Alarmen.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">Geplante Alarme umschalten</string>
-  <string name="permdesc_manage_alarms">Erlaubt einer App geplante Alarme ein- oder auszuschalten.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">Zeige geplante Alarme</string>
-  <string name="permdesc_read_alarms">Ermöglicht einer App, geplante Alarme zu lesen.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">MK Systemeinstellungen ändern</string>
   <string name="permdesc_writeSettings">Erlaubt einer App, MK Systemeinstellungen zu ändern.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">Ändere Sicherheitssystemeinstellungen</string>
   <string name="permdesc_writeSecureSettings">Erlaubt einer App, MK Systemsicherheitseinstellungen zu ändern. Nicht für normale Apps.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">Persistenten Speicher verwalten</string>
-  <string name="permdesc_managePersistentStorage">Erlaubt einer App das Lesen oder Schreiben von Eigenschaften, die zu einem Werksreset führen könnten.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Benutzerdefinierte Kachel-Listener</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">hinzufügen und entfernen von Apps zu geschützten Apps</string>
   <string name="permdesc_protectedApp">Erlaubt einer App eine andere App als geschützt zu markieren und sperrt diese.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay wechselt zu Tag-Modus.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay auf Nacht-Modus geändert.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay auf Outdoor Modus geändert.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">Zugang Performance Manager</string>
   <!-- Performance manager permission description -->

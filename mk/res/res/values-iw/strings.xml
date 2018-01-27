@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">מערכת MoKee</string>
-  <string name="permlab_publishCustomTile">צור אריח מותאם אישית בפאנל ההגדרות המהירות</string>
-  <string name="permdesc_publishCustomTile">מאפשר לאפליקציה לפרסם אריח הגדרה מהירה.</string>
-  <string name="permlab_modifyNetworkSettings">שנה את הגדרות הרשתות</string>
-  <string name="permdesc_modifyNetworkSettings">אפשר לאפליקציה לשנות את מצב טיסה ונתונים סלולרים.</string>
-  <string name="permlab_modifySoundSettings">שנה את הגדרות השמע</string>
-  <string name="permdesc_modifySoundSettings">מאפשר לאפליקציה לשנות את מצב \'אל תפריע\'.</string>
-  <string name="permlab_bindCustomTileListenerService">אפשר שירות של אריח מותאם אישית</string>
-  <string name="permdesc_bindCustomTileListenerService">אפשר לישום להוסיף אריח להגדרות מהירות.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">לראות את מצב הפלאפון ומצב הנתונים סוללרים עם תמיכה ביותר מSIM אחד</string>
-  <string name="permdesc_readMSPhoneState">אפשר לאפליקציה לראות את מצב הפלאפון ומצב הנתונים סוללרים עם תמיכה ביותר מSIM אחד.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">לשנות את מצב הפלאפון ומצב הנתונים סוללרים עם תמיכה ביותר מSIM אחד</string>
-  <string name="permdesc_modifyMSPhoneState">אפשר לאפליקציה לשנות את מצב הפלאפון ומצב הנתונים סוללרים עם תמיכה ביותר מSIM אחד</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">שינוי הפרופילים</string>
   <string name="permdesc_modifyProfiles">אפשר לאפליקציה לשנות את הפרופילי מערכת.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">השתמש במסגרת חומרתית</string>
   <string name="permdesc_useHardwareFramework">מאפשר לאפליקציה לגשת לתשתית החומרה MK.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">לשנות שעונים מעוררים</string>
-  <string name="permdesc_write_alarms">אפשר לאפליקציה להוסיף, לשנו או למחוק את השעונים המעוררים.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">להדליק או לכבות שעונים מעוררים</string>
-  <string name="permdesc_manage_alarms">מאפשר לאפליקציה להדליק או לכבות שעונים מעוררים.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">לראות את השעונים מעוררים המוגדרים</string>
-  <string name="permdesc_read_alarms">אפשר לאפליקציה לראות את השעונים מעוררים המוגדרים.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">שינוי הגדרות מערכת</string>
   <string name="permdesc_writeSettings">מאפשר יישום לשנות את הגדרות המערכת MK.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">שנוי הגדרות אבטחה של המערכת</string>
   <string name="permdesc_writeSecureSettings">מאפשר לישום לשנות הגדרות אבטחה של המערכת, לא לשימוש ע\"י אפליקציות רגילות.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">נהל זיכרון תמידי</string>
-  <string name="permdesc_managePersistentStorage">אפשר לישומים לקרוא או לכתוב הגדרות שאולי ישארו אחרי איפוס המערכת.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">אריח הגדרות מהירות מותאם אישית</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">הוסף או הסר ישומים לישומים מוגנים</string>
   <string name="permdesc_protectedApp">אפשר לישום לסמן ישום אחר כישום מוגן ולנעול אותו.</string>
@@ -104,12 +76,6 @@
   <string name="live_display_outdoor">בחוץ (אור שמש)</string>
   <string name="live_display_outdoor_summary">השתמש בהגדרות שמש בלבד</string>
   <string name="live_display_hint">תצוגה חיה יכולה להוריד את מאמץ העניים ולעזור לך להרדם בלילה. לחץ כאן כדי לנסות אותה!</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">לגשת למנהל ביצועים</string>
   <!-- Performance manager permission description -->

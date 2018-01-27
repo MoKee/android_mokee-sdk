@@ -18,23 +18,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Sistema de MoKee</string>
-  <string name="permlab_modifyNetworkSettings">Canvia la configuració de xarxa del sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Permet  a una aplicació realitzar canvis en el mode avió i en la configuració de la xarxa de dades mòbils.</string>
-  <string name="permlab_modifySoundSettings">canviar configuració de so del sistema</string>
-  <string name="permdesc_modifySoundSettings">Permet a una aplicació fer canvis a un conjunt restringit de configuracions dels sons del sistema.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">veure l\'estat del telèfon i la connexió de dades amb soport per múltiples SIMs</string>
-  <string name="permdesc_readMSPhoneState">Permet a una aplicació veure l\'estat del telèfon i la connexió de dades amb soport per múltiples SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <!-- Labels for the READ_ALARMS permission. -->
   <!-- Labels for the WRITE_SETTINGS permission -->
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
@@ -65,12 +52,6 @@
   <!-- LiveDisplay strings -->
   <string name="live_display_off">Desactivat</string>
   <string name="live_display_night">Nit</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->

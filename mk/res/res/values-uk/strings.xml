@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Система MoKee</string>
-  <string name="permlab_publishCustomTile">створити налаштовувану плитку в межах панелі швидкого доступу</string>
-  <string name="permdesc_publishCustomTile">Дозволяє додатку публікувати блок в швидких налаштуваннях.</string>
-  <string name="permlab_modifyNetworkSettings">змінити налаштування мережі системи</string>
-  <string name="permdesc_modifyNetworkSettings">Дозволяє додатку вносити зміни в режимі \"Політ\" і в налаштуваннях мобільної передачі даних.</string>
-  <string name="permlab_modifySoundSettings">змінити налаштування системних звуків</string>
-  <string name="permdesc_modifySoundSettings">Дозволяє додатку вносити зміни налаштувань звуку в режимі переривань.</string>
-  <string name="permlab_bindCustomTileListenerService">прив\'язати до служби налаштування плиток користувача</string>
-  <string name="permdesc_bindCustomTileListenerService">Дозволяє додатку зв\'язати інтерфейс верхнього рівня із службою плиток користувача.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">перегляд режиму роботи та передачі даних телефону з підтримкою декількох SIM-карт</string>
-  <string name="permdesc_readMSPhoneState">Дозволяє додатку відстежувати стан і дані підключення телефону з підтримкою декількох SIM-карт.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">зміна режиму роботи та передачі даних телефону з підтримкою декількох SIM-карт</string>
-  <string name="permdesc_modifyMSPhoneState">Дозволяє додатку змінювати стан і дані підключення телефону з підтримкою декількох SIM-карт.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">змінити системні профілі</string>
   <string name="permdesc_modifyProfiles">Дозволяє додатку змінювати системні профілі.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">використовувати апаратний framework</string>
   <string name="permdesc_useHardwareFramework">Дозволити додатку доступ до використання апаратного framework.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">напряму змінювати будильники</string>
-  <string name="permdesc_write_alarms">Дозволяє додаткам додавати, змінювати чи видаляти всі ваші будильники.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">перемикач запланованих будильників</string>
-  <string name="permdesc_manage_alarms">Дозволяє додатку вмикати або вимикати заплановані будильники.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">доступ до запланованих будильників</string>
-  <string name="permdesc_read_alarms">Дозволяє додатку читати заплановані будильники.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">змінити налаштування системи МК</string>
   <string name="permdesc_writeSettings">Дозволяє додатку змінювати налаштування системи MK.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">зміна налаштувань безпеки системи МК</string>
   <string name="permdesc_writeSecureSettings">Дозволяє додатку змінювати налаштування системи безпеки MK. Не використовуйте в звичайних додатках.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">Керування постійним сховищем даних</string>
-  <string name="permdesc_managePersistentStorage">Дозволяє додатку зчитувати і записувати властивості, які можуть зберігатися навіть після відновлення заводських налаштувань.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Налаштування плиток користувача</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">додавання та видалення додатків до захищених</string>
   <string name="permdesc_protectedApp">Дозволяє додатку відмітити інші додатки як захищені і заблокувати їх.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay змінено до денного режиму.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay змінено до нічного режиму.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay змінено до режиму на відкритому повітрі.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">дозвіл менеджера продуктивності</string>
   <!-- Performance manager permission description -->

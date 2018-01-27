@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Sistem MoKee</string>
-  <string name="permlab_publishCustomTile">membuat tile kustom dalam panel setelan cepat</string>
-  <string name="permdesc_publishCustomTile">Izinkan aplikasi untuk mempublikasikan tile panel setelan cepat.</string>
-  <string name="permlab_modifyNetworkSettings">merubah setelan jaringan sistem</string>
-  <string name="permdesc_modifyNetworkSettings">Izinkan aplikasi membuat perubahan ke modus pesawat dan pengaturan jaringan data.</string>
-  <string name="permlab_modifySoundSettings">mengubah setelan suara sistem</string>
-  <string name="permdesc_modifySoundSettings">Izinkan aplikasi untuk membuat perubahan pengaturan suara modus gangguan.</string>
-  <string name="permlab_bindCustomTileListenerService">mengikat ke layanan pendengar ikon kustom</string>
-  <string name="permdesc_bindCustomTileListenerService">Izinkan aplikasi untuk mengikat ke antarmuka tingkat atas layanan dari pendengar ikon kustom.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">lihat keadaan telepon dan sambungan data dengan dukungan untuk beberapa SIMs</string>
-  <string name="permdesc_readMSPhoneState">Izinkan aplikasi untuk melihat keadaan telepon dan sambungan data dengan dukungan untuk beberapa SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">modifikasi keadaan telepon dan sambungan data dengan dukungan untuk beberapa SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Izinkan aplikasi untuk memodifikasi keadaan telepon dan sambungan data dengan dukungan untuk beberapa SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">memodifikasi profil sistem</string>
   <string name="permdesc_modifyProfiles">Izinkan aplikasi untuk memodifikasi profil sistem.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">gunakan kerangka kerja perangkat keras</string>
   <string name="permdesc_useHardwareFramework">Izinkan aplikasi untuk mengakses perangkat keras MK.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">langsung merubah alarm</string>
-  <string name="permdesc_write_alarms">Izinkan aplikasi untuk menambah, mengubah atau menghapus semua alarm anda.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">beralih ke alarm yang dijadwalkan</string>
-  <string name="permdesc_manage_alarms">Izinkan aplikasi untuk mengaktifkan atau menonaktifkan jadwal alarm anda.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">akses jadwal alarm</string>
-  <string name="permdesc_read_alarms">Izinkan aplikasi untuk membaca jadwal alarm anda.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modifikasi setelan sistem MK</string>
   <string name="permdesc_writeSettings">Izinkan aplikasi untuk memodifikasi setelan sistem MK.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modifikasi setelan sistem aman MK</string>
   <string name="permdesc_writeSecureSettings">Izinkan aplikasi untuk memodifikasi pengaturan sistem aman MK. Tidak untuk digunakan oleh aplikasi yang normal.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">mengelola penyimpanan yang tetap</string>
-  <string name="permdesc_managePersistentStorage">Izinkan aplikasi untuk membaca atau menulis properti yang dapat bertahan melalui pengaturan ulang pabrik.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Daftar ikon kustom</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">menambah dan menghapus aplikasi untuk dilindungi apps</string>
   <string name="permdesc_protectedApp">Izinkan aplikasi untuk menandai aplikasi lain sebagai dilindungi dan mengunci mereka.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay dirubah ke mode siang hari.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay dirubah ke mode malam hari.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay dirubah ke mode diluar ruangan.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">akses pengelola kinerja</string>
   <!-- Performance manager permission description -->

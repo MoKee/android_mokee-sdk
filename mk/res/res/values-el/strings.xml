@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Σύστημα MoKee</string>
-  <string name="permlab_publishCustomTile">δημιουργήστε ένα προσαρμοσμένο πλακίδιο μέσα στον πίνακα γρήγορων ρυθμίσεων</string>
-  <string name="permdesc_publishCustomTile">Επιτρέπει σε μία εφαρμογή να δημοσιεύσει ένα πλακίδιο γρήγορων ρυθμίσεων.</string>
-  <string name="permlab_modifyNetworkSettings">Αλλαγή ρυθμίσεων δικτύου συστήματος</string>
-  <string name="permdesc_modifyNetworkSettings">Επιτρέπει σε μια εφαρμογή να κάνει αλλαγές στις ρυθμίσεις δικτύου δεδομένων κινητής τηλεφωνίας και λειτουργία πτήσης.</string>
-  <string name="permlab_modifySoundSettings">αλλαγή ρυθμίσεων ήχου συστήματος</string>
-  <string name="permdesc_modifySoundSettings">Επιτρέπει σε μια εφαρμογή για να κάνει αλλαγές στις ρυθμίσεις ήχου διακοπής λειτουργίας.</string>
-  <string name="permlab_bindCustomTileListenerService">δέσμευση σε ένα προσαρμοσμένο πλακίδιο υπηρεσίας ακρόασης ειδοποίησης</string>
-  <string name="permdesc_bindCustomTileListenerService">Επιτρέπει στην εφαρμογή να δεσμεύσει στο πάνω-επίπεδο διεπαφής ενός προσαρμοσμένου πλακιδίου ακρόασης υπηρεσίας.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">εμφάνιση της κατάστασης τηλεφώνου και σύνδεσης δεδομένων με υποστήριξη πολλαπλών SIM</string>
-  <string name="permdesc_readMSPhoneState">Επιτρέπει σε μια εφαρμογή να δει τη κατάσταση τηλεφώνου και τα σύνδεση δεδομένων με υποστήριξη για πολλαπλές SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">τροποποιήστε τη κατάσταση τηλεφώνου και τη σύνδεση δεδομένων με υποστήριξη για πολλαπλές SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Επιτρέπει σε μια εφαρμογή να τροποποιήσει τη κατάσταση τηλεφώνου και τα σύνδεση δεδομένων με υποστήριξη για πολλαπλές SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">τροποποίηση των προφίλ συστήματος</string>
   <string name="permdesc_modifyProfiles">Επιτρέπει σε μια εφαρμογή να τροποποιήσει τα προφίλ συστήματος.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">χρήση του πλαισίου υλικού</string>
   <string name="permdesc_useHardwareFramework">Επιτρέπει σε μια εφαρμογή την πρόσβαση στο πλαίσιο υλικού του MΚ.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">άμεση αλλαγή ειδοποιήσεων</string>
-  <string name="permdesc_write_alarms">Επιτρέπει σε μια εφαρμογή να προσθέσει, να τροποποιήσει ή να διαγράψει όλες τις ειδοποιήσεις σας.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">εναλλαγή προγραμματισμένων ειδοποιήσεων</string>
-  <string name="permdesc_manage_alarms">Επιτρέπει σε μια εφαρμογή να ανοίξει/κλείσει τις προγραμματισμένες ειδοποιήσεις σας.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">πρόσβαση σε προγραμματισμένες ειδοποιήσεις</string>
-  <string name="permdesc_read_alarms">Επιτρέπει σε μια εφαρμογή να διαβάσει τις προγραμματισμένες ειδοποιήσεις σας.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">τροποποίηση ρυθμίσεων συστήματος</string>
   <string name="permdesc_writeSettings">Επιτρέπει σε μια εφαρμογή να τροποποιήσει τις ρυθμίσεις συστήματοσ ΜΚ.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">τροποποίηση ασφαλών ρυθμίσεων συστήματος</string>
   <string name="permdesc_writeSecureSettings">Επιτρέπει σε μια εφαρμογή να τροποποιήσει τις ρυθμίσεις συστήματος ασφαλείας ΜΚ. Δεν πρέπει να χρησιμοποιήται από συνήθεις εφαρμογές.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">διαχείριση μόνιμης αποθήκευσης</string>
-  <string name="permdesc_managePersistentStorage">Επιτρέπει σε μια εφαρμογή να διαβάσει ή να γράψει ιδιότητες το οποίο μπορεί να προκαλέσει επαναφορά εργοστασιακών ρυθμίσεων.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Προσαρμοσμένο πλακίδιο ακρόασης</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">προσθήκη και αφαίρεση εφαρμογών σε προστατευμένες εφαρμογές</string>
   <string name="permdesc_protectedApp">Επιτρέπει σε μια εφαρμογή να σημαδέψει άλλες εφαρμογές σαν προστατευμένες και να τις κλειδώσει.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">Το LiveDisplay άλλαξε σε λειτουργία ημέρας.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">Το LiveDisplay άλλαξε σε λειτουγία νύχτας.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">Το LiveDisplay άλλαξε σε υπαίθρια λειτουργία.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">διαχειριστής πρόσβασης απόδοσης</string>
   <!-- Performance manager permission description -->

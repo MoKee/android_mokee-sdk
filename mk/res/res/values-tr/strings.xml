@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee Sistemi</string>
-  <string name="permlab_publishCustomTile">ayarlar panelinde düzenlenmiş bir kare yarat</string>
-  <string name="permdesc_publishCustomTile">Hızlı ayarlar panelini yayınlaması için bir uygulamaya izin verir.</string>
-  <string name="permlab_modifyNetworkSettings">sistemin ağ ayarlarını değiştirin</string>
-  <string name="permdesc_modifyNetworkSettings">Uçak modunda ve mobil veri ağ ayarlarında bir uygulamaya değişiklik yapması için izin verir.</string>
-  <string name="permlab_modifySoundSettings">sistemin ses ayarlarını değiştirin</string>
-  <string name="permdesc_modifySoundSettings">Kesinti modu ses ayarlarında bir uygulamaya değişiklik yapması için izin verir.</string>
-  <string name="permlab_bindCustomTileListenerService">düzenlenmiş bir dinleyici servis karosuna bağlan</string>
-  <string name="permdesc_bindCustomTileListenerService">Uygulamanın, özel başlık dinleyici hizmetinin üst düzey arayüzüne bağlanmasına izin verir.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">Çoklu SIM desteği ile telefon durumunu ve veri bağlantısına bakın</string>
-  <string name="permdesc_readMSPhoneState">Telefon durumunu ve veri bağlantısını birden fazla sim desteği ile görmek için bir uygulamaya izin verir.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">Çoklu SIM desteği ile telefon durumunu ve veri bağlantısını değiştir</string>
-  <string name="permdesc_modifyMSPhoneState">Telefon durumunu ve veri bağlantısını birden fazla sim desteği ile görmek için bir uygulamaya izin verir.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">sistem profilleri değiştirme</string>
   <string name="permdesc_modifyProfiles">Bir uygulamaya sistem profillerini değiştirme izni verir.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">donanım altyapısını kullan</string>
   <string name="permdesc_useHardwareFramework">Uygulamanın MK donanım altyapısına erişimine izin verir.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">doğrudan alarmları değiştir</string>
-  <string name="permdesc_write_alarms">Alarm ekleme, düzenleme veya alarmlarınızın hepsini silmesi için bir uygulamaya izin verir.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">planlanmış alarmları sabitle</string>
-  <string name="permdesc_manage_alarms">Bir uygulamanın zamanlanmış alarmları açmasına veya kapatmasına izin verir.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">zamanlanmış alarmlara erişim sağla</string>
-  <string name="permdesc_read_alarms">Alarm düzenlemelerinizi okuması için bir uygulamaya izin verir.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">MK sistem ayarlarını değiştir</string>
   <string name="permdesc_writeSettings">Bir uygulamaya MK sistem ayarlarını değiştirme izni verir.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">sistem güvenlik ayarlarını değiştir</string>
   <string name="permdesc_writeSecureSettings">Bir uygulamaya MK sistem güvenlik ayarlarını değiştirme izni verir. Normal uygulamalar tarafından kullanılamaz.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">kalıcı depolama birimini yönet</string>
-  <string name="permdesc_managePersistentStorage">Bir uygulamanın, fabrika ayarlarına sıfırlama işleminden sonra da devam edebilecek özellikleri okumasına veya yazmasına izin verir.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Özel döşeme dinleyicisi</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">korumalı uygulamalar için uygulama ekleme ve kaldırma</string>
   <string name="permdesc_protectedApp">Uygulamaya, diğer uygulamaları korumalı olarak işaretleme ve kilitleme izni verir.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay gündüz moduna geçti.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gece moduna geçti.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay açık alan moduna geçti.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">erişim performans Yöneticisi</string>
   <!-- Performance manager permission description -->

@@ -18,36 +18,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Sistemul Mokee</string>
-  <string name="permlab_publishCustomTile">Creați o dală particularizată in panoul setări rapide</string>
-  <string name="permdesc_publishCustomTile">Permite unei aplicații să posteze o icoană pentru setări rapide.</string>
-  <string name="permlab_modifyNetworkSettings">Schimbări setări de rețea</string>
-  <string name="permdesc_modifyNetworkSettings">Permite unei aplicații să facă schimbări în setările datelor mobile și modul avion.</string>
-  <string name="permlab_modifySoundSettings">schimbă setările sunetelor</string>
-  <string name="permdesc_modifySoundSettings">Permite unei aplicații să facă schimbări în setările modulului de întrerupere al sunetului.</string>
-  <string name="permlab_bindCustomTileListenerService">conectare la un serviciu de citire a notificărilor</string>
-  <string name="permdesc_bindCustomTileListenerService">Permite aplicației sa se lege la interfața de la cel mai înalt nivel a unui serviciu tile listener.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">vizualizează starea telefonului și conexiunea de date cu suport pentru multi-SIM</string>
-  <string name="permdesc_readMSPhoneState">Permite unei aplicații să vadă starea telefonului și conexiunea de date cu suport pentru multi-SIM.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">modifica starea telefonului și conexiunea de date cu suport pentru multi-SIM</string>
-  <string name="permdesc_modifyMSPhoneState">Permite unei aplicații să vadă starea telefonului și conexiunea de date cu suport pentru multi-SIM.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modifica profilul sistemului</string>
   <string name="permdesc_modifyProfiles">Permite unei aplicații să modifice profilul sistemului.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">folosește Framework-ul Hardware</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">schimbă alarma direct</string>
-  <string name="permdesc_write_alarms">Permite unei aplicații să adauge, să modifice sau să șteargă toate alarmele.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permdesc_manage_alarms">Permite unei aplicații să pornească sau să oprească alarmele programate.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">accesează alarmele programate</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
@@ -92,12 +69,6 @@
   <string name="accessibility_quick_settings_live_display_off">LiveDisplay oprit.</string>
   <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: mod auto.</string>
   <string name="accessibility_quick_settings_live_display_day">LiveDisplay: mod zi.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->

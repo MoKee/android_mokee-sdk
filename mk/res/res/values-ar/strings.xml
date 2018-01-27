@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">نظام موكي</string>
-  <string name="permlab_publishCustomTile">انشاء ايقونات متخصصة في لوحة الاعدادات السريعة</string>
-  <string name="permdesc_publishCustomTile">السماح لتطبيق نشر مربع إعدادات سريعة.</string>
-  <string name="permlab_modifyNetworkSettings">تغيير إعدادات شبكة الاتصال</string>
-  <string name="permdesc_modifyNetworkSettings">السماح لأي تطبيق بإجراء تغييرات على وضع الطائرة وإعدادات شبكة البيانات المتنقلة.</string>
-  <string name="permlab_modifySoundSettings">تغيير إعدادات نظام الصوت</string>
-  <string name="permdesc_modifySoundSettings">السماح لأي تطبيق بتغيير اعدادات الصوت الى نمط المقاطعة.</string>
-  <string name="permlab_bindCustomTileListenerService">ربط إلى خدمة مستمع مخصصة</string>
-  <string name="permdesc_bindCustomTileListenerService">السماح لتطبيق بربط واجهة المستوى الأعلى للمساحة المخصصة لخدمة المستمع.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">عرض اتصال الدولة وبيانات الهاتف مع دعم متعدد الشرائح</string>
-  <string name="permdesc_readMSPhoneState">السماح لأي تطبيق لعرض حالة الاتصال وبيانات الهاتف مع دعم الشرائح المتعددة.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">قم بتعديل حالة الاتصال وبيانات الهاتف مع دعم الشرائح متعددة</string>
-  <string name="permdesc_modifyMSPhoneState">السماح لأي تطبيق لعرض حالة الاتصال وبيانات الهاتف مع دعم الشرائح المتعددة.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">تعديل ملفات النظام</string>
   <string name="permdesc_modifyProfiles">السماح لأي تطبيق بتعديل ملفات النظام.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">استخدام إطار الجهاز</string>
   <string name="permdesc_useHardwareFramework">السماح لأي تطبيق للوصول إلى اطار أجهزة MK.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">تغيير الإنذار بشكل مباشر</string>
-  <string name="permdesc_write_alarms">السماح لأي تطبيق لإضافة أو تعديل أو حذف كافة التنبيهات الخاصة بك.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">تبديل الإنذارات المجدولة</string>
-  <string name="permdesc_manage_alarms">السماح لأي تطبيق لتشغيل أو إيقاف تشغيل الإنذارات المجدولة الخاصة بك.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">الوصول للإنذارات المجدولة</string>
-  <string name="permdesc_read_alarms">السماح لأي تطبيق لقراءة الإنذارات المجدولة الخاصة بك.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">تعديل إعدادات نظام MK</string>
   <string name="permdesc_writeSettings">السماح لأي تطبيق لتعديل إعدادات نظام MK.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">تعديا مصدر اعدادات نظام MK</string>
   <string name="permdesc_writeSecureSettings">السماح لأي تطبيق لتعديل مصدر إعدادات النظام. ليس للاستخدام من قبل التطبيقات العاديه.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">إدارة التخزين الثابتة</string>
-  <string name="permdesc_managePersistentStorage">السماح لأي تطبيق لقراءة أو كتابة الخصائص التي قد تمر عبر إعادة تعيين المصنع.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">المساحة المخصصة للمستمع</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">إضافة التطبيقات وإزالتها لتطبيقات محمية</string>
   <string name="permdesc_protectedApp">اختار تطبيق لحمايه وقفل التطبيقات الآخرة.</string>
@@ -104,12 +76,6 @@
   <string name="live_display_day">اليوم</string>
   <string name="live_display_day_summary">استخدام إعدادات اليوم فقط</string>
   <string name="live_display_night">ليلي</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->

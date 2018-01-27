@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee 系統</string>
-  <string name="permlab_publishCustomTile">在快速設定板面中建立一個自訂瓷磚</string>
-  <string name="permdesc_publishCustomTile">允許應用程式建立快速設定瓷磚。</string>
-  <string name="permlab_modifyNetworkSettings">變更系統網絡設定</string>
-  <string name="permdesc_modifyNetworkSettings">允許應用程式修改飛航模式和流動數據網絡設定。</string>
-  <string name="permlab_modifySoundSettings">變更系統聲音設定</string>
-  <string name="permdesc_modifySoundSettings">允許應用程式對有限的系統聲音設定進行修改。</string>
-  <string name="permlab_bindCustomTileListenerService">綁定到自訂平鋪攔截器服務</string>
-  <string name="permdesc_bindCustomTileListenerService">允許應用程式將綁定到頂級定制瓷磚攔截器服務的介面。</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">在支援多張 SIM 咭的裝置上查看電話狀態和數據連綫</string>
-  <string name="permdesc_readMSPhoneState">允許應用程式查看支援多張 SIM 咭的裝置的電話狀態和數據連綫</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">在支援多張 SIM 咭的裝置上修改電話狀態和數據連綫</string>
-  <string name="permdesc_modifyMSPhoneState">允許應用程式修改支援多張 SIM 咭的裝置的電話狀態和數據連綫</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">修改系統設定檔</string>
   <string name="permdesc_modifyProfiles">允許應用程式修改系統設定檔</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">使用硬件框架</string>
   <string name="permdesc_useHardwareFramework">允許應用程式存取 MK 硬件框架。</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">直接更改鬧鐘</string>
-  <string name="permdesc_write_alarms">允許一個應用程式新增，修改或刪除你的鬧鐘。</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">切換已設定的鬧鐘</string>
-  <string name="permdesc_manage_alarms">允許應用程式開關你已設定的鬧鐘。</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">存取已設定的鬧鐘</string>
-  <string name="permdesc_read_alarms">允許應用程式讀取已設定的鬧鐘</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">修改 MK 系統設定</string>
   <string name="permdesc_writeSettings">允許應用程式修改 MK 系統設定。</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">修改 MK 系統安全設定</string>
   <string name="permdesc_writeSecureSettings">允許應用程式修改 MK 系統安全設定。僅供偵錯使用。</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">管理永久儲存</string>
-  <string name="permdesc_managePersistentStorage">允許應用程式存取一些恢復原廠設定後仍可保持的屬性。</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">定制瓷磚攔截器</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">添加或刪除受保護的應用程式</string>
   <string name="permdesc_protectedApp">允許應用程式標記受保護的其他應用程式並將它們鎖定。</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay 改為日間模式。</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay 改為夜間模式。</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay 已變更為戶外模式。</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">訪問性能管理器</string>
   <!-- Performance manager permission description -->

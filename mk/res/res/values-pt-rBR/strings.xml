@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Sistema MoKee</string>
-  <string name="permlab_publishCustomTile">criar um bloco personalizado no painel de configurações rápidas</string>
-  <string name="permdesc_publishCustomTile">Permite que um aplicativo publique um bloco nas configurações rápidas.</string>
-  <string name="permlab_modifyNetworkSettings">alterar configurações de rede do sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Permite que um aplicativo altere um conjunto restrito de configurações de rede do sistema.</string>
-  <string name="permlab_modifySoundSettings">alterar configurações de som do sistema</string>
-  <string name="permdesc_modifySoundSettings">Permite que um aplicativo altere um conjunto restrito de configurações de som do sistema.</string>
-  <string name="permlab_bindCustomTileListenerService">vincular a um serviço personalizado de escuta de bloco</string>
-  <string name="permdesc_bindCustomTileListenerService">Permite que o aplicativo se vincule à interface de nível superior de um serviço personalizado de escuta de bloco.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">ver o estado do telefone e a conexão de dados com suporte a múltiplos SIMs</string>
-  <string name="permdesc_readMSPhoneState">Permite que um aplicativo veja o estado do telefone e a conexão de dados com suporte a múltiplos SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">modificar o estado do telefone e a conexão de dados com suporte a múltiplos SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Permite que um aplicativo modifique o estado do telefone e a conexão de dados com suporte a múltiplos SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modificar perfis do sistema</string>
   <string name="permdesc_modifyProfiles">Permite que um aplicativo modifique os perfis do sistema.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">utilizar a estrutura de hardware</string>
   <string name="permdesc_useHardwareFramework">Permite que um aplicativo acesse a estrutura de hardware do MoKee.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">alterar diretamente os alarmes</string>
-  <string name="permdesc_write_alarms">Permite que um aplicativo adicione, altere ou exclua todos os seus alarmes.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">ativar alarmes programados</string>
-  <string name="permdesc_manage_alarms">Permite que um aplicativo ative ou desative seus alarmes programados.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">acessar alarmes programados</string>
-  <string name="permdesc_read_alarms">Permite que um aplicativo acesse seus alarmes programados.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modificar as configurações do sistema MoKee</string>
   <string name="permdesc_writeSettings">Permite que um aplicativo modifique as configurações do sistema MoKee.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modificar configurações do sistema de segurança Mokee</string>
   <string name="permdesc_writeSecureSettings">Permite que um aplicativo modifique as configurações do sistema de segurança do MoKee. Não deve ser usado por aplicativos normais.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">gerenciar armazenamento persistente</string>
-  <string name="permdesc_managePersistentStorage">Permite que um aplicativo leia ou escreva propriedades que possam persistir durante uma reinicialização de fábrica.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Bloco personalizado de escuta</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">adicionar e remover aplicativos aos aplicativos protegidos</string>
   <string name="permdesc_protectedApp">Permite a um aplicativo marcar outros aplicativos como protegidos e bloqueá-los.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay alterado para o modo dia.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay alterado para modo noite.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay alterado para modo ar livre.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">acessar o gerenciador de desempenho</string>
   <!-- Performance manager permission description -->

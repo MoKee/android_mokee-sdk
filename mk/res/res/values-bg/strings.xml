@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee система</string>
-  <string name="permlab_publishCustomTile">създаване на собствен панел с бързи настройки</string>
-  <string name="permdesc_publishCustomTile">Позволява на приложението да задава плочка за бързи настройки.</string>
-  <string name="permlab_modifyNetworkSettings">промяна на системните мрежови настройки</string>
-  <string name="permdesc_modifyNetworkSettings">Позволява на приложението да прави промени в самолетен режим и настройки на мобилните данни.</string>
-  <string name="permlab_modifySoundSettings">промяна на системните настройки на звука</string>
-  <string name="permdesc_modifySoundSettings">Позволява да направите промени в настройките на режим прекъсване на звука.</string>
-  <string name="permlab_bindCustomTileListenerService">потребителски панел за услуги</string>
-  <string name="permdesc_bindCustomTileListenerService">Позволява приложението да се използва интерфейс на най-високо ниво на слушане.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">позволява да видите на телефона състоянието и данните за връзка с поддръжка на много SIM</string>
-  <string name="permdesc_readMSPhoneState">Позволява да видите на телефона състоянието и данните за връзка с поддръжка на много SIM.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">позволява да видите на телефона състоянието и данните за връзка с поддръжка на много SIM</string>
-  <string name="permdesc_modifyMSPhoneState">Позволява да видите на телефона състоянието и данните за връзка с поддръжка на много SIM.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">редактиране на системни профили</string>
   <string name="permdesc_modifyProfiles">Позволява да редактирате системните профили.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">използвайте хардуерна рамка</string>
   <string name="permdesc_useHardwareFramework">Позволява ви достъп до хардуерна рамка на MoKee.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">директна промяна на аларми</string>
-  <string name="permdesc_write_alarms">Позволява ви да добавяте, редактирате или изтривате аларми.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">Превключва на планирани будилници</string>
-  <string name="permdesc_manage_alarms">Позволява ви да вкл и изкл вашите планирани аларми.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">Превключва на планирани аларми</string>
-  <string name="permdesc_read_alarms">Позволява ви да вкл и изкл вашите планирани аларми.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">Промяна на системните настройки</string>
   <string name="permdesc_writeSettings">Позволява да редактирате системните профили.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">Промяна на системните настройки за сигурност</string>
   <string name="permdesc_writeSecureSettings">Позволява ви да променяте настройки за сигурност. Не се използва с нормални приложения.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">управление на памет за съхранение</string>
-  <string name="permdesc_managePersistentStorage">Позволява да четете и пишете по системните файлове, което може да доведе до заводски настройки.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Потребителско слушане</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">добавяне и премахване на приложения към защитени</string>
   <string name="permdesc_protectedApp">Позволява ви да маркирате приложения към защитени и да ги заключите.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay променен на дневен режим.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay променен на нощен режим.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay променя на режим открито.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">Достъп до мениджър на бързодействие</string>
   <!-- Performance manager permission description -->

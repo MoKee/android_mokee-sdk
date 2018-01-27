@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee sistem</string>
-  <string name="permlab_publishCustomTile">ustvari ploščico po meri v hitrih nastavitvah</string>
-  <string name="permdesc_publishCustomTile">Omogoča aplikaciji, objavo hitrih nastavitv ploščice.</string>
-  <string name="permlab_modifyNetworkSettings">spremeni omrežne nastavitve sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Omogoča aplikaciji, da lahko spremeni letalski način in nastavitve mobilnih podatkov.</string>
-  <string name="permlab_modifySoundSettings">spremenite nastavitve zvoka sistema</string>
-  <string name="permdesc_modifySoundSettings">Omogoča aplikaciji, da lahko spremeni nastavitve načina prekinitve zvoka.</string>
-  <string name="permlab_bindCustomTileListenerService">pripni na ploščo poslušalca</string>
-  <string name="permdesc_bindCustomTileListenerService">Dovoli aplikaciji pripeti na najvišji nivo vmesnika plošče poslušalca.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">vpogled v stanje podatkovne povezave telefona s podporo za več SIM kartic</string>
-  <string name="permdesc_readMSPhoneState">Omogoča aplikaciji, vpogled v stanje podatkovne povezave telefona s podporo za več SIM kartic.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">spreminjanje stanje podatkovne povezave telefona s podporo za več SIM kartic</string>
-  <string name="permdesc_modifyMSPhoneState">Omogoča aplikaciji, spreminjanje stanja podatkovne povezave telefona s podporo za več SIM kartic.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">urejanje sistemskih profilov</string>
   <string name="permdesc_modifyProfiles">Omogoča aplikaciji urejanje sistemskih profilov.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">uporabi strojni framework</string>
   <string name="permdesc_useHardwareFramework">Omogoča aplikaciji dostop do MK strojnega frameworka.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">neposredno spremeni alarme</string>
-  <string name="permdesc_write_alarms">Omogoča aplikaciji, da lahko doda, spremeni ali izbriše vse alarme.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">vklopi načrtovane alarme</string>
-  <string name="permdesc_manage_alarms">Omogoča aplikaciji vklop/izklop načrtovanih alarmov.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">dostop do načrtovanih alarmov</string>
-  <string name="permdesc_read_alarms">Omogoča aplikaciji, da prebere načrtovane alarme.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">spremeni MK sistemske nastavitve</string>
   <string name="permdesc_writeSettings">Omogoča aplikaciji speminjanje MK sistemskih nastavitev.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">spremeni MK varne sistemske nastavitve</string>
   <string name="permdesc_writeSecureSettings">Omogoči aplikaciji speminjanje MK varnih sistemskih nastavitev. Ni za uporabo z normalnimi aplikacijami.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">upravljanje obstoječih shramb</string>
-  <string name="permdesc_managePersistentStorage">Omogoča aplikaciji, da prebere ali prepiše lastnosti, ki so lahko prisotne pri resetiranju na tovarniške nastavitve.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Poslušalec ploščic po meri</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">dodaj in odstrani aplikacije za zaščito drugih aplikacij</string>
   <string name="permdesc_protectedApp">Omogoča aplikaciji označitev drugih aplikacij kot zaščitene in jih zaklene.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">ŽiviZaslon spremenjen na dnevni način.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">ŽiviZaslon spremenjen na nočni način.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">ŽiviZaslon spremenjen na zunaj.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">dostop do upravitelja zmogljivosti</string>
   <!-- Performance manager permission description -->

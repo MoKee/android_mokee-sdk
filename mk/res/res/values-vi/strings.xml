@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Hệ thống MoKee</string>
-  <string name="permlab_publishCustomTile">tạo một tiêu đề tùy chỉnh trong bảng cài đặt nhanh</string>
-  <string name="permdesc_publishCustomTile">Cho phép một ứng dụng để xuất bản một tiêu đề cài đặt nhanh.</string>
-  <string name="permlab_modifyNetworkSettings">thay đổi thiết đặt mạng hệ thống</string>
-  <string name="permdesc_modifyNetworkSettings">Cho phép một ứng dụng thực hiện thay đổi chế độ máy bay và thiết lập mạng dữ liệu di động.</string>
-  <string name="permlab_modifySoundSettings">thay đổi cài đặt âm thanh hệ thống</string>
-  <string name="permdesc_modifySoundSettings">Cho phép một ứng dụng để thay đổi cài đặt chế độ ngắt âm thanh.</string>
-  <string name="permlab_bindCustomTileListenerService">liên kết với một dịch vụ nghe tùy chỉnh tiêu đề</string>
-  <string name="permdesc_bindCustomTileListenerService">Cho phép các ứng dụng liên kết với giao diện cấp cao của một dịch vụ nghe tùy chỉnh tiêu đề.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">xem tình trạng điện thoại và dữ liệu kết nối với hỗ trợ cho nhiều SIMs</string>
-  <string name="permdesc_readMSPhoneState">Cho phép một ứng dụng xem tình trạng điện thoại và dữ liệu kết nối với hỗ trợ cho nhiều SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">thay đổi tình trạng điện thoại và dữ liệu kết nối với hỗ trợ cho nhiều SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Cho phép một ứng dụng sửa tình trạng điện thoại và dữ liệu kết nối với hỗ trợ cho nhiều SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">sửa đổi hồ sơ hệ thống</string>
   <string name="permdesc_modifyProfiles">Cho phép một ứng dụng để sửa đổi hồ sơ hệ thống.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">dùng khung làm việc phần cứng</string>
   <string name="permdesc_useHardwareFramework">Cho phép ứng dụng truy cập khung làm việc phần cứng Mk.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">trực tiếp thay đổi báo động hệ thống</string>
-  <string name="permdesc_write_alarms">Cho phép một ứng dụng để thêm, chỉnh sửa hoặc xoá tất cả báo động hệ thống của bạn.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">chuyển đổi hệ thống báo động theo lịch trình</string>
-  <string name="permdesc_manage_alarms">Cho phép một ứng dụng để bật hoặc tắt báo động theo lịch trình của bạn.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">truy cập vào hệ thống báo động theo lịch trình</string>
-  <string name="permdesc_read_alarms">Cho phép một ứng dụng đọc báo động theo lịch trình của bạn.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">sửa đổi thiết đặt hệ thống MK</string>
   <string name="permdesc_writeSettings">Cho phép một ứng dụng sửa đổi hệ thống cài đặt MK.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">sửa đổi thiết đặt bảo mật hệ thống MK</string>
   <string name="permdesc_writeSecureSettings">Cho phép một ứng dụng để sửa đổi cài đặt bảo mật hệ thống MK. Không sử dụng bởi ứng dụng bình thường.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">quản lý lưu trữ liên tục</string>
-  <string name="permdesc_managePersistentStorage">Cho phép một ứng dụng để đọc hoặc ghi các đặc tính mà có thể kéo dài quá trình máy đặt lại trạng thái xuất xưởng.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Tùy chỉnh tiêu đề nghe</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">thêm và loại bỏ các ứng dụng bảo vệ các ứng dụng</string>
   <string name="permdesc_protectedApp">Cho phép một ứng dụng để đánh dấu các ứng dụng khác như bảo vệ và khóa chúng.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay thay đổi chế độ ngày.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay thay đổi chế độ ban đêm.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay thay đổi chế độ ngoài trời.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">truy cập hiệu quả quản lý</string>
   <!-- Performance manager permission description -->
@@ -164,4 +130,5 @@
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Không rõ</string>
   <!-- Long-press back kill application -->
+  <string name="app_killed_message">Đã dừng ứng dụng</string>
 </resources>

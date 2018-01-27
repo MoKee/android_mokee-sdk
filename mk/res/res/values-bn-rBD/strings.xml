@@ -18,40 +18,16 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee System</string>
-  <string name="permlab_publishCustomTile">create a custom tile within quick settings panel</string>
-  <string name="permdesc_publishCustomTile">Allows an app to publish a quick settings tile.</string>
-  <string name="permlab_modifyNetworkSettings">change system network settings</string>
-  <string name="permdesc_modifyNetworkSettings">App টি এয়ারপ্লেন মোড এবং মোবাইল ডাটা নেটওয়ার্ক সেটিংস পরিবর্তন করতে পারবে।</string>
-  <string name="permlab_modifySoundSettings">change system sound settings</string>
-  <string name="permdesc_modifySoundSettings">App টি ইন্টারাপশন মোড সাউন্ড সেটিংস পরিবর্তন করতে পারবে।</string>
-  <string name="permlab_bindCustomTileListenerService">bind to a custom tile listener service</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">ফোনের অবস্থা এবং ডাটা সংযোগ দেখুন (একাথিক সিম সমর্থিত)</string>
-  <string name="permdesc_readMSPhoneState">App টি একাধিক সিম সমর্থন করতে ফোনের অবস্থা এবং ডাটা সংযোগ দেখার সম্মতি দেয়।</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">ফোনের অবস্থা এবং ডাটা সংযোগ পরিবর্তন (একাথিক সিম সমর্থিত)</string>
-  <string name="permdesc_modifyMSPhoneState">App টি একাধিক সিম সমর্থন করতে ফোনের অবস্থা এবং ডাটা সংযোগ পরিবর্তন করতে পারবে।</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">সিস্টেম প্রোফাইলগুলি সংশোধন করুন</string>
   <string name="permdesc_modifyProfiles">App টি সিস্টেম প্রোফাইল পরিবর্তন করতে পারবে।</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">use hardware framework</string>
   <string name="permdesc_useHardwareFramework">App টি MK হার্ডওয়্যার ফ্রেমওয়ার্কে প্রবেশ করতে পারবে।</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">directly change alarms</string>
-  <string name="permdesc_write_alarms">App টি এলার্ম তৈরি, পরিবর্তন অথবা মুছে ফেলতে পারবে।</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">পূর্বে নির্ধারিত এলার্ম পরিবর্তন করুন</string>
-  <string name="permdesc_manage_alarms">App টি এলার্ম চালু অথবা বন্ধ করতে পারবে।</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permdesc_read_alarms">App টি এলার্ম এর অবস্থা জানতে পারবে।</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permdesc_writeSettings">App টি MK সিস্টেম সেটিংস্‌ পরিবর্তন করতে পারবে।</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permdesc_writeSecureSettings">App টি MK সিকিওর সিস্টেম সেটিংস্‌ পরিবর্তন করতে পারবে। সাধারণ App এর জন্য প্রযোজ্য নয়।</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permdesc_managePersistentStorage">App টি ফ্যাক্টরি রিসেট করার পরেও থেকে যায় এমন প্রোপার্টিজ গুলো পরিবর্তন করতে পারবে।</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
@@ -77,12 +53,6 @@
   <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_off">Off</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->

@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee rendszer</string>
-  <string name="permlab_publishCustomTile">hozzon létre egy egyéni csempét a gyors beállítások panelen belül</string>
-  <string name="permdesc_publishCustomTile">Alkalmazás számára engedélyezi, hogy gyors beállítások csempét hozzon létre.</string>
-  <string name="permlab_modifyNetworkSettings">rendszer hálózati beállításainak módosítása</string>
-  <string name="permdesc_modifyNetworkSettings">Engedélyt ad az alkalmazász számára, hogy befolyásolja a repülőgép üzemmódot és a mobilinternet beállításait.</string>
-  <string name="permlab_modifySoundSettings">rendszer hangbeállításainak módosítása</string>
-  <string name="permdesc_modifySoundSettings">Lehetővé teszi egy alkalmazás számára, hogy megváltoztassa a megszakítás üzemmód hangbeállításait.</string>
-  <string name="permlab_bindCustomTileListenerService">kössön egy válaszott csempét a figyelő szolgáltatáshoz</string>
-  <string name="permdesc_bindCustomTileListenerService">Lehetővé teszi az alkalmazásnak, hogy hozzárendeljen egy felső szintű felületet, egy egyéni csempe figyelő szolgáltatásból.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">megtekinti a telefon állapotát és adatkapcsolatát, támogatással a több SIM kártya felé</string>
-  <string name="permdesc_readMSPhoneState">Lehetővé teszi egy alkalmazás számára, hogy megtekintse a telefon állapotát és mobil adatkapcsolatát, támogatással a több SIM felé.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">megváltoztatja a telefon állapotát és adatkapcsolatát, támogatással a több SIM kártya felé</string>
-  <string name="permdesc_modifyMSPhoneState">Lehetővé teszi egy alkalmazás számára, hogy megváltoztassa a telefon állapotát és mobil adatkapcsolatát, támogatással a több SIM felé.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">rendszer-profilok módosítása</string>
   <string name="permdesc_modifyProfiles">Lehetővé teszi egy alkalmazás számára, hogy módosítsa a rendszer-profilokat.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">hardver keretrendszer használata</string>
   <string name="permdesc_useHardwareFramework">Lehetővé teszi egy alkalmazás számára, hogy hozzáférjen az MK hardver keretrendszerhez.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">riasztások közvetlen változtatása</string>
-  <string name="permdesc_write_alarms">Engedélyezi egy alkalmazásnak, hogy módosítsa vagy törölje az összes riasztásodat.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">ütemezett riasztások bekapcsolása</string>
-  <string name="permdesc_manage_alarms">Lehetővé teszi egy alkalmazásnak, hogy ki vagy be kapcsolja az időzített riasztásaidat.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">hozzáférés az időzített riasztásokhoz</string>
-  <string name="permdesc_read_alarms">Lehetővé teszi egy alkalmazásnak, hogy olvassa az időzített riasztásaidat.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">MK rendszer beállítások módosítása</string>
   <string name="permdesc_writeSettings">Lehetővé teszi egy alkalmazásnak, hogy modósítsa az MK rendszer beállításait.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">MK rendszer biztonsági beállításainak módosítása</string>
   <string name="permdesc_writeSecureSettings">Lehetővé teszi egy alkalmazás számára hogy módosítsa az MK biztonsági rendszerbeállításait. Nem vonatkozik normál alkalmazásokra.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">tartós tárhely kezelése</string>
-  <string name="permdesc_managePersistentStorage">Lehetővé teszi egy alkalmazás számára olyan tulajdonságok olvasását vagy írását, melyek esetében fennállhat a gyári visszaállítás esete.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Egyéni figyelő a csempéken</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">hozzáadás és eltávolítás a védett alkalmazásokhoz</string>
   <string name="permdesc_protectedApp">Lehetővé teszi egy alkalmazásnak, hogy megjelöljön más alkalmazásokat védettként és zárolja azokat.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay nappali módra változtatva.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay nappali módra változtatva.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay kültéri változtva.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">hozzáférés teljesítmény kezelő</string>
   <!-- Performance manager permission description -->

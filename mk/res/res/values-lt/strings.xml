@@ -18,36 +18,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">„MoKee sistema</string>
-  <string name="permlab_publishCustomTile">sukurti savo plytele sparčiųjų nustatymų pulte</string>
-  <string name="permlab_modifyNetworkSettings">sistemos tinklo nustatymų keitimas</string>
-  <string name="permlab_modifySoundSettings">pakeisti sistemos garso parametrus</string>
-  <string name="permdesc_modifySoundSettings">Leisti programai keisti sustabdymo režimo garso parametrus.</string>
-  <string name="permlab_bindCustomTileListenerService">pririšti prie pasirinktinės plytelės klausytojo paslaugos</string>
-  <string name="permdesc_bindCustomTileListenerService">Leisti programai pririšti su aukščiausio lygio sąsajos vartotojo plytelių klausytojo paslaugas.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">rodyti telefono būseną ir duomenų ryšį su parama kelių SIMs</string>
-  <string name="permdesc_readMSPhoneState">Leisti programai peržiūrėti telefono būseną ir duomenų ryšį su parama kelių SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">keisti telefono būseną ir duomenų ryšį su parama kelių SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Leisti programai peržiūrėti telefono būseną ir duomenų ryšį su parama kelių SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permdesc_modifyProfiles">Leisti programai keisti sistemos profilius.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">naudoti aparatūros struktūrą</string>
   <string name="permdesc_useHardwareFramework">Suteikti programai prieigą prie MK aparatūros struktūros.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">tiesiogiai pakeisti alermus</string>
-  <string name="permdesc_write_alarms">Leisti programai pridėti, keisti ar ištrinti visus jūsų aliarmus.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">perjungti numatytus alermus</string>
-  <string name="permdesc_manage_alarms">Leisti programai įjungti ar išjungti numatytus alermus.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">prieiti prie numatytų alermų</string>
-  <string name="permdesc_read_alarms">Leisti programai skaityti suplanuotus alermus.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
@@ -77,12 +54,6 @@
   <string name="live_display_day_summary">Naudoti tik dienos nustatymus</string>
   <string name="live_display_night">Naktis</string>
   <string name="live_display_night_summary">Naudoti tik nakties nustatymus</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->

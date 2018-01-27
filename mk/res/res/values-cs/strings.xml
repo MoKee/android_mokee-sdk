@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Systém MoKee</string>
-  <string name="permlab_publishCustomTile">vytvořit vlastní dlaždici do panelu rychlého nastavení</string>
-  <string name="permdesc_publishCustomTile">Umožňuje aplikaci publikovat rychlé nastavení dlaždice.</string>
-  <string name="permlab_modifyNetworkSettings">změnit systémové nastastavení sítě</string>
-  <string name="permdesc_modifyNetworkSettings">Povolit aplikaci měnit režim v letadle a nastavení mobilní datové sítě.</string>
-  <string name="permlab_modifySoundSettings">změnit systémové nastavení zvuku</string>
-  <string name="permdesc_modifySoundSettings">Umožňuje aplikaci provádět změny v nastavení zvuku režimu vyrušení.</string>
-  <string name="permlab_bindCustomTileListenerService">navázání na službu pro poslouchání oznámení</string>
-  <string name="permdesc_bindCustomTileListenerService">Umožňuje aplikaci navázat na nejvyšší úroveň rozhraní služby vlastních dlaždic.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">zobrazovat stav telefonu a datového připojení s podporou více SIM</string>
-  <string name="permdesc_readMSPhoneState">Umožňuje aplikaci zobrazit stav telefonu a datového připojení s podporou více SIM.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">upravovat stav telefonu a datového připojení s podporou více SIM</string>
-  <string name="permdesc_modifyMSPhoneState">Umožňuje aplikaci upravit stav telefonu a datového připojení s podporou více SIM.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">úprava systémových profilů</string>
   <string name="permdesc_modifyProfiles">Umožňuje aplikaci upravit systémové profily.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">použít hardware framework</string>
   <string name="permdesc_useHardwareFramework">Umožní aplikaci přistupovat přímo k hardware zařízení.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">přímo měnit budíky</string>
-  <string name="permdesc_write_alarms">Umožňuje aplikaci přidat, upravit nebo odstranit všechny z budíků.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">zobrazit naplánované budíky</string>
-  <string name="permdesc_manage_alarms">Umožňuje aplikaci zapnout nebo vypnout naplánované budíky.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">přístup k naplánovaným budíkům</string>
-  <string name="permdesc_read_alarms">Umožňuje aplikaci čtení Vašich naplánovaných budíků.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">změnit nastavení systému MK</string>
   <string name="permdesc_writeSettings">Umožňuje aplikaci měnit nastavení systému MK.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">změnit nastavení zabezpečení systému MK</string>
   <string name="permdesc_writeSecureSettings">Umožňuje aplikaci změnit nastavení zabezpečení systému MK. Není určeno pro běžné aplikace.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">spravovat permanetní úložiště</string>
-  <string name="permdesc_managePersistentStorage">Umožňuje aplikaci číst a zapisovat vlastnosti, které mohou přetrvat i po obnově do továrního nastavení.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Seznam vlastních dlaždic</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">přidávat a odebírat aplikace do chráněných</string>
   <string name="permdesc_protectedApp">Umožňuje aplikaci označit jiné aplikace jako chráněné a zamknout je.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay změněn na denní režim.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay změněn na noční režim.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay změněn na venkovní režim.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">přístup ke správě výkonu</string>
   <!-- Performance manager permission description -->

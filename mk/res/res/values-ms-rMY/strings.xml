@@ -18,41 +18,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Sistem MoKee</string>
-  <string name="permlab_publishCustomTile">cipta lantai kustom didalam panel seting segera</string>
-  <string name="permdesc_publishCustomTile">Benarkan aplikasi untuk paparkan lantai seting segera.</string>
-  <string name="permlab_modifyNetworkSettings">ubah seting sistem rangkaian</string>
-  <string name="permdesc_modifyNetworkSettings">Benarkan aplikasi untuk mengubahkan ke mod kapal terbang dan seting rangkaian data mudah alih.</string>
-  <string name="permlab_modifySoundSettings">ubah seting sistem bunyi</string>
-  <string name="permdesc_modifySoundSettings">Benarkan aplikasi mengubah ke seting mod gangguan bunyi.</string>
-  <string name="permlab_bindCustomTileListenerService">mengikat kepada servis kustom lantai</string>
-  <string name="permdesc_bindCustomTileListenerService">Benarkan aplikasi mengikat ke paparan tertinggi diatas servis lantai kustom.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">papar status peranti dan sambungan data bersama sokongan ke multi SIMs</string>
-  <string name="permdesc_readMSPhoneState">Benarkan aplikasi untuk papar status peranti dan sambungan data bersama sokongan multi SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">ubah status peranti dan sambungan data bersama sokongan ke multi SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Benarkan aplikasi untuk ubah status peranti dan sambungan data bersama sokongan ke multi SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">ubah sistem profil</string>
   <string name="permdesc_modifyProfiles">Benarkan aplikasi untuk ubah sistem profil.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">gunakan rangka perkakasan</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">terus tukar penggera</string>
-  <string name="permdesc_write_alarms">Benarkan aplikasi untuk tambah, ubahsuai atau hapus semua penggera anda.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">togel jadual penggera</string>
-  <string name="permdesc_manage_alarms">Benarkan aplikasi untuk aktif atau nyahaktif jadual penggera anda.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">akses jadual penggera</string>
-  <string name="permdesc_read_alarms">Benarkan aplikasi mengetahui jadual penggera anda.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">urus storan berterusan</string>
-  <string name="permdesc_managePersistentStorage">Benarkan aplikasi mengetahui atau mengolah yang mana melalui seting pengilang.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Lantai kustom</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">menambah dan mengalih keluar aplikasi kepada aplikasi yang dilindungi</string>
   <string name="permdesc_protectedApp">Benarkan aplikasi menanda aplikasi lain sebagai dilindungi dan dikunci.</string>
@@ -114,12 +86,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay telah ditukar kepada mod siang.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay telah ditukar kepada mod malam.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay telah ditukar kepada mod luar.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">akses pengurus pretasi</string>
   <!-- Performance manager permission description -->

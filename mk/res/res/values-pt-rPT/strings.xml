@@ -18,24 +18,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Sistema MoKee</string>
-  <string name="permlab_modifyNetworkSettings">alterar as definições de rede do sistema</string>
-  <string name="permlab_modifySoundSettings">alterar as definições de som do sistema</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modificar perfis do sistema</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">alterar diretamente os alarmes</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">alternar alarmes agendados</string>
-  <!-- Labels for the READ_ALARMS permission. -->
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modificar as definições do sistema MK</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">gerir armazenamento persistente</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
@@ -59,12 +47,6 @@
   <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_night">Noite</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->

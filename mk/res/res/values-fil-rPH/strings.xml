@@ -18,41 +18,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Sistema ng MoKee</string>
-  <string name="permlab_publishCustomTile">lumikha ng isang pasadyang tile sa loob ng panel ng mga mabilisang setting</string>
-  <string name="permdesc_publishCustomTile">Nagpapahintulot sa isang app upang maglathala ng isang tile ng mabilisang settings.</string>
-  <string name="permlab_modifyNetworkSettings">baguhin ang mga setting ng network ng sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Nagpapahintulot sa isang app na gumawa ng mga pagbabago sa airplane mode at mga setting ng network ng mobile data.</string>
-  <string name="permlab_modifySoundSettings">baguhin ang mga setting ng sistema ng tunog</string>
-  <string name="permdesc_modifySoundSettings">Nagpapahintulot sa isang app para gumawa ng mga pagbabago sa mode ng pagkaantala ng settings ng tunog.</string>
-  <string name="permlab_bindCustomTileListenerService">ilakip sa isang pasadyang tile ng serbisyo ng tagapakinig</string>
-  <string name="permdesc_bindCustomTileListenerService">Nagpapahintulot sa app upang ilakip sa interface ng nangungunang antas ng isang pasadyang tile ng serbisyo ng tagapakinig.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">tingnan ang estado ng telepono at koneksyon ng data na may suporta sa maramihang SIMs</string>
-  <string name="permdesc_readMSPhoneState">Nagpapahintulot sa isang app upang tingnan ang estado ng telepono at koneksyon ng data na may suporta sa maramihang SIMs.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">baguhin ang estado ng telepono at koneksyon ng data na may suporta sa maramihang SIMs</string>
-  <string name="permdesc_modifyMSPhoneState">Nagpapahintulot sa isang app upang baguhin ang estado ng telepono at koneksyon ng data na may suporta sa maramihang SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">baguhin ang mga profile ng sistema</string>
   <string name="permdesc_modifyProfiles">Nagpapahintulot sa isang app na baguhin ang mga profile ng sistema.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">gamitin ang balangkas ng hardware</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">direktang baguhin ang mga alarma</string>
-  <string name="permdesc_write_alarms">Nagpapahintulot sa isang app upang dagdagan, baguhin o burahin ang lahat ng iyong mga alarma.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">magpalipat-lipat ng mga nakaiskedyul na alarma</string>
-  <string name="permdesc_manage_alarms">Nagpapahintulot sa isang app upang i-on o i-off ang iyong mga nakaiskedyul na alarma.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">i-access ang mga nakaiskedyul na alarma</string>
-  <string name="permdesc_read_alarms">Nagpapahintulot sa isang app upang basahin ang iyong mga nakaiskedyul na alarma.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">pamahalaan ang nagpupumilit na imbakan</string>
-  <string name="permdesc_managePersistentStorage">Nagpapahintulot sa isang app na magbasa o magsulat ng mga katangian na maaaring magpumilit sa pamamagitan ng isang factory reset.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Tagapakinig ng pasadyang tile</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">idagdag at alisin ang mga app sa mga protektadong app</string>
   <string name="permdesc_protectedApp">Nagpapahintulot sa isang app upang markahan ang ibang mga app bilang protektado at ikandado ang mga ito.</string>
@@ -114,12 +86,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">Ang LiveDisplay ay nabago sa pang-araw na mode.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">Ang LiveDisplay ay nabago sa panggabing mode.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">Ang LiveDisplay ay nabago sa panlabas na mode.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">i-access ang tagapamahala ng gawa</string>
   <!-- Performance manager permission description -->

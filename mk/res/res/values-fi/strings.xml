@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee Järjestelmä</string>
-  <string name="permlab_publishCustomTile">Luo kustomoituja pikavalintoja tilapalkkiin</string>
-  <string name="permdesc_publishCustomTile">Sallii sovelluksen julkaista pikavalintoja.</string>
-  <string name="permlab_modifyNetworkSettings">muuta järjestelmän verkkoasetuksia</string>
-  <string name="permdesc_modifyNetworkSettings">Sallii sovellusten tehdä muutoksia lentokonetilaan sekä tiedonsiirron asetuksiin.</string>
-  <string name="permlab_modifySoundSettings">muuta järjestelmän ääniasetuksia</string>
-  <string name="permdesc_modifySoundSettings">Sallii sovelluksen tehdä muutoksia ääniasetuksiin.</string>
-  <string name="permlab_bindCustomTileListenerService">sido ilmoituskuuntelijapalveluun</string>
-  <string name="permdesc_bindCustomTileListenerService">Salli sovelluksen sitoa ylimpään tasoon</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">katso tuki monelle SIM-kortille</string>
-  <string name="permdesc_readMSPhoneState">katso tuki monelle SIM-kortille.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">katso tuki monelle SIM-kortille</string>
-  <string name="permdesc_modifyMSPhoneState">katso tuki monelle SIM-kortille.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">muokkaa järjestelmän profiileja</string>
   <string name="permdesc_modifyProfiles">Sallii sovelluksen muokata järjestelmän profiileja.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">käytä laitteiston kehystä</string>
   <string name="permdesc_useHardwareFramework">Sallii sovelluksen pääsyn MK-laitteiston kehykseen.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">muuta suoraan hälytyksiä</string>
-  <string name="permdesc_write_alarms">Sallii sovelluksen lisätä, muokata tai poistaa hälytyksiä.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">kytke ajastettuja hälytyksiä</string>
-  <string name="permdesc_manage_alarms">Salli sovelluksen kytkeä päälle tai pois ajastettuja hälytyksiä.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">pääsy ajastettuihin hälytyksiin</string>
-  <string name="permdesc_read_alarms">Salli sovelluksen kytkeä päälle tai pois ajastettuja hälytyksiä.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">muokkaa järjestelmän asetuksia</string>
   <string name="permdesc_writeSettings">Tämä käyttöoikeus sallii sovelluksen muokata järjestelmäasetuksia.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">muokkaa järjestelmän asetuksia</string>
   <string name="permdesc_writeSecureSettings">Sallii sovelluksen muokata MK turvajärjestelmäasetuksia. Ei käytössä tavallisille sovelluksille.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">hallitse tallennustilaa</string>
-  <string name="permdesc_managePersistentStorage">Sallii soveluksen kirjoittaa tai lukea jotka asetuksia tehdaspalautuksen jälkeen.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Pikavalinnan kuuntelija</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">lisää ja poista suojattuihin sovelluksiin</string>
   <string name="permdesc_protectedApp">Sallii sovelluksen merkitä muihin sovelluksiin ja lukita ne.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay muutettiin päivä-tilaan.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay muutettiin Yö-tilaan.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay muuttui ulkoilma-tilaan.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">pääsy suorityskyvyn hallintaan</string>
   <!-- Performance manager permission description -->

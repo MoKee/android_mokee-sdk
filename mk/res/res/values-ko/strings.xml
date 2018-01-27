@@ -18,46 +18,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee 시스템</string>
-  <string name="permlab_publishCustomTile">빠른 설정 패널에서 사용자 정의 타일 만들기</string>
-  <string name="permdesc_publishCustomTile">앱은 퀵패널 타일을 게시 할 수 있습니다.</string>
-  <string name="permlab_modifyNetworkSettings">시스템 네트워크 설정 변경</string>
-  <string name="permdesc_modifyNetworkSettings">비행기 모드 및 모바일 데이터 네트워크 설정을 변경 하려면 응용을 프로그램을 수 있습니다.</string>
-  <string name="permlab_modifySoundSettings">시스템 사운드 설정을 변경합니다</string>
-  <string name="permdesc_modifySoundSettings">앱을 중단 모드 사운드 설정을 변경할 수 있습니다.</string>
-  <string name="permlab_bindCustomTileListenerService">알림 수신기 서비스 사용</string>
-  <string name="permdesc_bindCustomTileListenerService">앱이 사용자 정의 타일 리스너 서비스에 대한 최상위 인터페이스를 사용하도록 허용합니다.</string>
-  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">보기 여러 심즈를 지 원하는 휴대 전화 상태 및 데이터 연결</string>
-  <string name="permdesc_readMSPhoneState">앱을 여러 심즈를 지 원하는 휴대 전화 상태 및 데이터 연결을 볼 수 있습니다.</string>
-  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">여러 심즈를 지 원하는 휴대 전화 상태 및 데이터 연결 수정</string>
-  <string name="permdesc_modifyMSPhoneState">앱을 여러 심즈를 지 원하는 휴대 전화 상태 및 데이터 연결을 볼 수 있습니다.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">시스템 프로필 수정</string>
   <string name="permdesc_modifyProfiles">앱이 시스템 프로파일을 수정할 수 있습니다.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">하드웨어 프레임워크 사용</string>
   <string name="permdesc_useHardwareFramework">앱이 MK 하드웨어 프레임워크에 접근할 수 있도록 허용합니다.</string>
-  <!-- Labels for the WRITE_ALARMS permission. -->
-  <string name="permlab_write_alarms">직접 변경 경보</string>
-  <string name="permdesc_write_alarms">추가, 수정 또는 삭제 모든 당신의 경보의 애플 리 케이 션을 수 있습니다.</string>
-  <!-- Labels for the MANAGE_ALARMS permission. -->
-  <string name="permlab_manage_alarms">일정된 알람 설정/해제</string>
-  <string name="permdesc_manage_alarms">앱을 예정 된 경보기를 켜거나 끌 수 있습니다.</string>
-  <!-- Labels for the READ_ALARMS permission. -->
-  <string name="permlab_read_alarms">액세스 예약 된 경보</string>
-  <string name="permdesc_read_alarms">예약 된 경보기를 읽을 애플 리 케이 션을 수 있습니다.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">MK 시스템 설정 수정</string>
   <string name="permdesc_writeSettings">MK 시스템 설정을 수정 하는 애플 리 케이 션을 수 있습니다.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">MK 보안 시스템 설정 수정</string>
   <string name="permdesc_writeSecureSettings">MK 보안 시스템 설정을 수정 하는 애플 리 케이 션을 수 있습니다. 아니라 사용을 위해 일반 애플 리 케이 션에 의해.</string>
-  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">영구 저장소 관리</string>
-  <string name="permdesc_managePersistentStorage">읽기 또는 쓰기 thrοugh는 공장 초기화를 지속 될 수 있습니다 속성을 응용을 프로그램 수 있습니다.</string>
-  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">커스텀 타일 경청자</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">추가 보호 된 응용 프로그램에 응용 프로그램을 제거</string>
   <string name="permdesc_protectedApp">보호된 다른 응용 프로그램을 표시하고 그들을 잠글 수 있도록 허용합니다.</string>
@@ -119,12 +91,6 @@
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay 주간 모드 변경.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay 야간 모드 변경.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay 야외 모드 변경.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">액세스 성능 관리자</string>
   <!-- Performance manager permission description -->
