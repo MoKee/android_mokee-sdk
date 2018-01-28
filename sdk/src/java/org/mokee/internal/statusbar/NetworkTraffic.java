@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.statusbar;
+package org.mokee.internal.statusbar;
 
 import android.animation.ArgbEvaluator;
 import android.content.BroadcastReceiver;
@@ -40,9 +40,9 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
-import lineageos.providers.LineageSettings;
+import mokee.providers.MKSettings;
 
-import org.lineageos.platform.internal.R;
+import org.mokee.platform.internal.R;
 
 public class NetworkTraffic extends TextView {
     private static final String TAG = "NetworkTraffic";
@@ -107,8 +107,8 @@ public class NetworkTraffic extends TextView {
         mObserver = new SettingsObserver(mTrafficHandler);
     }
 
-    private LineageStatusBarItem.DarkReceiver mDarkReceiver =
-            new LineageStatusBarItem.DarkReceiver() {
+    private MKStatusBarItem.DarkReceiver mDarkReceiver =
+            new MKStatusBarItem.DarkReceiver() {
         public void onDarkChanged(Rect area, float darkIntensity, int tint) {
             mIconTint = (int) ArgbEvaluator.getInstance().evaluate(darkIntensity,
                     mLightModeFillColor, mDarkModeFillColor);
@@ -121,8 +121,8 @@ public class NetworkTraffic extends TextView {
         }
     };
 
-    private LineageStatusBarItem.VisibilityReceiver mVisibilityReceiver =
-            new LineageStatusBarItem.VisibilityReceiver() {
+    private MKStatusBarItem.VisibilityReceiver mVisibilityReceiver =
+            new MKStatusBarItem.VisibilityReceiver() {
         public void onVisibilityChanged(boolean isVisible) {
             if (mNetworkTrafficIsVisible != isVisible) {
                 mNetworkTrafficIsVisible = isVisible;
@@ -135,8 +135,8 @@ public class NetworkTraffic extends TextView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        LineageStatusBarItem.Manager manager =
-                LineageStatusBarItem.findManager((View) this);
+        MKStatusBarItem.Manager manager =
+                MKStatusBarItem.findManager((View) this);
         manager.addDarkReceiver(mDarkReceiver);
         manager.addVisibilityReceiver(mVisibilityReceiver);
 
@@ -269,17 +269,17 @@ public class NetworkTraffic extends TextView {
 
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
-            resolver.registerContentObserver(LineageSettings.Secure.getUriFor(
-                    LineageSettings.Secure.NETWORK_TRAFFIC_MODE),
+            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
+                    MKSettings.Secure.NETWORK_TRAFFIC_MODE),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.Secure.getUriFor(
-                    LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE),
+            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
+                    MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.Secure.getUriFor(
-                    LineageSettings.Secure.NETWORK_TRAFFIC_UNITS),
+            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
+                    MKSettings.Secure.NETWORK_TRAFFIC_UNITS),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(LineageSettings.Secure.getUriFor(
-                    LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS),
+            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
+                    MKSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS),
                     false, this, UserHandle.USER_ALL);
         }
 
@@ -302,12 +302,12 @@ public class NetworkTraffic extends TextView {
     private void updateSettings() {
         ContentResolver resolver = mContext.getContentResolver();
 
-        mMode = LineageSettings.Secure.getIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
-        mAutoHide = LineageSettings.Secure.getIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
-        mUnits = LineageSettings.Secure.getIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, /* Mbps */ 1,
+        mMode = MKSettings.Secure.getIntForUser(resolver,
+                MKSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
+        mAutoHide = MKSettings.Secure.getIntForUser(resolver,
+                MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
+        mUnits = MKSettings.Secure.getIntForUser(resolver,
+                MKSettings.Secure.NETWORK_TRAFFIC_UNITS, /* Mbps */ 1,
                 UserHandle.USER_CURRENT);
 
         switch (mUnits) {
@@ -328,8 +328,8 @@ public class NetworkTraffic extends TextView {
                 break;
         }
 
-        mShowUnits = LineageSettings.Secure.getIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1,
+        mShowUnits = MKSettings.Secure.getIntForUser(resolver,
+                MKSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1,
                 UserHandle.USER_CURRENT) == 1;
 
         if (mMode != MODE_DISABLED) {
