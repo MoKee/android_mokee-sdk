@@ -826,17 +826,6 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
-         * Whether to show the traffic in the status bar
-         * @hide
-         * The value is int (0: Hide  or 1: Only Outgoing 2: Only Incoming 3: both).
-         */
-        public static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
-
-        /** @hide */
-        public static final Validator STATUS_BAR_NETWORK_TRAFFIC_STYLE_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 3);
-
-        /**
          * Height of navigation bar buttons
          * @hide
          */
@@ -2050,7 +2039,6 @@ public final class MKSettings {
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
                 MKSettings.System.RECEIVE_PUSH_NOTIFICATIONS,
                 MKSettings.System.AEGIS_WARDEN_FORCE_STOP,
-                MKSettings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE,
                 MKSettings.System.NAVIGATION_BAR_HEIGHT,
                 MKSettings.System.NAV_BUTTONS,
                 MKSettings.System.KEY_HOME_LONG_PRESS_ACTION,
@@ -2177,7 +2165,6 @@ public final class MKSettings {
         static {
             VALIDATORS.put(RECEIVE_PUSH_NOTIFICATIONS, RECEIVE_PUSH_NOTIFICATIONS_VALIDATOR);
             VALIDATORS.put(AEGIS_WARDEN_FORCE_STOP, AEGIS_WARDEN_FORCE_STOP_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_NETWORK_TRAFFIC_STYLE, STATUS_BAR_NETWORK_TRAFFIC_STYLE_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_HEIGHT, NAVIGATION_BAR_HEIGHT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PLAY_QUEUE, NOTIFICATION_PLAY_QUEUE_VALIDATOR);
             VALIDATORS.put(HIGH_TOUCH_SENSITIVITY_ENABLE,
