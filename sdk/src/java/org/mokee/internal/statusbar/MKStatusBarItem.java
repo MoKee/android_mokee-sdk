@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.statusbar;
+package org.mokee.internal.statusbar;
 
 import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewParent;
 
-public class LineageStatusBarItem {
+public class MKStatusBarItem {
 
     public interface Manager {
         public void addDarkReceiver(DarkReceiver darkReceiver);
@@ -36,7 +36,7 @@ public class LineageStatusBarItem {
         public void onVisibilityChanged(boolean isVisible);
     }
 
-    // Locate parent LineageStatusBarItem.Manager
+    // Locate parent MKStatusBarItem.Manager
     public static Manager findManager(View v) {
         ViewParent parent = v.getParent();
         if (parent == null) {
