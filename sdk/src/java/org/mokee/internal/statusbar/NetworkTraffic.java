@@ -303,7 +303,7 @@ public class NetworkTraffic extends TextView {
         ContentResolver resolver = mContext.getContentResolver();
 
         mMode = MKSettings.Secure.getIntForUser(resolver,
-                MKSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
+                MKSettings.Secure.NETWORK_TRAFFIC_MODE, 3, UserHandle.USER_CURRENT);
         mAutoHide = MKSettings.Secure.getIntForUser(resolver,
                 MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
         mUnits = MKSettings.Secure.getIntForUser(resolver,
