@@ -131,4 +131,5 @@
   <string name="unknown">Sconosciuto</string>
   <!-- Long-press back kill application -->
   <string name="app_killed_message">Applicazione chiusa</string>
+  <!-- Status bar network traffic monitor strings -->
 </resources>

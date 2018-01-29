@@ -125,4 +125,5 @@
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Hindi alam</string>
   <!-- Long-press back kill application -->
+  <!-- Status bar network traffic monitor strings -->
 </resources>

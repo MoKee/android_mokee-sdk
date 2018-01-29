@@ -131,4 +131,5 @@
   <string name="unknown">未知</string>
   <!-- Long-press back kill application -->
   <string name="app_killed_message">应用程序已终止</string>
+  <!-- Status bar network traffic monitor strings -->
 </resources>

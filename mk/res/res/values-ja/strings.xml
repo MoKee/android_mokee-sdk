@@ -112,4 +112,5 @@
   <!-- General purpose use "unknown" string -->
   <string name="unknown">不明</string>
   <!-- Long-press back kill application -->
+  <!-- Status bar network traffic monitor strings -->
 </resources>
