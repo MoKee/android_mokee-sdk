@@ -827,16 +827,6 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
-         * Height of navigation bar buttons
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
-
-        /** @hide */
-        public static final Validator NAVIGATION_BAR_HEIGHT_VALIDATOR =
-                new DiscreteValueValidator(new String[] {"56", "52", "48", "44", "40", "36", "32", "28", "24", "20", "0"});
-
-        /**
          * Whether to attach a queue to media notifications.
          * 0 = 0ff, 1 = on
          */
@@ -2040,7 +2030,6 @@ public final class MKSettings {
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
                 MKSettings.System.RECEIVE_PUSH_NOTIFICATIONS,
                 MKSettings.System.AEGIS_WARDEN_FORCE_STOP,
-                MKSettings.System.NAVIGATION_BAR_HEIGHT,
                 MKSettings.System.NAV_BUTTONS,
                 MKSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 MKSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
@@ -2166,7 +2155,6 @@ public final class MKSettings {
         static {
             VALIDATORS.put(RECEIVE_PUSH_NOTIFICATIONS, RECEIVE_PUSH_NOTIFICATIONS_VALIDATOR);
             VALIDATORS.put(AEGIS_WARDEN_FORCE_STOP, AEGIS_WARDEN_FORCE_STOP_VALIDATOR);
-            VALIDATORS.put(NAVIGATION_BAR_HEIGHT, NAVIGATION_BAR_HEIGHT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PLAY_QUEUE, NOTIFICATION_PLAY_QUEUE_VALIDATOR);
             VALIDATORS.put(HIGH_TOUCH_SENSITIVITY_ENABLE,
                     HIGH_TOUCH_SENSITIVITY_ENABLE_VALIDATOR);
