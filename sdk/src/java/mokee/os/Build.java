@@ -91,8 +91,8 @@ public class Build {
          * <ul>
          * <li>Profiles API via {@link mokee.app.ProfileManager}
          * <li>Hardware Abstraction Framework Access via
-         * {@link mokee.hardware.LineageHardwareManager} (Not for use by 3rd parties)
-         * <li>Introductory Settings Provider {@link mokee.providers.LineageSettings}
+         * {@link mokee.hardware.MKHardwareManager} (Not for use by 3rd parties)
+         * <li>Introductory Settings Provider {@link mokee.providers.MKSettings}
          * </ul>
          */
         public static final int BOYSENBERRY = 2;
