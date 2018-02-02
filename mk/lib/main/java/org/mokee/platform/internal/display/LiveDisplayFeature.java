@@ -23,9 +23,10 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.util.Log;
 
+import com.android.server.twilight.TwilightState;
+
 import org.mokee.platform.internal.common.UserContentObserver;
 import org.mokee.platform.internal.display.LiveDisplayService.State;
-import org.mokee.platform.internal.display.TwilightTracker.TwilightState;
 
 import java.io.PrintWriter;
 import java.util.BitSet;

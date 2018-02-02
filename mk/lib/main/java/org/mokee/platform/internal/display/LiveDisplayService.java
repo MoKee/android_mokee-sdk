@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
  * Copyright (C) 2016 The MoKee Open Source Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,11 +37,12 @@ import android.view.Display;
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
 import com.android.server.power.BatterySaverPolicy.ServiceType;
+import com.android.server.twilight.TwilightListener;
+import com.android.server.twilight.TwilightManager;
+import com.android.server.twilight.TwilightState;
 
 import org.mokee.platform.internal.MKSystemService;
 import org.mokee.platform.internal.common.UserContentObserver;
-import org.mokee.platform.internal.display.TwilightTracker.TwilightListener;
-import org.mokee.platform.internal.display.TwilightTracker.TwilightState;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -82,7 +84,7 @@ public class LiveDisplayService extends MKSystemService {
 
     private DisplayManager mDisplayManager;
     private ModeObserver mModeObserver;
-    private final TwilightTracker mTwilightTracker;
+    private TwilightManager mTwilightManager;
 
     private boolean mAwaitingNudge = true;
     private boolean mSunset = false;
@@ -131,8 +133,6 @@ public class LiveDisplayService extends MKSystemService {
                 Process.THREAD_PRIORITY_DEFAULT, false /*allowIo*/);
         mHandlerThread.start();
         mHandler = new Handler(mHandlerThread.getLooper());
-
-        mTwilightTracker = new TwilightTracker(context);
     }
 
     @Override
@@ -203,8 +203,9 @@ public class LiveDisplayService extends MKSystemService {
             mState.mLowPowerMode =
                     pmi.getLowPowerState(SERVICE_TYPE_DUMMY).globalBatterySaverEnabled;
 
-            mTwilightTracker.registerListener(mTwilightListener, mHandler);
-            mState.mTwilight = mTwilightTracker.getCurrentState();
+            mTwilightManager = getLocalService(TwilightManager.class);
+            mTwilightManager.registerListener(mTwilightListener, mHandler);
+            mState.mTwilight = mTwilightManager.getLastTwilightState();
 
             if (mConfig.hasModeSupport()) {
                 mModeObserver = new ModeObserver(mHandler);
@@ -374,7 +375,7 @@ public class LiveDisplayService extends MKSystemService {
 
         @Override
         public boolean isNight() {
-            final TwilightState twilight = mTwilightTracker.getCurrentState();
+            final TwilightState twilight = mTwilightManager.getLastTwilightState();
             return twilight != null && twilight.isNight();
         }
     };
@@ -466,8 +467,8 @@ public class LiveDisplayService extends MKSystemService {
     // Night watchman
     private final TwilightListener mTwilightListener = new TwilightListener() {
         @Override
-        public void onTwilightStateChanged() {
-            mState.mTwilight = mTwilightTracker.getCurrentState();
+        public void onTwilightStateChanged(TwilightState state) {
+            mState.mTwilight = state;
             updateFeatures(TWILIGHT_CHANGED);
             nudge();
         }
@@ -512,7 +513,7 @@ public class LiveDisplayService extends MKSystemService {
      * @param state
      */
     private void nudge() {
-        final TwilightState twilight = mTwilightTracker.getCurrentState();
+        final TwilightState twilight = mTwilightManager.getLastTwilightState();
         if (!mAwaitingNudge || twilight == null) {
             return;
         }
