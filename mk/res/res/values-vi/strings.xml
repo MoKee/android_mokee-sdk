@@ -80,17 +80,17 @@
   <string name="live_display_night_summary">Sử dụng cài đặt chỉ ban đêm</string>
   <string name="live_display_outdoor">Ngoài trời (Mặt trời sáng chói)</string>
   <string name="live_display_outdoor_summary">Sử dụng cài đặt chỉ ngoài trời</string>
-  <string name="live_display_hint">LiveDisplay có thể giúp làm giảm mỏi mắt và giúp bạn ngủ vào ban đêm. Click vào đây để thử nó!</string>
-  <string name="accessibility_quick_settings_live_display_off">LiveDisplay tắt.</string>
-  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: chế độ tự động.</string>
-  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: chế độ ngày.</string>
-  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: chế độ ban đêm.</string>
-  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: chế độ ngoài trời.</string>
-  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay tắt.</string>
-  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay thay đổi chế độ tự động.</string>
-  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay thay đổi chế độ ngày.</string>
-  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay thay đổi chế độ ban đêm.</string>
-  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay thay đổi chế độ ngoài trời.</string>
+  <string name="live_display_hint">Chế độ Đọc sách có thể giúp làm giảm mỏi mắt và hạn chế ánh sáng xanh. Chạm vào đây để thử!</string>
+  <string name="accessibility_quick_settings_live_display_off">Đọc sách tắt.</string>
+  <string name="accessibility_quick_settings_live_display_auto">Đọc sách: tự động.</string>
+  <string name="accessibility_quick_settings_live_display_day">Đọc sách: ngày.</string>
+  <string name="accessibility_quick_settings_live_display_night">Đọc sách: đêm.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">Đọc sách: ngoài trời.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">Đọc sách tắt.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">Đọc sách thay đổi chế độ tự động.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">Đọc sách thay đổi chế độ ngày.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">Đọc sách thay đổi chế độ ban đêm.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">Đọc sách thay đổi chế độ ngoài trời.</string>
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">truy cập hiệu quả quản lý</string>
   <!-- Performance manager permission description -->
@@ -113,8 +113,8 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Cho phép một ứng dụng để đọc nội dung từ cơ sở dữ liệu sử dụng dữ liệu.</string>
   <!-- LiveDisplay manager permission -->
-  <string name="permlab_manageLiveDisplay">quản lý cài đặt LiveDisplay</string>
-  <string name="permdesc_manageLiveDisplay">Cho phép một ứng dụng để cấu hình thiết đặt nâng cao.</string>
+  <string name="permlab_manageLiveDisplay">quản lý cài đặt Đọc sách</string>
+  <string name="permdesc_manageLiveDisplay">Cho phép ứng dụng thiết lập cấu hình nâng cao.</string>
   <!-- MKAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">quan sát phiên âm thanh thay đổi</string>
   <string name="permdesc_observe_audio_sessions">Cho phép một ứng dụng để quan sát dòng suối âm thanh được tạo ra và bị phá hủy.</string>
