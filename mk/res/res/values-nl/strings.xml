@@ -132,4 +132,6 @@
   <!-- Long-press back kill application -->
   <string name="app_killed_message">Toepassing beëindigd</string>
   <!-- Status bar network traffic monitor strings -->
+  <!-- Accent colors -->
+  <string name="accent_cyan">Cyaan</string>
 </resources>

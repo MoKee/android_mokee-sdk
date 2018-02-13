@@ -129,4 +129,6 @@
   <string name="unknown">Neznano</string>
   <!-- Long-press back kill application -->
   <!-- Status bar network traffic monitor strings -->
+  <!-- Accent colors -->
+  <string name="accent_cyan">Cijan</string>
 </resources>

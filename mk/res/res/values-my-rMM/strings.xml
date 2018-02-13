@@ -65,4 +65,6 @@
   <string name="unknown">မသိ</string>
   <!-- Long-press back kill application -->
   <!-- Status bar network traffic monitor strings -->
+  <!-- Accent colors -->
+  <string name="accent_cyan">အစိမ်းနုရောင်</string>
 </resources>

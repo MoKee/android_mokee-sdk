@@ -113,4 +113,6 @@
   <string name="unknown">不明</string>
   <!-- Long-press back kill application -->
   <!-- Status bar network traffic monitor strings -->
+  <!-- Accent colors -->
+  <string name="accent_cyan">水色</string>
 </resources>

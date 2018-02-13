@@ -66,4 +66,6 @@
   <string name="unknown">Desconhecido</string>
   <!-- Long-press back kill application -->
   <!-- Status bar network traffic monitor strings -->
+  <!-- Accent colors -->
+  <string name="accent_cyan">Azul-turquesa</string>
 </resources>
