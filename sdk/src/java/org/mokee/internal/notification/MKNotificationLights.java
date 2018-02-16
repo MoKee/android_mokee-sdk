@@ -64,6 +64,7 @@ public final class MKNotificationLights {
     private boolean mAutoGenerateNotificationColor;
     private boolean mScreenOnEnabled;
     private boolean mZenAllowLights;
+    private boolean mNotificationLedEnabled;
     private int mNotificationLedBrightnessLevel;
     private int mNotificationLedBrightnessLevelZen;
     private int mDefaultNotificationColor;
@@ -269,8 +270,14 @@ public final class MKNotificationLights {
 
         final boolean enableLed;
         if (forcedOn) {
-            // Forced on always enables
+            // Forced on always enables.
+            // This is even higher priority than mNotificationLedEnabled (user
+            // led on/off setting) so that the battery light picker can still
+            // be used if notification led is turned off in settings.
             enableLed = true;
+        } else if (!mNotificationLedEnabled) {
+            // Notification light on/off user setting
+            enableLed = false;
         } else if (!mZenAllowLights && mZenMode != Global.ZEN_MODE_OFF) {
             // DnD configured to disable lights in all modes (except when off).
             enableLed = false;
@@ -336,6 +343,9 @@ public final class MKNotificationLights {
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
 
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.NOTIFICATION_LIGHT_PULSE),
+                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(MKSettings.System.getUriFor(
                     MKSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR),
                     false, this, UserHandle.USER_ALL);
@@ -382,6 +392,11 @@ public final class MKNotificationLights {
         private void update() {
             ContentResolver resolver = mContext.getContentResolver();
             Resources res = mContext.getResources();
+
+            // Whether the notification led is enabled
+            mNotificationLedEnabled = Settings.System.getIntForUser(resolver,
+                    Settings.System.NOTIFICATION_LIGHT_PULSE,
+                    0, UserHandle.USER_CURRENT) != 0;
 
             // Automatically pick a color for LED if not set
             mAutoGenerateNotificationColor = MKSettings.System.getIntForUser(resolver,
