@@ -171,7 +171,12 @@ public class Build {
         public static final int GUAVA = 7;
 
         /**
-         * Unreleased preliminary version starting from MK80.1
+         * Unreleased preliminary version starting from MK81
+         * <p>Applications targeting this or a later version will get access to these
+         * new features!</p>
+         * <ul>
+         * <li>Change system colors via {@link mokee.app.StyleInterface}
+         * </ul>
          */
         public static final int HACKBERRY = 8;
     }

@@ -82,6 +82,7 @@
         <item>org.mokee.platform.internal.MKWeatherManagerService</item>
         <item>org.mokee.platform.internal.display.LiveDisplayService</item>
         <item>org.mokee.platform.internal.MKAudioService</item>
+        <item>org.mokee.platform.internal.StyleInterfaceService</item>
     </string-array>
 
     <!-- The MKSystemServer class that is invoked from Android's SystemServer -->

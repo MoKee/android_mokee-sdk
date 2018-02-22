@@ -211,6 +211,7 @@ package mokee.hardware {
     method public boolean isAutomaticOutdoorModeEnabled();
     method public boolean isCABCEnabled();
     method public boolean isColorEnhancementEnabled();
+    method public boolean isNightModeEnabled();
     method public boolean setAutoContrastEnabled(boolean);
     method public boolean setAutomaticOutdoorModeEnabled(boolean);
     method public boolean setCABCEnabled(boolean);
@@ -220,7 +221,6 @@ package mokee.hardware {
     method public boolean setMode(int);
     method public boolean setNightColorTemperature(int);
     method public boolean setPictureAdjustment(mokee.hardware.HSIC);
-    method public boolean isNightModeEnabled();
     field public static final int ADJUSTMENT_CONTRAST = 3; // 0x3
     field public static final int ADJUSTMENT_HUE = 0; // 0x0
     field public static final int ADJUSTMENT_INTENSITY = 2; // 0x2
@@ -357,6 +357,7 @@ package mokee.platform {
     ctor public Manifest.permission();
     field public static final java.lang.String ACCESS_WEATHER_MANAGER = "mokee.permission.ACCESS_WEATHER_MANAGER";
     field public static final java.lang.String BIND_WEATHER_PROVIDER_SERVICE = "mokee.permission.BIND_WEATHER_PROVIDER_SERVICE";
+    field public static final java.lang.String CHANGE_STYLE = "mokee.permission.CHANGE_STYLE";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "mokee.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MANAGE_LIVEDISPLAY = "mokee.permission.MANAGE_LIVEDISPLAY";
     field public static final java.lang.String MANAGE_REMOTE_PREFERENCES = "mokee.permission.MANAGE_REMOTE_PREFERENCES";
@@ -401,6 +402,10 @@ package mokee.platform {
 
   public static final class R.bool {
     ctor public R.bool();
+  }
+
+  public static final class R.dimen {
+    ctor public R.dimen();
   }
 
   public static final class R.drawable {
@@ -796,6 +801,8 @@ package mokee.providers {
     field public static final java.lang.String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
     field public static final java.lang.String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
     field public static final java.lang.String BATTERY_LIGHT_PULSE = "battery_light_pulse";
+    field public static final java.lang.String BERRY_CURRENT_ACCENT = "berry_current_accent";
+    field public static final java.lang.String BERRY_GLOBAL_STYLE = "berry_global_style";
     field public static final java.lang.String BLUETOOTH_ACCEPT_ALL_FILES = "bluetooth_accept_all_files";
     field public static final java.lang.String CALL_RECORDING_FORMAT = "call_recording_format";
     field public static final java.lang.String CAMERA_LAUNCH = "camera_launch";
@@ -984,6 +991,31 @@ package mokee.providers {
   public static final class WeatherContract.WeatherColumns.WindSpeedUnit {
     field public static final int KPH = 1; // 0x1
     field public static final int MPH = 2; // 0x2
+  }
+
+}
+
+package mokee.style {
+
+  public class StyleInterface {
+    method public static mokee.style.StyleInterface getInstance(android.content.Context);
+    method public mokee.style.Suggestion getSuggestion(android.graphics.Bitmap, int[]);
+    method public boolean setAccent(java.lang.String);
+    method public boolean setGlobalStyle(int);
+    field public static final java.lang.String ACCENT_DEFAULT = "mokee";
+    field public static final java.lang.String CHANGE_STYLE_SETTINGS_PERMISSION = "mokee.permission.CHANGE_STYLE";
+    field public static final int STYLE_GLOBAL_AUTO_DAYTIME = 1; // 0x1
+    field public static final int STYLE_GLOBAL_AUTO_WALLPAPER = 0; // 0x0
+    field public static final int STYLE_GLOBAL_DARK = 3; // 0x3
+    field public static final int STYLE_GLOBAL_LIGHT = 2; // 0x2
+  }
+
+  public class Suggestion implements android.os.Parcelable {
+    ctor public Suggestion(int, int);
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public final int globalStyle;
+    field public final int selectedAccent;
   }
 
 }
