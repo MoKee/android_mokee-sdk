@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2018 The LineageOS Project
+ * Copyright (c) 2018 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal;
+package org.mokee.platform.internal;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -32,17 +33,17 @@ import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.util.Log;
 
-import lineageos.app.LineageContextConstants;
-import lineageos.providers.LineageSettings;
-import lineageos.style.IStyleInterface;
-import lineageos.style.StyleInterface;
-import lineageos.style.Suggestion;
-import lineageos.util.palette.Palette;
+import mokee.app.MKContextConstants;
+import mokee.providers.MKSettings;
+import mokee.style.IStyleInterface;
+import mokee.style.StyleInterface;
+import mokee.style.Suggestion;
+import mokee.util.palette.Palette;
 
 /** @hide */
-public class StyleInterfaceService extends LineageSystemService {
-    private static final String TAG = "LineageStyleInterfaceService";
-    private static final String ACCENT_METADATA_COLOR = "lineage_berry_accent_preview";
+public class StyleInterfaceService extends MKSystemService {
+    private static final String TAG = "MKStyleInterfaceService";
+    private static final String ACCENT_METADATA_COLOR = "mokee_berry_accent_preview";
     private static final int COLOR_DEFAULT = Color.BLACK;
 
     private Context mContext;
@@ -52,17 +53,17 @@ public class StyleInterfaceService extends LineageSystemService {
     public StyleInterfaceService(Context context) {
         super(context);
         mContext = context;
-        if (context.getPackageManager().hasSystemFeature(LineageContextConstants.Features.STYLES)) {
-            publishBinderService(LineageContextConstants.LINEAGE_STYLE_INTERFACE, mService);
+        if (context.getPackageManager().hasSystemFeature(MKContextConstants.Features.STYLES)) {
+            publishBinderService(MKContextConstants.MK_STYLE_INTERFACE, mService);
         } else {
-            Log.wtf(TAG, "Lineage profile service started by system server but feature xml not" +
+            Log.wtf(TAG, "MK profile service started by system server but feature xml not" +
                     " declared. Not publishing binder service!");
         }
     }
 
     @Override
     public String getFeatureDeclaration() {
-        return LineageContextConstants.Features.STYLES;
+        return MKContextConstants.Features.STYLES;
     }
 
     @Override
@@ -77,8 +78,8 @@ public class StyleInterfaceService extends LineageSystemService {
     }
 
     private boolean setGlobalStyleInternal(int mode) {
-        return LineageSettings.System.putInt(mContext.getContentResolver(),
-                LineageSettings.System.BERRY_GLOBAL_STYLE, mode);
+        return MKSettings.System.putInt(mContext.getContentResolver(),
+                MKSettings.System.BERRY_GLOBAL_STYLE, mode);
     }
 
     private boolean setAccentInternal(String pkgName) {
@@ -90,8 +91,8 @@ public class StyleInterfaceService extends LineageSystemService {
         int userId = UserHandle.myUserId();
 
         // Disable current accent
-        String currentAccent = LineageSettings.System.getString(mContext.getContentResolver(),
-                LineageSettings.System.BERRY_CURRENT_ACCENT);
+        String currentAccent = MKSettings.System.getString(mContext.getContentResolver(),
+                MKSettings.System.BERRY_CURRENT_ACCENT);
         try {
             mOverlayService.setEnabled(currentAccent, false, userId);
         } catch (RemoteException e) {
@@ -99,15 +100,15 @@ public class StyleInterfaceService extends LineageSystemService {
         }
 
         if (StyleInterface.ACCENT_DEFAULT.equals(pkgName)) {
-            return LineageSettings.System.putString(mContext.getContentResolver(),
-                    LineageSettings.System.BERRY_CURRENT_ACCENT, "");
+            return MKSettings.System.putString(mContext.getContentResolver(),
+                    MKSettings.System.BERRY_CURRENT_ACCENT, "");
         }
 
         // Enable new one
         try {
             mOverlayService.setEnabled(pkgName, true, userId);
-            return LineageSettings.System.putString(mContext.getContentResolver(),
-                    LineageSettings.System.BERRY_CURRENT_ACCENT, pkgName);
+            return MKSettings.System.putString(mContext.getContentResolver(),
+                    MKSettings.System.BERRY_CURRENT_ACCENT, pkgName);
         } catch (RemoteException e) {
             Log.e(TAG, "Failed to enable new accent", e);
         }

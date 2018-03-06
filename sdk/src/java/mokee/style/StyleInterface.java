@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lineageos.style;
+package mokee.style;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -23,7 +23,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-import lineageos.app.LineageContextConstants;
+import mokee.app.MKContextConstants;
 
 public class StyleInterface {
 
@@ -61,7 +61,7 @@ public class StyleInterface {
      *
      * @see #setAccent
      */
-    public static final String ACCENT_DEFAULT = "lineageos";
+    public static final String ACCENT_DEFAULT = "mokee";
 
     /**
      * Allows an application to change system style.
@@ -69,7 +69,7 @@ public class StyleInterface {
      * it at runtime as any other dangerous permission
      */
     public static final String CHANGE_STYLE_SETTINGS_PERMISSION =
-            "lineageos.permission.CHANGE_STYLE";
+            "mokee.permission.CHANGE_STYLE";
 
     private static final String TAG = "StyleInterface";
 
@@ -87,7 +87,7 @@ public class StyleInterface {
         }
         sService = getService();
         if (context.getPackageManager().hasSystemFeature(
-                LineageContextConstants.Features.STYLES) && sService == null) {
+                MKContextConstants.Features.STYLES) && sService == null) {
             throw new RuntimeException("Unable to get StyleInterfaceService. The service" +
                     " either crashed, was not started, or the interface has been called to early" +
                     " in SystemServer init");
@@ -95,7 +95,7 @@ public class StyleInterface {
     }
 
     /**
-     * Get or create an instance of the {@link lineageos.app.StyleInterface}
+     * Get or create an instance of the {@link mokee.app.StyleInterface}
      * @param context
      * @return {@link StyleInterface}
      */
@@ -111,7 +111,7 @@ public class StyleInterface {
         if (sService != null) {
             return sService;
         }
-        IBinder b = ServiceManager.getService(LineageContextConstants.LINEAGE_STYLE_INTERFACE);
+        IBinder b = ServiceManager.getService(MKContextConstants.MK_STYLE_INTERFACE);
         sService = IStyleInterface.Stub.asInterface(b);
 
         if (b != null) {

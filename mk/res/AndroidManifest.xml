@@ -145,10 +145,10 @@
                 android:protectionLevel="normal" />
 
     <!-- Allows an application to change system style -->
-    <permission android:name="lineageos.permission.CHANGE_STYLE"
+    <permission android:name="mokee.permission.CHANGE_STYLE"
                 android:label="@string/permlab_changeStyle"
                 android:description="@string/permdesc_changeStyle"
-                android:icon="@drawable/ic_launcher_lineageos"
+                android:icon="@drawable/ic_launcher_mokee"
                 android:protectionLevel="dangerous" />
 
     <application android:process="system"

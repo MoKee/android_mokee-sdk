@@ -15,10 +15,10 @@
 ** limitations under the License.
 */
 
-package lineageos.style;
+package mokee.style;
 
 import android.graphics.Bitmap;
-import lineageos.style.Suggestion;
+import mokee.style.Suggestion;
 
 /** {@hide} */
 interface IStyleInterface {

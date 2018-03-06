@@ -15,6 +15,6 @@
 ** limitations under the License.
 */
 
-package lineageos.style;
+package mokee.style;
 
 parcelable Suggestion;

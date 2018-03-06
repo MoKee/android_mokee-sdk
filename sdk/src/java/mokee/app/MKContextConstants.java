@@ -162,7 +162,7 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the MK style service
-         * utilized by the lineage sdk.
+         * utilized by the mksdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String STYLES = "org.mokee.style";

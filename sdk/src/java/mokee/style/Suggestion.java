@@ -15,14 +15,14 @@
 ** limitations under the License.
 */
 
-package lineageos.style;
+package mokee.style;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import lineageos.os.Build;
-import lineageos.os.Concierge;
-import lineageos.os.Concierge.ParcelInfo;
+import mokee.os.Build;
+import mokee.os.Concierge;
+import mokee.os.Concierge.ParcelInfo;
 
 public class Suggestion implements Parcelable {
     public final int globalStyle;
@@ -31,7 +31,7 @@ public class Suggestion implements Parcelable {
     /**
      * Default constructor
      *
-     * @see lineageos.style.StyleInterface#getSuggestion
+     * @see mokee.style.StyleInterface#getSuggestion
      *
      * @param globalStyle one of {@link #STYLE_GLOBAL_LIGHT} or {@link #STYLE_GLOBAL_DARK}
      * @param colorPosition position of selected color in the input array
@@ -45,7 +45,7 @@ public class Suggestion implements Parcelable {
         ParcelInfo parcelInfo = Concierge.receiveParcel(parcel);
         int parcelableVersion = parcelInfo.getParcelVersion();
 
-        if (parcelableVersion >= Build.LINEAGE_VERSION_CODES.HACKBERRY) {
+        if (parcelableVersion >= Build.MK_VERSION_CODES.HACKBERRY) {
             globalStyle = parcel.readInt();
             selectedAccent = parcel.readInt();
         } else {
