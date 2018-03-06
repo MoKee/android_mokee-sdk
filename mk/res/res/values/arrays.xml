@@ -116,4 +116,17 @@
         <item>com.google.android.gsf|com.google.android.talk</item>
     </string-array>
 
+    <!-- Trusted accents package names -->
+    <string-array name="trusted_accent_packages" translatable="false">
+        <item>org.mokee.overlay.accent.red</item>
+        <item>org.mokee.overlay.accent.pink</item>
+        <item>org.mokee.overlay.accent.purple</item>
+        <item>org.mokee.overlay.accent.blue</item>
+        <item>org.mokee.overlay.accent.cyan</item>
+        <item>org.mokee.overlay.accent.green</item>
+        <item>org.mokee.overlay.accent.orange</item>
+        <item>org.mokee.overlay.accent.yellow</item>
+        <item>org.mokee.overlay.accent.brown</item>
+        <item>org.mokee.overlay.accent.black</item>
+    </string-array>
 </resources>

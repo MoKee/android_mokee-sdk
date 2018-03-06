@@ -24,6 +24,10 @@ import mokee.os.Build;
 import mokee.os.Concierge;
 import mokee.os.Concierge.ParcelInfo;
 
+/**
+ * Style suggestion holder class.
+ * This is returned when calling {@link #mokee.style.StyleInterface#getSuggestion}
+ */
 public class Suggestion implements Parcelable {
     public final int globalStyle;
     public final int selectedAccent;
@@ -31,10 +35,11 @@ public class Suggestion implements Parcelable {
     /**
      * Default constructor
      *
-     * @see mokee.style.StyleInterface#getSuggestion
+     * @see {@link mokee.style.StyleInterface#getSuggestion}
      *
-     * @param globalStyle one of {@link #STYLE_GLOBAL_LIGHT} or {@link #STYLE_GLOBAL_DARK}
-     * @param colorPosition position of selected color in the input array
+     * @param globalStyle One of {@link #mokee.style.StyleInterface#STYLE_GLOBAL_LIGHT} or
+     *                           {@link #mokee.style.StyleInterface#STYLE_GLOBAL_DARK}
+     * @param selectedAccent The position of the selected color in the input array
      */
     public Suggestion(int globalStyle, int selectedAccent) {
         this.globalStyle = globalStyle;
