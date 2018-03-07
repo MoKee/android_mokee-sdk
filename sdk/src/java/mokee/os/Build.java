@@ -89,13 +89,9 @@ public class Build {
          * new features:</p>
          * <ul>
          * <li>Profiles API via {@link mokee.app.ProfileManager}
-         * <li>New Expanded Styles for Custom Tiles via
-         * {@link mokee.app.CustomTile.RemoteExpandedStyle}
          * <li>Hardware Abstraction Framework Access via
-         * {@link mokee.hardware.MKHardwareManager} (Not for use by 3rd parties)
-         * <li>MSIM API via {@link mokee.app.MKTelephonyManager}
-         * <li>Introductory Settings Provider {@link mokee.providers.MKSettings}
-         * <li>AlarmClock API via {@link mokee.alarmclock.MoKeeAlarmClock}
+         * {@link mokee.hardware.LineageHardwareManager} (Not for use by 3rd parties)
+         * <li>Introductory Settings Provider {@link mokee.providers.LineageSettings}
          * </ul>
          */
         public static final int BOYSENBERRY = 2;
@@ -112,8 +108,6 @@ public class Build {
          * <p>Applications targeting this or a later version will get access to these
          * new features:</p>
          * <ul>
-         * <li>External views api, and specifically Keyguard interfaces for making
-         * live lockscreens via {@link mokee.externalviews.KeyguardExternalView}</li>
          * <li>Inclusion of the PerformanceManager interfaces, allowing an application to specify
          * the type of mode to have the device be placed in via
          * {@link mokee.power.PerformanceManager}</li>
@@ -133,13 +127,6 @@ public class Build {
          * {@link mokee.weather.MKWeatherManager}</li>
          * <li>Weather provider api to provide weather data to any listener on the device
          * {@link mokee.weatherservice.WeatherProviderService}</li>
-         * <li>Extended capabilities of the {@link mokee.externalviews.KeyguardExternalView}
-         * interfaces to provide immersive and interactive experiences on the lockscreen.</li>
-         * <li>Themes interfaces have found a new home in the mksdk, thus we allow access
-         * to 3rd parties requesting theme changes on the platform via
-         * {@link mokee.themes.ThemeManager} and
-         * {@link mokee.themes.ThemeChangeRequest}</li>
-         * <li>Full access to the {@link mokee.providers.ThemesContract} and provider</li>
          * <li>Parceling helper class {@link mokee.os.Concierge} to help with parcel
          * headers and protocol revisions</li>
          * </ul>
@@ -166,17 +153,13 @@ public class Build {
         public static final int FIG = 6;
 
         /**
-         * Unreleased preliminary version starting from MK70
+         * January 2017: Unreleased preliminary version starting from MK71.2
          */
         public static final int GUAVA = 7;
 
         /**
-         * Unreleased preliminary version starting from MK81
-         * <p>Applications targeting this or a later version will get access to these
-         * new features!</p>
-         * <ul>
-         * <li>Change system colors via {@link mokee.app.StyleInterface}
-         * </ul>
+         * February 2018: Unreleased preliminary version starting from MK81.0
+         * <p>Unused APIs have been removed.</p>
          */
         public static final int HACKBERRY = 8;
     }

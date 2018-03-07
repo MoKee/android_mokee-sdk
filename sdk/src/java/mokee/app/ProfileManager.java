@@ -36,7 +36,7 @@ import mokee.providers.MKSettings;
 
 /**
  * <p>
- * The ProfileManager allows you to create {@link Profile}s and {@link ProfileGroup}s to create
+ * The ProfileManager allows you to create {@link Profile}s and ProfileGroups to create
  * specific behavior states depending on triggers from hardware devices changing states, such as:
  *
  * <pre class="prettyprint">
@@ -57,8 +57,7 @@ import mokee.providers.MKSettings;
  * <p>
  * This manager requires the MODIFY_PROFILES permission.
  *
- * @see mokee.app.Profile
- * @see mokee.app.ProfileGroup
+ * @see ..app.Profile
  */
 public class ProfileManager {
 
