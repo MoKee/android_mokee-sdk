@@ -33,6 +33,7 @@
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">додавання та видалення додатків до захищених</string>
   <string name="permdesc_protectedApp">Дозволяє додатку відмітити інші додатки як захищені і заблокувати їх.</string>
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Стандартний</string>

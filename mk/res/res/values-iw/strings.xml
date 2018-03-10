@@ -33,6 +33,7 @@
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">הוסף או הסר ישומים לישומים מוגנים</string>
   <string name="permdesc_protectedApp">אפשר לישום לסמן ישום אחר כישום מוגן ולנעול אותו.</string>
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">ברירת מחדל</string>

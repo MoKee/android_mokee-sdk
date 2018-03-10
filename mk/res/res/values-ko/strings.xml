@@ -33,6 +33,7 @@
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">추가 보호 된 응용 프로그램에 응용 프로그램을 제거</string>
   <string name="permdesc_protectedApp">보호된 다른 응용 프로그램을 표시하고 그들을 잠글 수 있도록 허용합니다.</string>
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">기본</string>

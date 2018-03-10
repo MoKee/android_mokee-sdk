@@ -33,6 +33,9 @@
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">thêm và loại bỏ các ứng dụng bảo vệ các ứng dụng</string>
   <string name="permdesc_protectedApp">Cho phép một ứng dụng để đánh dấu các ứng dụng khác như bảo vệ và khóa chúng.</string>
+  <!-- Labels for CHANGE_STYLE permission -->
+  <string name="permlab_changeStyle">thay đổi kiểu hệ thống</string>
+  <string name="permdesc_changeStyle">Cho phép ứng dụng tùy chỉnh màu sắc hệ thống.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Mặc định</string>

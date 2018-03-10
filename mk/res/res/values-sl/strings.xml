@@ -33,6 +33,7 @@
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">dodaj in odstrani aplikacije za zaščito drugih aplikacij</string>
   <string name="permdesc_protectedApp">Omogoča aplikaciji označitev drugih aplikacij kot zaščitene in jih zaklene.</string>
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Privzeto</string>

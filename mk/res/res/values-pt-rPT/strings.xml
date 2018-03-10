@@ -25,6 +25,7 @@
   <string name="permlab_writeSettings">modificar as definições do sistema MK</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <!-- Labels for the PROTECTED_APP permission. -->
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Padrão</string>

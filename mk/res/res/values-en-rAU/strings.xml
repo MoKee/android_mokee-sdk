@@ -31,6 +31,7 @@
   <string name="permlab_writeSecureSettings">modify MK secure system settings</string>
   <string name="permdesc_writeSecureSettings">Allows an app to modify MK secure system settings. Not for use by normal apps.</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Default</string>

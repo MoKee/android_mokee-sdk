@@ -33,6 +33,7 @@
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">agregar y quitar aplicaciones a aplicaciones protegidas</string>
   <string name="permdesc_protectedApp">Permite una aplicación marcar otras aplicaciones protegidas y bloquearlas.</string>
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Predeterminado</string>

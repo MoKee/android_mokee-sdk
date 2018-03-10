@@ -29,6 +29,7 @@
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permdesc_writeSecureSettings">App টি MK সিকিওর সিস্টেম সেটিংস্‌ পরিবর্তন করতে পারবে। সাধারণ App এর জন্য প্রযোজ্য নয়।</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <!-- Labels for CHANGE_STYLE permission -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Default</string>

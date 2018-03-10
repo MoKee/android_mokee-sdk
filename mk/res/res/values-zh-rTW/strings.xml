@@ -33,6 +33,9 @@
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">增加或刪除受保護的應用程式</string>
   <string name="permdesc_protectedApp">允許應用程式將其他應用程式標註為受保護的並將其鎖定。</string>
+  <!-- Labels for CHANGE_STYLE permission -->
+  <string name="permlab_changeStyle">更改系統樣式</string>
+  <string name="permdesc_changeStyle">允許應用程式自訂系統色彩。</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">預設</string>
