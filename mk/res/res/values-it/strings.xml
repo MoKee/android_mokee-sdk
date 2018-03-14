@@ -35,6 +35,9 @@
   <string name="permdesc_protectedApp">Consente ad un\'app di contrassegnare altre applicazioni come protette e bloccarle.</string>
   <!-- Labels for CHANGE_STYLE permission -->
   <string name="permlab_changeStyle">cambia lo stile del sistema</string>
+  <!-- this is wrong, but google's package manager uses the android:description
+         attribute as description for the runtime permission request dialog
+         with non-default dangerous permissions -->
   <string name="permdesc_changeStyle">Consente a un\'app di personalizzare i colori del sistema.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->

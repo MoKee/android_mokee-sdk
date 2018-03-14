@@ -34,6 +34,9 @@
   <string name="permlab_protectedApp">保護されたアプリケーションにアプリケーションを追加したり削除したりする</string>
   <string name="permdesc_protectedApp">アプリが他のアプリを保護されているとマークしてロックすることをアプリに許可します。</string>
   <!-- Labels for CHANGE_STYLE permission -->
+  <!-- this is wrong, but google's package manager uses the android:description
+         attribute as description for the runtime permission request dialog
+         with non-default dangerous permissions -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">デフォルト</string>

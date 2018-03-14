@@ -30,6 +30,9 @@
   <string name="permdesc_writeSecureSettings">App টি MK সিকিওর সিস্টেম সেটিংস্‌ পরিবর্তন করতে পারবে। সাধারণ App এর জন্য প্রযোজ্য নয়।</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Labels for CHANGE_STYLE permission -->
+  <!-- this is wrong, but google's package manager uses the android:description
+         attribute as description for the runtime permission request dialog
+         with non-default dangerous permissions -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Default</string>

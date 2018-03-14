@@ -34,6 +34,10 @@
   <string name="permlab_protectedApp">添加或移除受保护的应用</string>
   <string name="permdesc_protectedApp">允许应用标记受保护的应用并锁定它们。</string>
   <!-- Labels for CHANGE_STYLE permission -->
+  <string name="permlab_changeStyle">更改系统样式</string>
+  <!-- this is wrong, but google's package manager uses the android:description
+         attribute as description for the runtime permission request dialog
+         with non-default dangerous permissions -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">默认</string>

@@ -34,6 +34,9 @@
   <string name="permlab_protectedApp">idagdag at alisin ang mga app sa mga protektadong app</string>
   <string name="permdesc_protectedApp">Nagpapahintulot sa isang app upang markahan ang ibang mga app bilang protektado at i-lock ang mga ito.</string>
   <!-- Labels for CHANGE_STYLE permission -->
+  <!-- this is wrong, but google's package manager uses the android:description
+         attribute as description for the runtime permission request dialog
+         with non-default dangerous permissions -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Pangunahin</string>

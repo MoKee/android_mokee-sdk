@@ -35,6 +35,9 @@
   <string name="permdesc_protectedApp">اختار تطبيق لحمايه وقفل التطبيقات الآخرة.</string>
   <!-- Labels for CHANGE_STYLE permission -->
   <string name="permlab_changeStyle">تغيير شكل النظام</string>
+  <!-- this is wrong, but google's package manager uses the android:description
+         attribute as description for the runtime permission request dialog
+         with non-default dangerous permissions -->
   <string name="permdesc_changeStyle">للسماح لتطبيق ما بتخصيص ألوان النظام.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
