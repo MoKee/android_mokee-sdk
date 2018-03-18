@@ -333,6 +333,7 @@ package mokee.os {
     field public static final int FIG = 6; // 0x6
     field public static final int GUAVA = 7; // 0x7
     field public static final int HACKBERRY = 8; // 0x8
+    field public static final int ILAMA = 9; // 0x9
   }
 
   public final class Concierge {
