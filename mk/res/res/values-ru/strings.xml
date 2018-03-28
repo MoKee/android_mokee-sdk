@@ -19,22 +19,22 @@
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">Система MoKee</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
-  <string name="permlab_modifyProfiles">Изменение системных профилей</string>
+  <string name="permlab_modifyProfiles">изменение системных профилей</string>
   <string name="permdesc_modifyProfiles">Позволяет приложению изменять профили системы.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-  <string name="permlab_useHardwareFramework">Использование аппаратного фреймворка</string>
+  <string name="permlab_useHardwareFramework">использование аппаратного фреймворка</string>
   <string name="permdesc_useHardwareFramework">Позволяет приложенияю использовать аппаратный фреймворк MK.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
-  <string name="permlab_writeSettings">Изменение параметров системы</string>
+  <string name="permlab_writeSettings">изменение параметров системы</string>
   <string name="permdesc_writeSettings">Позволяет приложению изменять параметры системы МК.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <string name="permlab_writeSecureSettings">Изменение настроек системы безопасности</string>
+  <string name="permlab_writeSecureSettings">изменение настроек системы безопасности</string>
   <string name="permdesc_writeSecureSettings">Позволяет приложению изменять параметры безопасности системы МК. Не используется в обычных приложениях.</string>
   <!-- Labels for the PROTECTED_APP permission. -->
-  <string name="permlab_protectedApp">Добавление и удаление приложений в список защищённых приложений</string>
+  <string name="permlab_protectedApp">добавление и удаление приложений в список защищённых приложений</string>
   <string name="permdesc_protectedApp">Разрешает приложению отмечать другие как защищённые и закрепить их.</string>
   <!-- Labels for CHANGE_STYLE permission -->
-  <string name="permlab_changeStyle">Изменение стиля системы</string>
+  <string name="permlab_changeStyle">изменение стиля системы</string>
   <!-- this is wrong, but google's package manager uses the android:description
          attribute as description for the runtime permission request dialog
          with non-default dangerous permissions -->
@@ -56,11 +56,11 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Другой</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readPhoneLocation">Доступ к местоположению</string>
+  <string name="permlab_readPhoneLocation">доступ к местоположению устройства</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_readPhoneLocation">Позволить приложению получать информацию о местоположении телефона.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writePhoneLocation">Запись местоположения</string>
+  <string name="permlab_writePhoneLocation">запись местоположения устройства</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_writePhoneLocation">Позволить приложению записывать местоположение телефона.</string>
   <!-- Performance profiles -->
@@ -98,36 +98,36 @@
   <string name="accessibility_quick_settings_live_display_changed_night">Режим LiveDisplay изменен на ночной.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">Режим LiveDisplay изменен на уличный.</string>
   <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">Доступ к менеджеру производительности</string>
+  <string name="permlab_perfAccess">доступ к менеджеру производительности</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Приложение сможет получать доступ к службе производительности. Это разрешение не используется обычными приложениями.</string>
   <!-- Weather Service strings -->
-  <string name="permlab_weather_read">Чтение информации о погоде</string>
+  <string name="permlab_weather_read">чтение информации о погоде</string>
   <string name="permdesc_weather_read">Позволяет приложению читать данные поставщика погоды.</string>
-  <string name="permlab_weather_write">Обновление поставщика погоды</string>
+  <string name="permlab_weather_write">обновление поставщика погоды</string>
   <string name="permdesc_weather_write">Позволяет приложению обновлять данные поставщика погоды.</string>
-  <string name="permlab_weather_bind">Назначение службы поставщика погоды</string>
+  <string name="permlab_weather_bind">назначение службы поставщика погоды</string>
   <string name="permdesc_weather_bind">Позволяет приложению быть службой поставщика погоды.</string>
-  <string name="permlab_weather_access_mgr">Доступ к службе погоды</string>
+  <string name="permlab_weather_access_mgr">доступ к службе погоды</string>
   <string name="permdesc_weather_access_mgr">Разрешает приложению доступ к поставщику погоды в системе МK. Не используется в обычных приложениях.</string>
   <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">Изменение БД использования данных</string>
+  <string name="permlab_dataUsageWrite">изменение БД использования данных</string>
   <!-- DataUsageProvider write permission description -->
   <string name="permdesc_dataUsageWrite">Разрешить запись в БД использования данных</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">Чтение БД использования данных</string>
+  <string name="permlab_dataUsageRead">чтение БД использования данных</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Разрешить доступ на чтение из БД использования данных</string>
   <!-- LiveDisplay manager permission -->
-  <string name="permlab_manageLiveDisplay">Управление параметрами LiveDisplay</string>
+  <string name="permlab_manageLiveDisplay">управление параметрами LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Позволяет приложению управлять расширенными параметрами дисплея.</string>
   <!-- MKAudioService - observe session changes permission -->
-  <string name="permlab_observe_audio_sessions">Наблюдение за изменениями аудиосессии</string>
+  <string name="permlab_observe_audio_sessions">наблюдение за изменениями аудиосессии</string>
   <string name="permdesc_observe_audio_sessions">Позволяет приложению наблюдать за создаваемыми и разрушающимися аудиопотоками.</string>
   <!-- Privacy Guard -->
   <string name="privacy_guard_manager_title">Менеджер защиты личных данных</string>
   <!-- Permissions used by remote preferences -->
-  <string name="permlab_manageRemotePrefs">Управление удалёнными настройками</string>
+  <string name="permlab_manageRemotePrefs">управление удалёнными настройками</string>
   <string name="permdesc_manageRemotePrefs">Приложение сможет управлять удалёнными настройками</string>
   <!-- About device screen, build date -->
   <string name="build_date">Дата сборки</string>
