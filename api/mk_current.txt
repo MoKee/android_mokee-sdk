@@ -368,6 +368,7 @@ package mokee.platform {
     field public static final java.lang.String READ_DATAUSAGE = "mokee.permission.READ_DATAUSAGE";
     field public static final java.lang.String READ_PHONE_LOCATION = "mokee.permission.READ_PHONE_LOCATION";
     field public static final java.lang.String READ_WEATHER = "mokee.permission.READ_WEATHER";
+    field public static final java.lang.String TRUST_INTERFACE = "mokee.permission.TRUST_INTERFACE";
     field public static final java.lang.String WRITE_DATAUSAGE = "mokee.permission.WRITE_DATAUSAGE";
     field public static final java.lang.String WRITE_PHONE_LOCATION = "mokee.permission.WRITE_PHONE_LOCATION";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "mokee.permission.WRITE_SECURE_SETTINGS";
@@ -776,6 +777,7 @@ package mokee.providers {
     method public static boolean putString(android.content.ContentResolver, java.lang.String, java.lang.String);
     field public static final android.net.Uri CONTENT_URI;
     field public static final java.lang.String SYS_PROP_MK_SETTING_VERSION = "sys.mk_settings_secure_version";
+    field public static final java.lang.String TRUST_NOTIFICATIONS = "trust_notifications";
   }
 
   public static final class MKSettings.System extends android.provider.Settings.NameValueTable {
@@ -1022,6 +1024,27 @@ package mokee.style {
     method public void writeToParcel(android.os.Parcel, int);
     field public final int globalStyle;
     field public final int selectedAccent;
+  }
+
+}
+
+package mokee.trust {
+
+  public class TrustInterface {
+    method public static mokee.trust.TrustInterface getInstance(android.content.Context);
+    method public int getLevelForFeature(int);
+    method public boolean postNotificationForFeature(int);
+    method public boolean removeNotificationForFeature(int);
+    field public static final int ERROR_UNDEFINED = -1; // 0xffffffff
+    field public static final int TRUST_FEATURE_ENCRYPTION = 4; // 0x4
+    field public static final int TRUST_FEATURE_LEVEL_BAD = 2; // 0x2
+    field public static final int TRUST_FEATURE_LEVEL_GOOD = 0; // 0x0
+    field public static final int TRUST_FEATURE_LEVEL_POOR = 1; // 0x1
+    field public static final int TRUST_FEATURE_PLATFORM_SECURITY_PATCH = 2; // 0x2
+    field public static final int TRUST_FEATURE_ROOT = 1; // 0x1
+    field public static final int TRUST_FEATURE_SELINUX = 0; // 0x0
+    field public static final int TRUST_FEATURE_VENDOR_SECURITY_PATCH = 3; // 0x3
+    field public static final java.lang.String TRUST_INTERFACE_PERMISSION = "mokee.permission.TRUST_INTERFACE";
   }
 
 }

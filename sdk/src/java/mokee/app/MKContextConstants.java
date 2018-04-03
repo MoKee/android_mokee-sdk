@@ -108,6 +108,17 @@ public final class MKContextConstants {
     public static final String MK_STYLE_INTERFACE = "mkstyle";
 
     /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link mokee.trust.TrustInterface} to access the Trust interface.
+     *
+     * @see android.content.Context#getSystemService
+     * @see mokee.trust.TrustInterface
+     *
+     * @hide
+     */
+    public static final String LINEAGE_TRUST_INTERFACE = "mktrust";
+
+    /**
      * Features supported by the MKSDK.
      */
     public static class Features {
@@ -166,5 +177,13 @@ public final class MKContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String STYLES = "org.mokee.style";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the MK trust service
+         * utilized by the mkdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String TRUST = "org.mokee.trust";
     }
 }
