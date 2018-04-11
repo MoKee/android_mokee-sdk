@@ -19,8 +19,8 @@
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee rendszer</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
-  <string name="permlab_modifyProfiles">rendszer-profilok módosítása</string>
-  <string name="permdesc_modifyProfiles">Lehetővé teszi egy alkalmazás számára, hogy módosítsa a rendszer-profilokat.</string>
+  <string name="permlab_modifyProfiles">rendszerprofilok módosítása</string>
+  <string name="permdesc_modifyProfiles">Lehetővé teszi egy alkalmazás számára, hogy módosítsa a rendszerprofilokat.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">hardver keretrendszer használata</string>
   <string name="permdesc_useHardwareFramework">Lehetővé teszi egy alkalmazás számára, hogy hozzáférjen az MK hardver keretrendszerhez.</string>
