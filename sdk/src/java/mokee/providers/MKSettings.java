@@ -2054,6 +2054,15 @@ public final class MKSettings {
                 sNonNegativeIntegerValidator;
 
         /**
+         * List of long-screen apps.
+         */
+        public static final String LONG_SCREEN_APPS = "long_screen_apps";
+
+        /** @hide */
+        public static final Validator LONG_SCREEN_APPS_VALIDATOR =
+                sAlwaysTrueValidator;
+
+        /**
          * Mapping of fingerprint shortcuts
          *
          * format:
@@ -2380,6 +2389,8 @@ public final class MKSettings {
                     DISPLAY_PICTURE_ADJUSTMENT_VALIDATOR);
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES,
                     ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
+            VALIDATORS.put(LONG_SCREEN_APPS,
+                    LONG_SCREEN_APPS_VALIDATOR);
             VALIDATORS.put(FINGERPRINT_SHORTCUTS, FINGERPRINT_SHORTCUTS_VALIDATOR);
         };
         // endregion
