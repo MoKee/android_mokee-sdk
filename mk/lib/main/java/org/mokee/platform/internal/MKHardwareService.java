@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015-2018 The MoKee Open Source Project
- *               2017 The LineageOS Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ import org.mokee.hardware.HighTouchSensitivity;
 import org.mokee.hardware.KeyDisabler;
 import org.mokee.hardware.LongTermOrbits;
 import org.mokee.hardware.PictureAdjustment;
+import org.mokee.hardware.ReadingEnhancement;
 import org.mokee.hardware.SerialNumber;
 import org.mokee.hardware.SunlightEnhancement;
 import org.mokee.hardware.TouchscreenGestures;
@@ -111,6 +112,8 @@ public class MKHardwareService extends MKSystemService {
 
         public TouchscreenGesture[] getTouchscreenGestures();
         public boolean setTouchscreenGestureEnabled(TouchscreenGesture gesture, boolean state);
+
+        public boolean setGrayscale(boolean state);
     }
 
     private class LegacyMKHardware implements MKHardwareInterface {
@@ -132,6 +135,8 @@ public class MKHardwareService extends MKSystemService {
                 mSupportedFeatures |= MKHardwareManager.FEATURE_KEY_DISABLE;
             if (LongTermOrbits.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_LONG_TERM_ORBITS;
+            if (ReadingEnhancement.isSupported())
+                mSupportedFeatures |= MKHardwareManager.FEATURE_READING_ENHANCEMENT;
             if (SerialNumber.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_SERIAL_NUMBER;
             if (SunlightEnhancement.isSupported())
@@ -367,6 +372,10 @@ public class MKHardwareService extends MKSystemService {
 
         public boolean setTouchscreenGestureEnabled(TouchscreenGesture gesture, boolean state) {
             return TouchscreenGestures.setGestureEnabled(gesture, state);
+        }
+
+        public boolean setGrayscale(boolean state) {
+            return ReadingEnhancement.setGrayscale(state);
         }
     }
 
@@ -769,6 +778,17 @@ public class MKHardwareService extends MKSystemService {
                 return false;
             }
             return mMkHwImpl.setTouchscreenGestureEnabled(gesture, state);
+        }
+
+        @Override
+        public boolean setGrayscale(boolean state) {
+            mContext.enforceCallingOrSelfPermission(
+                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (!isSupported(MKHardwareManager.FEATURE_READING_ENHANCEMENT)) {
+                Log.e(TAG, "Reading enhancement not supported");
+                return false;
+            }
+            return mMkHwImpl.setGrayscale(state);
         }
     };
 }

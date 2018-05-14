@@ -1471,6 +1471,16 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
+         * Reader mode
+         * 0 = 0ff, 1 = on
+         */
+        public static final String DISPLAY_READING_MODE = "display_reading_mode";
+
+        /** @hide */
+        public static final Validator DISPLAY_READING_MODE_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Use display power saving features such as CABC or CABL
          * 0 = 0ff, 1 = on
          */
@@ -2118,6 +2128,7 @@ public final class MKSettings {
                 MKSettings.System.DISPLAY_TEMPERATURE_NIGHT,
                 MKSettings.System.DISPLAY_TEMPERATURE_MODE,
                 MKSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
+                MKSettings.System.DISPLAY_READING_MODE,
                 MKSettings.System.DISPLAY_CABC,
                 MKSettings.System.DISPLAY_COLOR_ENHANCE,
                 MKSettings.System.DISPLAY_COLOR_ADJUSTMENT,
@@ -2278,6 +2289,7 @@ public final class MKSettings {
             VALIDATORS.put(DISPLAY_TEMPERATURE_MODE, DISPLAY_TEMPERATURE_MODE_VALIDATOR);
             VALIDATORS.put(DISPLAY_AUTO_CONTRAST, DISPLAY_AUTO_CONTRAST_VALIDATOR);
             VALIDATORS.put(DISPLAY_AUTO_OUTDOOR_MODE, DISPLAY_AUTO_OUTDOOR_MODE_VALIDATOR);
+            VALIDATORS.put(DISPLAY_READING_MODE, DISPLAY_READING_MODE_VALIDATOR);
             VALIDATORS.put(DISPLAY_CABC, DISPLAY_CABC_VALIDATOR);
             VALIDATORS.put(DISPLAY_COLOR_ENHANCE, DISPLAY_COLOR_ENHANCE_VALIDATOR);
             VALIDATORS.put(DISPLAY_COLOR_ADJUSTMENT, DISPLAY_COLOR_ADJUSTMENT_VALIDATOR);

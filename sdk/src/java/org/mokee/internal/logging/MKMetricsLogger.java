@@ -1,6 +1,7 @@
 /**
- * Copyright (c) 2016, The CyanogenMod Project
+ * Copyright (c) 2016 The CyanogenMod Project
  * Copyright (c) 2016, The MoKee Open Source Project
+ *               2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,5 +71,6 @@ public class MKMetricsLogger extends MetricsLogger {
     public static final int WEATHER_SETTINGS = BASE + 42;
     public static final int TILE_THEMES = BASE + 43;
     public static final int TILE_LOCATION_DETAIL = BASE + 44;
-    public static final int TILE_SCREENSHOT = BASE + 45;
+    public static final int TILE_READING_MODE = BASE + 45;
+    public static final int TILE_SCREENSHOT = BASE + 46;
 }

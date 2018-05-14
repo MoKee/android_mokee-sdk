@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
  * Copyright (C) 2016 The MoKee Open Source Project
+ *               2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +49,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
     private final boolean mUseColorAdjustment;
     private final boolean mUseColorEnhancement;
     private final boolean mUseCABC;
+    private final boolean mUseReaderMode;
     private final boolean mUseDisplayModes;
 
     // default values
@@ -72,6 +74,8 @@ public class DisplayHardwareController extends LiveDisplayFeature {
             MKSettings.System.getUriFor(MKSettings.System.DISPLAY_COLOR_ENHANCE);
     private static final Uri DISPLAY_CABC =
             MKSettings.System.getUriFor(MKSettings.System.DISPLAY_CABC);
+    private static final Uri DISPLAY_READING_MODE =
+            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_READING_MODE);
 
     public DisplayHardwareController(Context context, Handler handler) {
         super(context, handler);
@@ -98,6 +102,9 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         mUseDisplayModes = mHardware
                 .isSupported(MKHardwareManager.FEATURE_DISPLAY_MODES);
 
+        mUseReaderMode = mHardware
+                .isSupported(MKHardwareManager.FEATURE_READING_ENHANCEMENT);
+
         if (mUseColorAdjustment) {
             mMaxColor = mHardware.getDisplayColorCalibrationMax();
             copyColors(getColorAdjustment(), mColorAdjustment);
@@ -121,6 +128,9 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         }
         if (mUseColorAdjustment) {
             settings.add(DISPLAY_COLOR_ADJUSTMENT);
+        }
+        if (mUseReaderMode) {
+            settings.add(DISPLAY_READING_MODE);
         }
 
         if (settings.size() == 0) {
@@ -147,8 +157,11 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (mUseDisplayModes) {
             caps.set(LiveDisplayManager.FEATURE_DISPLAY_MODES);
         }
+        if (mUseReaderMode) {
+            caps.set(LiveDisplayManager.FEATURE_READING_ENHANCEMENT);
+        }
         return mUseAutoContrast || mUseColorEnhancement || mUseCABC || mUseColorAdjustment ||
-            mUseDisplayModes;
+            mUseDisplayModes || mUseReaderMode;
     }
 
     @Override
@@ -201,6 +214,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         pw.println("  mUseColorEnhancement="  + mUseColorEnhancement);
         pw.println("  mUseCABC=" + mUseCABC);
         pw.println("  mUseDisplayModes=" + mUseDisplayModes);
+        pw.println("  mUseReaderMode=" + mUseReaderMode);
         pw.println();
         pw.println("  DisplayHardwareController State:");
         pw.println("    mAutoContrast=" + isAutoContrastEnabled());
