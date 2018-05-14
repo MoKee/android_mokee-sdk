@@ -19,7 +19,7 @@
   <!-- Label for the MoKee system components when they are shown to the user. -->
   <string name="mokee_system_label">MoKee Sistemi</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
-  <string name="permlab_modifyProfiles">sistem profilleri değiştirme</string>
+  <string name="permlab_modifyProfiles">sistem profillerini değiştir</string>
   <string name="permdesc_modifyProfiles">Bir uygulamaya sistem profillerini değiştirme izni verir.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">donanım altyapısını kullan</string>
@@ -78,48 +78,48 @@
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Otomatik</string>
   <string name="live_display_auto_summary">Günbatımı ve gündoğumundan sonra otomatik olarak ekran renk sıcaklığını ayarla</string>
-  <string name="live_display_off">Kapat</string>
+  <string name="live_display_off">Kapalı</string>
   <string name="live_display_off_summary">Tüm ayarları devre dışı bırak</string>
   <string name="live_display_day">Gün</string>
   <string name="live_display_day_summary">Sadece gün ayarlarını kullan</string>
   <string name="live_display_night">Gece</string>
   <string name="live_display_night_summary">Sadece gece ayarlarını kullan</string>
-  <string name="live_display_outdoor">Açık Alan (parlak güneş)</string>
+  <string name="live_display_outdoor">Açık alan (parlak güneş)</string>
   <string name="live_display_outdoor_summary">Sadece açık alan ayarlarını kullan</string>
   <string name="live_display_hint">LiveDisplay göz yorgunluğu azalttır ve geceleri uyumana yardımcı yardımcı olabilir. Denemek için buraya tıklayın!</string>
   <string name="accessibility_quick_settings_live_display_off">LiveDisplay kapalı.</string>
-  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: Otomatik modu.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: otomatik mod.</string>
   <string name="accessibility_quick_settings_live_display_day">LiveDisplay: gündüz modu.</string>
   <string name="accessibility_quick_settings_live_display_night">LiveDisplay: gece modu.</string>
-  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: Açık alan modu.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: açık alan modu.</string>
   <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay devre dışı.</string>
   <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay otomatik moda geçti.</string>
   <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay gündüz moduna geçti.</string>
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gece moduna geçti.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay açık alan moduna geçti.</string>
   <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">erişim performans Yöneticisi</string>
+  <string name="permlab_perfAccess">erişim performans yöneticisi</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Bir uygulamanın fener hizmetine erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">hava durumunu oku</string>
   <string name="permdesc_weather_read">Bir uygulamanın hava durumu sunucusundan içerik okuma izni verir.</string>
-  <string name="permlab_weather_write">hava durumu sağlayıcısını güncelleme</string>
+  <string name="permlab_weather_write">hava durumu sağlayıcısını güncelle</string>
   <string name="permdesc_weather_write">Bir uygulamanın hava durumu sunucusunun içeriğini güncellemesine izin verir.</string>
   <string name="permlab_weather_bind">hava durumu sağlayıcı hizmeti olarak bağla</string>
   <string name="permdesc_weather_bind">Bir uygulamanın bir hava durumu sağlayıcı hizmeti olarak tanımlanmasına izin verir.</string>
-  <string name="permlab_weather_access_mgr">meteoroloji Servisine erişim</string>
+  <string name="permlab_weather_access_mgr">meteoroloji servisine erişim</string>
   <string name="permdesc_weather_access_mgr">Bir uygulamaya sistemdeki hava durumu hizmetine erişme izin verir. Normal uygulamalar için asla gerekli değildir.</string>
   <!-- DataUsageProvider write permission title -->
   <string name="permlab_dataUsageWrite">veri kullanımı veritabanını değiştir</string>
   <!-- DataUsageProvider write permission description -->
   <string name="permdesc_dataUsageWrite">Bir uygulamanın veri kullanımı veritabanının içeriğini güncelleme izin verir.</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">veri kullanımı veritabanı okunur</string>
+  <string name="permlab_dataUsageRead">veri kullanımı veritabanını oku</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Bir uygulamaya, veri kullanımı veri tabanındaki içeriği okuma izni verir.</string>
   <!-- LiveDisplay manager permission -->
-  <string name="permlab_manageLiveDisplay">livedisplay ayarları</string>
+  <string name="permlab_manageLiveDisplay">LiveDisplay ayarlarını yönet</string>
   <string name="permdesc_manageLiveDisplay">Bir uygulamanın gelişmiş ekran ayarlarını yapılandırmasına izin verir.</string>
   <!-- MKAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">sesli oturum değişikliklerini gözlemle</string>
@@ -127,16 +127,16 @@
   <!-- Privacy Guard -->
   <string name="privacy_guard_manager_title">Gizlilik Koruması</string>
   <!-- Permissions used by remote preferences -->
-  <string name="permlab_manageRemotePrefs">Uzak bağlantı ayarları </string>
-  <string name="permdesc_manageRemotePrefs">Bir uygulamaya uzak bağlantı ayarlarını yönetme izni verir</string>
+  <string name="permlab_manageRemotePrefs">uzaktan ayarları yönet</string>
+  <string name="permdesc_manageRemotePrefs">Bir uygulamanın uzaktan ayarları yönetmesine izin verir</string>
   <!-- About device screen, build date -->
-  <string name="build_date">İnşa tarihi</string>
+  <string name="build_date">Yapı tarihi</string>
   <!-- About device screen, MoKee version -->
-  <string name="mk_version">MoKee Versiyonu</string>
+  <string name="mk_version">MoKee sürümü</string>
   <!-- General purpose use "unknown" string -->
-  <string name="unknown">Bilinmeyen</string>
+  <string name="unknown">Bilinmiyor</string>
   <!-- Long-press back kill application -->
-  <string name="app_killed_message">Uygulama kapatıldı</string>
+  <string name="app_killed_message">Uygulama sonlandırıldı</string>
   <!-- Status bar network traffic monitor strings -->
   <string name="kilobitspersecond_short">kb/s</string>
   <string name="megabitspersecond_short">Mb/s</string>
@@ -148,7 +148,7 @@
   <string name="accent_brown">Kakao</string>
   <string name="accent_cyan">Camgöbeği</string>
   <string name="accent_green">Orman</string>
-  <string name="accent_orange">Bal Kabağı</string>
+  <string name="accent_orange">Bal kabağı</string>
   <string name="accent_pink">Kiraz</string>
   <string name="accent_purple">Lavanta</string>
   <string name="accent_red">Domates</string>
