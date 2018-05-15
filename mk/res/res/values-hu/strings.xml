@@ -130,7 +130,7 @@
   <string name="permlab_manageRemotePrefs">távoli beállítások kezelése</string>
   <string name="permdesc_manageRemotePrefs">Lehetővé teszi az alkalmazások számára a távoli beállítások kezelését</string>
   <!-- About device screen, build date -->
-  <string name="build_date">Build dátuma</string>
+  <string name="build_date">Kiadás dátuma</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">MoKee verzió</string>
   <!-- General purpose use "unknown" string -->
