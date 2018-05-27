@@ -41,7 +41,7 @@ public final class LightsCapabilities {
     // via the alpha channel.
     // Note: if a device notification light supports LIGHTS_RGB_NOTIFICATION_LED
     // then HAL support is not necessary for brightness control.  In this case,
-    // brightness support will be provided by lineage-sdk through the scaling of
+    // brightness support will be provided by mokee-sdk through the scaling of
     // RGB color values.
     public static final int LIGHTS_ADJUSTABLE_NOTIFICATION_LED_BRIGHTNESS = 32;
 
@@ -52,7 +52,7 @@ public final class LightsCapabilities {
     // the alpha channel.
     // Note: if a device battery light supports LIGHTS_RGB_BATTERY_LED then HAL
     // support is not necessary for brightness control.  In this case,
-    // brightness support will be provided by lineage-sdk through the scaling of
+    // brightness support will be provided by mokee-sdk through the scaling of
     // RGB color values.
     public static final int LIGHTS_ADJUSTABLE_BATTERY_LED_BRIGHTNESS = 128;
 
