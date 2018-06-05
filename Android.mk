@@ -1,5 +1,6 @@
 # Copyright (C) 2015 The CyanogenMod Project
-# Copyright (C) 2015-2017 The MoKee Open Source Project
+# Copyright (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2015-2018 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,6 +44,9 @@ mokee_sdk_LOCAL_JAVA_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-recyclerview \
     android-support-v14-preference
+
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    telephony-ext
 
 LOCAL_JAVA_LIBRARIES := \
     services \
@@ -192,6 +196,9 @@ mokee_sdk_LOCAL_INTERMEDIATE_SOURCES := \
 
 LOCAL_INTERMEDIATE_SOURCES := \
     $(mokee_sdk_LOCAL_INTERMEDIATE_SOURCES)
+
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    telephony-ext
 
 LOCAL_JAVA_LIBRARIES := \
     $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
