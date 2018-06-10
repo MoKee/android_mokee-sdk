@@ -15,7 +15,7 @@
 ** limitations under the License.
 */
 
-package lineageos.trust;
+package mokee.trust;
 
 /** {@hide} */
 interface ITrustInterface {

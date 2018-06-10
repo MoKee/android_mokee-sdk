@@ -116,7 +116,7 @@ public final class MKContextConstants {
      *
      * @hide
      */
-    public static final String LINEAGE_TRUST_INTERFACE = "mktrust";
+    public static final String MK_TRUST_INTERFACE = "mktrust";
 
     /**
      * Features supported by the MKSDK.
