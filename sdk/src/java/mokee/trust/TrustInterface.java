@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lineageos.trust;
+package mokee.trust;
 
 import android.content.Context;
 import android.os.IBinder;
@@ -22,7 +22,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-import lineageos.app.LineageContextConstants;
+import mokee.app.MKContextConstants;
 
 public class TrustInterface {
     /**
@@ -30,7 +30,7 @@ public class TrustInterface {
      * security messages to the user.
      * This is a system-only permission, user-installed apps cannot use it
      */
-    public static final String TRUST_INTERFACE_PERMISSION = "lineageos.permission.TRUST_INTERFACE";
+    public static final String TRUST_INTERFACE_PERMISSION = "mokee.permission.TRUST_INTERFACE";
 
     /**
      * Unable to determine status, an error occured
@@ -141,7 +141,7 @@ public class TrustInterface {
         mContext = appContext == null ? context : appContext;
         sService = getService();
         if (context.getPackageManager().hasSystemFeature(
-                LineageContextConstants.Features.TRUST) && sService == null) {
+                MKContextConstants.Features.TRUST) && sService == null) {
             throw new RuntimeException("Unable to get TrustInterfaceService. The service" +
                     " either crashed, was not started, or the interface has been called to early" +
                     " in SystemServer init");
@@ -149,7 +149,7 @@ public class TrustInterface {
     }
 
     /**
-     * Get or create an instance of the {@link lineageos.trust.TrustInterface}
+     * Get or create an instance of the {@link mokee.trust.TrustInterface}
      *
      * @param context Used to get the service
      * @return {@link TrustInterface}
@@ -166,7 +166,7 @@ public class TrustInterface {
         if (sService != null) {
             return sService;
         }
-        IBinder b = ServiceManager.getService(LineageContextConstants.LINEAGE_TRUST_INTERFACE);
+        IBinder b = ServiceManager.getService(MKContextConstants.MK_TRUST_INTERFACE);
         sService = ITrustInterface.Stub.asInterface(b);
 
         if (b == null) {

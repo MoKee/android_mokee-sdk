@@ -88,7 +88,7 @@ public final class MKSettings {
      * Output: Nothing.
      */
     public static final String ACTION_TRUST_INTERFACE =
-            "lineageos.settings.TRUST_INTERFACE";
+            "mokee.settings.TRUST_INTERFACE";
 
     // region Call Methods
 

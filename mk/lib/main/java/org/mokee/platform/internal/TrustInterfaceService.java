@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal;
+package org.mokee.platform.internal;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -36,10 +36,10 @@ import android.util.Log;
 import android.util.Pair;
 import android.text.TextUtils;
 
-import lineageos.app.LineageContextConstants;
-import lineageos.providers.LineageSettings;
-import lineageos.trust.ITrustInterface;
-import lineageos.trust.TrustInterface;
+import mokee.app.MKContextConstants;
+import mokee.providers.MKSettings;
+import mokee.trust.ITrustInterface;
+import mokee.trust.TrustInterface;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,14 +47,16 @@ import java.util.Calendar;
 import java.util.Date;
 
 /** @hide **/
-public class TrustInterfaceService extends LineageSystemService {
-    private static final String TAG = "LineageTrustInterfaceService";
+public class TrustInterfaceService extends MKSystemService {
+    private static final String TAG = "MKTrustInterfaceService";
     private static final String PLATFORM_SECURITY_PATCHES = "ro.build.version.security_patch";
     private static final String VENDOR_SECURITY_PATCHES = "ro.vendor.build.security_patch";
+    private static final String MK_VENDOR_SECURITY_PATCHES =
+            "ro.mk.build.vendor_security_patch";
     private static final String LINEAGE_VENDOR_SECURITY_PATCHES =
             "ro.lineage.build.vendor_security_patch";
-    private static final String INTENT_PARTS = "org.lineageos.lineageparts.TRUST_INTERFACE";
-    private static final String INTENT_ONBOARDING = "org.lineageos.lineageparts.TRUST_HINT";
+    private static final String INTENT_PARTS = "org.mokee.mkparts.TRUST_INTERFACE";
+    private static final String INTENT_ONBOARDING = "org.mokee.mkparts.TRUST_HINT";
     private static final String CHANNEL_NAME = "TrustInterface";
     private static final int ONBOARDING_NOTIFCATION_ID = 89;
 
@@ -64,17 +66,17 @@ public class TrustInterfaceService extends LineageSystemService {
     public TrustInterfaceService(Context context) {
         super(context);
         mContext = context;
-        if (context.getPackageManager().hasSystemFeature(LineageContextConstants.Features.TRUST)) {
-            publishBinderService(LineageContextConstants.LINEAGE_TRUST_INTERFACE, mService);
+        if (context.getPackageManager().hasSystemFeature(MKContextConstants.Features.TRUST)) {
+            publishBinderService(MKContextConstants.MK_TRUST_INTERFACE, mService);
         } else {
-            Log.wtf(TAG, "Lineage Trust service started by system server but feature xml not" +
+            Log.wtf(TAG, "MoKee Trust service started by system server but feature xml not" +
                     " declared. Not publishing binder service!");
         }
     }
 
     @Override
     public String getFeatureDeclaration() {
-        return LineageContextConstants.Features.TRUST;
+        return MKContextConstants.Features.TRUST;
     }
 
     @Override
@@ -134,10 +136,6 @@ public class TrustInterfaceService extends LineageSystemService {
     }
 
     private boolean postOnBoardingNotification() {
-        if (hasOnboardedUser()) {
-            return false;
-        }
-
         String title = mContext.getString(R.string.trust_notification_title_onboarding);
         String message = mContext.getString(R.string.trust_notification_content_onboarding);
         Intent intent = new Intent(INTENT_ONBOARDING);
@@ -182,8 +180,8 @@ public class TrustInterfaceService extends LineageSystemService {
     }
 
     private boolean userAllowsTrustNotifications() {
-        return LineageSettings.Secure.getInt(mContext.getContentResolver(),
-                LineageSettings.Secure.TRUST_NOTIFICATIONS, 1) == 1;
+        return MKSettings.Secure.getInt(mContext.getContentResolver(),
+                MKSettings.Secure.TRUST_NOTIFICATIONS, 1) == 1;
     }
 
     private Pair<Integer, Integer> getNotificationStringsForFeature(int feature) {
@@ -242,11 +240,14 @@ public class TrustInterfaceService extends LineageSystemService {
     private int getSecurityPatchStatus(String target) {
         String patchLevel = SystemProperties.get(target);
         if (TextUtils.isEmpty(patchLevel)) {
-            // Try to fallback to Lineage vendor prop
+            // Try to fallback to MoKee vendor prop
             if (VENDOR_SECURITY_PATCHES.equals(target)) {
-                    patchLevel = SystemProperties.get(LINEAGE_VENDOR_SECURITY_PATCHES);
+                    patchLevel = SystemProperties.get(MK_VENDOR_SECURITY_PATCHES);
                     if (TextUtils.isEmpty(patchLevel)) {
-                        return TrustInterface.ERROR_UNDEFINED;
+                        patchLevel = SystemProperties.get(LINEAGE_VENDOR_SECURITY_PATCHES);
+                        if (TextUtils.isEmpty(patchLevel)) {
+                            return TrustInterface.ERROR_UNDEFINED;
+                        }
                     }
             } else {
                 return TrustInterface.ERROR_UNDEFINED;
@@ -303,8 +304,8 @@ public class TrustInterfaceService extends LineageSystemService {
     }
 
     private boolean hasOnboardedUser() {
-        return LineageSettings.System.getInt(mContext.getContentResolver(),
-                LineageSettings.System.TRUST_INTERFACE_HINTED, 0) == 1;
+        return MKSettings.System.getInt(mContext.getContentResolver(),
+                MKSettings.System.TRUST_INTERFACE_HINTED, 0) == 1;
     }
 
     /* Service */
