@@ -167,5 +167,4 @@
   <string name="trust_notification_content_root">Egy alkalmazás root jogokat használ éppen most</string>
   <string name="trust_notification_title_onboarding">Fedezze fel a Trust-ot</string>
   <string name="trust_notification_content_onboarding">Ismerje meg, hogyan garantálhatja a készüléke biztonságát</string>
-  <string name="trust_notification_action_later">Ne most</string>
 </resources>

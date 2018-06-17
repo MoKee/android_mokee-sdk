@@ -167,5 +167,5 @@
   <string name="trust_notification_content_root">В настоящее время приложение использует root-доступ</string>
   <string name="trust_notification_title_onboarding">Добро пожаловать в Trust</string>
   <string name="trust_notification_content_onboarding">Узнайте, как обеспечить безопасность вашего устройства</string>
-  <string name="trust_notification_action_later">Не сейчас</string>
+  <string name="trust_notification_action_manage">Управление оповещениями</string>
 </resources>

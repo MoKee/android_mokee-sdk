@@ -167,5 +167,5 @@
   <string name="trust_notification_content_root">يستخدم أحد التطبيقات امتيازات الروت في الوقت الحالي</string>
   <string name="trust_notification_title_onboarding">اكتشف الائتمان</string>
   <string name="trust_notification_content_onboarding">تعرف على كيفية التأكد من سلامة جهازك</string>
-  <string name="trust_notification_action_later">ليس الآن</string>
+  <string name="trust_notification_action_manage">إدارة التنبيهات</string>
 </resources>
