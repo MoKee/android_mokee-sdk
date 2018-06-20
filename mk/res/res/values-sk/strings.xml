@@ -167,4 +167,5 @@
   <string name="trust_notification_content_root">Aplikácia práve teraz používa Root práva</string>
   <string name="trust_notification_title_onboarding">Objavte Trust</string>
   <string name="trust_notification_content_onboarding">Zistite, ako zabezpečiť, aby vaše zariadenie bolo v bezpečí</string>
+  <string name="trust_notification_action_manage">Správa upozornení</string>
 </resources>

@@ -167,4 +167,5 @@
   <string name="trust_notification_content_root">Bir uygulama şu anda root erişimi ayrıcalıklarını kullanıyor</string>
   <string name="trust_notification_title_onboarding">Güveni Keşfet</string>
   <string name="trust_notification_content_onboarding">Cihazınızın güvenliğini nasıl sağlayacağınızı öğrenin</string>
+  <string name="trust_notification_action_manage">Uyarıları yönet</string>
 </resources>
