@@ -161,7 +161,6 @@
   <string name="permlab_trustInterface">güven arayüzüne erişim</string>
   <string name="permdesc_trustInterface">Bir uygulamanın güven uyarılarını ve önerilerini görüntülemesine izin verir</string>
   <string name="trust_notification_channel">Güven uyarıları</string>
-  <string name="trust_notification_title_selinux">Güven \u2022 Sistem güvenliği</string>
   <string name="trust_notification_content_selinux">SELinux zorlanmıyor, güvenliğiniz zayıfladı</string>
   <string name="trust_notification_title_root">Güven \u2022 Root erişimi</string>
   <string name="trust_notification_content_root">Bir uygulama şu anda root erişimi ayrıcalıklarını kullanıyor</string>

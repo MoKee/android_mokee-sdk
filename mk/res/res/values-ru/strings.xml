@@ -161,10 +161,11 @@
   <string name="permlab_trustInterface">доступ к интерфейсу Trust</string>
   <string name="permdesc_trustInterface">Позволяет приложению отображать предупреждения и предложения Trust</string>
   <string name="trust_notification_channel">Предупреждения Trust</string>
-  <string name="trust_notification_title_selinux">Trust \u2022 Безопасность системы</string>
+  <string name="trust_notification_title_security">Trust \u2022 Безопасность системы</string>
   <string name="trust_notification_content_selinux">SELinux не применяется, ваша безопасность под угрозой</string>
   <string name="trust_notification_title_root">Trust \u2022 Root-доступ</string>
   <string name="trust_notification_content_root">В настоящее время приложение использует root-доступ</string>
+  <string name="trust_notification_content_keys">Эта сборка подписана открытыми ключами</string>
   <string name="trust_notification_title_onboarding">Добро пожаловать в Trust</string>
   <string name="trust_notification_content_onboarding">Узнайте, как обеспечить безопасность вашего устройства</string>
   <string name="trust_notification_action_manage">Управление оповещениями</string>

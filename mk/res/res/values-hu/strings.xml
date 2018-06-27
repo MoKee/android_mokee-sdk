@@ -161,10 +161,11 @@
   <string name="permlab_trustInterface">hozzáférés a Trust felületéhez</string>
   <string name="permdesc_trustInterface">Lehetővé teszi, hogy egy alkalmazás megjelenítse a Trust figyelmeztetéseit és javaslatait</string>
   <string name="trust_notification_channel">Trust riasztás</string>
-  <string name="trust_notification_title_selinux">Trust \u2022 Rendszerbiztonság</string>
+  <string name="trust_notification_title_security">Trust \u2022 Rendszerbiztonság</string>
   <string name="trust_notification_content_selinux">Ha a SELinux nem kényszerített, az Ön biztonsági szintje meggyengült</string>
   <string name="trust_notification_title_root">Trust \u2022 Root hozzáférés</string>
   <string name="trust_notification_content_root">Egy alkalmazás root jogokat használ éppen most</string>
+  <string name="trust_notification_content_keys">Ezt a kiadást nyilvános kulcsokkal írták alá</string>
   <string name="trust_notification_title_onboarding">Fedezze fel a Trust-ot</string>
   <string name="trust_notification_content_onboarding">Ismerje meg, hogyan garantálhatja a készüléke biztonságát</string>
   <string name="trust_notification_action_manage">Értesítéskezelés</string>

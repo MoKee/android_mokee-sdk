@@ -161,7 +161,6 @@
   <string name="permlab_trustInterface">الوصول إلى واجهة الائتمان</string>
   <string name="permdesc_trustInterface">السماح لأحد التطبيقات بعرض تحذيرات واقتراحات الائتمان</string>
   <string name="trust_notification_channel">تحذيرات الائتمان</string>
-  <string name="trust_notification_title_selinux">ائتمان حماية النظام</string>
   <string name="trust_notification_content_selinux">SELinux ليس فرض ، تم إضعاف الأمان الخاص بك</string>
   <string name="trust_notification_title_root">ائتمان الوصول الى الروت</string>
   <string name="trust_notification_content_root">يستخدم أحد التطبيقات امتيازات الروت في الوقت الحالي</string>
