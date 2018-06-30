@@ -49,14 +49,17 @@ import java.util.Date;
 /** @hide **/
 public class TrustInterfaceService extends MKSystemService {
     private static final String TAG = "MKTrustInterfaceService";
+
     private static final String PLATFORM_SECURITY_PATCHES = "ro.build.version.security_patch";
     private static final String VENDOR_SECURITY_PATCHES = "ro.vendor.build.security_patch";
     private static final String MK_VENDOR_SECURITY_PATCHES =
             "ro.mk.build.vendor_security_patch";
     private static final String LINEAGE_VENDOR_SECURITY_PATCHES =
             "ro.lineage.build.vendor_security_patch";
+
     private static final String INTENT_PARTS = "org.mokee.mkparts.TRUST_INTERFACE";
     private static final String INTENT_ONBOARDING = "org.mokee.mkparts.TRUST_HINT";
+
     private static final String CHANNEL_NAME = "TrustInterface";
     private static final int ONBOARDING_NOTIFCATION_ID = 89;
 
@@ -82,27 +85,20 @@ public class TrustInterfaceService extends MKSystemService {
     @Override
     public void onStart() {
         mNotificationManager = mContext.getSystemService(NotificationManager.class);
+
         // Onboard
         if (!hasOnboardedUser()) {
             postOnBoardingNotification();
             return;
         }
 
-        int selinuxStatus = getSELinuxStatus();
-        if (selinuxStatus != TrustInterface.TRUST_FEATURE_LEVEL_GOOD) {
-            postNotificationForFeatureInternal(TrustInterface.TRUST_FEATURE_SELINUX);
-        }
-
-        int keysStatus = getKeysStatus();
-        if (keysStatus != TrustInterface.TRUST_FEATURE_LEVEL_GOOD) {
-            postNotificationForFeatureInternal(TrustInterface.TRUST_FEATURE_KEYS);
-        }
+        runTestInternal();
     }
 
     /* Public methods implementation */
 
     private boolean postNotificationForFeatureInternal(int feature) {
-        if (!hasOnboardedUser() || !userAllowsTrustNotifications()) {
+        if (!hasOnboardedUser() || !isWarningAllowed(feature)) {
             return false;
         }
 
@@ -140,7 +136,7 @@ public class TrustInterfaceService extends MKSystemService {
     }
 
     private boolean removeNotificationForFeatureInternal(int feature) {
-        if (!userAllowsTrustNotifications()) {
+        if (!isWarningAllowed(feature)) {
             return false;
         }
 
@@ -187,6 +183,18 @@ public class TrustInterfaceService extends MKSystemService {
         }
     }
 
+    private void runTestInternal() {
+        int selinuxStatus = getSELinuxStatus();
+        if (selinuxStatus != TrustInterface.TRUST_FEATURE_LEVEL_GOOD) {
+            postNotificationForFeatureInternal(TrustInterface.TRUST_WARN_SELINUX);
+        }
+
+        int keysStatus = getKeysStatus();
+        if (keysStatus != TrustInterface.TRUST_FEATURE_LEVEL_GOOD) {
+            postNotificationForFeatureInternal(TrustInterface.TRUST_WARN_PUBLIC_KEY);
+        }
+    }
+
     /* Utils */
 
     private void enforceTrustPermission() {
@@ -194,9 +202,10 @@ public class TrustInterfaceService extends MKSystemService {
                 "You do not have permissions to use the Trust interface");
     }
 
-    private boolean userAllowsTrustNotifications() {
-        return MKSettings.Secure.getInt(mContext.getContentResolver(),
-                MKSettings.Secure.TRUST_NOTIFICATIONS, 1) == 1;
+    private boolean isWarningAllowed(int warning) {
+        return (MKSettings.Secure.getInt(mContext.getContentResolver(),
+                MKSettings.Secure.TRUST_WARNINGS,
+                TrustInterface.TRUST_WARN_MAX_VALUE) & warning) != 0;
     }
 
     private Pair<Integer, Integer> getNotificationStringsForFeature(int feature) {
@@ -204,15 +213,15 @@ public class TrustInterfaceService extends MKSystemService {
         int message = 0;
 
         switch (feature) {
-            case TrustInterface.TRUST_FEATURE_SELINUX:
+            case TrustInterface.TRUST_WARN_SELINUX:
                 title = R.string.trust_notification_title_security;
                 message = R.string.trust_notification_content_selinux;
                 break;
-            case TrustInterface.TRUST_FEATURE_ROOT:
+            case TrustInterface.TRUST_WARN_ROOT:
                 title = R.string.trust_notification_title_root;
                 message = R.string.trust_notification_content_root;
                 break;
-            case TrustInterface.TRUST_FEATURE_KEYS:
+            case TrustInterface.TRUST_WARN_PUBLIC_KEY:
                 title = R.string.trust_notification_title_security;
                 message = R.string.trust_notification_content_keys;
                 break;
@@ -377,6 +386,19 @@ public class TrustInterfaceService extends MKSystemService {
              * No need to require permission for this one because it's harmless
              */
             return getLevelForFeatureInternal(feature);
+        }
+
+        @Override
+        public void runTest() {
+            enforceTrustPermission();
+            /*
+             * We need to clear the caller's identity in order to
+             *   allow this method call to modify settings
+             *   not allowed by the caller's permissions.
+             */
+            long token = clearCallingIdentity();
+            runTestInternal();
+            restoreCallingIdentity(token);
         }
     };
 }
