@@ -296,7 +296,6 @@ public class StyleInterfaceService extends MKSystemService {
 
         @Override
         public int getGlobalStyle() {
-            enforceChangeStylePermission();
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
@@ -324,7 +323,6 @@ public class StyleInterfaceService extends MKSystemService {
 
         @Override
         public String getAccent() {
-            enforceChangeStylePermission();
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
@@ -338,7 +336,6 @@ public class StyleInterfaceService extends MKSystemService {
 
         @Override
         public Suggestion getSuggestion(Bitmap source, int[] colors) {
-            enforceChangeStylePermission();
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
@@ -352,7 +349,6 @@ public class StyleInterfaceService extends MKSystemService {
 
         @Override
         public List<String> getTrustedAccents() {
-            enforceChangeStylePermission();
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
