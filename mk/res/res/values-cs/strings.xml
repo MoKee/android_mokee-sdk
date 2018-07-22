@@ -133,6 +133,8 @@
   <string name="build_date">Datum sestavení</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">Verze MoKee</string>
+  <!-- About device screen, vendor security patch -->
+  <string name="mk_vendor_security_patch">Úroveň opravy zabezpečení dodavatele</string>
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Neznámá</string>
   <!-- Long-press back kill application -->

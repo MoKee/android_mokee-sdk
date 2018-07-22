@@ -50,6 +50,7 @@
   <!-- Permissions used by remote preferences -->
   <!-- About device screen, build date -->
   <!-- About device screen, MoKee version -->
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <!-- Long-press back kill application -->
   <!-- Status bar network traffic monitor strings -->

@@ -71,6 +71,7 @@
   <string name="build_date">Data d\'elaboració</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">Versió MoKee</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Desconeguda</string>
   <!-- Long-press back kill application -->

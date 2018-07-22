@@ -131,6 +131,7 @@
   <string name="build_date">Ημερομηνία έκδοσης</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">Έκδοση MoKee</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Άγνωστο</string>
   <!-- Long-press back kill application -->

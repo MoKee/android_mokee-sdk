@@ -70,6 +70,7 @@
   <!-- About device screen, build date -->
   <string name="build_date">கட்டிய தேதி</string>
   <!-- About device screen, MoKee version -->
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">அறியாத</string>
   <!-- Long-press back kill application -->

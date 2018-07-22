@@ -106,6 +106,7 @@
   <string name="build_date">Byggdatum</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">MoKee version</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Okänd</string>
   <!-- Long-press back kill application -->

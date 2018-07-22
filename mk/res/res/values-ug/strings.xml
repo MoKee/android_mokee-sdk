@@ -51,6 +51,7 @@
   <!-- About device screen, build date -->
   <string name="build_date">ھاسىللىغان چېسلا</string>
   <!-- About device screen, MoKee version -->
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">نامەلۇم</string>
   <!-- Long-press back kill application -->

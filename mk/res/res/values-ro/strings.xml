@@ -133,6 +133,7 @@
   <string name="build_date">Dată compilare</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">Versiune MoKee</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Necunoscut</string>
   <!-- Long-press back kill application -->

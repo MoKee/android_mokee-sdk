@@ -97,6 +97,7 @@
   <string name="build_date">תאריך בנייה</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">גירסת MoKee</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">לא ידוע</string>
   <!-- Long-press back kill application -->

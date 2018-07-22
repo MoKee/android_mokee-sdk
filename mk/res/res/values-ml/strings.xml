@@ -52,6 +52,7 @@
   <!-- About device screen, build date -->
   <string name="build_date">ബിൽഡ് തീയതി</string>
   <!-- About device screen, MoKee version -->
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">ലഭ്യമല്ല</string>
   <!-- Long-press back kill application -->

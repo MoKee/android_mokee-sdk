@@ -133,6 +133,7 @@
   <string name="build_date">Yapı tarihi</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">MoKee sürümü</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Bilinmiyor</string>
   <!-- Long-press back kill application -->

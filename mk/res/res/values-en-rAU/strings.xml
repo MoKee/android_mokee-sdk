@@ -78,6 +78,7 @@
   <!-- About device screen, build date -->
   <!-- About device screen, MoKee version -->
   <string name="mk_version">MoKee Version</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Unknown</string>
   <!-- Long-press back kill application -->

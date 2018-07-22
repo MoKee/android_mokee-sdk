@@ -131,6 +131,7 @@
   <string name="build_date">빌드 날짜</string>
   <!-- About device screen, MoKee version -->
   <string name="mk_version">MoKee 버전</string>
+  <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">알 수 없음</string>
   <!-- Long-press back kill application -->
