@@ -134,6 +134,7 @@
   <!-- About device screen, MoKee version -->
   <string name="mk_version">MoKee 版本</string>
   <!-- About device screen, vendor security patch -->
+  <string name="mk_vendor_security_patch">供應商安全性修補程式等級</string>
   <!-- General purpose use "unknown" string -->
   <string name="unknown">不明</string>
   <!-- Long-press back kill application -->
