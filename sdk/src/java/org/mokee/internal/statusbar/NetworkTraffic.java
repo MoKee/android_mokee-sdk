@@ -349,7 +349,7 @@ public class NetworkTraffic extends TextView {
         mAutoHide = MKSettings.Secure.getIntForUser(resolver,
                 MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
         mUnits = MKSettings.Secure.getIntForUser(resolver,
-                MKSettings.Secure.NETWORK_TRAFFIC_UNITS, /* Mbps */ 1,
+                MKSettings.Secure.NETWORK_TRAFFIC_UNITS, /* MB */ 3,
                 UserHandle.USER_CURRENT);
 
         switch (mUnits) {
