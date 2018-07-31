@@ -119,13 +119,13 @@ public final class MKContextConstants {
     public static final String MK_TRUST_INTERFACE = "mktrust";
 
     /**
-     * Features supported by the MKSDK.
+     * Features supported by the MoKee SDK.
      */
     public static class Features {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the hardware abstraction
-         * framework service utilized by the mksdk.
+         * framework service utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String HARDWARE_ABSTRACTION = "org.mokee.hardware";
@@ -133,7 +133,7 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the mk profiles service
-         * utilized by the mksdk.
+         * utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String PROFILES = "org.mokee.profiles";
@@ -141,7 +141,7 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the mk performance service
-         * utilized by the mksdk.
+         * utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String PERFORMANCE = "org.mokee.performance";
@@ -149,7 +149,7 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the mk weather weather
-         * service utilized by the mksdk.
+         * service utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String WEATHER_SERVICES = "org.mokee.weather";
@@ -157,7 +157,7 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the LiveDisplay service
-         * utilized by the mksdk.
+         * utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String LIVEDISPLAY = "org.mokee.livedisplay";
@@ -165,7 +165,7 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the MK audio extensions
-         * utilized by the mksdk.
+         * utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String AUDIO = "org.mokee.audio";
@@ -173,7 +173,7 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the MK style service
-         * utilized by the mksdk.
+         * utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String STYLES = "org.mokee.style";
@@ -181,9 +181,17 @@ public final class MKContextConstants {
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
          * {@link PackageManager#hasSystemFeature}: The device includes the MK trust service
-         * utilized by the mkdk.
+         * utilized by the mokee sdk.
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String TRUST = "org.mokee.trust";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the MK settings service
+         * utilized by the mokee sdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String SETTINGS = "org.mokee.settings";
     }
 }
