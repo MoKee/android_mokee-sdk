@@ -161,12 +161,13 @@ public final class MKHardwareManager {
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
+        FEATURE_AUTO_CONTRAST,
         FEATURE_COLOR_ENHANCEMENT,
         FEATURE_HIGH_TOUCH_SENSITIVITY,
         FEATURE_KEY_DISABLE,
         FEATURE_SUNLIGHT_ENHANCEMENT,
         FEATURE_TOUCH_HOVERING,
-        FEATURE_AUTO_CONTRAST
+        FEATURE_READING_ENHANCEMENT
     );
 
     private static MKHardwareManager sMKHardwareManagerInstance;
@@ -870,21 +871,6 @@ public final class MKHardwareManager {
         try {
             if (checkService()) {
                 return sService.setTouchscreenGestureEnabled(gesture, state);
-            }
-        } catch (RemoteException e) {
-        }
-        return false;
-    }
-
-    /**
-     * Enables or disables reading mode
-     *
-     * @return true if success
-     */
-    public boolean setGrayscale(boolean state) {
-        try {
-            if (checkService()) {
-                return sService.setGrayscale(state);
             }
         } catch (RemoteException e) {
         }

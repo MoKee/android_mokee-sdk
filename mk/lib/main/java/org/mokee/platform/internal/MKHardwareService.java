@@ -112,8 +112,6 @@ public class MKHardwareService extends MKSystemService {
 
         public TouchscreenGesture[] getTouchscreenGestures();
         public boolean setTouchscreenGestureEnabled(TouchscreenGesture gesture, boolean state);
-
-        public boolean setGrayscale(boolean state);
     }
 
     private class LegacyMKHardware implements MKHardwareInterface {
@@ -165,18 +163,20 @@ public class MKHardwareService extends MKSystemService {
             switch(feature) {
                 case MKHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT:
                     return AdaptiveBacklight.isEnabled();
+                case MKHardwareManager.FEATURE_AUTO_CONTRAST:
+                    return AutoContrast.isEnabled();
                 case MKHardwareManager.FEATURE_COLOR_ENHANCEMENT:
                     return ColorEnhancement.isEnabled();
                 case MKHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY:
                     return HighTouchSensitivity.isEnabled();
                 case MKHardwareManager.FEATURE_KEY_DISABLE:
                     return KeyDisabler.isActive();
+                case MKHardwareManager.FEATURE_READING_ENHANCEMENT:
+                    return ReadingEnhancement.isEnabled();
                 case MKHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT:
                     return SunlightEnhancement.isEnabled();
                 case MKHardwareManager.FEATURE_TOUCH_HOVERING:
                     return TouchscreenHovering.isEnabled();
-                case MKHardwareManager.FEATURE_AUTO_CONTRAST:
-                    return AutoContrast.isEnabled();
                 default:
                     Log.e(TAG, "feature " + feature + " is not a boolean feature");
                     return false;
@@ -187,18 +187,20 @@ public class MKHardwareService extends MKSystemService {
             switch(feature) {
                 case MKHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT:
                     return AdaptiveBacklight.setEnabled(enable);
+                case MKHardwareManager.FEATURE_AUTO_CONTRAST:
+                    return AutoContrast.setEnabled(enable);
                 case MKHardwareManager.FEATURE_COLOR_ENHANCEMENT:
                     return ColorEnhancement.setEnabled(enable);
                 case MKHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY:
                     return HighTouchSensitivity.setEnabled(enable);
                 case MKHardwareManager.FEATURE_KEY_DISABLE:
                     return KeyDisabler.setActive(enable);
+                case MKHardwareManager.FEATURE_READING_ENHANCEMENT:
+                    return ReadingEnhancement.setEnabled(enable);
                 case MKHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT:
                     return SunlightEnhancement.setEnabled(enable);
                 case MKHardwareManager.FEATURE_TOUCH_HOVERING:
                     return TouchscreenHovering.setEnabled(enable);
-                case MKHardwareManager.FEATURE_AUTO_CONTRAST:
-                    return AutoContrast.setEnabled(enable);
                 default:
                     Log.e(TAG, "feature " + feature + " is not a boolean feature");
                     return false;
@@ -372,10 +374,6 @@ public class MKHardwareService extends MKSystemService {
 
         public boolean setTouchscreenGestureEnabled(TouchscreenGesture gesture, boolean state) {
             return TouchscreenGestures.setGestureEnabled(gesture, state);
-        }
-
-        public boolean setGrayscale(boolean state) {
-            return ReadingEnhancement.setGrayscale(state);
         }
     }
 
@@ -778,17 +776,6 @@ public class MKHardwareService extends MKSystemService {
                 return false;
             }
             return mMkHwImpl.setTouchscreenGestureEnabled(gesture, state);
-        }
-
-        @Override
-        public boolean setGrayscale(boolean state) {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_READING_ENHANCEMENT)) {
-                Log.e(TAG, "Reading enhancement not supported");
-                return false;
-            }
-            return mMkHwImpl.setGrayscale(state);
         }
     };
 }
