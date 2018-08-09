@@ -23,7 +23,7 @@ LOCAL_PATH := $(call my-dir)
 # did, the PRIVATE_* vars for R.java wouldn't be guaranteed to be correct.
 # Instead, it depends on the R.stamp file, which lists the corresponding
 # R.java file as a prerequisite.
-mokee_platform_res := APPS/org.mokee.platform-res_intermediates/src
+mokee_platform_res := APPS/org.mokee.platform-res_intermediates/aapt
 
 # List of packages used in mokee-api-stubs
 mokee_stub_packages := mokee.app:mokee.content:mokee.hardware:mokee.media:mokee.os:mokee.preference:mokee.profiles:mokee.providers:mokee.platform:mokee.power:mokee.util:mokee.weather:mokee.weatherservice:mokee.style:mokee.trust
