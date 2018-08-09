@@ -27,6 +27,7 @@ import android.hardware.display.DisplayManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.PowerManager.ServiceType;
 import android.os.PowerManagerInternal;
 import android.os.PowerSaveState;
 import android.os.Process;
@@ -35,7 +36,6 @@ import android.view.Display;
 
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
-import com.android.server.power.BatterySaverPolicy.ServiceType;
 
 import org.mokee.platform.internal.MKSystemService;
 import org.mokee.platform.internal.common.UserContentObserver;
