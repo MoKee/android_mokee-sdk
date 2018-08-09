@@ -28,63 +28,6 @@ mokee_platform_res := APPS/org.mokee.platform-res_intermediates/aapt
 # List of packages used in mokee-api-stubs
 mokee_stub_packages := mokee.app:mokee.content:mokee.hardware:mokee.media:mokee.os:mokee.preference:mokee.profiles:mokee.providers:mokee.platform:mokee.power:mokee.util:mokee.weather:mokee.weatherservice:mokee.style:mokee.trust
 
-# The MoKee Platform Framework Library
-# ============================================================
-include $(CLEAR_VARS)
-
-mokee_sdk_src := sdk/src/java/mokee
-mokee_sdk_internal_src := sdk/src/java/org/mokee/internal
-library_src := mk/lib/main/java
-
-LOCAL_MODULE := org.mokee.platform
-LOCAL_MODULE_TAGS := optional
-
-mokee_sdk_LOCAL_JAVA_LIBRARIES := \
-    android-support-annotations \
-    android-support-v7-preference \
-    android-support-v7-recyclerview \
-    android-support-v14-preference
-
-LOCAL_STATIC_JAVA_LIBRARIES := \
-    telephony-ext
-
-LOCAL_JAVA_LIBRARIES := \
-    services \
-    org.mokee.hardware \
-    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
-
-LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(mokee_sdk_src)) \
-    $(call all-java-files-under, $(mokee_sdk_internal_src)) \
-    $(call all-java-files-under, $(library_src))
-
-## READ ME: ########################################################
-##
-## When updating this list of aidl files, consider if that aidl is
-## part of the SDK API.  If it is, also add it to the list below that
-## is preprocessed and distributed with the SDK.  This list should
-## not contain any aidl files for parcelables, but the one below should
-## if you intend for 3rd parties to be able to send those objects
-## across process boundaries.
-##
-## READ ME: ########################################################
-LOCAL_SRC_FILES += \
-    $(call all-Iaidl-files-under, $(mokee_sdk_src)) \
-    $(call all-Iaidl-files-under, $(mokee_sdk_internal_src))
-
-mokee_platform_LOCAL_INTERMEDIATE_SOURCES := \
-    $(mokee_platform_res)/mokee/platform/R.java \
-    $(mokee_platform_res)/mokee/platform/Manifest.java \
-    $(mokee_platform_res)/org/mokee/platform/internal/R.java
-
-LOCAL_INTERMEDIATE_SOURCES := \
-    $(mokee_platform_LOCAL_INTERMEDIATE_SOURCES)
-
-# Include aidl files from mokee.app namespace as well as internal src aidl files
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
-LOCAL_AIDL_FLAGS := -n
-
-include $(BUILD_JAVA_LIBRARY)
 mokee_framework_module := $(LOCAL_INSTALLED_MODULE)
 
 # Make sure that R.java and Manifest.java are built before we build
@@ -96,53 +39,6 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(mokee_framework_res_R_stamp)
 $(mokee_framework_module): | $(dir $(mokee_framework_module))org.mokee.platform-res.apk
 
 mokee_framework_built := $(call java-lib-deps, org.mokee.platform)
-
-# ====  org.mokee.platform.xml lib def  ========================
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := org.mokee.platform.xml
-LOCAL_MODULE_TAGS := optional
-
-LOCAL_MODULE_CLASS := ETC
-
-# This will install the file in /system/etc/permissions
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
-
-LOCAL_SRC_FILES := $(LOCAL_MODULE)
-
-include $(BUILD_PREBUILT)
-
-# the sdk
-# ============================================================
-include $(CLEAR_VARS)
-
-LOCAL_MODULE:= org.mokee.platform.sdk
-LOCAL_MODULE_TAGS := optional
-LOCAL_REQUIRED_MODULES := services
-
-LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(mokee_sdk_src)) \
-    $(call all-Iaidl-files-under, $(mokee_sdk_src))
-
-# Included aidl files from mokee.app namespace
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
-
-mokee_sdk_LOCAL_INTERMEDIATE_SOURCES := \
-    $(mokee_platform_res)/mokee/platform/R.java \
-    $(mokee_platform_res)/mokee/platform/Manifest.java
-
-LOCAL_INTERMEDIATE_SOURCES := \
-    $(mokee_sdk_LOCAL_INTERMEDIATE_SOURCES)
-
-LOCAL_JAVA_LIBRARIES := \
-    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
-
-# Make sure that R.java and Manifest.java are built before we build
-# the source for this library.
-mokee_framework_res_R_stamp := \
-    $(call intermediates-dir-for,APPS,org.mokee.platform-res,,COMMON)/src/R.stamp
-LOCAL_ADDITIONAL_DEPENDENCIES := $(mokee_framework_res_R_stamp)
-include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # the sdk as an aar for publish, not built as part of full target
 # DO NOT LINK AGAINST THIS IN BUILD
@@ -169,43 +65,6 @@ LOCAL_STATIC_JAVA_LIBRARIES := org.mokee.platform.sdk
 
 include $(BUILD_STATIC_JAVA_LIBRARY)
 $(LOCAL_MODULE) : $(built_aar)
-
-# full target for use by platform apps
-#
-include $(CLEAR_VARS)
-
-LOCAL_MODULE:= org.mokee.platform.internal
-LOCAL_MODULE_TAGS := optional
-LOCAL_REQUIRED_MODULES := services
-
-LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(mokee_sdk_src)) \
-    $(call all-java-files-under, $(mokee_sdk_internal_src)) \
-    $(call all-Iaidl-files-under, $(mokee_sdk_src)) \
-    $(call all-Iaidl-files-under, $(mokee_sdk_internal_src))
-
-# Included aidl files from mokee.app namespace
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
-LOCAL_AIDL_FLAGS := -n
-
-mokee_sdk_LOCAL_INTERMEDIATE_SOURCES := \
-    $(mokee_platform_res)/mokee/platform/R.java \
-    $(mokee_platform_res)/mokee/platform/Manifest.java \
-    $(mokee_platform_res)/org/mokee/platform/internal/R.java \
-    $(mokee_platform_res)/org/mokee/platform/internal/Manifest.java
-
-LOCAL_INTERMEDIATE_SOURCES := \
-    $(mokee_sdk_LOCAL_INTERMEDIATE_SOURCES)
-
-LOCAL_STATIC_JAVA_LIBRARIES := \
-    telephony-ext
-
-LOCAL_JAVA_LIBRARIES := \
-    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
-
-$(full_target): $(mokee_framework_built) $(gen)
-include $(BUILD_STATIC_JAVA_LIBRARY)
-
 
 # ===========================================================
 # Common Droiddoc vars
