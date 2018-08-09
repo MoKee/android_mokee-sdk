@@ -1,6 +1,7 @@
 /*
- * Copyright (C) 2016 The CyanogenMod project
- * Copyright (C) 2016 The MoKee Open Source project
+ * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2016-2018 The MoKee Open Source project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,26 +33,8 @@ public class MKSecureSettingListPreference extends SelfRemovingListPreference {
         super(context, attrs);
     }
 
-    @Override
-    protected boolean persistString(String value) {
-        if (shouldPersist()) {
-            if (value == getPersistedString(null)) {
-                // It's already there, so the same as persisting
-                return true;
-            }
-            MKSettings.Secure.putString(getContext().getContentResolver(), getKey(), value);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    protected String getPersistedString(String defaultReturnValue) {
-        if (!shouldPersist()) {
-            return defaultReturnValue;
-        }
-        String value = MKSettings.Secure.getString(getContext().getContentResolver(), getKey());
-        return value == null ? defaultReturnValue : value;
+    public int getIntValue(int defValue) {
+        return getValue() == null ? defValue : Integer.valueOf(getValue());
     }
 
     @Override
@@ -59,7 +42,14 @@ public class MKSecureSettingListPreference extends SelfRemovingListPreference {
         return MKSettings.Secure.getString(getContext().getContentResolver(), getKey()) != null;
     }
 
-    public int getIntValue(int defValue) {
-        return getValue() == null ? defValue : Integer.valueOf(getValue());
+    @Override
+    protected void putString(String key, String value) {
+        MKSettings.Secure.putString(getContext().getContentResolver(), key, value);
+    }
+
+    @Override
+    protected String getString(String key, String defaultValue) {
+        return MKSettings.Secure.getString(getContext().getContentResolver(),
+                key, defaultValue);
     }
 }

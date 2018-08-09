@@ -1,6 +1,7 @@
 /*
- * Copyright (C) 2015 The CyanogenMod project
- * Copyright (C) 2016 The MoKee Open Source project
+ * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2015-2018 The MoKee Open Source project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,29 +38,18 @@ public class MKSystemSettingSwitchPreference extends SelfRemovingSwitchPreferenc
     }
 
     @Override
-    protected boolean persistBoolean(boolean value) {
-        if (shouldPersist()) {
-            if (value == getPersistedBoolean(!value)) {
-                // It's already there, so the same as persisting
-                return true;
-            }
-            MKSettings.System.putInt(getContext().getContentResolver(), getKey(), value ? 1 : 0);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    protected boolean getPersistedBoolean(boolean defaultReturnValue) {
-        if (!shouldPersist()) {
-            return defaultReturnValue;
-        }
-        return MKSettings.System.getInt(getContext().getContentResolver(),
-                getKey(), defaultReturnValue ? 1 : 0) != 0;
-    }
-
-    @Override
     protected boolean isPersisted() {
         return MKSettings.System.getString(getContext().getContentResolver(), getKey()) != null;
+    }
+
+    @Override
+    protected void putBoolean(String key, boolean value) {
+        MKSettings.System.putInt(getContext().getContentResolver(), key, value ? 1 : 0);
+    }
+
+    @Override
+    protected boolean getBoolean(String key, boolean defaultValue) {
+        return MKSettings.System.getInt(getContext().getContentResolver(),
+                key, defaultValue ? 1 : 0) != 0;
     }
 }
