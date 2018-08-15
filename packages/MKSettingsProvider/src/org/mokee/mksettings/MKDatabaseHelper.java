@@ -192,21 +192,9 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 4) {
-            if (mUserHandle == UserHandle.USER_OWNER) {
-                db.beginTransaction();
-                SQLiteStatement stmt = null;
-                try {
-                    stmt = db.compileStatement("INSERT INTO secure(name,value)"
-                            + " VALUES(?,?);");
-                    final String provisionedFlag = Settings.Global.getString(
-                            mContext.getContentResolver(), Settings.Global.DEVICE_PROVISIONED);
-                    loadSetting(stmt, MKSettings.Secure.MK_SETUP_WIZARD_COMPLETED, provisionedFlag);
-                    db.setTransactionSuccessful();
-                } finally {
-                    if (stmt != null) stmt.close();
-                    db.endTransaction();
-                }
-            }
+            /* Was set MKSettings.Secure.MK_SETUP_WIZARD_COMPLETE
+             * but this is no longer used
+             */
             upgradeVersion = 4;
         }
 
@@ -299,6 +287,7 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
 
         if (upgradeVersion < 10) {
             if (mUserHandle == UserHandle.USER_OWNER) {
+                // Update STATUS_BAR_CLOCK
                 db.beginTransaction();
                 SQLiteStatement stmt = null;
                 try {
@@ -315,6 +304,19 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
                     db.setTransactionSuccessful();
                 } catch (SQLiteDoneException ex) {
                     // MKSettings.System.STATUS_BAR_CLOCK is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+
+                // Remove MK_SETUP_WIZARD_COMPLETED
+                db.beginTransaction();
+                stmt = null;
+                try {
+                    stmt = db.compileStatement("DELETE FROM secure WHERE name=?");
+                    stmt.bindString(1, MKSettings.Secure.MK_SETUP_WIZARD_COMPLETED);
+                    stmt.execute();
+                    db.setTransactionSuccessful();
                 } finally {
                     if (stmt != null) stmt.close();
                     db.endTransaction();
