@@ -15,8 +15,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:mk="http://schemas.android.com/apk/res/mokee.platform">
-    <declare-styleable name="mk:SelfRemovingPreference">
+<resources>
+    <declare-styleable name="mk_SelfRemovingPreference">
         <attr name="requiresPackage" format="string" />
         <attr name="requiresFeature" format="string" />
         <attr name="requiresConfig" format="string" />
@@ -29,7 +29,7 @@
     </declare-styleable>
 
     <!--Settings search providers-->
-    <declare-styleable name="mk:Searchable">
+    <declare-styleable name="mk_Searchable">
         <attr name="xmlRes" format="reference" />
     </declare-styleable>
 
