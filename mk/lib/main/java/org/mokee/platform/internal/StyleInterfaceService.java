@@ -239,7 +239,7 @@ public class StyleInterfaceService extends MKSystemService {
 
         try {
             PackageInfo pi = mPackageManager.getPackageInfo(pkgName, 0);
-            return pi != null && (pi.overlayFlags & PackageInfo.FLAG_OVERLAY_STATIC) == 0 &&
+            return pi != null && !pi.isStaticOverlayPackage() &&
                     isValidAccent(pkgName);
         } catch (PackageManager.NameNotFoundException e) {
             return false;
