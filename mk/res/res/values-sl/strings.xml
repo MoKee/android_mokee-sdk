@@ -134,6 +134,7 @@
   <!-- About device screen, MoKee version -->
   <string name="mk_version">MoKee različica</string>
   <!-- About device screen, vendor security patch -->
+  <string name="mk_vendor_security_patch">Raven zaščite dobavitelja</string>
   <!-- General purpose use "unknown" string -->
   <string name="unknown">Neznano</string>
   <!-- Long-press back kill application -->
@@ -160,6 +161,14 @@
          to a different meaning of the word "trust" in your language -->
   <string name="trust_feature_name">Trust</string>
   <string name="permlab_trustInterface">dostop do Trust vmesnika</string>
+  <string name="permdesc_trustInterface">Aplikaciji dovoljuje, da prikaže opozorila in predloge za zaupanje</string>
   <string name="trust_notification_channel">Trust opozorila</string>
+  <string name="trust_notification_title_security">Trust \u2022 Varnostni sistem</string>
+  <string name="trust_notification_content_selinux">SELinux se ne uveljavlja, vaša varnost je bila oslabljena</string>
+  <string name="trust_notification_title_root">Trust \u2022 Skrbniški dostop</string>
+  <string name="trust_notification_content_root">Aplikacija trenutno uporablja skrbniška dovoljenja</string>
+  <string name="trust_notification_content_keys">Ta izgradnja je bila podpisana z javnimi ključi</string>
   <string name="trust_notification_title_onboarding">Odkrijte Trust</string>
+  <string name="trust_notification_content_onboarding">Spoznajte, kako zagotoviti, da je vaša naprava v</string>
+  <string name="trust_notification_action_manage">Upravljanje z opozorili</string>
 </resources>
