@@ -33,6 +33,8 @@ import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.util.Log;
 
+import com.android.server.SystemService;
+
 import mokee.app.MKContextConstants;
 import mokee.providers.MKSettings;
 import mokee.style.IStyleInterface;
@@ -71,8 +73,15 @@ public class StyleInterfaceService extends MKSystemService {
 
     @Override
     public void onStart() {
-        mPackageManager = mContext.getPackageManager();
-        mOverlayService = IOverlayManager.Stub.asInterface(ServiceManager.getService("overlay"));
+        /* No-op */
+    }
+
+    @Override
+    public void onBootPhase(int phase) {
+        if (phase == SystemService.PHASE_SYSTEM_SERVICES_READY) {
+            mPackageManager = mContext.getPackageManager();
+            mOverlayService = IOverlayManager.Stub.asInterface(ServiceManager.getService("overlay"));
+        }
     }
 
     private void enforceChangeStylePermission() {
