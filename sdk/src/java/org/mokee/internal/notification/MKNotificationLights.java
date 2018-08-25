@@ -1,7 +1,7 @@
 /**
  * Copyright (C) 2015 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
- * Copyright (C) 2017 The MoKee Open Source Project
+ * Copyright (C) 2017-2018 The LineageOS Project
+ * Copyright (C) 2017-2018 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,9 +78,6 @@ public final class MKNotificationLights {
 
     private int mZenMode;
 
-    // For checking lockscreen status
-    private KeyguardManager mKeyguardManager;
-
     private final SettingsObserver mSettingsObserver;
 
     private final Context mContext;
@@ -123,9 +120,6 @@ public final class MKNotificationLights {
             mPackageNameMappings.put(map[0], map[1]);
         }
 
-        mKeyguardManager =
-                (KeyguardManager) mContext.getSystemService(Context.KEYGUARD_SERVICE);
-
         mSettingsObserver = new SettingsObserver(new Handler());
         mSettingsObserver.observe();
     }
@@ -139,7 +133,8 @@ public final class MKNotificationLights {
     // when lights should / should not be cleared.
     // TODO: put this somewhere else
     public boolean isKeyguardLocked() {
-        return mKeyguardManager != null && mKeyguardManager.isKeyguardLocked();
+        KeyguardManager keyguardManager = mContext.getSystemService(KeyguardManager.class);
+        return keyguardManager != null && keyguardManager.isKeyguardLocked();
     }
 
     private void parseNotificationPulseCustomValuesString(String customLedValuesString) {
