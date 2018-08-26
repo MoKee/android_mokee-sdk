@@ -15,64 +15,40 @@
  * limitations under the License.
  */
 
-package org.mokee.internal.preference.deviceinfo;
+package org.lineageos.internal.preference.deviceinfo;
 
 import android.content.Context;
 import android.os.SystemProperties;
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
+import android.widget.TextView;
 
-import mokee.preference.SelfRemovingPreference;
-
-import org.mokee.platform.internal.R;
+import org.lineageos.platform.internal.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class MKVendorSecurityPatchPreference extends SelfRemovingPreference {
+public class LineageVendorSecurityPatchTextView extends TextView {
+    private static final String TAG = "LineageVendorSecurityPatchTextView";
+
     private static final String KEY_AOSP_VENDOR_SECURITY_PATCH =
             "ro.vendor.build.security_patch";
 
-    private static final String KEY_MOKEE_VENDOR_SECURITY_PATCH =
-            "ro.mk.build.vendor_security_patch";
+    private static final String KEY_LINEAGE_VENDOR_SECURITY_PATCH =
+            "ro.lineage.build.vendor_security_patch";
 
-    public MKVendorSecurityPatchPreference(Context context, AttributeSet attrs,
-            int defStyle) {
-        super(context, attrs, defStyle);
-    }
-
-    public MKVendorSecurityPatchPreference(Context context, AttributeSet attrs) {
+    public LineageVendorSecurityPatchTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public MKVendorSecurityPatchPreference(Context context) {
-        super(context);
-    }
-
-    @Override
-    public void onAttached() {
-        super.onAttached();
-
-        setTitle(R.string.mk_vendor_security_patch);
-        setSummary(getVendorSecurityPatchLevel());
-    }
-
-    @Override
-    public void setSummary(CharSequence summary) {
-        if (summary.length() > 0) {
-            super.setSummary(summary);
-        } else {
-            setAvailable(false);
-        }
+        setText(getVendorSecurityPatchLevel());
     }
 
     private String getVendorSecurityPatchLevel() {
         String patchLevel = SystemProperties.get(KEY_AOSP_VENDOR_SECURITY_PATCH);
 
         if (patchLevel.isEmpty()) {
-            patchLevel = SystemProperties.get(KEY_MOKEE_VENDOR_SECURITY_PATCH);
+            patchLevel = SystemProperties.get(KEY_LINEAGE_VENDOR_SECURITY_PATCH);
         }
 
         if (!patchLevel.isEmpty()) {
@@ -84,7 +60,11 @@ public class MKVendorSecurityPatchPreference extends SelfRemovingPreference {
             } catch (ParseException e) {
                 // parsing failed, use raw string
             }
+        } else {
+            patchLevel = getContext().getResources().getString(R.string.unknown);
         }
+
         return patchLevel;
     }
+
 }

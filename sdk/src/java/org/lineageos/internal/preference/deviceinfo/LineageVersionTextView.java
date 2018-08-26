@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The MoKee Open Source Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,62 +14,44 @@
  * limitations under the License.
  */
 
-package org.mokee.internal.preference.deviceinfo;
+package org.lineageos.internal.preference.deviceinfo;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.os.SystemProperties;
-import android.support.v7.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
-import mokee.preference.SelfRemovingPreference;
+import org.lineageos.platform.internal.R;
 
-import org.mokee.platform.internal.R;
+public class LineageVersionTextView extends TextView implements View.OnClickListener {
+    private static final String TAG = "LineageVersionTextView";
 
-public class MKVersionPreference extends SelfRemovingPreference
-        implements Preference.OnPreferenceClickListener {
+    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.version";
 
-    private static final String TAG = "MKVersionPreference";
-
-    private static final String KEY_MK_VERSION_PROP = "ro.mk.version";
-
-    private static final String PLATLOGO_PACKAGE_NAME = "android";
-    private static final String PLATLOGO_ACTIVITY_CLASS = com.android.internal.app.PlatLogoActivity.class.getName();
+    private static final String PLATLOGO_PACKAGE_NAME = "org.lineageos.lineageparts";
+    private static final String PLATLOGO_ACTIVITY_CLASS =
+            PLATLOGO_PACKAGE_NAME + ".logo.PlatLogoActivity";
 
     private long[] mHits = new long[3];
 
-    public MKVersionPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
-
-    public MKVersionPreference(Context context, AttributeSet attrs) {
+    public LineageVersionTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public MKVersionPreference(Context context) {
-        super(context);
-    }
-
-    @Override
-    public void onAttached() {
-        super.onAttached();
-
-        setOnPreferenceClickListener(this);
-        setTitle(R.string.mk_version);
-        setSummary(SystemProperties.get(KEY_MK_VERSION_PROP,
+        setText(SystemProperties.get(KEY_LINEAGE_VERSION_PROP,
                 getContext().getResources().getString(R.string.unknown)));
+        setOnClickListener(this);
     }
 
     @Override
-    public boolean onPreferenceClick(Preference preference) {
+    public void onClick(View v) {
         System.arraycopy(mHits, 1, mHits, 0, mHits.length - 1);
         mHits[mHits.length - 1] = SystemClock.uptimeMillis();
         if (mHits[0] >= (SystemClock.uptimeMillis() - 500)) {
             launchLogoActivity();
         }
-        return true; // handled
     }
 
     private void launchLogoActivity() {
@@ -81,4 +63,5 @@ public class MKVersionPreference extends SelfRemovingPreference
             Log.e(TAG, "Unable to start activity " + intent.toString());
         }
     }
+
 }

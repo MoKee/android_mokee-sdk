@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The MoKee Open Source Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,39 +14,24 @@
  * limitations under the License.
  */
 
-package org.mokee.internal.preference.deviceinfo;
+package org.lineageos.internal.preference.deviceinfo;
 
 import android.content.Context;
 import android.os.SystemProperties;
 import android.util.AttributeSet;
+import android.widget.TextView;
 
-import mokee.preference.SelfRemovingPreference;
+import org.lineageos.platform.internal.R;
 
-import org.mokee.platform.internal.R;
-
-public class MKBuildDatePreference extends SelfRemovingPreference {
-    private static final String TAG = "MKBuildDatePreference";
+public class LineageBuildDateTextView extends TextView {
+    private static final String TAG = "LineageAPIVersionTextView";
 
     private static final String KEY_BUILD_DATE_PROP = "ro.build.date";
 
-    public MKBuildDatePreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
-
-    public MKBuildDatePreference(Context context, AttributeSet attrs) {
+    public LineageBuildDateTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public MKBuildDatePreference(Context context) {
-        super(context);
-    }
-
-    @Override
-    public void onAttached() {
-        super.onAttached();
-
-        setTitle(R.string.build_date);
-        setSummary(SystemProperties.get(KEY_BUILD_DATE_PROP,
+        setText(SystemProperties.get(KEY_BUILD_DATE_PROP,
                 getContext().getResources().getString(R.string.unknown)));
     }
+
 }
