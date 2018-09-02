@@ -159,5 +159,16 @@
   <!-- This string will be referenced from other apps when they're referring to the Trust interface.
          Trust is a feature name, it's not suggested to translate this unless there are conflicts due
          to a different meaning of the word "trust" in your language -->
-  <string name="trust_feature_name">Percayai</string>
+  <string name="trust_feature_name">Trust</string>
+  <string name="permlab_trustInterface">akses antarmuka Trust</string>
+  <string name="permdesc_trustInterface">Mengizinkan aplikasi menampilkan peringatan dan saran Trust</string>
+  <string name="trust_notification_channel">Peringatan Trust</string>
+  <string name="trust_notification_title_security">Trust \u2022 Keamanan sistem</string>
+  <string name="trust_notification_content_selinux">SELinux tidak berlaku, keamanan anda telah melemah</string>
+  <string name="trust_notification_title_root">Trust \u2022 Akses root</string>
+  <string name="trust_notification_content_root">Aplikasi menggunakan hak akses root sekarang</string>
+  <string name="trust_notification_content_keys">Bentukan ini ditandatangani dengan kunci publik</string>
+  <string name="trust_notification_title_onboarding">Temukan Kepercayaan</string>
+  <string name="trust_notification_content_onboarding">Kenali cara memastikan perangkat anda aman</string>
+  <string name="trust_notification_action_manage">Kelola peringatan</string>
 </resources>
