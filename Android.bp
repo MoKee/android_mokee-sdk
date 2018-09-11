@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2018 The LineageOS Project
+// Copyright (C) 2018 The MoKee Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
 //
 
 android_app {
-    name: "org.lineageos.platform-res",
+    name: "org.mokee.platform-res",
     certificate: "platform",
     no_framework_libs: true,
-    manifest: "lineage/res/AndroidManifest.xml",
+    manifest: "mk/res/AndroidManifest.xml",
 
     aaptflags: [
         "--auto-add-overlay",
         "--private-symbols",
-        "org.lineageos.platform.internal",
+        "org.mokee.platform.internal",
 
         // Framework doesn't need versioning since it IS the platform.
         "--no-auto-version",
@@ -37,7 +37,7 @@ android_app {
     ],
 
     resource_dirs: [
-        "lineage/res/res",
+        "mk/res/res",
         "sdk/res/res"
     ],
 
@@ -47,14 +47,14 @@ android_app {
 }
 
 
-// The LineageOS Platform Framework Library
+// The MoKee Platform Framework Library
 // ============================================================
 
-lineage_sdk_src = "sdk/src/java/lineageos"
-lineage_sdk_internal_src = "sdk/src/java/org/lineageos/internal"
-library_src = "lineage/lib/main/java"
+mokee_sdk_src = "sdk/src/java/mokee"
+mokee_sdk_internal_src = "sdk/src/java/org/mokee/internal"
+library_src = "mk/lib/main/java"
 
-lineage_sdk_LOCAL_JAVA_LIBRARIES = [
+mokee_sdk_LOCAL_JAVA_LIBRARIES = [
     "android-support-annotations",
     "android-support-v7-preference",
     "android-support-v7-recyclerview",
@@ -73,23 +73,23 @@ lineage_sdk_LOCAL_JAVA_LIBRARIES = [
 // READ ME: ########################################################
 
 java_library {
-    name: "org.lineageos.platform",
+    name: "org.mokee.platform",
     static_libs: ["telephony-ext"],
 
     libs: [
         "services",
-        "org.lineageos.hardware",
-    ] + lineage_sdk_LOCAL_JAVA_LIBRARIES,
+        "org.mokee.hardware",
+    ] + mokee_sdk_LOCAL_JAVA_LIBRARIES,
 
     srcs: [
-        lineage_sdk_src + "/**/*.java",
-        lineage_sdk_internal_src + "/**/*.java",
+        mokee_sdk_src + "/**/*.java",
+        mokee_sdk_internal_src + "/**/*.java",
         library_src + "/**/*.java",
-        lineage_sdk_src + "/**/I*.aidl",
-        lineage_sdk_internal_src + "/**/I*.aidl",
+        mokee_sdk_src + "/**/I*.aidl",
+        mokee_sdk_internal_src + "/**/I*.aidl",
     ],
 
-    // Include aidl files from lineageos.app namespace as well as internal src aidl files
+    // Include aidl files from mokee.app namespace as well as internal src aidl files
     aidl: {
         local_include_dirs: ["sdk/src/java"],
     },
@@ -99,16 +99,16 @@ java_library {
 // ============================================================
 
 java_library_static {
-    name: "org.lineageos.platform.internal",
+    name: "org.mokee.platform.internal",
     required: ["services"],
     static_libs: ["telephony-ext"],
-    libs: lineage_sdk_LOCAL_JAVA_LIBRARIES,
+    libs: mokee_sdk_LOCAL_JAVA_LIBRARIES,
 
     srcs: [
-        lineage_sdk_src + "/**/*.java",
-        lineage_sdk_internal_src + "/**/*.java",
-        lineage_sdk_src + "/**/I*.aidl",
-        lineage_sdk_internal_src + "/**/I*.aidl",
+        mokee_sdk_src + "/**/*.java",
+        mokee_sdk_internal_src + "/**/*.java",
+        mokee_sdk_src + "/**/I*.aidl",
+        mokee_sdk_internal_src + "/**/I*.aidl",
     ],
 
     aidl: {
@@ -119,16 +119,16 @@ java_library_static {
 // The SDK
 // ============================================================
 
-// Included aidl files from lineageos.app namespace
+// Included aidl files from mokee.app namespace
 
 java_library_static {
-    name: "org.lineageos.platform.sdk",
+    name: "org.mokee.platform.sdk",
     required: ["services"],
-    libs: lineage_sdk_LOCAL_JAVA_LIBRARIES,
+    libs: mokee_sdk_LOCAL_JAVA_LIBRARIES,
 
     srcs: [
-        lineage_sdk_src + "/**/*.java",
-        lineage_sdk_src + "/**/I*.aidl",
+        mokee_sdk_src + "/**/*.java",
+        mokee_sdk_src + "/**/I*.aidl",
     ],
 
     aidl: {

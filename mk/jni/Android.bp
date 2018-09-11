@@ -16,7 +16,7 @@
 
 cc_library_shared {
     srcs: [
-        "src/org_lineageos_platform_internal_LineageAudioService.cpp",
+        "src/org_mokee_platform_internal_MKAudioService.cpp",
         "src/onload.cpp",
     ],
 
@@ -37,7 +37,7 @@ cc_library_shared {
         "libutils",
     ],
 
-    name: "liblineage-sdk_platform_jni",
+    name: "libmokee-sdk_platform_jni",
 
     cflags: [
         "-Wall",

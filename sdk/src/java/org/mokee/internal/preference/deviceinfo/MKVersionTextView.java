@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.internal.preference.deviceinfo;
+package org.mokee.internal.preference.deviceinfo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -25,22 +25,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import org.lineageos.platform.internal.R;
+import org.mokee.platform.internal.R;
 
-public class LineageVersionTextView extends TextView implements View.OnClickListener {
-    private static final String TAG = "LineageVersionTextView";
+public class MKVersionTextView extends TextView implements View.OnClickListener {
+    private static final String TAG = "MKVersionTextView";
 
-    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.version";
+    private static final String KEY_MOKEE_VERSION_PROP = "ro.mk.version";
 
-    private static final String PLATLOGO_PACKAGE_NAME = "org.lineageos.lineageparts";
+    private static final String PLATLOGO_PACKAGE_NAME = "org.mokee.mkparts";
     private static final String PLATLOGO_ACTIVITY_CLASS =
             PLATLOGO_PACKAGE_NAME + ".logo.PlatLogoActivity";
 
     private long[] mHits = new long[3];
 
-    public LineageVersionTextView(Context context, AttributeSet attrs) {
+    public MKVersionTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setText(SystemProperties.get(KEY_LINEAGE_VERSION_PROP,
+        setText(SystemProperties.get(KEY_MOKEE_VERSION_PROP,
                 getContext().getResources().getString(R.string.unknown)));
         setOnClickListener(this);
     }

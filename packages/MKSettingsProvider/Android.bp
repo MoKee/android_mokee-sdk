@@ -18,7 +18,7 @@ android_app {
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
 
-    name: "LineageSettingsProvider",
+    name: "MKSettingsProvider",
     certificate: "platform",
     privileged: true,
 
@@ -28,6 +28,6 @@ android_app {
         "android-support-v7-preference",
         "android-support-v7-recyclerview",
         "android-support-v14-preference",
-        "org.lineageos.platform.internal",
+        "org.mokee.platform.internal",
     ],
 }
