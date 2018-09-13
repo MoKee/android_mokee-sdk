@@ -29,13 +29,23 @@
          with non-default dangerous permissions -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
+  <string name="profileNameDefault">ค่าเริ่มต้น</string>
   <!-- Names of application groups. -->
+  <string name="profileGroupPhone">โทรศัพท์</string>
+  <string name="profileGroupCalendar">ปฏิทิน</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">อีเมล</string>
+  <string name="profileGroupSMS">SMS</string>
   <!-- Name of wildcard profile. -->
+  <string name="wildcardProfile">อื่น ๆ</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">ประหยัดพลังงาน</string>
+  <string name="perf_profile_bal">สมดุล</string>
+  <string name="perf_profile_perf">ประสิทธิภาพ</string>
   <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <!-- Performance manager permission title -->
@@ -52,8 +62,10 @@
   <!-- About device screen, build date -->
   <string name="build_date">วันที่สร้าง</string>
   <!-- About device screen, MoKee version -->
+  <string name="mk_version">เวอร์ชัน Mokee</string>
   <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
+  <string name="unknown">ไม่รู้จัก</string>
   <!-- Long-press back kill application -->
   <!-- Status bar network traffic monitor strings -->
   <!-- Accent colors -->

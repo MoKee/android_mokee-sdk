@@ -52,6 +52,7 @@
   <!-- About device screen, build date -->
   <string name="build_date">ನಿರ್ಮಾಣ ದಿನಾಂಕ</string>
   <!-- About device screen, MoKee version -->
+  <string name="mk_version">MoKee ಆವೃತ್ತಿ</string>
   <!-- About device screen, vendor security patch -->
   <!-- General purpose use "unknown" string -->
   <string name="unknown">ಅಪರಿಚಿತ</string>
