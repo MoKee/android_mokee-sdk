@@ -155,6 +155,8 @@
 
     <!-- About device screen, build date -->
     <string name="build_date">Build date</string>
+    <!-- About device screen, MoKee API Level -->
+    <string name="mk_api_level">MoKee API level</string>
     <!-- About device screen, MoKee version -->
     <string name="mk_version">MoKee version</string>
     <!-- About device screen, vendor security patch -->

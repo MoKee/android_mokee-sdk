@@ -119,6 +119,7 @@
 
     <!-- About device info screen -->
     <java-symbol type="string" name="build_date" />
+    <java-symbol type="string" name="mk_api_level" />
     <java-symbol type="string" name="mk_version" />
     <java-symbol type="string" name="mk_vendor_security_patch" />
 
