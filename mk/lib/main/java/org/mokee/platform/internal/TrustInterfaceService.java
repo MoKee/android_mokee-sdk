@@ -336,9 +336,7 @@ public class TrustInterfaceService extends MKSystemService {
     private int getKeysStatus() {
         String buildTags = SystemProperties.get("ro.build.tags");
 
-        if (buildTags.contains("test-keys")) {
-            return TrustInterface.TRUST_FEATURE_LEVEL_BAD;
-        } else if (buildTags.contains("release-keys") || buildTags.contains("dev-keys")) {
+        if (buildTags.contains("release-keys") || buildTags.contains("dev-keys") || buildTags.contains("test-keys")) {
             return TrustInterface.TRUST_FEATURE_LEVEL_GOOD;
         }
         return TrustInterface.ERROR_UNDEFINED;
