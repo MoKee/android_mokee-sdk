@@ -17,11 +17,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
+  <string name="mokee_system_label">MoKee System</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permdesc_modifyProfiles">ಒಂದು ತಂತ್ರಾಂಶಕ್ಕೆ ಸಿಸ್ಟಂ ಪ್ರೊಫೈಲ್‍ಗಳನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <!-- Labels for the WRITE_SETTINGS permission -->
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">ತಂತ್ರಾಂಶಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿಡಲು ತಂತ್ರಾಂಶಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ತೆಗೆಯಿರಿ</string>
+  <string name="permdesc_protectedApp">ಇತರ ತಂತ್ರಾಂಶಗಳನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಲು ಮತ್ತು ಅವುಗಳನ್ನು ಲಾಕ್‌ ಮಾಡಲು ಒಂದು ತಂತ್ರಾಂಶವನ್ನು ಅನುಮತಿಸಿ.</string>
   <!-- Labels for CHANGE_STYLE permission -->
   <!-- this is wrong, but google's package manager uses the android:description
          attribute as description for the runtime permission request dialog
@@ -29,16 +33,63 @@
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">ಪೂರ್ವನಿಯೋಜಿತ</string>
+  <string name="profileNameWork">ಕಾರ್ಯ</string>
+  <string name="profileNameHome">ಮನೆ</string>
+  <string name="profileNameSilent">ನಿಶ್ಯಬ್ದ</string>
+  <string name="profileNameNight">ರಾತ್ರಿ</string>
+  <string name="profileNameAutomobile">ವಾಹನ</string>
   <!-- Names of application groups. -->
+  <string name="profileGroupPhone">ಫೋನ್</string>
+  <string name="profileGroupCalendar">ಕ್ಯಾಲೆಂಡರ್</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">ಇಮೇಲ್</string>
+  <string name="profileGroupSMS">SMS</string>
   <!-- Name of wildcard profile. -->
+  <string name="wildcardProfile">ಇತರೆ</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readPhoneLocation">ಫೋನಿನ ಸ್ಥಳ ಪಡೆಯಿರಿ</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readPhoneLocation">ಒಂದು ತಂತ್ರಾಂಶಕ್ಕೆ ಫೋನಿನ ಸ್ಥಳದ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writePhoneLocation">ಫೋನಿನ ಸ್ಥಳ ಬರೆಯಿರಿ</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writePhoneLocation">ಫೋನಿನ ಸ್ಥಳವನ್ನು ಬದಲಾಯಿಸಲು ತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">ವಿದ್ಯುತ್ ಉಳಿಕೆ</string>
+  <string name="perf_profile_bal">ಸಮತೋಲಿತ</string>
+  <string name="perf_profile_perf">ಕಾರ್ಯಕ್ಷಮತೆ</string>
+  <string name="perf_profile_bias_power">ದಕ್ಷತೆ</string>
+  <string name="perf_profile_bias_perf">ಕ್ಷಿಪ್ರ</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">ಹೆಚ್ಚಿನ ವಿದ್ಯುತ್ ಉಳಿಕೆಗಳು, ಸಾಧನದ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತವೆ</string>
+  <string name="perf_profile_bal_summary">ಅತ್ಯುತ್ತಮ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಶಕ್ತಿ ಗುಣಲಕ್ಷಣಗಳ ಸಮತೋಲನ</string>
+  <string name="perf_profile_perf_summary">ಹೆಚ್ಚಿನ ಕಾರ್ಯಕ್ಷಮತೆ ಮಾದರಿ. ವಿದ್ಯುತ್ ಬಳಕೆಯು ಕಳವಳವಿಲ್ಲದಿದ್ದಾಗ ಕಡಿಮೆ ಸುಪ್ತತೆ ಮತ್ತು ಹೆಚ್ಚಿನ ವಸ್ತುವಿನ ಒಟ್ಟು ಮೊತ್ತ ಅಗತ್ಯವಿರುವ ತಂತ್ರಾಂಶಗಳಿಗೆ ಉಪಯುಕ್ತವಾಗಿದೆ</string>
+  <string name="perf_profile_bias_power_summary">ಫೇವರ್ ಪವರ್ ಉಳಿತಾಯ. ಗರಿಷ್ಠ ಸಿಪಿಯು ಶಕ್ತಿಯನ್ನು ಮಿತಿಗೊಳಿಸಿ ಮತ್ತು ಹೆಚ್ಚಿನ ಸುಪ್ತತೆಯ ವೆಚ್ಚದಲ್ಲಿ ವಿದ್ಯುತ್ ಉಳಿತಾಯಕ್ಕಾಗಿ ಅತ್ಯುತ್ತಮವಾಗಿಸಿ</string>
+  <string name="perf_profile_bias_perf_summary">ಅನುಕೂಲಕರ ಪ್ರದರ್ಶನ. ಸ್ವಲ್ಪ ಹೆಚ್ಚಿದ ವಿದ್ಯುತ್ ಬಳಕೆಯನ್ನು ಸುಪ್ತತೆ ಕಡಿಮೆಗೊಳಿಸುತ್ತದೆ</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">ಸ್ವಯಂಚಾಲಿತ</string>
+  <string name="live_display_auto_summary">ಸೂರ್ಯೋದಯ ಮತ್ತು ಸೂರ್ಯಾಸ್ತದ ನಂತರ ಪರದೆ‌ ಬಣ್ಣದ ತಾಪವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿ</string>
+  <string name="live_display_off">ಆರಿಸು</string>
+  <string name="live_display_off_summary">ಎಲ್ಲಾ ಹೊಂದಾಣಿಕೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
+  <string name="live_display_day">ದಿನ</string>
+  <string name="live_display_day_summary">ದಿನದ ಸಂಯೋಜನೆಗಳನ್ನು ಮಾತ್ರ ಬಳಸಿ</string>
+  <string name="live_display_night">ರಾತ್ರಿ</string>
+  <string name="live_display_night_summary">ರಾತ್ರಿ ಸಂಯೋಜನೆಗಳನ್ನು ಮಾತ್ರ ಬಳಸಿ</string>
+  <string name="live_display_outdoor">ಹೊರಾಂಗಣ (ಪ್ರಕಾಶಮಾನ ಸೂರ್ಯ)</string>
+  <string name="live_display_outdoor_summary">ಹೊರಾಂಗಣ ಸಂಯೋಜನೆಗಳನ್ನು ಮಾತ್ರ ಬಳಸಿ</string>
+  <string name="live_display_hint">ಕಣ್ಣಿನ ತೊಂದರೆಯನ್ನು ಕಡಿಮೆ ಮಾಡಲು ನೇರಪ್ರದರ್ಶನ ನೆರವಾಗುತ್ತದೆ ಮತ್ತು ರಾತ್ರಿಯಲ್ಲಿ ನಿದ್ರೆಗೂ ಸಹಾಯವಾಗುತ್ತದೆ. ಪ್ರಯತ್ನಿಸಲು ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ!</string>
+  <string name="accessibility_quick_settings_live_display_off">ನೇರಪ್ರದರ್ಶನ ಆರಿಸಿದೆ.</string>
+  <string name="accessibility_quick_settings_live_display_auto">ನೇರಪ್ರದರ್ಶನ: ಸ್ವಯಂಚಾಲಿತ ಮಾದರಿ.</string>
+  <string name="accessibility_quick_settings_live_display_day">ನೇರಪ್ರದರ್ಶನ: ದಿನ ಮಾದರಿ.</string>
+  <string name="accessibility_quick_settings_live_display_night">ನೇರಪ್ರದರ್ಶನ: ರಾತ್ರಿ ಮಾದರಿ.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">ನೇರಪ್ರದರ್ಶನ: ಹೊರಾಂಗಣ ಮಾದರಿ.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">ನೇರಪ್ರದರ್ಶನ ಆರಿಸಿದೆ.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">ನೇರಪ್ರದರ್ಶನ ಸ್ವಯಂಚಾಲಿತ ಮಾದರಿಗೆ ಬದಲಾಗಿದೆ.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">ನೇರಪ್ರದರ್ಶನ ದಿನ ಮಾದರಿಗೆ ಬದಲಾಗಿದೆ.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">ನೇರಪ್ರದರ್ಶನ ರಾತ್ರಿ ಮಾದರಿಗೆ ಬದಲಾಗಿದೆ.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">ನೇರಪ್ರದರ್ಶನ ಹೊರಾಂಗಣ ಮಾದರಿಗೆ ಬದಲಾಗಿದೆ.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">ಕಾರ್ಯನಿರ್ವಹಣೆ ನಿರ್ವಾಹಕರನ್ನು ಪ್ರವೇಶಿಸು</string>
   <!-- Performance manager permission description -->
   <!-- Weather Service strings -->
   <!-- DataUsageProvider write permission title -->
