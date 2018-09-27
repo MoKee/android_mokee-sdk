@@ -1048,16 +1048,6 @@ public final class MKSettings {
                         "recent", "menu0", "menu1", "menu2", "dpad_left", "dpad_right"}, "|", true);
 
         /**
-         * Volume key controls ringtone or media sound stream
-         */
-        public static final String VOLUME_KEYS_CONTROL_RING_STREAM =
-                "volume_keys_control_ring_stream";
-
-        /** @hide */
-        public static final Validator VOLUME_KEYS_CONTROL_RING_STREAM_VALIDATOR =
-                sBooleanValidator;
-
-        /**
          * boolean value. toggles using arrow key locations on nav bar
          * as left and right dpad keys
          */
@@ -2236,7 +2226,6 @@ public final class MKSettings {
                 MKSettings.System.STATUS_BAR_AM_PM,
                 MKSettings.System.STATUS_BAR_BATTERY_STYLE,
                 MKSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
-                MKSettings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
                 MKSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
                 MKSettings.System.HEADSET_CONNECT_PLAYER,
                 MKSettings.System.ZEN_ALLOW_LIGHTS,
@@ -2295,8 +2284,6 @@ public final class MKSettings {
             VALIDATORS.put(VOLUME_ADJUST_SOUNDS_ENABLED,
                     VOLUME_ADJUST_SOUNDS_ENABLED_VALIDATOR);
             VALIDATORS.put(NAV_BUTTONS, NAV_BUTTONS_VALIDATOR);
-            VALIDATORS.put(VOLUME_KEYS_CONTROL_RING_STREAM,
-                    VOLUME_KEYS_CONTROL_RING_STREAM_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_MENU_ARROW_KEYS,
                     NAVIGATION_BAR_MENU_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(KEY_HOME_LONG_PRESS_ACTION, KEY_HOME_LONG_PRESS_ACTION_VALIDATOR);
