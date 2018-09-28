@@ -59,7 +59,7 @@
          $1=MODEL -->
     <string name="def_device_name">%1$s</string>
 
-    <!-- Defaults for MKSettings.Global.DEV_FORCE_SHOW_NAVBAR -->
+    <!-- Defaults for MKSettings.System.FORCE_SHOW_NAVBAR -->
     <integer name="def_force_show_navbar">0</integer>
 
     <!-- Default for MKSettings.Global.HEADS_UP_NOTIFICATIONS_ENABLED
