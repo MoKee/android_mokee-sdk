@@ -63,7 +63,7 @@ public class ColorTemperatureController extends LiveDisplayFeature {
 
     private final MKHardwareManager mHardware;
 
-    private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS * 1;
+    private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS / 2;
 
     private static final Uri DISPLAY_TEMPERATURE_DAY =
             MKSettings.System.getUriFor(MKSettings.System.DISPLAY_TEMPERATURE_DAY);
@@ -296,21 +296,21 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         if (sunset < 0 || sunrise < 0
                 || now < (sunset - TWILIGHT_ADJUSTMENT_TIME)
                 || now > (sunrise + TWILIGHT_ADJUSTMENT_TIME)) {
-            // More than 1hr after civil sunrise or before civil sunset
+            // More than 0.5hr after civil sunrise or before civil sunset
             return 1.0f;
         }
 
-        // Scale the transition into night mode in 1hr before civil sunset
+        // Scale the transition into night mode in 0.5hr before civil sunset
         if (now <= sunset) {
             return (float) (sunset - now) / TWILIGHT_ADJUSTMENT_TIME;
         }
 
-        // Scale the transition into day mode in 1hr after civil sunrise
+        // Scale the transition into day mode in 0.5hr after civil sunrise
         if (now >= sunrise) {
             return (float) (now - sunrise) / TWILIGHT_ADJUSTMENT_TIME;
         }
 
-        // More than 1hr past civil sunset
+        // More than 0.5hr past civil sunset
         return 0.0f;
     }
 
