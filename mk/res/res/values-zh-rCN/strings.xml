@@ -17,19 +17,19 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the MoKee system components when they are shown to the user. -->
-  <string name="mokee_system_label">MoKeeOS 系统</string>
+  <string name="mokee_system_label">魔趣系统</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">修改系统配置</string>
   <string name="permdesc_modifyProfiles">允许应用修改系统配置文件。</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">使用硬件框架</string>
-  <string name="permdesc_useHardwareFramework">允许应用访问 MoKee 硬件框架。</string>
+  <string name="permdesc_useHardwareFramework">允许应用访问魔趣硬件框架</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
-  <string name="permlab_writeSettings">修改 MoKee 系统设置</string>
-  <string name="permdesc_writeSettings">允许应用修改 MoKee 系统设置。</string>
+  <string name="permlab_writeSettings">修改魔趣系统设置</string>
+  <string name="permdesc_writeSettings">允许应用修改魔趣系统设置。</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <string name="permlab_writeSecureSettings">修改 MoKee 系统安全设置</string>
-  <string name="permdesc_writeSecureSettings">允许应用修改 MoKee 系统安全设置。不适用于一般的应用程序。</string>
+  <string name="permlab_writeSecureSettings">修改魔趣系统安全设置</string>
+  <string name="permdesc_writeSecureSettings">允许应用修改魔趣系统安全设置。不适用于一般的应用程序。</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">从受保护的应用中添加或删除应用</string>
   <string name="permdesc_protectedApp">允许应用标记受保护的应用并将其锁定。</string>
@@ -132,7 +132,7 @@
   <!-- About device screen, build date -->
   <string name="build_date">编译日期</string>
   <!-- About device screen, MoKee version -->
-  <string name="mk_version">MoKeeOS 版本</string>
+  <string name="mk_version">魔趣版本</string>
   <!-- About device screen, vendor security patch -->
   <string name="mk_vendor_security_patch">供应商安全补丁程序级别</string>
   <!-- General purpose use "unknown" string -->
