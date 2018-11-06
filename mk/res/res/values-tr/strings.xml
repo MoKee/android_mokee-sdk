@@ -16,159 +16,159 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Label for the MoKee system components when they are shown to the user. -->
-  <string name="mokee_system_label">MoKee Sistemi</string>
-  <!-- Labels for the MODIFY_PROFILES permission. -->
-  <string name="permlab_modifyProfiles">sistem profillerini değiştir</string>
-  <string name="permdesc_modifyProfiles">Bir uygulamaya sistem profillerini değiştirme izni verir.</string>
-  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-  <string name="permlab_useHardwareFramework">donanım altyapısını kullan</string>
-  <string name="permdesc_useHardwareFramework">Uygulamanın MK donanım altyapısına erişimine izin verir.</string>
-  <!-- Labels for the WRITE_SETTINGS permission -->
-  <string name="permlab_writeSettings">MK sistem ayarlarını değiştir</string>
-  <string name="permdesc_writeSettings">Bir uygulamaya MK sistem ayarlarını değiştirme izni verir.</string>
-  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <string name="permlab_writeSecureSettings">sistem güvenlik ayarlarını değiştir</string>
-  <string name="permdesc_writeSecureSettings">Bir uygulamaya MK sistem güvenlik ayarlarını değiştirme izni verir. Normal uygulamalar tarafından kullanılamaz.</string>
-  <!-- Labels for the PROTECTED_APP permission. -->
-  <string name="permlab_protectedApp">korumalı uygulamalar için uygulama ekleme ve kaldırma</string>
-  <string name="permdesc_protectedApp">Uygulamaya, diğer uygulamaları korumalı olarak işaretleme ve kilitleme izni verir.</string>
-  <!-- Labels for CHANGE_STYLE permission -->
-  <string name="permlab_changeStyle">sistem stilini değiştir</string>
-  <!-- this is wrong, but google's package manager uses the android:description
+    <!-- Label for the MoKee system components when they are shown to the user. -->
+    <string name="mokee_system_label">MoKee Sistemi</string>
+    <!-- Labels for the MODIFY_PROFILES permission. -->
+    <string name="permlab_modifyProfiles">sistem profillerini değiştir</string>
+    <string name="permdesc_modifyProfiles">Bir uygulamaya sistem profillerini değiştirme izni verir.</string>
+    <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+    <string name="permlab_useHardwareFramework">donanım altyapısını kullan</string>
+    <string name="permdesc_useHardwareFramework">Uygulamanın MK donanım altyapısına erişimine izin verir.</string>
+    <!-- Labels for the WRITE_SETTINGS permission -->
+    <string name="permlab_writeSettings">MK sistem ayarlarını değiştir</string>
+    <string name="permdesc_writeSettings">Bir uygulamaya MK sistem ayarlarını değiştirme izni verir.</string>
+    <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+    <string name="permlab_writeSecureSettings">sistem güvenlik ayarlarını değiştir</string>
+    <string name="permdesc_writeSecureSettings">Bir uygulamaya MK sistem güvenlik ayarlarını değiştirme izni verir. Normal uygulamalar tarafından kullanılamaz.</string>
+    <!-- Labels for the PROTECTED_APP permission. -->
+    <string name="permlab_protectedApp">korumalı uygulamalar için uygulama ekleme ve kaldırma</string>
+    <string name="permdesc_protectedApp">Uygulamaya, diğer uygulamaları korumalı olarak işaretleme ve kilitleme izni verir.</string>
+    <!-- Labels for CHANGE_STYLE permission -->
+    <string name="permlab_changeStyle">sistem stilini değiştir</string>
+    <!-- this is wrong, but google's package manager uses the android:description
          attribute as description for the runtime permission request dialog
          with non-default dangerous permissions -->
-  <string name="permdesc_changeStyle">Bir uygulamanın sistem renklerini özelleştirmesine izin verir.</string>
-  <!-- Profiles -->
-  <!-- Names of default profiles. -->
-  <string name="profileNameDefault">Varsayılan</string>
-  <string name="profileNameWork">İş</string>
-  <string name="profileNameHome">Ev</string>
-  <string name="profileNameSilent">Sessiz</string>
-  <string name="profileNameNight">Gece</string>
-  <string name="profileNameAutomobile">Otomobil</string>
-  <!-- Names of application groups. -->
-  <string name="profileGroupPhone">Telefon</string>
-  <string name="profileGroupCalendar">Takvim</string>
-  <string name="profileGroupGmail">Gmail</string>
-  <string name="profileGroupEmail">E-posta</string>
-  <string name="profileGroupSMS">SMS</string>
-  <!-- Name of wildcard profile. -->
-  <string name="wildcardProfile">Diğer</string>
-  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readPhoneLocation">telefon konumunu okuyun</string>
-  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readPhoneLocation">Bir uygulamaya telefon konumuyla ilgili bilgileri okuma izni verir.</string>
-  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writePhoneLocation">telefon konumunu yaz</string>
-  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writePhoneLocation">Bir uygulamaya telefon konumunu değiştirme izni verir.</string>
-  <!-- Performance profiles -->
-  <string name="perf_profile_pwrsv">Güç tasarrufu</string>
-  <string name="perf_profile_bal">Dengeli</string>
-  <string name="perf_profile_perf">Performans</string>
-  <string name="perf_profile_bias_power">Verimlilik</string>
-  <string name="perf_profile_bias_perf">Hızlı</string>
-  <!-- Performance profiles -->
-  <string name="perf_profile_pwrsv_summary">Maksimum güç tasarrufu. Cihaz performansını düşürür, arka plan görevlerini ve veriyi devre dışı bırakır, animasyonları devre dışı bırakır ve ekran karesi oranını azaltır</string>
-  <string name="perf_profile_bal_summary">Optimum performans ve güç özelliklerinin dengelenmesi</string>
-  <string name="perf_profile_perf_summary">Yüksek performans modu. Güç tüketiminin endişe kaynağı olmadığında düşük gecikme ve yüksek verim gerektiren uygulamalar için kullanışlıdır</string>
-  <string name="perf_profile_bias_power_summary">Güç tasarrufunu tercih et. Maksimum işlemci gücünü sınırlayın ve daha yüksek gecikme maliyeti ile güç tasarrufu için optimize edin</string>
-  <string name="perf_profile_bias_perf_summary">Performansı tercih et. Hafifletilmiş güç tüketimi ile gecikmeyi azaltır</string>
-  <!-- LiveDisplay strings -->
-  <string name="live_display_auto">Otomatik</string>
-  <string name="live_display_auto_summary">Günbatımı ve gündoğumundan sonra otomatik olarak ekran renk sıcaklığını ayarla</string>
-  <string name="live_display_off">Kapalı</string>
-  <string name="live_display_off_summary">Tüm ayarları devre dışı bırak</string>
-  <string name="live_display_day">Gün</string>
-  <string name="live_display_day_summary">Sadece gün ayarlarını kullan</string>
-  <string name="live_display_night">Gece</string>
-  <string name="live_display_night_summary">Sadece gece ayarlarını kullan</string>
-  <string name="live_display_outdoor">Açık alan (parlak güneş)</string>
-  <string name="live_display_outdoor_summary">Sadece açık alan ayarlarını kullan</string>
-  <string name="live_display_hint">LiveDisplay göz yorgunluğu azalttır ve geceleri uyumana yardımcı yardımcı olabilir. Denemek için buraya tıklayın!</string>
-  <string name="accessibility_quick_settings_live_display_off">LiveDisplay kapalı.</string>
-  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: otomatik mod.</string>
-  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: gündüz modu.</string>
-  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: gece modu.</string>
-  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: açık alan modu.</string>
-  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay devre dışı.</string>
-  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay otomatik moda geçti.</string>
-  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay gündüz moduna geçti.</string>
-  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gece moduna geçti.</string>
-  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay açık alan moduna geçti.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">erişim performans yöneticisi</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Bir uygulamanın fener hizmetine erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
-  <!-- Weather Service strings -->
-  <string name="permlab_weather_read">hava durumunu oku</string>
-  <string name="permdesc_weather_read">Bir uygulamanın hava durumu sunucusundan içerik okuma izni verir.</string>
-  <string name="permlab_weather_write">hava durumu sağlayıcısını güncelle</string>
-  <string name="permdesc_weather_write">Bir uygulamanın hava durumu sunucusunun içeriğini güncellemesine izin verir.</string>
-  <string name="permlab_weather_bind">hava durumu sağlayıcı hizmeti olarak bağla</string>
-  <string name="permdesc_weather_bind">Bir uygulamanın bir hava durumu sağlayıcı hizmeti olarak tanımlanmasına izin verir.</string>
-  <string name="permlab_weather_access_mgr">meteoroloji servisine erişim</string>
-  <string name="permdesc_weather_access_mgr">Bir uygulamaya sistemdeki hava durumu hizmetine erişme izin verir. Normal uygulamalar için asla gerekli değildir.</string>
-  <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">veri kullanımı veritabanını değiştir</string>
-  <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Bir uygulamanın veri kullanımı veritabanının içeriğini güncelleme izin verir.</string>
-  <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">veri kullanımı veritabanını oku</string>
-  <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Bir uygulamaya, veri kullanımı veri tabanındaki içeriği okuma izni verir.</string>
-  <!-- LiveDisplay manager permission -->
-  <string name="permlab_manageLiveDisplay">LiveDisplay ayarlarını yönet</string>
-  <string name="permdesc_manageLiveDisplay">Bir uygulamanın gelişmiş ekran ayarlarını yapılandırmasına izin verir.</string>
-  <!-- MKAudioService - observe session changes permission -->
-  <string name="permlab_observe_audio_sessions">sesli oturum değişikliklerini gözlemle</string>
-  <string name="permdesc_observe_audio_sessions">Bir uygulamaya, ses akışlarının oluşturulduğunu ve yok edildiğini gözlemleme izni verir.</string>
-  <!-- Privacy Guard -->
-  <string name="privacy_guard_manager_title">Gizlilik Koruması</string>
-  <!-- Permissions used by remote preferences -->
-  <string name="permlab_manageRemotePrefs">uzaktan ayarları yönet</string>
-  <string name="permdesc_manageRemotePrefs">Bir uygulamanın uzaktan ayarları yönetmesine izin verir</string>
-  <!-- About device screen, build date -->
-  <string name="build_date">Yapı tarihi</string>
-  <!-- About device screen, MoKee version -->
-  <string name="mk_version">MoKee sürümü</string>
-  <!-- About device screen, vendor security patch -->
-  <string name="mk_vendor_security_patch">Vendor güvenlik yaması düzeyi</string>
-  <!-- General purpose use "unknown" string -->
-  <string name="unknown">Bilinmiyor</string>
-  <!-- Long-press back kill application -->
-  <string name="app_killed_message">Uygulama sonlandırıldı</string>
-  <!-- Status bar network traffic monitor strings -->
-  <string name="kilobitspersecond_short">kb/s</string>
-  <string name="megabitspersecond_short">Mb/s</string>
-  <string name="kilobytespersecond_short">kB/s</string>
-  <string name="megabytespersecond_short">MB/s</string>
-  <!-- Accent colors -->
-  <string name="accent_black">Karbon</string>
-  <string name="accent_blue">Yaban mersini</string>
-  <string name="accent_brown">Kakao</string>
-  <string name="accent_cyan">Camgöbeği</string>
-  <string name="accent_green">Orman</string>
-  <string name="accent_orange">Bal kabağı</string>
-  <string name="accent_pink">Kiraz</string>
-  <string name="accent_purple">Lavanta</string>
-  <string name="accent_red">Domates</string>
-  <string name="accent_yellow">Muz</string>
-  <!-- Trust interface -->
-  <!-- This string will be referenced from other apps when they're referring to the Trust interface.
+    <string name="permdesc_changeStyle">Bir uygulamanın sistem renklerini özelleştirmesine izin verir.</string>
+    <!-- Profiles -->
+    <!-- Names of default profiles. -->
+    <string name="profileNameDefault">Varsayılan</string>
+    <string name="profileNameWork">İş</string>
+    <string name="profileNameHome">Ev</string>
+    <string name="profileNameSilent">Sessiz</string>
+    <string name="profileNameNight">Gece</string>
+    <string name="profileNameAutomobile">Otomobil</string>
+    <!-- Names of application groups. -->
+    <string name="profileGroupPhone">Telefon</string>
+    <string name="profileGroupCalendar">Takvim</string>
+    <string name="profileGroupGmail">Gmail</string>
+    <string name="profileGroupEmail">E-posta</string>
+    <string name="profileGroupSMS">SMS</string>
+    <!-- Name of wildcard profile. -->
+    <string name="wildcardProfile">Diğer</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_readPhoneLocation">telefon konumunu okuyun</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_readPhoneLocation">Bir uygulamaya telefon konumuyla ilgili bilgileri okuma izni verir.</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_writePhoneLocation">telefon konumunu yaz</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_writePhoneLocation">Bir uygulamaya telefon konumunu değiştirme izni verir.</string>
+    <!-- Performance profiles -->
+    <string name="perf_profile_pwrsv">Güç tasarrufu</string>
+    <string name="perf_profile_bal">Dengeli</string>
+    <string name="perf_profile_perf">Performans</string>
+    <string name="perf_profile_bias_power">Verimlilik</string>
+    <string name="perf_profile_bias_perf">Hızlı</string>
+    <!-- Performance profiles -->
+    <string name="perf_profile_pwrsv_summary">Maksimum güç tasarrufu. Cihaz performansını düşürür, arka plan görevlerini ve veriyi devre dışı bırakır, animasyonları devre dışı bırakır ve ekran karesi oranını azaltır</string>
+    <string name="perf_profile_bal_summary">Optimum performans ve güç özelliklerinin dengelenmesi</string>
+    <string name="perf_profile_perf_summary">Yüksek performans modu. Güç tüketiminin endişe kaynağı olmadığında düşük gecikme ve yüksek verim gerektiren uygulamalar için kullanışlıdır</string>
+    <string name="perf_profile_bias_power_summary">Güç tasarrufunu tercih et. Maksimum işlemci gücünü sınırlayın ve daha yüksek gecikme maliyeti ile güç tasarrufu için optimize edin</string>
+    <string name="perf_profile_bias_perf_summary">Performansı tercih et. Hafifletilmiş güç tüketimi ile gecikmeyi azaltır</string>
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Otomatik</string>
+    <string name="live_display_auto_summary">Günbatımı ve gündoğumundan sonra otomatik olarak ekran renk sıcaklığını ayarla</string>
+    <string name="live_display_off">Kapalı</string>
+    <string name="live_display_off_summary">Tüm ayarları devre dışı bırak</string>
+    <string name="live_display_day">Gün</string>
+    <string name="live_display_day_summary">Sadece gün ayarlarını kullan</string>
+    <string name="live_display_night">Gece</string>
+    <string name="live_display_night_summary">Sadece gece ayarlarını kullan</string>
+    <string name="live_display_outdoor">Açık alan (parlak güneş)</string>
+    <string name="live_display_outdoor_summary">Sadece açık alan ayarlarını kullan</string>
+    <string name="live_display_hint">LiveDisplay göz yorgunluğu azalttır ve geceleri uyumana yardımcı yardımcı olabilir. Denemek için buraya tıklayın!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay kapalı.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: otomatik mod.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: gündüz modu.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: gece modu.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: açık alan modu.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay devre dışı.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay otomatik moda geçti.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay gündüz moduna geçti.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gece moduna geçti.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay açık alan moduna geçti.</string>
+    <!-- Performance manager permission title -->
+    <string name="permlab_perfAccess">erişim performans yöneticisi</string>
+    <!-- Performance manager permission description -->
+    <string name="permdesc_perfAccessDesc">Bir uygulamanın fener hizmetine erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
+    <!-- Weather Service strings -->
+    <string name="permlab_weather_read">hava durumunu oku</string>
+    <string name="permdesc_weather_read">Bir uygulamanın hava durumu sunucusundan içerik okuma izni verir.</string>
+    <string name="permlab_weather_write">hava durumu sağlayıcısını güncelle</string>
+    <string name="permdesc_weather_write">Bir uygulamanın hava durumu sunucusunun içeriğini güncellemesine izin verir.</string>
+    <string name="permlab_weather_bind">hava durumu sağlayıcı hizmeti olarak bağla</string>
+    <string name="permdesc_weather_bind">Bir uygulamanın bir hava durumu sağlayıcı hizmeti olarak tanımlanmasına izin verir.</string>
+    <string name="permlab_weather_access_mgr">meteoroloji servisine erişim</string>
+    <string name="permdesc_weather_access_mgr">Bir uygulamaya sistemdeki hava durumu hizmetine erişme izin verir. Normal uygulamalar için asla gerekli değildir.</string>
+    <!-- DataUsageProvider write permission title -->
+    <string name="permlab_dataUsageWrite">veri kullanımı veritabanını değiştir</string>
+    <!-- DataUsageProvider write permission description -->
+    <string name="permdesc_dataUsageWrite">Bir uygulamanın veri kullanımı veritabanının içeriğini güncelleme izin verir.</string>
+    <!-- DataUsageProvider read permission title -->
+    <string name="permlab_dataUsageRead">veri kullanımı veritabanını oku</string>
+    <!-- DataUsageProvider read permission description -->
+    <string name="permdesc_dataUsageRead">Bir uygulamaya, veri kullanımı veri tabanındaki içeriği okuma izni verir.</string>
+    <!-- LiveDisplay manager permission -->
+    <string name="permlab_manageLiveDisplay">LiveDisplay ayarlarını yönet</string>
+    <string name="permdesc_manageLiveDisplay">Bir uygulamanın gelişmiş ekran ayarlarını yapılandırmasına izin verir.</string>
+    <!-- MKAudioService - observe session changes permission -->
+    <string name="permlab_observe_audio_sessions">sesli oturum değişikliklerini gözlemle</string>
+    <string name="permdesc_observe_audio_sessions">Bir uygulamaya, ses akışlarının oluşturulduğunu ve yok edildiğini gözlemleme izni verir.</string>
+    <!-- Privacy Guard -->
+    <string name="privacy_guard_manager_title">Gizlilik Koruması</string>
+    <!-- Permissions used by remote preferences -->
+    <string name="permlab_manageRemotePrefs">uzaktan ayarları yönet</string>
+    <string name="permdesc_manageRemotePrefs">Bir uygulamanın uzaktan ayarları yönetmesine izin verir</string>
+    <!-- About device screen, build date -->
+    <string name="build_date">Yapı tarihi</string>
+    <!-- About device screen, MoKee version -->
+    <string name="mk_version">MoKee sürümü</string>
+    <!-- About device screen, vendor security patch -->
+    <string name="mk_vendor_security_patch">Vendor güvenlik yaması düzeyi</string>
+    <!-- General purpose use "unknown" string -->
+    <string name="unknown">Bilinmiyor</string>
+    <!-- Long-press back kill application -->
+    <string name="app_killed_message">Uygulama sonlandırıldı</string>
+    <!-- Status bar network traffic monitor strings -->
+    <string name="kilobitspersecond_short">kb/s</string>
+    <string name="megabitspersecond_short">Mb/s</string>
+    <string name="kilobytespersecond_short">kB/s</string>
+    <string name="megabytespersecond_short">MB/s</string>
+    <!-- Accent colors -->
+    <string name="accent_black">Karbon</string>
+    <string name="accent_blue">Yaban mersini</string>
+    <string name="accent_brown">Kakao</string>
+    <string name="accent_cyan">Camgöbeği</string>
+    <string name="accent_green">Orman</string>
+    <string name="accent_orange">Bal kabağı</string>
+    <string name="accent_pink">Kiraz</string>
+    <string name="accent_purple">Lavanta</string>
+    <string name="accent_red">Domates</string>
+    <string name="accent_yellow">Muz</string>
+    <!-- Trust interface -->
+    <!-- This string will be referenced from other apps when they're referring to the Trust interface.
          Trust is a feature name, it's not suggested to translate this unless there are conflicts due
          to a different meaning of the word "trust" in your language -->
-  <string name="trust_feature_name">Güvenlik</string>
-  <string name="permlab_trustInterface">güvenlik arayüzüne erişim</string>
-  <string name="permdesc_trustInterface">Bir uygulamanın güvenlik uyarılarını ve önerilerini görüntülemesine izin verir</string>
-  <string name="trust_notification_channel">Güvenlik uyarıları</string>
-  <string name="trust_notification_title_security">Güvenlik \u2022 Sistem güvenliği</string>
-  <string name="trust_notification_content_selinux">SELinux zorlanmıyor, güvenliğiniz zayıfladı</string>
-  <string name="trust_notification_title_root">Güvenlik \u2022 Root erişimi</string>
-  <string name="trust_notification_content_root">Bir uygulama şu anda root erişimi ayrıcalıklarını kullanıyor</string>
-  <string name="trust_notification_content_keys">Bu yapı ortak anahtarlarla imzalandı</string>
-  <string name="trust_notification_title_onboarding">Güvenliği keşfet</string>
-  <string name="trust_notification_content_onboarding">Cihazınızın güvenliğini nasıl sağlayacağınızı öğrenin</string>
-  <string name="trust_notification_action_manage">Uyarıları yönet</string>
+    <string name="trust_feature_name">Güvenlik</string>
+    <string name="permlab_trustInterface">güvenlik arayüzüne erişim</string>
+    <string name="permdesc_trustInterface">Bir uygulamanın güvenlik uyarılarını ve önerilerini görüntülemesine izin verir</string>
+    <string name="trust_notification_channel">Güvenlik uyarıları</string>
+    <string name="trust_notification_title_security">Güvenlik \u2022 Sistem güvenliği</string>
+    <string name="trust_notification_content_selinux">SELinux zorlanmıyor, güvenliğiniz zayıfladı</string>
+    <string name="trust_notification_title_root">Güvenlik \u2022 Root erişimi</string>
+    <string name="trust_notification_content_root">Bir uygulama şu anda root erişimi ayrıcalıklarını kullanıyor</string>
+    <string name="trust_notification_content_keys">Bu yapı ortak anahtarlarla imzalandı</string>
+    <string name="trust_notification_title_onboarding">Güvenliği keşfet</string>
+    <string name="trust_notification_content_onboarding">Cihazınızın güvenliğini nasıl sağlayacağınızı öğrenin</string>
+    <string name="trust_notification_action_manage">Uyarıları yönet</string>
 </resources>

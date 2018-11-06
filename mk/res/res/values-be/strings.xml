@@ -16,159 +16,159 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Label for the MoKee system components when they are shown to the user. -->
-  <string name="mokee_system_label">Систэма MoKee</string>
-  <!-- Labels for the MODIFY_PROFILES permission. -->
-  <string name="permlab_modifyProfiles">змена сістэмных профіляў</string>
-  <string name="permdesc_modifyProfiles">Дазваляць дадаткам змяняць сістэмныя профілі.</string>
-  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-  <string name="permlab_useHardwareFramework">Узаемадзеянне з абсталяваннем</string>
-  <string name="permdesc_useHardwareFramework">Дазваляе прыкладанню выкарыстоўваць апаратны MK framework.</string>
-  <!-- Labels for the WRITE_SETTINGS permission -->
-  <string name="permlab_writeSettings">змянiць налады сістэмы МК</string>
-  <string name="permdesc_writeSettings">Дазваляе прыкладанню змяняць налады сістэмы МК.</string>
-  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <string name="permlab_writeSecureSettings">змянiць налады бяспекi сістэмы МК</string>
-  <string name="permdesc_writeSecureSettings">Дазваляе прыкладанню змянiць налады бяспекi сістэмы МК. Не выкарыстоўваецца звычайнымі прыкладаннямі.</string>
-  <!-- Labels for the PROTECTED_APP permission. -->
-  <string name="permlab_protectedApp">даданне і выдаленне запісаў пераліку абароненых дадаткаў</string>
-  <string name="permdesc_protectedApp">Дадатак зможа адзначаць іншыя дадаткі як абароненыя і блакаваць іх.</string>
-  <!-- Labels for CHANGE_STYLE permission -->
-  <string name="permlab_changeStyle">змяненне стылю сістэмы</string>
-  <!-- this is wrong, but google's package manager uses the android:description
+    <!-- Label for the MoKee system components when they are shown to the user. -->
+    <string name="mokee_system_label">Систэма MoKee</string>
+    <!-- Labels for the MODIFY_PROFILES permission. -->
+    <string name="permlab_modifyProfiles">змена сістэмных профіляў</string>
+    <string name="permdesc_modifyProfiles">Дазваляць дадаткам змяняць сістэмныя профілі.</string>
+    <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+    <string name="permlab_useHardwareFramework">Узаемадзеянне з абсталяваннем</string>
+    <string name="permdesc_useHardwareFramework">Дазваляе прыкладанню выкарыстоўваць апаратны MK framework.</string>
+    <!-- Labels for the WRITE_SETTINGS permission -->
+    <string name="permlab_writeSettings">змянiць налады сістэмы МК</string>
+    <string name="permdesc_writeSettings">Дазваляе прыкладанню змяняць налады сістэмы МК.</string>
+    <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+    <string name="permlab_writeSecureSettings">змянiць налады бяспекi сістэмы МК</string>
+    <string name="permdesc_writeSecureSettings">Дазваляе прыкладанню змянiць налады бяспекi сістэмы МК. Не выкарыстоўваецца звычайнымі прыкладаннямі.</string>
+    <!-- Labels for the PROTECTED_APP permission. -->
+    <string name="permlab_protectedApp">даданне і выдаленне запісаў пераліку абароненых дадаткаў</string>
+    <string name="permdesc_protectedApp">Дадатак зможа адзначаць іншыя дадаткі як абароненыя і блакаваць іх.</string>
+    <!-- Labels for CHANGE_STYLE permission -->
+    <string name="permlab_changeStyle">змяненне стылю сістэмы</string>
+    <!-- this is wrong, but google's package manager uses the android:description
          attribute as description for the runtime permission request dialog
          with non-default dangerous permissions -->
-  <string name="permdesc_changeStyle">наладзіць сістэмныя колеры</string>
-  <!-- Profiles -->
-  <!-- Names of default profiles. -->
-  <string name="profileNameDefault">Па змаўчанні</string>
-  <string name="profileNameWork">Праца</string>
-  <string name="profileNameHome">На Галоўную старонку</string>
-  <string name="profileNameSilent">Ціхі рэжым</string>
-  <string name="profileNameNight">Ноч</string>
-  <string name="profileNameAutomobile">Аўтамабіль</string>
-  <!-- Names of application groups. -->
-  <string name="profileGroupPhone">Тэлефон</string>
-  <string name="profileGroupCalendar">Каляндар</string>
-  <string name="profileGroupGmail">Gmail</string>
-  <string name="profileGroupEmail">Электронная пошта</string>
-  <string name="profileGroupSMS">SMS</string>
-  <!-- Name of wildcard profile. -->
-  <string name="wildcardProfile">Iншае</string>
-  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readPhoneLocation">Доступ да месцазнаходжання</string>
-  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readPhoneLocation">Дазваляе прыкладанню чытаць інфармацыю аб месцазнаходжаннi тэлефона.</string>
-  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writePhoneLocation">Запісаць месцазнаходжанне</string>
-  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writePhoneLocation">Дазволіць прыкладанням запісваць месцазнаходжанне тэлефона.</string>
-  <!-- Performance profiles -->
-  <string name="perf_profile_pwrsv">Энергазберажэнне</string>
-  <string name="perf_profile_bal">Збалансаваны</string>
-  <string name="perf_profile_perf">Прадукцыйнасць</string>
-  <string name="perf_profile_bias_power">Эфектыўны</string>
-  <string name="perf_profile_bias_perf">Хуткі</string>
-  <!-- Performance profiles -->
-  <string name="perf_profile_pwrsv_summary">Максімальнае энергазберажэнне. Зніжэнне прадукцыйнасці прылады, адключэнне фонавых задач і перадачы дадзеных, адключэнне анімацыі і памяншэнне частаты кадраў дысплэя</string>
-  <string name="perf_profile_bal_summary">Пэўная раўнавага паміж працаздольнасьцьцю і энэргазахаваньнем</string>
-  <string name="perf_profile_perf_summary">Высокая працаздольнасьць. Карысна падчас працы з дадаткамі, для якіх неабходны найменьшы час адказу й найвышэйша хуткасьць дадзеных, а таксама, калі энэргазахаваньне не вельмі неаходнае</string>
-  <string name="perf_profile_bias_power_summary">Намагацца заховаць энэргію. Абмяжоўваньне найбольшае магутнасьці коштам найбольшага часу адказваньня сістэмы</string>
-  <string name="perf_profile_bias_perf_summary">Падвышаная працаздольнасьць. Зьменшаны час адказу коштам падвышаным энэргаспажываньнем</string>
-  <!-- LiveDisplay strings -->
-  <string name="live_display_auto">Аўтаматычна</string>
-  <string name="live_display_auto_summary">Аўтаматычная падладка колеравай тэмпературы экрана пасля заходу і ўзыходу сонца</string>
-  <string name="live_display_off">Адключана</string>
-  <string name="live_display_off_summary">Адключыць аўтападладку</string>
-  <string name="live_display_day">Дзень</string>
-  <string name="live_display_day_summary">Толькі дзённыя налады</string>
-  <string name="live_display_night">Ноч</string>
-  <string name="live_display_night_summary">Толькі начныя налады</string>
-  <string name="live_display_outdoor">На вуліцы (яскравае сонца)</string>
-  <string name="live_display_outdoor_summary">Толькі вулічны рэжым</string>
-  <string name="live_display_hint">Жывыя шпалеры дапамогуць зменшыць напружанне на вочы і палепшыць сон. Націсні тут, каб паспрабаваць!</string>
-  <string name="accessibility_quick_settings_live_display_off">LiveDisplay выключаны.</string>
-  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: аўтаматычна.</string>
-  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: дзень.</string>
-  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: ноч.</string>
-  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: рэжым вуліцы.</string>
-  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay выключаны.</string>
-  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay зменены на аўтаматычны рэжым.</string>
-  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay змяніць на дзенны рэжым.</string>
-  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay змяніць на начны рэжым.</string>
-  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay змяніць на рэжым вуліцы.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">доступ да менеджара прадукцыйнасці</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Дадатак зможа атрымваць доступ да службы прадукцыйнасці. Гэты дазвол не выкарыстоўваецца звычайнымі дадаткамі.</string>
-  <!-- Weather Service strings -->
-  <string name="permlab_weather_read">чытанне надвор\'я</string>
-  <string name="permdesc_weather_read">Дазваляе дадаткам чытаць дадзеныя пастаўшчыка надвор\'я.</string>
-  <string name="permlab_weather_write">Абнавіць звесткі аб надвор’і</string>
-  <string name="permdesc_weather_write">Дазваляе дадаткам абнаўляць дадзеныя пастаўшчыка надвор\'я.</string>
-  <string name="permlab_weather_bind">прызначыць службай пастаўшчыка надвор\'я</string>
-  <string name="permdesc_weather_bind">Дазваляе дадаткам быць службай пастаўшчыка надвор\'я.</string>
-  <string name="permlab_weather_access_mgr">доступ да службы надвор\'я</string>
-  <string name="permdesc_weather_access_mgr">Дазваляе дадаткам доступ да пастаўшчыка надвор\'я ў сістэме МК. Не выкарыстоўваецца ў звычайных дадатках.</string>
-  <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">змяняць БД выкарыстання дадзеных</string>
-  <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Дазволіць запіс у БД выкарыстання дадзеных.</string>
-  <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">чытанне БД выкарыстання дадзеных</string>
-  <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Дазволіць доступ на чытанне з БД выкарыстання дадзеных.</string>
-  <!-- LiveDisplay manager permission -->
-  <string name="permlab_manageLiveDisplay">кіраванне наладамі LiveDisplay</string>
-  <string name="permdesc_manageLiveDisplay">Дазваляе дадатку кіраваць пашыранымі параметрамі дысплея.</string>
-  <!-- MKAudioService - observe session changes permission -->
-  <string name="permlab_observe_audio_sessions">назіраць за зменамі аўдыё сесіі</string>
-  <string name="permdesc_observe_audio_sessions">Дазваляе дадатку назіраць за створанымі і разбуранымі аўдыёпатокамі.</string>
-  <!-- Privacy Guard -->
-  <string name="privacy_guard_manager_title">Ахова</string>
-  <!-- Permissions used by remote preferences -->
-  <string name="permlab_manageRemotePrefs">кіраваньне аддаленнымі наладамі</string>
-  <string name="permdesc_manageRemotePrefs">Дадатак зможа кіраваць аддаленымі наладамі</string>
-  <!-- About device screen, build date -->
-  <string name="build_date">Дата зборкі</string>
-  <!-- About device screen, MoKee version -->
-  <string name="mk_version">Версiя MoKee</string>
-  <!-- About device screen, vendor security patch -->
-  <string name="mk_vendor_security_patch">Узровень патча бяспекі вытворцы</string>
-  <!-- General purpose use "unknown" string -->
-  <string name="unknown">Невядома</string>
-  <!-- Long-press back kill application -->
-  <string name="app_killed_message">Праграма зачынена</string>
-  <!-- Status bar network traffic monitor strings -->
-  <string name="kilobitspersecond_short">кБ/с</string>
-  <string name="megabitspersecond_short">мБ/с</string>
-  <string name="kilobytespersecond_short">КБ/с</string>
-  <string name="megabytespersecond_short">МБ/с</string>
-  <!-- Accent colors -->
-  <string name="accent_black">Карбон</string>
-  <string name="accent_blue">Сіні</string>
-  <string name="accent_brown">Карычневы</string>
-  <string name="accent_cyan">Блакітны</string>
-  <string name="accent_green">Зялёны</string>
-  <string name="accent_orange">Аранжавы</string>
-  <string name="accent_pink">Ружовы</string>
-  <string name="accent_purple">Пурпурны</string>
-  <string name="accent_red">Чырвоны</string>
-  <string name="accent_yellow">Жоўты</string>
-  <!-- Trust interface -->
-  <!-- This string will be referenced from other apps when they're referring to the Trust interface.
+    <string name="permdesc_changeStyle">наладзіць сістэмныя колеры</string>
+    <!-- Profiles -->
+    <!-- Names of default profiles. -->
+    <string name="profileNameDefault">Па змаўчанні</string>
+    <string name="profileNameWork">Праца</string>
+    <string name="profileNameHome">На Галоўную старонку</string>
+    <string name="profileNameSilent">Ціхі рэжым</string>
+    <string name="profileNameNight">Ноч</string>
+    <string name="profileNameAutomobile">Аўтамабіль</string>
+    <!-- Names of application groups. -->
+    <string name="profileGroupPhone">Тэлефон</string>
+    <string name="profileGroupCalendar">Каляндар</string>
+    <string name="profileGroupGmail">Gmail</string>
+    <string name="profileGroupEmail">Электронная пошта</string>
+    <string name="profileGroupSMS">SMS</string>
+    <!-- Name of wildcard profile. -->
+    <string name="wildcardProfile">Iншае</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_readPhoneLocation">Доступ да месцазнаходжання</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_readPhoneLocation">Дазваляе прыкладанню чытаць інфармацыю аб месцазнаходжаннi тэлефона.</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_writePhoneLocation">Запісаць месцазнаходжанне</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_writePhoneLocation">Дазволіць прыкладанням запісваць месцазнаходжанне тэлефона.</string>
+    <!-- Performance profiles -->
+    <string name="perf_profile_pwrsv">Энергазберажэнне</string>
+    <string name="perf_profile_bal">Збалансаваны</string>
+    <string name="perf_profile_perf">Прадукцыйнасць</string>
+    <string name="perf_profile_bias_power">Эфектыўны</string>
+    <string name="perf_profile_bias_perf">Хуткі</string>
+    <!-- Performance profiles -->
+    <string name="perf_profile_pwrsv_summary">Максімальнае энергазберажэнне. Зніжэнне прадукцыйнасці прылады, адключэнне фонавых задач і перадачы дадзеных, адключэнне анімацыі і памяншэнне частаты кадраў дысплэя</string>
+    <string name="perf_profile_bal_summary">Пэўная раўнавага паміж працаздольнасьцьцю і энэргазахаваньнем</string>
+    <string name="perf_profile_perf_summary">Высокая працаздольнасьць. Карысна падчас працы з дадаткамі, для якіх неабходны найменьшы час адказу й найвышэйша хуткасьць дадзеных, а таксама, калі энэргазахаваньне не вельмі неаходнае</string>
+    <string name="perf_profile_bias_power_summary">Намагацца заховаць энэргію. Абмяжоўваньне найбольшае магутнасьці коштам найбольшага часу адказваньня сістэмы</string>
+    <string name="perf_profile_bias_perf_summary">Падвышаная працаздольнасьць. Зьменшаны час адказу коштам падвышаным энэргаспажываньнем</string>
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Аўтаматычна</string>
+    <string name="live_display_auto_summary">Аўтаматычная падладка колеравай тэмпературы экрана пасля заходу і ўзыходу сонца</string>
+    <string name="live_display_off">Адключана</string>
+    <string name="live_display_off_summary">Адключыць аўтападладку</string>
+    <string name="live_display_day">Дзень</string>
+    <string name="live_display_day_summary">Толькі дзённыя налады</string>
+    <string name="live_display_night">Ноч</string>
+    <string name="live_display_night_summary">Толькі начныя налады</string>
+    <string name="live_display_outdoor">На вуліцы (яскравае сонца)</string>
+    <string name="live_display_outdoor_summary">Толькі вулічны рэжым</string>
+    <string name="live_display_hint">Жывыя шпалеры дапамогуць зменшыць напружанне на вочы і палепшыць сон. Націсні тут, каб паспрабаваць!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay выключаны.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: аўтаматычна.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: дзень.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: ноч.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: рэжым вуліцы.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay выключаны.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay зменены на аўтаматычны рэжым.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay змяніць на дзенны рэжым.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay змяніць на начны рэжым.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay змяніць на рэжым вуліцы.</string>
+    <!-- Performance manager permission title -->
+    <string name="permlab_perfAccess">доступ да менеджара прадукцыйнасці</string>
+    <!-- Performance manager permission description -->
+    <string name="permdesc_perfAccessDesc">Дадатак зможа атрымваць доступ да службы прадукцыйнасці. Гэты дазвол не выкарыстоўваецца звычайнымі дадаткамі.</string>
+    <!-- Weather Service strings -->
+    <string name="permlab_weather_read">чытанне надвор\'я</string>
+    <string name="permdesc_weather_read">Дазваляе дадаткам чытаць дадзеныя пастаўшчыка надвор\'я.</string>
+    <string name="permlab_weather_write">Абнавіць звесткі аб надвор’і</string>
+    <string name="permdesc_weather_write">Дазваляе дадаткам абнаўляць дадзеныя пастаўшчыка надвор\'я.</string>
+    <string name="permlab_weather_bind">прызначыць службай пастаўшчыка надвор\'я</string>
+    <string name="permdesc_weather_bind">Дазваляе дадаткам быць службай пастаўшчыка надвор\'я.</string>
+    <string name="permlab_weather_access_mgr">доступ да службы надвор\'я</string>
+    <string name="permdesc_weather_access_mgr">Дазваляе дадаткам доступ да пастаўшчыка надвор\'я ў сістэме МК. Не выкарыстоўваецца ў звычайных дадатках.</string>
+    <!-- DataUsageProvider write permission title -->
+    <string name="permlab_dataUsageWrite">змяняць БД выкарыстання дадзеных</string>
+    <!-- DataUsageProvider write permission description -->
+    <string name="permdesc_dataUsageWrite">Дазволіць запіс у БД выкарыстання дадзеных.</string>
+    <!-- DataUsageProvider read permission title -->
+    <string name="permlab_dataUsageRead">чытанне БД выкарыстання дадзеных</string>
+    <!-- DataUsageProvider read permission description -->
+    <string name="permdesc_dataUsageRead">Дазволіць доступ на чытанне з БД выкарыстання дадзеных.</string>
+    <!-- LiveDisplay manager permission -->
+    <string name="permlab_manageLiveDisplay">кіраванне наладамі LiveDisplay</string>
+    <string name="permdesc_manageLiveDisplay">Дазваляе дадатку кіраваць пашыранымі параметрамі дысплея.</string>
+    <!-- MKAudioService - observe session changes permission -->
+    <string name="permlab_observe_audio_sessions">назіраць за зменамі аўдыё сесіі</string>
+    <string name="permdesc_observe_audio_sessions">Дазваляе дадатку назіраць за створанымі і разбуранымі аўдыёпатокамі.</string>
+    <!-- Privacy Guard -->
+    <string name="privacy_guard_manager_title">Ахова</string>
+    <!-- Permissions used by remote preferences -->
+    <string name="permlab_manageRemotePrefs">кіраваньне аддаленнымі наладамі</string>
+    <string name="permdesc_manageRemotePrefs">Дадатак зможа кіраваць аддаленымі наладамі</string>
+    <!-- About device screen, build date -->
+    <string name="build_date">Дата зборкі</string>
+    <!-- About device screen, MoKee version -->
+    <string name="mk_version">Версiя MoKee</string>
+    <!-- About device screen, vendor security patch -->
+    <string name="mk_vendor_security_patch">Узровень патча бяспекі вытворцы</string>
+    <!-- General purpose use "unknown" string -->
+    <string name="unknown">Невядома</string>
+    <!-- Long-press back kill application -->
+    <string name="app_killed_message">Праграма зачынена</string>
+    <!-- Status bar network traffic monitor strings -->
+    <string name="kilobitspersecond_short">кБ/с</string>
+    <string name="megabitspersecond_short">мБ/с</string>
+    <string name="kilobytespersecond_short">КБ/с</string>
+    <string name="megabytespersecond_short">МБ/с</string>
+    <!-- Accent colors -->
+    <string name="accent_black">Карбон</string>
+    <string name="accent_blue">Сіні</string>
+    <string name="accent_brown">Карычневы</string>
+    <string name="accent_cyan">Блакітны</string>
+    <string name="accent_green">Зялёны</string>
+    <string name="accent_orange">Аранжавы</string>
+    <string name="accent_pink">Ружовы</string>
+    <string name="accent_purple">Пурпурны</string>
+    <string name="accent_red">Чырвоны</string>
+    <string name="accent_yellow">Жоўты</string>
+    <!-- Trust interface -->
+    <!-- This string will be referenced from other apps when they're referring to the Trust interface.
          Trust is a feature name, it's not suggested to translate this unless there are conflicts due
          to a different meaning of the word "trust" in your language -->
-  <string name="trust_feature_name">Trust</string>
-  <string name="permlab_trustInterface">доступ да інтэрфейсу Trust</string>
-  <string name="permdesc_trustInterface">Дазваляе праграме адлюстроўваць папярэджання і прапановы Trust</string>
-  <string name="trust_notification_channel">Папярэджанне Trust</string>
-  <string name="trust_notification_title_security">Trust \u2022 Бяспека сістэмы</string>
-  <string name="trust_notification_content_selinux">SELinux не ўжываецца, ваша бяспека пад пагрозай</string>
-  <string name="trust_notification_title_root">Trust \u2022 Root-доступ</string>
-  <string name="trust_notification_content_root">У цяперашні час праграма выкарыстоўвае root-доступ</string>
-  <string name="trust_notification_content_keys">Гэтая зборка падпісаная адкрытымі ключамі</string>
-  <string name="trust_notification_title_onboarding">Сардэчна запрашаем у Trust</string>
-  <string name="trust_notification_content_onboarding">Даведайцеся, як забяспечыць бяспеку вашай прылады</string>
-  <string name="trust_notification_action_manage">Кіраванне апавяшчэннямі</string>
+    <string name="trust_feature_name">Trust</string>
+    <string name="permlab_trustInterface">доступ да інтэрфейсу Trust</string>
+    <string name="permdesc_trustInterface">Дазваляе праграме адлюстроўваць папярэджання і прапановы Trust</string>
+    <string name="trust_notification_channel">Папярэджанне Trust</string>
+    <string name="trust_notification_title_security">Trust \u2022 Бяспека сістэмы</string>
+    <string name="trust_notification_content_selinux">SELinux не ўжываецца, ваша бяспека пад пагрозай</string>
+    <string name="trust_notification_title_root">Trust \u2022 Root-доступ</string>
+    <string name="trust_notification_content_root">У цяперашні час праграма выкарыстоўвае root-доступ</string>
+    <string name="trust_notification_content_keys">Гэтая зборка падпісаная адкрытымі ключамі</string>
+    <string name="trust_notification_title_onboarding">Сардэчна запрашаем у Trust</string>
+    <string name="trust_notification_content_onboarding">Даведайцеся, як забяспечыць бяспеку вашай прылады</string>
+    <string name="trust_notification_action_manage">Кіраванне апавяшчэннямі</string>
 </resources>
