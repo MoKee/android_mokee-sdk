@@ -248,6 +248,11 @@ public class ProfileManagerService extends MKSystemService {
     }
 
     @Override
+    public boolean isCoreService() {
+        return false;
+    }
+
+    @Override
     public void onStart() {
         mBackupManager = new BackupManager(mContext);
 
