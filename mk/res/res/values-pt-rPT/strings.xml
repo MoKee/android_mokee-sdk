@@ -50,13 +50,19 @@
     <!-- Names of application groups. -->
     <string name="profileGroupPhone">Telefone</string>
     <string name="profileGroupCalendar">Calendário</string>
+    <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">E-mail</string>
+    <string name="profileGroupSMS">SMS</string>
     <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">Outro</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_readPhoneLocation">ler a localização do telefone</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_readPhoneLocation">Permite que uma aplicação leia a informação sobre a localização do telefone.</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_writePhoneLocation">escrever a localização do telefone</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_writePhoneLocation">Permite que uma aplicação altere a localização do telefone.</string>
     <!-- Performance profiles -->
     <string name="perf_profile_pwrsv">Poupança de bateria</string>
     <string name="perf_profile_bal">Equilibrado</string>
@@ -134,6 +140,7 @@
     <!-- Long-press back kill application -->
     <string name="app_killed_message">Aplicação terminada</string>
     <!-- Status bar network traffic monitor strings -->
+    <string name="kilobitspersecond_short">kb/s</string>
     <!-- Accent colors -->
     <string name="accent_black">Carvão</string>
     <string name="accent_blue">Mirtilo</string>
