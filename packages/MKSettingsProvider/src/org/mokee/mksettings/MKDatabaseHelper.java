@@ -430,6 +430,9 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             stmt = db.compileStatement("INSERT OR IGNORE INTO system(name,value)"
                     + " VALUES(?,?);");
             // System
+            loadIntegerSetting(stmt, MKSettings.System.FORCE_SHOW_NAVBAR,
+                    R.integer.def_force_show_navbar);
+
             loadIntegerSetting(stmt, MKSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     R.integer.def_qs_quick_pulldown);
 
@@ -484,10 +487,6 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
                     + " VALUES(?,?);");
             // Global
-            loadIntegerSetting(stmt,
-                    MKSettings.Global.DEV_FORCE_SHOW_NAVBAR,
-                    R.integer.def_force_show_navbar);
-
             loadBooleanSetting(stmt,
                     MKSettings.Global.POWER_NOTIFICATIONS_ENABLED,
                     R.bool.def_power_notifications_enabled);
