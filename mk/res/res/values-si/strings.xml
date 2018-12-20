@@ -53,6 +53,7 @@
     <!-- About device screen, MoKee version -->
     <!-- About device screen, vendor security patch -->
     <!-- General purpose use "unknown" string -->
+    <string name="unknown">නොදනී</string>
     <!-- Long-press back kill application -->
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->

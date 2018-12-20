@@ -67,6 +67,7 @@
     <string name="mk_version">MoKee versioon</string>
     <!-- About device screen, vendor security patch -->
     <!-- General purpose use "unknown" string -->
+    <string name="unknown">Teadmata</string>
     <!-- Long-press back kill application -->
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->
