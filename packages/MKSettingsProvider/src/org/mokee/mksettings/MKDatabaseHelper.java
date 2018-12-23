@@ -166,13 +166,11 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             db.beginTransaction();
             try {
                 loadSettings(db);
-
                 db.setTransactionSuccessful();
-
-                upgradeVersion = 2;
             } finally {
                 db.endTransaction();
             }
+            upgradeVersion = 2;
         }
 
         if (upgradeVersion < 3) {
@@ -325,21 +323,6 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
             upgradeVersion = 10;
         }
         // *** Remember to update DATABASE_VERSION above!
-
-        if (upgradeVersion < newVersion) {
-            Log.w(TAG, "Got stuck trying to upgrade db. Old version: " + oldVersion
-                    + ", version stuck at: " +  upgradeVersion + ", new version: "
-                            + newVersion + ". Must wipe the mk settings provider.");
-
-            dropDbTable(db, MKTableNames.TABLE_SYSTEM);
-            dropDbTable(db, MKTableNames.TABLE_SECURE);
-
-            if (mUserHandle == UserHandle.USER_OWNER) {
-                dropDbTable(db, MKTableNames.TABLE_GLOBAL);
-            }
-
-            onCreate(db);
-        }
     }
 
     private void moveSettingsToNewTable(SQLiteDatabase db,
