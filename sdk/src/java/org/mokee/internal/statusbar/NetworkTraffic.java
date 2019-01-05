@@ -1,4 +1,5 @@
 /**
+ * Copyright (C) 2014-2019 The MoKee Open Source project
  * Copyright (C) 2017-2018 The LineageOS project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,13 +38,13 @@ import android.os.UserHandle;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
 import mokee.providers.MKSettings;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 import org.mokee.platform.internal.R;
@@ -61,16 +62,19 @@ public class NetworkTraffic extends TextView {
 
     private static final int REFRESH_INTERVAL = 2000;
 
-    private static final int UNITS_KILOBITS = 0;
-    private static final int UNITS_MEGABITS = 1;
-    private static final int UNITS_KILOBYTES = 2;
-    private static final int UNITS_MEGABYTES = 3;
-
     // Thresholds themselves are always defined in kbps
-    private static final long AUTOHIDE_THRESHOLD_KILOBITS  = 10;
-    private static final long AUTOHIDE_THRESHOLD_MEGABITS  = 100;
-    private static final long AUTOHIDE_THRESHOLD_KILOBYTES = 8;
     private static final long AUTOHIDE_THRESHOLD_MEGABYTES = 80;
+
+    private static final int KILOBYTE = 1024;
+    private int KB = KILOBYTE;
+    private int MB = KB * KB;
+    private int GB = MB * KB;
+
+    private static DecimalFormat decimalFormat = new DecimalFormat("##0.#");
+    static {
+        decimalFormat.setMaximumIntegerDigits(4);
+        decimalFormat.setMaximumFractionDigits(1);
+    }
 
     private int mMode = MODE_DISABLED;
     private boolean mNetworkTrafficIsVisible;
@@ -81,8 +85,6 @@ public class NetworkTraffic extends TextView {
     private int mTextSizeMulti;
     private boolean mAutoHide;
     private long mAutoHideThreshold;
-    private int mUnits;
-    private boolean mShowUnits;
     private int mDarkModeFillColor;
     private int mLightModeFillColor;
     private int mIconTint = Color.WHITE;
@@ -235,34 +237,23 @@ public class NetworkTraffic extends TextView {
         private String formatOutput(long kbps) {
             final String value;
             final String unit;
-            switch (mUnits) {
-                case UNITS_KILOBITS:
-                    value = String.format("%d", kbps);
-                    unit = mContext.getString(R.string.kilobitspersecond_short);
-                    break;
-                case UNITS_MEGABITS:
-                    value = String.format("%.1f", (float) kbps / 1000);
-                    unit = mContext.getString(R.string.megabitspersecond_short);
-                    break;
-                case UNITS_KILOBYTES:
-                    value = String.format("%d", kbps / 8);
-                    unit = mContext.getString(R.string.kilobytespersecond_short);
-                    break;
-                case UNITS_MEGABYTES:
-                    value = String.format("%.2f", (float) kbps / 8000);
-                    unit = mContext.getString(R.string.megabytespersecond_short);
-                    break;
-                default:
-                    value = "unknown";
-                    unit = "unknown";
-                    break;
+
+            long kilobyte = kbps / 8 * 1000;
+            if (kilobyte < KB) {
+                value = decimalFormat.format(kilobyte);
+                unit = mContext.getString(R.string.bytespersecond_short);
+            } else if (kilobyte < MB) {
+                value = decimalFormat.format(kilobyte / KB);
+                unit = mContext.getString(R.string.kilobytespersecond_short);
+            } else if (kilobyte < GB) {
+                value = decimalFormat.format(kilobyte / MB);
+                unit = mContext.getString(R.string.megabytespersecond_short);
+            } else {
+                value = decimalFormat.format(kilobyte / GB);
+                unit = mContext.getString(R.string.gigabytespersecond_short);
             }
 
-            if (mShowUnits) {
-                return value + " " + unit;
-            } else {
-                return value;
-            }
+            return value + " " + unit;
         }
     };
 
@@ -289,12 +280,6 @@ public class NetworkTraffic extends TextView {
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(MKSettings.Secure.getUriFor(
                     MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE),
-                    false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
-                    MKSettings.Secure.NETWORK_TRAFFIC_UNITS),
-                    false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
-                    MKSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS),
                     false, this, UserHandle.USER_ALL);
         }
 
@@ -373,31 +358,7 @@ public class NetworkTraffic extends TextView {
                 MKSettings.Secure.NETWORK_TRAFFIC_MODE, 3, UserHandle.USER_CURRENT);
         mAutoHide = MKSettings.Secure.getIntForUser(resolver,
                 MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
-        mUnits = MKSettings.Secure.getIntForUser(resolver,
-                MKSettings.Secure.NETWORK_TRAFFIC_UNITS, /* MB */ 3,
-                UserHandle.USER_CURRENT);
-
-        switch (mUnits) {
-            case UNITS_KILOBITS:
-                mAutoHideThreshold = AUTOHIDE_THRESHOLD_KILOBITS;
-                break;
-            case UNITS_MEGABITS:
-                mAutoHideThreshold = AUTOHIDE_THRESHOLD_MEGABITS;
-                break;
-            case UNITS_KILOBYTES:
-                mAutoHideThreshold = AUTOHIDE_THRESHOLD_KILOBYTES;
-                break;
-            case UNITS_MEGABYTES:
-                mAutoHideThreshold = AUTOHIDE_THRESHOLD_MEGABYTES;
-                break;
-            default:
-                mAutoHideThreshold = 0;
-                break;
-        }
-
-        mShowUnits = MKSettings.Secure.getIntForUser(resolver,
-                MKSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1,
-                UserHandle.USER_CURRENT) == 1;
+        mAutoHideThreshold = AUTOHIDE_THRESHOLD_MEGABYTES;
 
         if (mMode != MODE_DISABLED) {
             updateTrafficDrawable();
