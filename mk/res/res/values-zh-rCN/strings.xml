@@ -138,7 +138,7 @@
     <string name="app_killed_message">应用程序已终止</string>
     <!-- Accent colors -->
     <string name="accent_black">黑色</string>
-    <string name="accent_blue">蓝色</string>
+    <string name="accent_gray">蓝灰色</string>
     <string name="accent_brown">棕色</string>
     <string name="accent_cyan">青色</string>
     <string name="accent_green">绿色</string>
