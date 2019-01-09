@@ -140,9 +140,6 @@
     <!-- Long-press back kill application -->
     <string name="app_killed_message">Sovellus pysäytetty</string>
     <!-- Status bar network traffic monitor strings -->
-    <string name="kilobitspersecond_short">kt/s</string>
-    <string name="megabitspersecond_short">Mt/s</string>
-    <string name="kilobytespersecond_short">kt/s</string>
     <!-- Accent colors -->
     <string name="accent_black">Hiili</string>
     <string name="accent_blue">Mustikka</string>

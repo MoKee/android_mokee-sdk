@@ -140,10 +140,6 @@
     <!-- Long-press back kill application -->
     <string name="app_killed_message">تم اغلاق التطبيق</string>
     <!-- Status bar network traffic monitor strings -->
-    <string name="kilobitspersecond_short">كيلو بت/ثانية</string>
-    <string name="megabitspersecond_short">ميغا بت/ثانية</string>
-    <string name="kilobytespersecond_short">كيلو بايت/ثانية</string>
-    <string name="megabytespersecond_short">ميغا بايت/ثانية</string>
     <!-- Accent colors -->
     <string name="accent_black">الكربون</string>
     <string name="accent_blue">توت ازرق</string>

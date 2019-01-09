@@ -140,10 +140,6 @@
     <!-- Long-press back kill application -->
     <string name="app_killed_message">Приложение закрыто</string>
     <!-- Status bar network traffic monitor strings -->
-    <string name="kilobitspersecond_short">кБ/с</string>
-    <string name="megabitspersecond_short">мБ/с</string>
-    <string name="kilobytespersecond_short">КБ/с</string>
-    <string name="megabytespersecond_short">МБ/с</string>
     <!-- Accent colors -->
     <string name="accent_black">Чёрный</string>
     <string name="accent_blue">Синий</string>
