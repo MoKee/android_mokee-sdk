@@ -142,6 +142,7 @@
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->
     <string name="accent_black">黑色</string>
+    <string name="accent_blue">蓝色</string>
     <string name="accent_gray">蓝灰色</string>
     <string name="accent_brown">棕色</string>
     <string name="accent_cyan">青色</string>
@@ -150,6 +151,7 @@
     <string name="accent_pink">樱红色</string>
     <string name="accent_purple">淡紫色</string>
     <string name="accent_red">红色</string>
+    <string name="accent_teal">水鸭色</string>
     <string name="accent_yellow">黄色</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
