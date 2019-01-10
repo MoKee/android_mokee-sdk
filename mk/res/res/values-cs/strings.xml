@@ -142,7 +142,7 @@
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->
     <string name="accent_black">Černá</string>
-    <string name="accent_blue">Modrá</string>
+    <string name="accent_blue">Borůvka</string>
     <string name="accent_brown">Hnědá</string>
     <string name="accent_cyan">Tyrkysová</string>
     <string name="accent_green">Zelená</string>

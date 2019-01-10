@@ -142,7 +142,7 @@
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->
     <string name="accent_black">Carbón</string>
-    <string name="accent_blue">Blueberry</string>
+    <string name="accent_blue">Arándano</string>
     <string name="accent_brown">Cacao</string>
     <string name="accent_cyan">Cian</string>
     <string name="accent_green">Bosque</string>

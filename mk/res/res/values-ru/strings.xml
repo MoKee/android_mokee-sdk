@@ -142,7 +142,7 @@
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->
     <string name="accent_black">Чёрный</string>
-    <string name="accent_blue">Синий</string>
+    <string name="accent_blue">Голубика</string>
     <string name="accent_brown">Коричневый</string>
     <string name="accent_cyan">Голубой</string>
     <string name="accent_green">Зелёный</string>

@@ -145,11 +145,13 @@
     <string name="accent_blue">توت ازرق</string>
     <string name="accent_brown">كاكاو</string>
     <string name="accent_cyan">سماوي</string>
+    <string name="accent_gray">جبل جليد</string>
     <string name="accent_green">غابة</string>
     <string name="accent_orange">يقطين</string>
     <string name="accent_pink">كرز</string>
     <string name="accent_purple">خزامي</string>
     <string name="accent_red">طماطم</string>
+    <string name="accent_teal">أزرق مخضّر</string>
     <string name="accent_yellow">الموز</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
