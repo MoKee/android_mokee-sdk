@@ -16,5 +16,5 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">MK Einstellungsspeicher</string>
+    <string name="app_name">MK Einstellungsspeicher</string>
 </resources>

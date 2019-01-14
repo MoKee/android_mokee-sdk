@@ -16,5 +16,5 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Хранилище за MK Настройки</string>
+    <string name="app_name">Хранилище за MK Настройки</string>
 </resources>
