@@ -41,7 +41,7 @@ import mokee.providers.MKSettings;
 import mokee.trust.ITrustInterface;
 import mokee.trust.TrustInterface;
 
-import vendor.lineage.trust.V1_0.IUsbRestrict;
+import vendor.mokee.trust.V1_0.IUsbRestrict;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

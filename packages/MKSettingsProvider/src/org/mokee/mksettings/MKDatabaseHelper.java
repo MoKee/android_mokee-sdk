@@ -52,7 +52,7 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "mksettings.db";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 11;
 
     public static class MKTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -321,6 +321,36 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
                 }
             }
             upgradeVersion = 10;
+        }
+
+        if (upgradeVersion < 11) {
+            // Move force_show_navbar to system
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    stmt = db.compileStatement("SELECT value FROM global WHERE name=?");
+                    stmt.bindString(1, MKSettings.Global.DEV_FORCE_SHOW_NAVBAR);
+                    long value = stmt.simpleQueryForLong();
+
+                    stmt = db.compileStatement("INSERT INTO system (name, value) VALUES (?, ?)");
+                    stmt.bindString(1, MKSettings.System.FORCE_SHOW_NAVBAR);
+                    stmt.bindLong(2, value);
+                    stmt.execute();
+
+                    stmt = db.compileStatement("DELETE FROM global WHERE name=?");
+                    stmt.bindString(1, MKSettings.Global.DEV_FORCE_SHOW_NAVBAR);
+                    stmt.execute();
+
+                    db.setTransactionSuccessful();
+                } catch (SQLiteDoneException ex) {
+                    // MKSettings.Global.DEV_FORCE_SHOW_NAVBAR is not set
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+            }
+            upgradeVersion = 11;
         }
         // *** Remember to update DATABASE_VERSION above!
     }
