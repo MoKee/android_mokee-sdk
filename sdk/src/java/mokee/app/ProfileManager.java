@@ -57,7 +57,7 @@ import mokee.providers.MKSettings;
  * <p>
  * This manager requires the MODIFY_PROFILES permission.
  *
- * @see ..app.Profile
+ * @see mokee.app.Profile
  */
 public class ProfileManager {
 
