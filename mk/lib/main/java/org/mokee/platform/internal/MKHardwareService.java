@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2018 The MoKee Open Source Project
+ * Copyright (C) 2015-2016 The CyanogenMod Project
  *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,14 +45,11 @@ import org.mokee.hardware.AutoContrast;
 import org.mokee.hardware.ColorBalance;
 import org.mokee.hardware.ColorEnhancement;
 import org.mokee.hardware.DisplayColorCalibration;
-import org.mokee.hardware.DisplayGammaCalibration;
 import org.mokee.hardware.DisplayModeControl;
 import org.mokee.hardware.HighTouchSensitivity;
 import org.mokee.hardware.KeyDisabler;
-import org.mokee.hardware.LongTermOrbits;
 import org.mokee.hardware.PictureAdjustment;
 import org.mokee.hardware.ReadingEnhancement;
-import org.mokee.hardware.SerialNumber;
 import org.mokee.hardware.SunlightEnhancement;
 import org.mokee.hardware.TouchscreenGestures;
 import org.mokee.hardware.TouchscreenHovering;
@@ -65,7 +62,7 @@ public class MKHardwareService extends MKSystemService {
     private static final String TAG = MKHardwareService.class.getSimpleName();
 
     private final Context mContext;
-    private final MKHardwareInterface mMkHwImpl;
+    private final MKHardwareInterface mMKHwImpl;
 
     private final ArrayMap<String, String> mDisplayModeMappings =
             new ArrayMap<String, String>();
@@ -79,18 +76,8 @@ public class MKHardwareService extends MKSystemService {
         public int[] getDisplayColorCalibration();
         public boolean setDisplayColorCalibration(int[] rgb);
 
-        public int getNumGammaControls();
-        public int[] getDisplayGammaCalibration(int idx);
-        public boolean setDisplayGammaCalibration(int idx, int[] rgb);
-
         public int[] getVibratorIntensity();
         public boolean setVibratorIntensity(int intensity);
-
-        public String getLtoSource();
-        public String getLtoDestination();
-        public long getLtoDownloadInterval();
-
-        public String getSerialNumber();
 
         public boolean requireAdaptiveBacklightForSunlightEnhancement();
         public boolean isSunlightEnhancementSelfManaged();
@@ -125,18 +112,12 @@ public class MKHardwareService extends MKSystemService {
                 mSupportedFeatures |= MKHardwareManager.FEATURE_COLOR_ENHANCEMENT;
             if (DisplayColorCalibration.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION;
-            if (DisplayGammaCalibration.isSupported())
-                mSupportedFeatures |= MKHardwareManager.FEATURE_DISPLAY_GAMMA_CALIBRATION;
             if (HighTouchSensitivity.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY;
             if (KeyDisabler.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_KEY_DISABLE;
-            if (LongTermOrbits.isSupported())
-                mSupportedFeatures |= MKHardwareManager.FEATURE_LONG_TERM_ORBITS;
             if (ReadingEnhancement.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_READING_ENHANCEMENT;
-            if (SerialNumber.isSupported())
-                mSupportedFeatures |= MKHardwareManager.FEATURE_SERIAL_NUMBER;
             if (SunlightEnhancement.isSupported())
                 mSupportedFeatures |= MKHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT;
             if (VibratorHW.isSupported())
@@ -257,31 +238,6 @@ public class MKHardwareService extends MKSystemService {
             return DisplayColorCalibration.setColors(rgbToString(rgb));
         }
 
-        public int getNumGammaControls() {
-            return DisplayGammaCalibration.getNumberOfControls();
-        }
-
-        public int[] getDisplayGammaCalibration(int idx) {
-            int[] rgb = splitStringToInt(DisplayGammaCalibration.getCurGamma(idx), " ");
-            if (rgb == null || rgb.length != 3) {
-                Log.e(TAG, "Invalid gamma calibration string");
-                return null;
-            }
-            int[] currentCalibration = new int[5];
-            currentCalibration[MKHardwareManager.GAMMA_CALIBRATION_RED_INDEX] = rgb[0];
-            currentCalibration[MKHardwareManager.GAMMA_CALIBRATION_GREEN_INDEX] = rgb[1];
-            currentCalibration[MKHardwareManager.GAMMA_CALIBRATION_BLUE_INDEX] = rgb[2];
-            currentCalibration[MKHardwareManager.GAMMA_CALIBRATION_MIN_INDEX] =
-                DisplayGammaCalibration.getMinValue(idx);
-            currentCalibration[MKHardwareManager.GAMMA_CALIBRATION_MAX_INDEX] =
-                DisplayGammaCalibration.getMaxValue(idx);
-            return currentCalibration;
-        }
-
-        public boolean setDisplayGammaCalibration(int idx, int[] rgb) {
-            return DisplayGammaCalibration.setGamma(idx, rgbToString(rgb));
-        }
-
         public int[] getVibratorIntensity() {
             int[] vibrator = new int[5];
             vibrator[MKHardwareManager.VIBRATOR_INTENSITY_INDEX] = VibratorHW.getCurIntensity();
@@ -294,23 +250,6 @@ public class MKHardwareService extends MKSystemService {
 
         public boolean setVibratorIntensity(int intensity) {
             return VibratorHW.setIntensity(intensity);
-        }
-
-        public String getLtoSource() {
-            return LongTermOrbits.getSourceLocation();
-        }
-
-        public String getLtoDestination() {
-            File file = LongTermOrbits.getDestinationLocation();
-            return file.getAbsolutePath();
-        }
-
-        public long getLtoDownloadInterval() {
-            return LongTermOrbits.getDownloadInterval();
-        }
-
-        public String getSerialNumber() {
-            return SerialNumber.getSerialNumber();
         }
 
         public boolean requireAdaptiveBacklightForSunlightEnhancement() {
@@ -384,7 +323,7 @@ public class MKHardwareService extends MKSystemService {
     public MKHardwareService(Context context) {
         super(context);
         mContext = context;
-        mMkHwImpl = getImpl(context);
+        mMKHwImpl = getImpl(context);
         publishBinderService(MKContextConstants.MK_HARDWARE_SERVICE, mService);
 
         final String[] mappings = mContext.getResources().getStringArray(
@@ -443,7 +382,7 @@ public class MKHardwareService extends MKSystemService {
         public int getSupportedFeatures() {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            return mMkHwImpl.getSupportedFeatures();
+            return mMKHwImpl.getSupportedFeatures();
         }
 
         @Override
@@ -454,7 +393,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "feature " + feature + " is not supported");
                 return false;
             }
-            return mMkHwImpl.get(feature);
+            return mMKHwImpl.get(feature);
         }
 
         @Override
@@ -465,7 +404,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "feature " + feature + " is not supported");
                 return false;
             }
-            return mMkHwImpl.set(feature, enable);
+            return mMKHwImpl.set(feature, enable);
         }
 
         @Override
@@ -476,7 +415,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display color calibration is not supported");
                 return null;
             }
-            return mMkHwImpl.getDisplayColorCalibration();
+            return mMKHwImpl.getDisplayColorCalibration();
         }
 
         @Override
@@ -491,40 +430,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Invalid color calibration");
                 return false;
             }
-            return mMkHwImpl.setDisplayColorCalibration(rgb);
-        }
-
-        @Override
-        public int getNumGammaControls() {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_DISPLAY_GAMMA_CALIBRATION)) {
-                Log.e(TAG, "Display gamma calibration is not supported");
-                return 0;
-            }
-            return mMkHwImpl.getNumGammaControls();
-        }
-
-        @Override
-        public int[] getDisplayGammaCalibration(int idx) {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_DISPLAY_GAMMA_CALIBRATION)) {
-                Log.e(TAG, "Display gamma calibration is not supported");
-                return null;
-            }
-            return mMkHwImpl.getDisplayGammaCalibration(idx);
-        }
-
-        @Override
-        public boolean setDisplayGammaCalibration(int idx, int[] rgb) {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_DISPLAY_GAMMA_CALIBRATION)) {
-                Log.e(TAG, "Display gamma calibration is not supported");
-                return false;
-            }
-            return mMkHwImpl.setDisplayGammaCalibration(idx, rgb);
+            return mMKHwImpl.setDisplayColorCalibration(rgb);
         }
 
         @Override
@@ -535,7 +441,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Vibrator is not supported");
                 return null;
             }
-            return mMkHwImpl.getVibratorIntensity();
+            return mMKHwImpl.getVibratorIntensity();
         }
 
         @Override
@@ -546,51 +452,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Vibrator is not supported");
                 return false;
             }
-            return mMkHwImpl.setVibratorIntensity(intensity);
-        }
-
-        @Override
-        public String getLtoSource() {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_LONG_TERM_ORBITS)) {
-                Log.e(TAG, "Long term orbits is not supported");
-                return null;
-            }
-            return mMkHwImpl.getLtoSource();
-        }
-
-        @Override
-        public String getLtoDestination() {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_LONG_TERM_ORBITS)) {
-                Log.e(TAG, "Long term orbits is not supported");
-                return null;
-            }
-            return mMkHwImpl.getLtoDestination();
-        }
-
-        @Override
-        public long getLtoDownloadInterval() {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_LONG_TERM_ORBITS)) {
-                Log.e(TAG, "Long term orbits is not supported");
-                return 0;
-            }
-            return mMkHwImpl.getLtoDownloadInterval();
-        }
-
-        @Override
-        public String getSerialNumber() {
-            mContext.enforceCallingOrSelfPermission(
-                    mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
-            if (!isSupported(MKHardwareManager.FEATURE_SERIAL_NUMBER)) {
-                Log.e(TAG, "Serial number is not supported");
-                return null;
-            }
-            return mMkHwImpl.getSerialNumber();
+            return mMKHwImpl.setVibratorIntensity(intensity);
         }
 
         @Override
@@ -601,7 +463,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Sunlight enhancement is not supported");
                 return false;
             }
-            return mMkHwImpl.requireAdaptiveBacklightForSunlightEnhancement();
+            return mMKHwImpl.requireAdaptiveBacklightForSunlightEnhancement();
         }
 
         @Override
@@ -612,7 +474,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Sunlight enhancement is not supported");
                 return false;
             }
-            return mMkHwImpl.isSunlightEnhancementSelfManaged();
+            return mMKHwImpl.isSunlightEnhancementSelfManaged();
         }
 
         @Override
@@ -623,7 +485,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            final DisplayMode[] modes = mMkHwImpl.getDisplayModes();
+            final DisplayMode[] modes = mMKHwImpl.getDisplayModes();
             if (modes == null) {
                 return null;
             }
@@ -645,7 +507,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            return remapDisplayMode(mMkHwImpl.getCurrentDisplayMode());
+            return remapDisplayMode(mMKHwImpl.getCurrentDisplayMode());
         }
 
         @Override
@@ -656,7 +518,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            return remapDisplayMode(mMkHwImpl.getDefaultDisplayMode());
+            return remapDisplayMode(mMKHwImpl.getDefaultDisplayMode());
         }
 
         @Override
@@ -667,7 +529,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display modes are not supported");
                 return false;
             }
-            return mMkHwImpl.setDisplayMode(mode, makeDefault);
+            return mMKHwImpl.setDisplayMode(mode, makeDefault);
         }
 
         @Override
@@ -675,7 +537,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_COLOR_BALANCE)) {
-                return mMkHwImpl.getColorBalanceMin();
+                return mMKHwImpl.getColorBalanceMin();
             }
             return 0;
         }
@@ -685,7 +547,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_COLOR_BALANCE)) {
-                return mMkHwImpl.getColorBalanceMax();
+                return mMKHwImpl.getColorBalanceMax();
             }
             return 0;
         }
@@ -695,7 +557,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_COLOR_BALANCE)) {
-                return mMkHwImpl.getColorBalance();
+                return mMKHwImpl.getColorBalance();
             }
             return 0;
         }
@@ -705,7 +567,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_COLOR_BALANCE)) {
-                return mMkHwImpl.setColorBalance(value);
+                return mMKHwImpl.setColorBalance(value);
             }
             return false;
         }
@@ -715,7 +577,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_PICTURE_ADJUSTMENT)) {
-                return mMkHwImpl.getPictureAdjustment();
+                return mMKHwImpl.getPictureAdjustment();
             }
             return new HSIC(0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
         }
@@ -725,7 +587,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_PICTURE_ADJUSTMENT)) {
-                return mMkHwImpl.getDefaultPictureAdjustment();
+                return mMKHwImpl.getDefaultPictureAdjustment();
             }
             return new HSIC(0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
         }
@@ -735,7 +597,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_PICTURE_ADJUSTMENT) && hsic != null) {
-                return mMkHwImpl.setPictureAdjustment(hsic);
+                return mMKHwImpl.setPictureAdjustment(hsic);
             }
             return false;
         }
@@ -745,7 +607,7 @@ public class MKHardwareService extends MKSystemService {
             mContext.enforceCallingOrSelfPermission(
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (isSupported(MKHardwareManager.FEATURE_PICTURE_ADJUSTMENT)) {
-                final List<Range<Float>> r = mMkHwImpl.getPictureAdjustmentRanges();
+                final List<Range<Float>> r = mMKHwImpl.getPictureAdjustmentRanges();
                 return new float[] {
                         r.get(0).getLower(), r.get(0).getUpper(),
                         r.get(1).getLower(), r.get(1).getUpper(),
@@ -764,7 +626,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Touchscreen gestures are not supported");
                 return null;
             }
-            return mMkHwImpl.getTouchscreenGestures();
+            return mMKHwImpl.getTouchscreenGestures();
         }
 
         @Override
@@ -775,7 +637,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Touchscreen gestures are not supported");
                 return false;
             }
-            return mMkHwImpl.setTouchscreenGestureEnabled(gesture, state);
+            return mMKHwImpl.setTouchscreenGestureEnabled(gesture, state);
         }
     };
 }
