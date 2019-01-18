@@ -248,14 +248,12 @@ package mokee.hardware {
     method public mokee.hardware.DisplayMode getDefaultDisplayMode();
     method public mokee.hardware.HSIC getDefaultPictureAdjustment();
     method public int[] getDisplayColorCalibration();
-    method public int getDisplayColorCalibrationDefault();
     method public int getDisplayColorCalibrationMax();
     method public int getDisplayColorCalibrationMin();
     method public mokee.hardware.DisplayMode[] getDisplayModes();
     method public static mokee.hardware.MKHardwareManager getInstance(android.content.Context);
     method public mokee.hardware.HSIC getPictureAdjustment();
     method public java.util.List<android.util.Range<java.lang.Float>> getPictureAdjustmentRanges();
-    method public int getSupportedFeatures();
     method public mokee.hardware.TouchscreenGesture[] getTouchscreenGestures();
     method public int getVibratorDefaultIntensity();
     method public int getVibratorIntensity();

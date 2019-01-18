@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017-2018 The LineageOS Project
+ *               2017-2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.os.UserHandle;
-import android.util.ArrayMap;
 import android.util.Log;
 import android.util.Range;
 
@@ -63,10 +62,6 @@ public class MKHardwareService extends MKSystemService {
 
     private final Context mContext;
     private final MKHardwareInterface mMKHwImpl;
-
-    private final ArrayMap<String, String> mDisplayModeMappings =
-            new ArrayMap<String, String>();
-    private final boolean mFilterDisplayModes;
 
     private interface MKHardwareInterface {
         public int getSupportedFeatures();
@@ -225,8 +220,6 @@ public class MKHardwareService extends MKSystemService {
             currentCalibration[MKHardwareManager.COLOR_CALIBRATION_RED_INDEX] = rgb[0];
             currentCalibration[MKHardwareManager.COLOR_CALIBRATION_GREEN_INDEX] = rgb[1];
             currentCalibration[MKHardwareManager.COLOR_CALIBRATION_BLUE_INDEX] = rgb[2];
-            currentCalibration[MKHardwareManager.COLOR_CALIBRATION_DEFAULT_INDEX] =
-                DisplayColorCalibration.getDefValue();
             currentCalibration[MKHardwareManager.COLOR_CALIBRATION_MIN_INDEX] =
                 DisplayColorCalibration.getMinValue();
             currentCalibration[MKHardwareManager.COLOR_CALIBRATION_MAX_INDEX] =
@@ -325,19 +318,6 @@ public class MKHardwareService extends MKSystemService {
         mContext = context;
         mMKHwImpl = getImpl(context);
         publishBinderService(MKContextConstants.MK_HARDWARE_SERVICE, mService);
-
-        final String[] mappings = mContext.getResources().getStringArray(
-                org.mokee.platform.internal.R.array.config_displayModeMappings);
-        if (mappings != null && mappings.length > 0) {
-            for (String mapping : mappings) {
-                String[] split = mapping.split(":");
-                if (split.length == 2) {
-                    mDisplayModeMappings.put(split[0], split[1]);
-                }
-            }
-        }
-        mFilterDisplayModes = mContext.getResources().getBoolean(
-                org.mokee.platform.internal.R.bool.config_filterDisplayModes);
     }
 
     @Override
@@ -357,19 +337,6 @@ public class MKHardwareService extends MKSystemService {
 
     @Override
     public void onStart() {
-    }
-
-    private DisplayMode remapDisplayMode(DisplayMode in) {
-        if (in == null) {
-            return null;
-        }
-        if (mDisplayModeMappings.containsKey(in.name)) {
-            return new DisplayMode(in.id, mDisplayModeMappings.get(in.name));
-        }
-        if (!mFilterDisplayModes) {
-            return in;
-        }
-        return null;
     }
 
     private final IBinder mService = new IMKHardwareService.Stub() {
@@ -485,18 +452,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            final DisplayMode[] modes = mMKHwImpl.getDisplayModes();
-            if (modes == null) {
-                return null;
-            }
-            final ArrayList<DisplayMode> remapped = new ArrayList<DisplayMode>();
-            for (DisplayMode mode : modes) {
-                DisplayMode r = remapDisplayMode(mode);
-                if (r != null) {
-                    remapped.add(r);
-                }
-            }
-            return remapped.toArray(new DisplayMode[remapped.size()]);
+            return mMKHwImpl.getDisplayModes();
         }
 
         @Override
@@ -507,7 +463,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            return remapDisplayMode(mMKHwImpl.getCurrentDisplayMode());
+            return mMKHwImpl.getCurrentDisplayMode();
         }
 
         @Override
@@ -518,7 +474,7 @@ public class MKHardwareService extends MKSystemService {
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            return remapDisplayMode(mMKHwImpl.getDefaultDisplayMode());
+            return mMKHwImpl.getDefaultDisplayMode();
         }
 
         @Override
