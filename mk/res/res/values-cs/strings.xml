@@ -145,11 +145,13 @@
     <string name="accent_blue">Borůvka</string>
     <string name="accent_brown">Hnědá</string>
     <string name="accent_cyan">Tyrkysová</string>
+    <string name="accent_gray">Šedá</string>
     <string name="accent_green">Zelená</string>
     <string name="accent_orange">Oranžová</string>
     <string name="accent_pink">Růžová</string>
     <string name="accent_purple">Purpurová</string>
     <string name="accent_red">Červená</string>
+    <string name="accent_teal">Šedozelená</string>
     <string name="accent_yellow">Žlutá</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.

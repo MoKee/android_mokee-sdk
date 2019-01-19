@@ -51,7 +51,7 @@
     <string name="profileGroupPhone">Téléphone</string>
     <string name="profileGroupCalendar">Agenda</string>
     <string name="profileGroupGmail">Gmail</string>
-    <string name="profileGroupEmail">Courriel</string>
+    <string name="profileGroupEmail">E-mail</string>
     <string name="profileGroupSMS">SMS</string>
     <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">Autre</string>
@@ -151,6 +151,7 @@
     <string name="accent_pink">Cerise</string>
     <string name="accent_purple">Lavande</string>
     <string name="accent_red">Tomate</string>
+    <string name="accent_teal">Turquoise</string>
     <string name="accent_yellow">Banane</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.

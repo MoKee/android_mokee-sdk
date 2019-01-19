@@ -151,6 +151,7 @@
     <string name="accent_pink">Cerise</string>
     <string name="accent_purple">Lavande</string>
     <string name="accent_red">Tomate</string>
+    <string name="accent_teal">Turquoise</string>
     <string name="accent_yellow">Banane</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.

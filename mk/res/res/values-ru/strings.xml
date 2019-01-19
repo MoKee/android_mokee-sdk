@@ -145,11 +145,13 @@
     <string name="accent_blue">Голубика</string>
     <string name="accent_brown">Коричневый</string>
     <string name="accent_cyan">Голубой</string>
+    <string name="accent_gray">Серый</string>
     <string name="accent_green">Зелёный</string>
     <string name="accent_orange">Оранжевый</string>
     <string name="accent_pink">Розовый</string>
     <string name="accent_purple">Пурпурный</string>
     <string name="accent_red">Красный</string>
+    <string name="accent_teal">Бирюзовый</string>
     <string name="accent_yellow">Жёлтый</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.

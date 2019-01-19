@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Label for the MoKee system components when they are shown to the user. -->
-    <string name="mokee_system_label">MoKee Sistemi</string>
+    <string name="mokee_system_label">MoKee sistemi</string>
     <!-- Labels for the MODIFY_PROFILES permission. -->
     <string name="permlab_modifyProfiles">sistem profillerini değiştir</string>
     <string name="permdesc_modifyProfiles">Bir uygulamaya sistem profillerini değiştirme izni verir.</string>
@@ -145,11 +145,13 @@
     <string name="accent_blue">Yaban mersini</string>
     <string name="accent_brown">Kakao</string>
     <string name="accent_cyan">Camgöbeği</string>
+    <string name="accent_gray">Buzdağı</string>
     <string name="accent_green">Orman</string>
     <string name="accent_orange">Bal kabağı</string>
     <string name="accent_pink">Kiraz</string>
     <string name="accent_purple">Lavanta</string>
     <string name="accent_red">Domates</string>
+    <string name="accent_teal">Turkuaz</string>
     <string name="accent_yellow">Muz</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.

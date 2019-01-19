@@ -145,11 +145,13 @@
     <string name="accent_blue">Áfonya</string>
     <string name="accent_brown">Kakaóbarna</string>
     <string name="accent_cyan">Zöldeskék</string>
+    <string name="accent_gray">Jégszürke</string>
     <string name="accent_green">Erdőzöld</string>
     <string name="accent_orange">Narancssárga</string>
     <string name="accent_pink">Cseresznye</string>
     <string name="accent_purple">Levendulalila</string>
     <string name="accent_red">Paradicsom</string>
+    <string name="accent_teal">Pávakék</string>
     <string name="accent_yellow">Banánsárga</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
