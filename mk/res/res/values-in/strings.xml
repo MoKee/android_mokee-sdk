@@ -72,14 +72,14 @@
     <!-- Performance profiles -->
     <string name="perf_profile_pwrsv_summary">Hemat daya maksimal, kurangi kinerja perangkat</string>
     <string name="perf_profile_bal_summary">Seimbang antara kinerja yang optimal dan karakteristik kekuatan</string>
-    <string name="perf_profile_perf_summary">Mode kinerja tinggi. Berguna untuk aplikasi yang memerlukan latency rendah dan tertinggi throughput ketika konsumsi daya tidak perhatian</string>
-    <string name="perf_profile_bias_power_summary">Mendukung penghematan daya. Batas maksimum power CPU dan mengoptimalkan untuk penghematan biaya latensi lebih tinggi daya</string>
+    <string name="perf_profile_perf_summary">Mode kinerja tinggi. Berguna untuk aplikasi yang memerlukan latensi rendah dan hasil maksimal ketika konsumsi daya tidak menjadi masalah</string>
+    <string name="perf_profile_bias_power_summary">Mendukung penghematan daya. Batasi daya CPU maksimum dan optimalkan penghematan daya dengan imbas latensi yang lebih tinggi</string>
     <string name="perf_profile_bias_perf_summary">Mendukung kinerja. Mengurangi latensi dengan konsumsi daya yang sedikit meningkat</string>
     <!-- LiveDisplay strings -->
     <string name="live_display_auto">Otomatis</string>
     <string name="live_display_auto_summary">Menyesuaikan suhu warna layar secara otomatis setelah matahari terbenam dan terbit</string>
     <string name="live_display_off">Mati</string>
-    <string name="live_display_off_summary">Menonaktifkan semua pengaturan</string>
+    <string name="live_display_off_summary">Menonaktifkan semua penyesuaian</string>
     <string name="live_display_day">Siang</string>
     <string name="live_display_day_summary">Hanya menggunakan setelan siang hari</string>
     <string name="live_display_night">Malam</string>

@@ -147,11 +147,13 @@
     <string name="accent_blue">藍莓藍</string>
     <string name="accent_brown">可可棕</string>
     <string name="accent_cyan">青色</string>
+    <string name="accent_gray">冰山</string>
     <string name="accent_green">森林綠</string>
     <string name="accent_orange">南瓜橘</string>
     <string name="accent_pink">櫻桃紅</string>
     <string name="accent_purple">薰衣草紫</string>
     <string name="accent_red">番茄紅</string>
+    <string name="accent_teal">藍綠色</string>
     <string name="accent_yellow">香蕉黃</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
