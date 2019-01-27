@@ -145,11 +145,13 @@
     <string name="accent_blue">Jagodowy</string>
     <string name="accent_brown">Kakao</string>
     <string name="accent_cyan">Turkusowy</string>
+    <string name="accent_gray">Góra Lodowa</string>
     <string name="accent_green">Las</string>
     <string name="accent_orange">Dynia</string>
     <string name="accent_pink">Wiśnia</string>
     <string name="accent_purple">Lawenda</string>
     <string name="accent_red">Pomidor</string>
+    <string name="accent_teal">Morski</string>
     <string name="accent_yellow">Banan</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.

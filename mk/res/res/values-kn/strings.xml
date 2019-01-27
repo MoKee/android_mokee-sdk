@@ -23,15 +23,22 @@
     <string name="permdesc_modifyProfiles">ಒಂದು ಆಪ್‍ಗೆ ಸಿಸ್ಟಂ ಪ್ರೊಫೈಲ್‍ಗಳನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
     <string name="permlab_useHardwareFramework">ಹಾರ್ಡ್‍ವೇರ್ ಫ್ರೇಮ್‍ವರ್ಕ್ ಉಪಯೋಗಿಸು</string>
+    <string name="permdesc_useHardwareFramework">ಒಂದು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ MoKee ಹಾರ್ಡ್ವೇರ್ ಚೌಕಟ್ಟನ್ನು ಬಳಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- Labels for the WRITE_SETTINGS permission -->
+    <string name="permlab_writeSettings">MoKee ವ್ಯವಸ್ಥೆಯ ಸಂಯೋಜನೆಗಳನ್ನು ಮಾರ್ಪಾಡಿಸಿ</string>
+    <string name="permdesc_writeSettings">ಒಂದು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ MoKee ವ್ಯವಸ್ಥೆಯ ಸಂಯೋಜನೆಗಳನ್ನು ಮಾರ್ಪಾಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+    <string name="permlab_writeSecureSettings">MoKee ಸುರಕ್ಷಿತ ವ್ಯವಸ್ಥೆಯ ಸಂಯೋಜನೆಗಳನ್ನು ಮಾರ್ಪಾಡಿಸಿ</string>
+    <string name="permdesc_writeSecureSettings">ಒಂದು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ MoKee ಸುರಕ್ಷಿತ ವ್ಯವಸ್ಥೆಯ ಸಂಯೋಜನೆಗಳನ್ನು ಮಾರ್ಪಾಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ. ಸಾಮಾನ್ಯ ತಂತ್ರಾಂಶಗಳ ಬಳಕೆಗೆ ಅಲ್ಲ.</string>
     <!-- Labels for the PROTECTED_APP permission. -->
     <string name="permlab_protectedApp">ಸಂರಕ್ಷಿತ ಅಪ್ಲಿಕೇಶನ್‌ಗಳಿಗೆ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ತೆಗೆಯಿರಿ</string>
     <string name="permdesc_protectedApp">ಇತರ ಅಪ್ಲಿಗಳನ್ನು ಸಂರಕ್ಷಿತಗೊಳಿಸಲು ಮತ್ತು ಅವುಗಳನ್ನು ಲಾಕ್‌ ಮಾಡಲು ಒಂದು ಅಪ್ಲಿಕೇಶನ್‌ ಅನುವು ಮಾಡಿ</string>
     <!-- Labels for CHANGE_STYLE permission -->
+    <string name="permlab_changeStyle">ವ್ಯವಸ್ಥೆಯ ಶೈಲಿಯನ್ನು ಬದಲಿಸು</string>
     <!-- this is wrong, but google's package manager uses the android:description
          attribute as description for the runtime permission request dialog
          with non-default dangerous permissions -->
+    <string name="permdesc_changeStyle">ವ್ಯವಸ್ಥೆಯ ಬಣ್ಣಗಳನ್ನು ವೈಯಕ್ತೀಕರಿಸು</string>
     <!-- Profiles -->
     <!-- Names of default profiles. -->
     <string name="profileNameDefault">ಡೀಫಾಲ್ಟ್</string>
@@ -93,7 +100,13 @@
     <!-- Performance manager permission title -->
     <string name="permlab_perfAccess">ಕಾರ್ಯನಿರ್ವಹಣೆ ನಿರ್ವಾಹಕರನ್ನು ಪ್ರವೇಶಿಸು</string>
     <!-- Performance manager permission description -->
+    <string name="permdesc_perfAccessDesc">ಕಾರ್ಯಕ್ಷಮತೆ ಸೇವೆಯನ್ನು ಬಳಸಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ. ಸಾಮಾನ್ಯ ತಂತ್ರಾಂಶಗಳಿಗೆ ಇದರ ಅಗತ್ಯವೇ ಇರುವುದಿಲ್ಲ.</string>
     <!-- Weather Service strings -->
+    <string name="permlab_weather_read">ಹವಾಮಾನ ಓದು</string>
+    <string name="permdesc_weather_read">ಹವಾಮಾನ ವಿಷಯಗಳನ್ನು ಒದಗಿಸುವವರಿಂದ ಓದಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
+    <string name="permlab_weather_write">ಹವಾಮಾನ ಒದಗಿಸುವವರನ್ನು ನವೀಕರಿಸು</string>
+    <string name="permdesc_weather_write">ಹವಾಮಾನ ಒದಗಿಸುವವರಿಂದ ವಿಷಯಗಳನ್ನು ನವೀಕರಿಸಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
+    <string name="permlab_weather_bind">ಹವಾಮಾನ ಒದಗಿಸುವ ಸೇವೆಯಾಗಿ ಬಂಧಿಸಿ</string>
     <!-- DataUsageProvider write permission title -->
     <!-- DataUsageProvider write permission description -->
     <!-- DataUsageProvider read permission title -->
@@ -101,6 +114,7 @@
     <!-- LiveDisplay manager permission -->
     <!-- MKAudioService - observe session changes permission -->
     <!-- Privacy Guard -->
+    <string name="privacy_guard_manager_title">ಗೌಪ್ಯತಾ ರಕ್ಷಕ</string>
     <!-- Permissions used by remote preferences -->
     <!-- About device screen, build date -->
     <string name="build_date">ನಿರ್ಮಾಣ ದಿನಾಂಕ</string>
@@ -113,8 +127,24 @@
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->
     <string name="accent_cyan">ಕ್ಯಾನ್</string>
+    <string name="accent_green">ಅರಣ್ಯ</string>
+    <string name="accent_orange">ಕುಂಬಳಕಾಯಿ</string>
+    <string name="accent_pink">ಚೆರ್ರಿ</string>
+    <string name="accent_red">ಟೊಮೆಟೊ</string>
+    <string name="accent_yellow">ಬಾಳೆಹಣ್ಣು</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
          Trust is a feature name, it's not suggested to translate this unless there are conflicts due
          to a different meaning of the word "trust" in your language -->
+    <string name="trust_feature_name">ನಂಬಿಕೆ</string>
+    <string name="permlab_trustInterface">ನಂಬಿಕೆ ಅಂತರ್ಮುಖವನ್ನು ಪ್ರವೇಶಿಸು</string>
+    <string name="permdesc_trustInterface">ನಂಬಿಕೆ ಎಚ್ಚರಿಕೆಗಳನ್ನು ಮತ್ತು ಸಲಹೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ</string>
+    <string name="trust_notification_channel">ನಂಬಿಕೆ ಎಚ್ಚರಿಕೆಗಳು</string>
+    <string name="trust_notification_title_security">ನಂಬಿಕೆ\u2022 ವ್ಯವಸ್ಥೆಯ ಭದ್ರತೆ</string>
+    <string name="trust_notification_content_selinux">SELinux ಕಡ್ಡಾಯವಾಗಿಲ್ಲ, ನಿಮ್ಮ ಸುರಕ್ಷತೆ ದುರ್ಬಲಗೊಂಡಿದೆ</string>
+    <string name="trust_notification_title_root">ನಂಬಿಕೆ\u2022 ಮೂಲ ಪ್ರವೇಶ</string>
+    <string name="trust_notification_content_root">ಒಂದು ತಂತ್ರಾಂಶವು ಈಗ ಮೂಲ ಹಕ್ಕುಗಳನ್ನು ಬಳಸುತ್ತಿದೆ</string>
+    <string name="trust_notification_content_keys">ಈ ನಿರ್ಮಾಣವು ಸಾರ್ವಜನಿಕ ಕೀಲಿಗಳಿಂದ ಸಹಿ ಹಾಕಲ್ಪಟ್ಟಿದೆ</string>
+    <string name="trust_notification_title_onboarding">ನಂಬಿಕೆ ಅನ್ವೇಷಿಸು</string>
+    <string name="trust_notification_action_manage">ಎಚ್ಚರಿಕೆಗಳನ್ನು ನಿರ್ವಹಿಸು</string>
 </resources>
