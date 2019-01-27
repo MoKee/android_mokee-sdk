@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- * Copyright (C) 2016 The MoKee Open Source Project
+ * Copyright (C) 2016-2019 The MoKee Open Source Project
+ *               2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -240,7 +241,7 @@ public class LiveDisplayService extends MKSystemService {
 
         @Override
         public int getMode() {
-            if (mConfig.hasModeSupport()) {
+            if (mConfig != null && mConfig.hasModeSupport()) {
                 return mModeObserver.getMode();
             } else {
                 return MODE_OFF;
