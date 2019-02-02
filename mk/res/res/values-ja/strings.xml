@@ -145,11 +145,13 @@
     <string name="accent_blue">ブルーベリー</string>
     <string name="accent_brown">ココア</string>
     <string name="accent_cyan">水色</string>
+    <string name="accent_gray">氷山</string>
     <string name="accent_green">森林</string>
     <string name="accent_orange">カボチャ</string>
     <string name="accent_pink">さくらんぼ</string>
     <string name="accent_purple">ラベンダー</string>
     <string name="accent_red">トマト</string>
+    <string name="accent_teal">青緑</string>
     <string name="accent_yellow">バナナ</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
