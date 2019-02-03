@@ -147,11 +147,13 @@
     <string name="accent_blue">Arándano</string>
     <string name="accent_brown">Cacao</string>
     <string name="accent_cyan">Cian</string>
+    <string name="accent_gray">Iceberg</string>
     <string name="accent_green">Bosque</string>
     <string name="accent_orange">Calabaza</string>
     <string name="accent_pink">Cereza</string>
     <string name="accent_purple">Lavanda</string>
     <string name="accent_red">Tomate</string>
+    <string name="accent_teal">Verde azulado</string>
     <string name="accent_yellow">Plátano</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
