@@ -20,6 +20,7 @@ package mokee.providers;
 
 import com.android.internal.util.ArrayUtils;
 
+import android.annotation.Nullable;
 import android.content.ContentResolver;
 import android.content.IContentProvider;
 import android.database.Cursor;
@@ -319,6 +320,18 @@ public final class MKSettings {
         public boolean validate(String value) {
             try {
                 return Integer.parseInt(value) >= 0;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    };
+
+    private static final Validator sAnyIntegerValidator = new Validator() {
+        @Override
+        public boolean validate(@Nullable String value) {
+            try {
+                Integer.parseInt(value);
+                return true;
             } catch (NumberFormatException e) {
                 return false;
             }
@@ -865,6 +878,24 @@ public final class MKSettings {
         /** @hide */
         private static final Validator USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
                 sBooleanValidator;
+
+        /**
+         * @hide
+         */
+        public static final String BOTTOM_GESTURE_TRIGGER_TIMEOUT =
+                "bottom_gesture_navigation_trigger_timeout";
+
+        private static final Validator BOTTOM_GESTURE_TRIGGER_TIMEOUT_VALIDATOR =
+                sAnyIntegerValidator;
+
+        /**
+         * @hide
+         */
+        public static final String BOTTOM_GESTURE_SWIPE_LIMIT =
+                "bottom_gesture_navigation_swipe_limit";
+
+        private static final Validator BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR =
+                sAnyIntegerValidator;
 
         /**
          * Whether to attach a queue to media notifications.
@@ -2149,6 +2180,8 @@ public final class MKSettings {
                 MKSettings.System.RECEIVE_PUSH_NOTIFICATIONS,
                 MKSettings.System.AEGIS_WARDEN_FORCE_STOP,
                 MKSettings.System.USE_BOTTOM_GESTURE_NAVIGATION,
+                MKSettings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT,
+                MKSettings.System.BOTTOM_GESTURE_SWIPE_LIMIT,
                 MKSettings.System.NAV_BUTTONS,
                 MKSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 MKSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
@@ -2273,6 +2306,8 @@ public final class MKSettings {
             VALIDATORS.put(RECEIVE_PUSH_NOTIFICATIONS, RECEIVE_PUSH_NOTIFICATIONS_VALIDATOR);
             VALIDATORS.put(AEGIS_WARDEN_FORCE_STOP, AEGIS_WARDEN_FORCE_STOP_VALIDATOR);
             VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION, USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
+            VALIDATORS.put(BOTTOM_GESTURE_TRIGGER_TIMEOUT, BOTTOM_GESTURE_TRIGGER_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(BOTTOM_GESTURE_SWIPE_LIMIT, BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PLAY_QUEUE, NOTIFICATION_PLAY_QUEUE_VALIDATOR);
             VALIDATORS.put(HIGH_TOUCH_SENSITIVITY_ENABLE,
                     HIGH_TOUCH_SENSITIVITY_ENABLE_VALIDATOR);
