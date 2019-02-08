@@ -857,6 +857,16 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
+         * @hide
+         */
+        public static final String USE_BOTTOM_GESTURE_NAVIGATION =
+                "use_bottom_gesture_navigation";
+
+        /** @hide */
+        private static final Validator USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Whether to attach a queue to media notifications.
          * 0 = 0ff, 1 = on
          */
@@ -2138,6 +2148,7 @@ public final class MKSettings {
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
                 MKSettings.System.RECEIVE_PUSH_NOTIFICATIONS,
                 MKSettings.System.AEGIS_WARDEN_FORCE_STOP,
+                MKSettings.System.USE_BOTTOM_GESTURE_NAVIGATION,
                 MKSettings.System.NAV_BUTTONS,
                 MKSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 MKSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
@@ -2261,6 +2272,7 @@ public final class MKSettings {
         static {
             VALIDATORS.put(RECEIVE_PUSH_NOTIFICATIONS, RECEIVE_PUSH_NOTIFICATIONS_VALIDATOR);
             VALIDATORS.put(AEGIS_WARDEN_FORCE_STOP, AEGIS_WARDEN_FORCE_STOP_VALIDATOR);
+            VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION, USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PLAY_QUEUE, NOTIFICATION_PLAY_QUEUE_VALIDATOR);
             VALIDATORS.put(HIGH_TOUCH_SENSITIVITY_ENABLE,
                     HIGH_TOUCH_SENSITIVITY_ENABLE_VALIDATOR);
