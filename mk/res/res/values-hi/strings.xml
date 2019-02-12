@@ -28,6 +28,8 @@
          with non-default dangerous permissions -->
     <!-- Profiles -->
     <!-- Names of default profiles. -->
+    <string name="profileNameSilent">मौन</string>
+    <string name="profileNameNight">रात</string>
     <!-- Names of application groups. -->
     <!-- Name of wildcard profile. -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -37,6 +39,9 @@
     <!-- Performance profiles -->
     <!-- Performance profiles -->
     <!-- LiveDisplay strings -->
+    <string name="live_display_off">बंद</string>
+    <string name="live_display_day">दिन</string>
+    <string name="live_display_night">रात</string>
     <!-- Performance manager permission title -->
     <!-- Performance manager permission description -->
     <!-- Weather Service strings -->
