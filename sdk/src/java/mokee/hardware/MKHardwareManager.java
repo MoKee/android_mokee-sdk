@@ -680,7 +680,7 @@ public final class MKHardwareManager {
                     remapped.add(r);
                 }
             }
-            return remapped.toArray(new DisplayMode[remapped.size()]);
+            return remapped.toArray(new DisplayMode[0]);
         }
     }
 

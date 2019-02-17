@@ -379,8 +379,7 @@ public class PerformanceManagerService extends MKSystemService {
         @Override
         public PerformanceProfile[] getPowerProfiles() throws RemoteException {
             synchronized (mLock) {
-                return mProfiles.values().toArray(
-                        new PerformanceProfile[mProfiles.size()]);
+                return mProfiles.values().toArray(new PerformanceProfile[0]);
             }
         }
 
