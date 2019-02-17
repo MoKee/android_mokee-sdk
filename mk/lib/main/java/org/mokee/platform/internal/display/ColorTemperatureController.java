@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- * Copyright (C) 2016 The MoKee Open Source Project
+ * Copyright (C) 2016-2019 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import android.text.format.DateUtils;
 import android.util.MathUtils;
 import android.util.Range;
 import android.util.Slog;
-import android.view.animation.LinearInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
 import org.mokee.platform.internal.display.TwilightTracker.TwilightState;
 
@@ -59,6 +59,7 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     private int mDayTemperature;
     private int mNightTemperature;
 
+    private AccelerateDecelerateInterpolator mInterpolator;
     private ValueAnimator mAnimator;
 
     private final MKHardwareManager mHardware;
@@ -98,6 +99,8 @@ public class ColorTemperatureController extends LiveDisplayFeature {
                 mColorTemperatureRange.getLower(),
                 mDefaultDayTemperature,
                 mColorTemperatureRange.getUpper());
+
+        mInterpolator = new AccelerateDecelerateInterpolator();
     }
 
     @Override
@@ -203,8 +206,8 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         setDisplayTemperature(temperature);
 
         if (isTransitioning()) {
-            // fire again in a minute
-            mHandler.postDelayed(mTransitionRunnable, DateUtils.MINUTE_IN_MILLIS);
+            // fire again in 30 seconds
+            mHandler.postDelayed(mTransitionRunnable, DateUtils.MINUTE_IN_MILLIS / 2);
         }
     }
 
@@ -235,7 +238,7 @@ public class ColorTemperatureController extends LiveDisplayFeature {
 
         mAnimator = ValueAnimator.ofInt(current, balance);
         mAnimator.setDuration(duration);
-        mAnimator.setInterpolator(new LinearInterpolator());
+        mAnimator.setInterpolator(mInterpolator);
         mAnimator.addUpdateListener(new AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(final ValueAnimator animation) {
@@ -292,7 +295,7 @@ public class ColorTemperatureController extends LiveDisplayFeature {
      * @param sunrise
      * @return float between 0 and 1
      */
-    private static float adj(long now, long sunset, long sunrise) {
+    private float adj(long now, long sunset, long sunrise) {
         if (sunset < 0 || sunrise < 0
                 || now < (sunset - TWILIGHT_ADJUSTMENT_TIME)
                 || now > (sunrise + TWILIGHT_ADJUSTMENT_TIME)) {
@@ -302,12 +305,12 @@ public class ColorTemperatureController extends LiveDisplayFeature {
 
         // Scale the transition into night mode in 0.5hr before civil sunset
         if (now <= sunset) {
-            return (float) (sunset - now) / TWILIGHT_ADJUSTMENT_TIME;
+            return mInterpolator.getInterpolation((float) (sunset - now) / TWILIGHT_ADJUSTMENT_TIME);
         }
 
         // Scale the transition into day mode in 0.5hr after civil sunrise
         if (now >= sunrise) {
-            return (float) (now - sunrise) / TWILIGHT_ADJUSTMENT_TIME;
+            return mInterpolator.getInterpolation((float) (now - sunrise) / TWILIGHT_ADJUSTMENT_TIME);
         }
 
         // More than 0.5hr past civil sunset
