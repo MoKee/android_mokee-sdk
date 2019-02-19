@@ -84,7 +84,6 @@ java_library {
 
     libs: [
         "services",
-        "org.mokee.hardware",
     ] + mokee_sdk_LOCAL_JAVA_LIBRARIES,
 
     srcs: [

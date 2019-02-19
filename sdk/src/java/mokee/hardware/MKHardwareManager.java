@@ -247,7 +247,7 @@ public final class MKHardwareManager {
      * @return true if the feature is supported, false otherwise.
      */
     public boolean isSupported(int feature) {
-        return isSupportedHIDL(feature) || isSupportedLegacy(feature);
+        return isSupportedHIDL(feature) || isSupportedHWC2(feature);
     }
 
     private boolean isSupportedHIDL(int feature) {
@@ -257,7 +257,7 @@ public final class MKHardwareManager {
         return mHIDLMap.get(feature) != null;
     }
 
-    private boolean isSupportedLegacy(int feature) {
+    private boolean isSupportedHWC2(int feature) {
         try {
             if (checkService()) {
                 return feature == (sService.getSupportedFeatures() & feature);
@@ -436,90 +436,6 @@ public final class MKHardwareManager {
     /**
      * {@hide}
      */
-    public static final int VIBRATOR_INTENSITY_INDEX = 0;
-    /**
-     * {@hide}
-     */
-    public static final int VIBRATOR_DEFAULT_INDEX = 1;
-    /**
-     * {@hide}
-     */
-    public static final int VIBRATOR_MIN_INDEX = 2;
-    /**
-     * {@hide}
-     */
-    public static final int VIBRATOR_MAX_INDEX = 3;
-    /**
-     * {@hide}
-     */
-    public static final int VIBRATOR_WARNING_INDEX = 4;
-
-    private int[] getVibratorIntensityArray() {
-        try {
-            if (checkService()) {
-                return sService.getVibratorIntensity();
-            }
-        } catch (RemoteException e) {
-        }
-        return null;
-    }
-
-    /**
-     * @return The current vibrator intensity.
-     */
-    public int getVibratorIntensity() {
-        return getArrayValue(getVibratorIntensityArray(), VIBRATOR_INTENSITY_INDEX, 0);
-    }
-
-    /**
-     * @return The default vibrator intensity.
-     */
-    public int getVibratorDefaultIntensity() {
-        return getArrayValue(getVibratorIntensityArray(), VIBRATOR_DEFAULT_INDEX, 0);
-    }
-
-    /**
-     * @return The minimum vibrator intensity.
-     */
-    public int getVibratorMinIntensity() {
-        return getArrayValue(getVibratorIntensityArray(), VIBRATOR_MIN_INDEX, 0);
-    }
-
-    /**
-     * @return The maximum vibrator intensity.
-     */
-    public int getVibratorMaxIntensity() {
-        return getArrayValue(getVibratorIntensityArray(), VIBRATOR_MAX_INDEX, 0);
-    }
-
-    /**
-     * @return The warning threshold vibrator intensity.
-     */
-    public int getVibratorWarningIntensity() {
-        return getArrayValue(getVibratorIntensityArray(), VIBRATOR_WARNING_INDEX, 0);
-    }
-
-    /**
-     * Set the current vibrator intensity
-     *
-     * @param intensity the intensity to set, between {@link #getVibratorMinIntensity()} and
-     * {@link #getVibratorMaxIntensity()} inclusive.
-     *
-     * @return true on success, false otherwise.
-     */
-    public boolean setVibratorIntensity(int intensity) {
-        try {
-            if (checkService()) {
-                return sService.setVibratorIntensity(intensity);
-            }
-        } catch (RemoteException e) {
-        }
-        return false;
-    }
-
-    /**
-     * {@hide}
-     */
     public static final int COLOR_CALIBRATION_RED_INDEX = 0;
     /**
      * {@hide}
@@ -622,41 +538,6 @@ public final class MKHardwareManager {
     }
 
     /**
-     * @return true if adaptive backlight should be enabled when sunlight enhancement
-     * is enabled.
-     */
-    public boolean requireAdaptiveBacklightForSunlightEnhancement() {
-        if (isSupportedHIDL(FEATURE_SUNLIGHT_ENHANCEMENT)) {
-            return false;
-        }
-
-        try {
-            if (checkService()) {
-                return sService.requireAdaptiveBacklightForSunlightEnhancement();
-            }
-        } catch (RemoteException e) {
-        }
-        return false;
-    }
-
-    /**
-     * @return true if this implementation does it's own lux metering
-     */
-    public boolean isSunlightEnhancementSelfManaged() {
-        if (isSupportedHIDL(FEATURE_SUNLIGHT_ENHANCEMENT)) {
-            return false;
-        }
-
-        try {
-            if (checkService()) {
-                return sService.isSunlightEnhancementSelfManaged();
-            }
-        } catch (RemoteException e) {
-        }
-        return false;
-    }
-
-    /**
      * @return a list of available display modes on the devices
      */
     public DisplayMode[] getDisplayModes() {
@@ -665,8 +546,6 @@ public final class MKHardwareManager {
             if (isSupportedHIDL(FEATURE_DISPLAY_MODES)) {
                 IDisplayModes displayModes = (IDisplayModes) mHIDLMap.get(FEATURE_DISPLAY_MODES);
                 modes = HIDLHelper.fromHIDLModes(displayModes.getDisplayModes());
-            } else if (checkService()) {
-                modes= sService.getDisplayModes();
             }
         } catch (RemoteException e) {
         } finally {
@@ -693,8 +572,6 @@ public final class MKHardwareManager {
             if (isSupportedHIDL(FEATURE_DISPLAY_MODES)) {
                 IDisplayModes displayModes = (IDisplayModes) mHIDLMap.get(FEATURE_DISPLAY_MODES);
                 mode = HIDLHelper.fromHIDLMode(displayModes.getCurrentDisplayMode());
-            } else if (checkService()) {
-                mode = sService.getCurrentDisplayMode();
             }
         } catch (RemoteException e) {
         } finally {
@@ -711,8 +588,6 @@ public final class MKHardwareManager {
             if (isSupportedHIDL(FEATURE_DISPLAY_MODES)) {
                 IDisplayModes displayModes = (IDisplayModes) mHIDLMap.get(FEATURE_DISPLAY_MODES);
                 mode = HIDLHelper.fromHIDLMode(displayModes.getDefaultDisplayMode());
-            } else if (checkService()) {
-                mode = sService.getDefaultDisplayMode();
             }
         } catch (RemoteException e) {
         } finally {
@@ -728,8 +603,6 @@ public final class MKHardwareManager {
             if (isSupportedHIDL(FEATURE_DISPLAY_MODES)) {
                 IDisplayModes displayModes = (IDisplayModes) mHIDLMap.get(FEATURE_DISPLAY_MODES);
                 return displayModes.setDisplayMode(mode.id, makeDefault);
-            } else if (checkService()) {
-                return sService.setDisplayMode(mode, makeDefault);
             }
         } catch (RemoteException e) {
         }
@@ -757,10 +630,6 @@ public final class MKHardwareManager {
             if (isSupportedHIDL(FEATURE_COLOR_BALANCE)) {
                 IColorBalance colorBalance = (IColorBalance) mHIDLMap.get(FEATURE_COLOR_BALANCE);
                 return HIDLHelper.fromHIDLRange(colorBalance.getColorBalanceRange());
-            } else if (checkService()) {
-                return new Range<Integer>(
-                        sService.getColorBalanceMin(),
-                        sService.getColorBalanceMax());
             }
         } catch (RemoteException e) {
         }
@@ -775,8 +644,6 @@ public final class MKHardwareManager {
             if (isSupportedHIDL(FEATURE_COLOR_BALANCE)) {
                 IColorBalance colorBalance = (IColorBalance) mHIDLMap.get(FEATURE_COLOR_BALANCE);
                 return colorBalance.getColorBalance();
-            } else if (checkService()) {
-                return sService.getColorBalance();
             }
         } catch (RemoteException e) {
         }
@@ -795,8 +662,6 @@ public final class MKHardwareManager {
             if (isSupportedHIDL(FEATURE_COLOR_BALANCE)) {
                 IColorBalance colorBalance = (IColorBalance) mHIDLMap.get(FEATURE_COLOR_BALANCE);
                 return colorBalance.setColorBalance(value);
-            } else if (checkService()) {
-                return sService.setColorBalance(value);
             }
         } catch (RemoteException e) {
         }
@@ -814,8 +679,6 @@ public final class MKHardwareManager {
                 IPictureAdjustment pictureAdjustment = (IPictureAdjustment)
                         mHIDLMap.get(FEATURE_PICTURE_ADJUSTMENT);
                 return HIDLHelper.fromHIDLHSIC(pictureAdjustment.getPictureAdjustment());
-            } else if (checkService()) {
-                return sService.getPictureAdjustment();
             }
         } catch (RemoteException e) {
         }
@@ -833,8 +696,6 @@ public final class MKHardwareManager {
                 IPictureAdjustment pictureAdjustment = (IPictureAdjustment)
                         mHIDLMap.get(FEATURE_PICTURE_ADJUSTMENT);
                 return HIDLHelper.fromHIDLHSIC(pictureAdjustment.getDefaultPictureAdjustment());
-            } else if (checkService()) {
-                return sService.getDefaultPictureAdjustment();
             }
         } catch (RemoteException e) {
         }
@@ -853,8 +714,6 @@ public final class MKHardwareManager {
                 IPictureAdjustment pictureAdjustment = (IPictureAdjustment)
                         mHIDLMap.get(FEATURE_PICTURE_ADJUSTMENT);
                 return pictureAdjustment.setPictureAdjustment(HIDLHelper.toHIDLHSIC(hsic));
-            } else if (checkService()) {
-                return sService.setPictureAdjustment(hsic);
             }
         } catch (RemoteException e) {
         }
@@ -877,17 +736,6 @@ public final class MKHardwareManager {
                         HIDLHelper.fromHIDLRange(pictureAdjustment.getIntensityRange()),
                         HIDLHelper.fromHIDLRange(pictureAdjustment.getContrastRange()),
                         HIDLHelper.fromHIDLRange(pictureAdjustment.getSaturationThresholdRange()));
-            } else if (checkService()) {
-                float[] ranges = sService.getPictureAdjustmentRanges();
-                if (ranges.length > 7) {
-                    return Arrays.asList(new Range<Float>(ranges[0], ranges[1]),
-                            new Range<Float>(ranges[2], ranges[3]),
-                            new Range<Float>(ranges[4], ranges[5]),
-                            new Range<Float>(ranges[6], ranges[7]),
-                            (ranges.length > 9 ?
-                                    new Range<Float>(ranges[8], ranges[9]) :
-                                    new Range<Float>(0.0f, 0.0f)));
-                }
             }
         } catch (RemoteException e) {
         }
@@ -903,8 +751,6 @@ public final class MKHardwareManager {
                 ITouchscreenGesture touchscreenGesture = (ITouchscreenGesture)
                         mHIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES);
                 return HIDLHelper.fromHIDLGestures(touchscreenGesture.getSupportedGestures());
-            } else if (checkService()) {
-                return sService.getTouchscreenGestures();
             }
         } catch (RemoteException e) {
         }
@@ -922,8 +768,6 @@ public final class MKHardwareManager {
                         mHIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES);
                 return touchscreenGesture.setGestureEnabled(
                         HIDLHelper.toHIDLGesture(gesture), state);
-            } else if (checkService()) {
-                return sService.setTouchscreenGestureEnabled(gesture, state);
             }
         } catch (RemoteException e) {
         }
