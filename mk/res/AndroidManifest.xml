@@ -45,15 +45,6 @@
     <protected-broadcast android:name="mokee.intent.action.UPDATE_PREFERENCE" />
     <protected-broadcast android:name="mokee.intent.action.REFRESH_PREFERENCE" />
 
-    <!-- Defined in MKCenter -->
-    <protected-broadcast android:name="com.mokee.center.action.DOWNLOAD_COMPLETED" />
-    <protected-broadcast android:name="com.mokee.center.action.DOWNLOAD_START" />
-    <protected-broadcast android:name="com.mokee.center.action.DOWNLOAD_STARTED" />
-    <protected-broadcast android:name="com.mokee.center.action.NOTIFICATION_CLICKED" />
-    <protected-broadcast android:name="com.mokee.center.action.ON_NEW_INTENT" />
-    <protected-broadcast android:name="com.mokee.center.action.UPDATE_CHECK_FINISHED" />
-    <protected-broadcast android:name="com.mokee.center.action.VERIFY_REQUEST" />
-
     <!-- Defined in Masquerade -->
     <protected-broadcast android:name="projekt.substratum.APP_CRASHED" />
 
