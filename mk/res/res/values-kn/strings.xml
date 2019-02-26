@@ -20,7 +20,7 @@
     <string name="mokee_system_label">MoKee System</string>
     <!-- Labels for the MODIFY_PROFILES permission. -->
     <string name="permlab_modifyProfiles">ಸಿಸ್ಟಂ ಪ್ರೋಫೈಲ್‍ಗಳನ್ನು ಮಾರ್ಪಡಿಸು</string>
-    <string name="permdesc_modifyProfiles">ಒಂದು ಆಪ್‍ಗೆ ಸಿಸ್ಟಂ ಪ್ರೊಫೈಲ್‍ಗಳನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
+    <string name="permdesc_modifyProfiles">ಒಂದು ತಂತ್ರಾಂಶಕ್ಕೆ ಸಿಸ್ಟಂ ಪ್ರೊಫೈಲ್‍ಗಳನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
     <string name="permlab_useHardwareFramework">ಹಾರ್ಡ್‍ವೇರ್ ಫ್ರೇಮ್‍ವರ್ಕ್ ಉಪಯೋಗಿಸು</string>
     <string name="permdesc_useHardwareFramework">ಒಂದು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ MoKee ಹಾರ್ಡ್ವೇರ್ ಚೌಕಟ್ಟನ್ನು ಬಳಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
@@ -107,30 +107,51 @@
     <string name="permlab_weather_write">ಹವಾಮಾನ ಒದಗಿಸುವವರನ್ನು ನವೀಕರಿಸು</string>
     <string name="permdesc_weather_write">ಹವಾಮಾನ ಒದಗಿಸುವವರಿಂದ ವಿಷಯಗಳನ್ನು ನವೀಕರಿಸಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_weather_bind">ಹವಾಮಾನ ಒದಗಿಸುವ ಸೇವೆಯಾಗಿ ಬಂಧಿಸಿ</string>
+    <string name="permdesc_weather_bind">ಹವಾಮಾನ ಪರಿಚಾರಕ ಎಂದು ಗುರುತಿಸಿಕೊಳ್ಳಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
+    <string name="permlab_weather_access_mgr">ಹವಾಮಾನ ಸೇವೆ ಬಳಕೆ</string>
+    <string name="permdesc_weather_access_mgr">ವ್ಯವಸ್ಥೆಯಲ್ಲಿನ ಹವಾಮಾನ ಸೇವೆಯನ್ನು ಬಳಸಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ. ಸಾಮಾನ್ಯ ತಂತ್ರಾಂಶಗಳಿಗೆ ಇದರ ಅಗತ್ಯವೇ ಇರುವುದಿಲ್ಲ.</string>
     <!-- DataUsageProvider write permission title -->
+    <string name="permlab_dataUsageWrite">ದತ್ತಾಂಶ ಬಳಕೆಯ ದತ್ತಸಂಚಯವನ್ನು ಮಾರ್ಪಾಡಿಸು</string>
     <!-- DataUsageProvider write permission description -->
+    <string name="permdesc_dataUsageWrite">ದತ್ತಾಂಶ ಬಳಕೆಯ ದತ್ತಸಂಚಯ ವಿಷಯಗಳನ್ನು ನವೀಕರಿಸಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- DataUsageProvider read permission title -->
+    <string name="permlab_dataUsageRead">ದತ್ತಾಂಶ ಬಳಕೆಯ ದತ್ತಸಂಚಯವನ್ನು ಓದು</string>
     <!-- DataUsageProvider read permission description -->
+    <string name="permdesc_dataUsageRead">ದತ್ತಾಂಶ ಬಳಕೆಯ ದತ್ತಸಂಚಯ ಘಟಕಗಳನ್ನು ಓದಲು ತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- LiveDisplay manager permission -->
+    <string name="permlab_manageLiveDisplay">LiveDisplay ಸಂಯೋಜನೆಗಳನ್ನು ನಿರ್ವಹಿಸು</string>
+    <string name="permdesc_manageLiveDisplay">ಸುಧಾರಿತ ಪ್ರದರ್ಶನ ಸಂಯೋಜನೆಗಳನ್ನು ಸಂರಚಿಸಲು ಕಿರುತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- MKAudioService - observe session changes permission -->
+    <string name="permlab_observe_audio_sessions">ಧ್ವನಿ ಅಧಿವೇಶನದ ಬದಲಾವಣೆಗಳನ್ನು ಗಮನಿಸು</string>
+    <string name="permdesc_observe_audio_sessions">ಧ್ವನಿ ತೊರೆಗಳ ಸೃಷ್ಟಿ ಮತ್ತು ನಾಶನ ವೀಕ್ಷಿಸಲು ತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <!-- Privacy Guard -->
     <string name="privacy_guard_manager_title">ಗೌಪ್ಯತಾ ರಕ್ಷಕ</string>
     <!-- Permissions used by remote preferences -->
+    <string name="permlab_manageRemotePrefs">ದೂರಸಂವೇದಿಯ ಸಂಯೋಜನೆಗಳನ್ನು ನಿರ್ವಹಿಸು</string>
+    <string name="permdesc_manageRemotePrefs">ದೂರಸಂವೇದಿಯ ಸಂಯೋಜನೆಗಳನ್ನು ನಿರ್ವಹಿಸಲು ತಂತ್ರಾಂಶಕ್ಕೆ ಅನುಮತಿಸುತ್ತದೆ</string>
     <!-- About device screen, build date -->
     <string name="build_date">ನಿರ್ಮಾಣ ದಿನಾಂಕ</string>
     <!-- About device screen, MoKee version -->
     <string name="mk_version">MoKee ಆವೃತ್ತಿ</string>
     <!-- About device screen, vendor security patch -->
+    <string name="mk_vendor_security_patch">ಮಾರಾಟಗಾರರ ಭದ್ರತಾ ತೇಪೆ ಮಟ್ಟ</string>
     <!-- General purpose use "unknown" string -->
     <string name="unknown">ಅಪರಿಚಿತ</string>
     <!-- Long-press back kill application -->
+    <string name="app_killed_message">ತಂತ್ರಾಂಶ ಸ್ಥಗಿತಗೊಂಡಿದೆ</string>
     <!-- Status bar network traffic monitor strings -->
     <!-- Accent colors -->
+    <string name="accent_black">ಇಂಗಾಲ</string>
+    <string name="accent_blue">ನೀಲಿಬೆರಿ</string>
+    <string name="accent_brown">ಕೊಕೊ</string>
     <string name="accent_cyan">ಕ್ಯಾನ್</string>
+    <string name="accent_gray">ಮಂಜುಗಡ್ಡೆ</string>
     <string name="accent_green">ಅರಣ್ಯ</string>
     <string name="accent_orange">ಕುಂಬಳಕಾಯಿ</string>
     <string name="accent_pink">ಚೆರ್ರಿ</string>
+    <string name="accent_purple">ಲ್ಯಾವೆಂಡರ್</string>
     <string name="accent_red">ಟೊಮೆಟೊ</string>
+    <string name="accent_teal">ಗಾಢ ಹಸಿರು-ನೀಲಿ</string>
     <string name="accent_yellow">ಬಾಳೆಹಣ್ಣು</string>
     <!-- Trust interface -->
     <!-- This string will be referenced from other apps when they're referring to the Trust interface.
@@ -146,5 +167,6 @@
     <string name="trust_notification_content_root">ಒಂದು ತಂತ್ರಾಂಶವು ಈಗ ಮೂಲ ಹಕ್ಕುಗಳನ್ನು ಬಳಸುತ್ತಿದೆ</string>
     <string name="trust_notification_content_keys">ಈ ನಿರ್ಮಾಣವು ಸಾರ್ವಜನಿಕ ಕೀಲಿಗಳಿಂದ ಸಹಿ ಹಾಕಲ್ಪಟ್ಟಿದೆ</string>
     <string name="trust_notification_title_onboarding">ನಂಬಿಕೆ ಅನ್ವೇಷಿಸು</string>
+    <string name="trust_notification_content_onboarding">ನಿಮ್ಮ ಸಾಧನವು ಸುರಕ್ಷಿತವಾಗಿರುವುದನ್ನು ಖಾತ್ರಿಮಾಡಿಕೊಳ್ಳುವುದು ಹೇಗೆಂದು ತಿಳಿಯಿರಿ</string>
     <string name="trust_notification_action_manage">ಎಚ್ಚರಿಕೆಗಳನ್ನು ನಿರ್ವಹಿಸು</string>
 </resources>
