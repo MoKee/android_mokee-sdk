@@ -171,4 +171,9 @@
     <string name="trust_notification_title_onboarding">探索安全中心</string>
     <string name="trust_notification_content_onboarding">了解如何保证设备安全</string>
     <string name="trust_notification_action_manage">管理警报</string>
+
+    <string name="license_notification_channel">许可证警报</string>
+    <string name="license_notification_title">未找到有效的设备许可证</string>
+    <string name="license_notification_content">优选版是设备维护者为捐赠用户提供的独享版本，累计捐赠满 %d 元即可激活许可。</string>
+
 </resources>

@@ -204,4 +204,9 @@
     <string name="trust_notification_title_onboarding">Discover Trust</string>
     <string name="trust_notification_content_onboarding">Get to know how to assure your device is safe</string>
     <string name="trust_notification_action_manage">Manage alerts</string>
+
+    <string name="license_notification_channel">License alerts</string>
+    <string name="license_notification_title">Valid license file not found</string>
+    <string name="license_notification_content">Premium versions are compiled and provided directly by the device maintainers, unlocked with a donation of %d CNY.</string>
+
 </resources>
