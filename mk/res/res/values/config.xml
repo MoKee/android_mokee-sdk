@@ -109,6 +109,7 @@
         <item>org.mokee.platform.internal.StyleInterfaceService</item>
         <item>org.mokee.platform.internal.TrustInterfaceService</item>
         <item>org.mokee.platform.internal.MKSettingsService</item>
+        <item>org.mokee.platform.internal.LicenseInterfaceService</item>
     </string-array>
 
     <!-- The MKSystemServer class that is invoked from Android's SystemServer -->
