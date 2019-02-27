@@ -204,4 +204,9 @@
     <string name="trust_notification_title_onboarding">Discover Trust</string>
     <string name="trust_notification_content_onboarding">Get to know how to assure your device is safe</string>
     <string name="trust_notification_action_manage">Manage alerts</string>
+
+    <string name="license_notification_channel">License alerts</string>
+    <string name="license_notification_title">未找到有效的许可证</string>
+    <string name="license_notification_content">优选版是设备维护者为捐赠用户提供的独享版本，您目前没有权限使用它。</string>
+
 </resources>

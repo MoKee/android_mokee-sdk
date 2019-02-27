@@ -82,6 +82,13 @@ public final class MKContextConstants {
     public static final String MK_WEATHER_SERVICE = "mkweather";
 
     /**
+     * Manages license info
+     *
+     * @hide
+     */
+    public static final String MK_LICENSE_INTERFACE = "mklicense";
+
+    /**
      * Manages display color adjustments
      *
      * @hide
@@ -153,6 +160,14 @@ public final class MKContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String WEATHER_SERVICES = "org.mokee.weather";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the mk License service
+         * utilized by the mokee sdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String LICENSE = "org.mokee.license";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and
