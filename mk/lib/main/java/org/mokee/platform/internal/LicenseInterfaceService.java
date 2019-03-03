@@ -25,7 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
-import android.os.SystemProperties;
 import android.text.TextUtils;
 
 import com.mokee.os.Build;
@@ -37,6 +36,7 @@ import mokee.app.MKContextConstants;
 import mokee.license.DonationInfo;
 import mokee.license.ILicenseInterface;
 import mokee.license.LicenseInterface;
+import mokee.providers.MKSettings;
 
 public class LicenseInterfaceService extends MKSystemService {
     private static final String TAG = "MKLicenseInterfaceService";
@@ -79,6 +79,9 @@ public class LicenseInterfaceService extends MKSystemService {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (action.equals(LicenseInterface.ACTION_LICENSE_CHANGED)) {
+                String deviceLicenseKey = intent.getStringExtra("data");
+                MKSettings.Secure.putString(mContext.getContentResolver(),
+                        MKSettings.Secure.DEVICE_LICENSE_KEY, deviceLicenseKey);
                 updateLicenseInfoInternal();
                 if (mDonationInfo.isAdvanced()) {
                     cancelNotificationForFeatureInternal();
@@ -138,14 +141,11 @@ public class LicenseInterfaceService extends MKSystemService {
     }
 
     private Float getTotalAmountPaid() {
-        String nums = SystemProperties.get(LicenseInterface.LICENSE_SPLIT_NUMS_PROPERTY);
-        if (!TextUtils.isEmpty(nums)) {
+        String deviceLicenseKey = MKSettings.Secure.getString(mContext.getContentResolver(),
+                MKSettings.Secure.DEVICE_LICENSE_KEY);
+        if (!TextUtils.isEmpty(deviceLicenseKey)) {
             try {
-                StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 0; i < Integer.valueOf(nums); i++) {
-                    stringBuilder.append(SystemProperties.get(LicenseInterface.LICENSE_SPLIT_PART_PROPERTY + i));
-                }
-                return License.readLicenseFromContent(stringBuilder.toString(), LicenseInterface.LICENSE_PUB_KEY).getPrice();
+                return License.readLicenseFromContent(deviceLicenseKey, LicenseInterface.LICENSE_PUB_KEY).getPrice();
             } catch (Exception e) {
                 e.printStackTrace();
             }

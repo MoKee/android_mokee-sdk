@@ -33,10 +33,6 @@ public class LicenseInterface {
     public static final int DONATION_ADVANCED = 68;
     public static final int DONATION_BASIC = 30;
 
-    // License
-    public static final String LICENSE_SPLIT_NUMS_PROPERTY = "persist.sys.license.split.nums";
-    public static final String LICENSE_SPLIT_PART_PROPERTY = "persist.sys.license.split.part.";
-
     public static final String LICENSE_PUB_KEY =
             "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwN8FdvNOu5A8yP2Bfb7rk1o6N" +
                     "dXik/DO+Kw6+q7nIZjTh4qpPL3Gyoa7A3MI01gTRKaM+MU2+zkiZND8qoB8EGlF6" +
