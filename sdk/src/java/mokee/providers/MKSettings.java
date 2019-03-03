@@ -860,16 +860,6 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
-         * Force stop restricted app when leaving
-         * @hide
-         */
-        public static final String AEGIS_WARDEN_FORCE_STOP = "aegis_warden_force_stop";
-
-        /** @hide */
-        public static final Validator AEGIS_WARDEN_FORCE_STOP_VALIDATOR =
-                sBooleanValidator;
-
-        /**
          * @hide
          */
         public static final String USE_BOTTOM_GESTURE_NAVIGATION =
@@ -2178,7 +2168,6 @@ public final class MKSettings {
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
                 MKSettings.System.RECEIVE_PUSH_NOTIFICATIONS,
-                MKSettings.System.AEGIS_WARDEN_FORCE_STOP,
                 MKSettings.System.USE_BOTTOM_GESTURE_NAVIGATION,
                 MKSettings.System.BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT,
                 MKSettings.System.BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT,
@@ -2304,7 +2293,6 @@ public final class MKSettings {
                 new ArrayMap<String, Validator>();
         static {
             VALIDATORS.put(RECEIVE_PUSH_NOTIFICATIONS, RECEIVE_PUSH_NOTIFICATIONS_VALIDATOR);
-            VALIDATORS.put(AEGIS_WARDEN_FORCE_STOP, AEGIS_WARDEN_FORCE_STOP_VALIDATOR);
             VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION, USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
             VALIDATORS.put(BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT, BOTTOM_GESTURE_NAVIGATION_TRIGGER_TIMEOUT_VALIDATOR);
             VALIDATORS.put(BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT, BOTTOM_GESTURE_NAVIGATION_SWIPE_LIMIT_VALIDATOR);
@@ -2854,20 +2842,6 @@ public final class MKSettings {
         // endregion
 
         // region Secure Settings
-
-        /**
-         * Indicates whether ANBI (Accidental navigation button interaction) is enabled.
-         *
-         * @hide
-         */
-        public static final String ANBI_ENABLED = "anbi_enabled";
-
-        /**
-         * Indicates whether 3 finger screenshot is enabled.
-         *
-         * @hide
-         */
-        public static final String THREE_FINGER_SCREENSHOT_ENABLED = "three_finger_screenshot_enabled";
 
         /**
          * Locked task list in recent view
