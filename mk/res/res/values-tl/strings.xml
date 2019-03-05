@@ -16,64 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Label for the MoKee system components when they are shown to the user. -->
     <string name="mokee_system_label">Sistema ng MoKee</string>
-    <!-- Labels for the MODIFY_PROFILES permission. -->
     <string name="permlab_modifyProfiles">baguhin ang mga profile ng sistema</string>
     <string name="permdesc_modifyProfiles">Nagpapahintulot sa isang app na baguhin ang mga profile ng sistema.</string>
-    <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
     <string name="permlab_useHardwareFramework">gamitin ang hardware framework</string>
     <string name="permdesc_useHardwareFramework">Payagan ang app na i-aksis sa MoKee hardware framework.</string>
-    <!-- Labels for the WRITE_SETTINGS permission -->
     <string name="permlab_writeSettings">i-modify ang mga setting ng sistema ng MoKee</string>
     <string name="permdesc_writeSettings">Payangan ang app na i-modify ang mga system setting ng MoKee.</string>
-    <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
     <string name="permlab_writeSecureSettings">i-modify ang seguridad ng mga setting ng sistema ng MoKee</string>
     <string name="permdesc_writeSecureSettings">Payagan ang app na i-modify ang MoKee secure system setting. Hindi para sa mga normal na app.</string>
-    <!-- Labels for the PROTECTED_APP permission. -->
     <string name="permlab_protectedApp">idagdag at alisin ang mga app sa mga protektadong app</string>
     <string name="permdesc_protectedApp">Nagpapahintulot sa isang app upang markahan ang ibang mga app bilang protektado at i-lock ang mga ito.</string>
-    <!-- Labels for CHANGE_STYLE permission -->
-    <!-- this is wrong, but google's package manager uses the android:description
-         attribute as description for the runtime permission request dialog
-         with non-default dangerous permissions -->
-    <!-- Profiles -->
-    <!-- Names of default profiles. -->
     <string name="profileNameDefault">Pangunahin</string>
     <string name="profileNameWork">Gawain</string>
     <string name="profileNameHome">Tahanan</string>
     <string name="profileNameSilent">Tahimik</string>
     <string name="profileNameNight">Gabi</string>
     <string name="profileNameAutomobile">Sasakyan</string>
-    <!-- Names of application groups. -->
     <string name="profileGroupPhone">Telepono</string>
     <string name="profileGroupCalendar">Kalendaryo</string>
     <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">Email</string>
     <string name="profileGroupSMS">SMS</string>
-    <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">Iba pa</string>
-    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_readPhoneLocation">basahin ang lokasyon ng telepono</string>
-    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_readPhoneLocation">Hayaan ang app na basahin ang impormasyon tungkol sa lokasyon ng telepono.</string>
-    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_writePhoneLocation">isulat ang lokasyon ng telepono</string>
-    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_writePhoneLocation">Nagpapahintulot sa isang app upang baguhin ang lokasyon ng telepono.</string>
-    <!-- Performance profiles -->
     <string name="perf_profile_pwrsv">Bawas sa konsumo ng baterya</string>
     <string name="perf_profile_bal">Balanse</string>
     <string name="perf_profile_perf">Kakayanan</string>
     <string name="perf_profile_bias_power">Kahusayan</string>
     <string name="perf_profile_bias_perf">Mabilis</string>
-    <!-- Performance profiles -->
     <string name="perf_profile_pwrsv_summary">Pinakamalaki na power savings, binabawasan ang performance ng device</string>
     <string name="perf_profile_bal_summary">Balanse ng optimal performance at power characteristics</string>
     <string name="perf_profile_perf_summary">Mode ng mataas na performance. Kapaki-pakinabang para sa mga application na nangangailangan ng mababang latency at pinakamataas na throughput kung ang paggamit sa power ay hindi dapat alalahanin</string>
     <string name="perf_profile_bias_power_summary">Favor na pagpapatipid ng power. Limitahan ang pinakamataas ng CPU power at i-optimize para sa power saving na presyong mas mataas na latency</string>
     <string name="perf_profile_bias_perf_summary">Favor na performance. Binabawasan ang latency pa pagkunsumo ng bahagyang mas mataas na power</string>
-    <!-- LiveDisplay strings -->
     <string name="live_display_auto">Awtomatiko</string>
     <string name="live_display_auto_summary">Awtomatikong i-adjust ang temperatura ng kulay ng screen pagkatapos ng paglubog ng araw at pagsikat ng araw</string>
     <string name="live_display_off">I-off</string>
@@ -95,11 +74,8 @@
     <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay ay binago sa pang-araw na mode.</string>
     <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay ay binago sa pang-gabi na mode.</string>
     <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay ay binago sa panlabas na mode.</string>
-    <!-- Performance manager permission title -->
     <string name="permlab_perfAccess">i-access ang performance manager</string>
-    <!-- Performance manager permission description -->
     <string name="permdesc_perfAccessDesc">Nagpapahintulot sa app upang i-access ang performance service. Hindi dapat kailanganin para sa mga normal na app.</string>
-    <!-- Weather Service strings -->
     <string name="permlab_weather_read">pagbasa sa lagay ng panahon</string>
     <string name="permdesc_weather_read">Nagpapahintulot sa isang app upang basahin ang linalaman mula sa weather provider.</string>
     <string name="permlab_weather_write">i-update ang weather provider</string>
@@ -108,38 +84,19 @@
     <string name="permdesc_weather_bind">Nagpapahintulot sa isang app na matukoy bilang isang weather provider service.</string>
     <string name="permlab_weather_access_mgr">i-access ang weather service</string>
     <string name="permdesc_weather_access_mgr">Nagpapahintulot sa isang app upang i-access ang weather service sa sistema. Hindi dapat kailanganin para sa mga normal na app.</string>
-    <!-- DataUsageProvider write permission title -->
     <string name="permlab_dataUsageWrite">baguhin ang data usage na database</string>
-    <!-- DataUsageProvider write permission description -->
     <string name="permdesc_dataUsageWrite">Nagpapahintulot sa isang app upang i-update ang nilalaman ng data usage na database.</string>
-    <!-- DataUsageProvider read permission title -->
     <string name="permlab_dataUsageRead">basahin ang data usage na database</string>
-    <!-- DataUsageProvider read permission description -->
     <string name="permdesc_dataUsageRead">Nagpapahintulot sa isang app upang basahin ang nilalaman mula sa data usage na database.</string>
-    <!-- LiveDisplay manager permission -->
     <string name="permlab_manageLiveDisplay">pangasiwa sa mga setting ng LiveDisplay</string>
     <string name="permdesc_manageLiveDisplay">Nagpapahintulot sa isang app upang i-configure ang advanced na mga display setting.</string>
-    <!-- MKAudioService - observe session changes permission -->
     <string name="permlab_observe_audio_sessions">obserbahan ang mga pagbabago sa audio session</string>
     <string name="permdesc_observe_audio_sessions">Paghintulot sa app na ma obserbahan ang mga nagawa at nasira na mga audio stream.</string>
-    <!-- Privacy Guard -->
     <string name="privacy_guard_manager_title">Privacy Guard</string>
-    <!-- Permissions used by remote preferences -->
     <string name="permlab_manageRemotePrefs">pamahalaan ang mga remote setting</string>
     <string name="permdesc_manageRemotePrefs">Nagpapahintulot sa isang app upang i-manage ang mga remote setting</string>
-    <!-- About device screen, build date -->
     <string name="build_date">Petsa sa paggawa</string>
-    <!-- About device screen, MoKee version -->
     <string name="mk_version">Bersyon ng MoKee</string>
-    <!-- About device screen, vendor security patch -->
-    <!-- General purpose use "unknown" string -->
     <string name="unknown">Hindi tiyak</string>
-    <!-- Long-press back kill application -->
-    <!-- Status bar network traffic monitor strings -->
-    <!-- Accent colors -->
     <string name="accent_cyan">Cyan</string>
-    <!-- Trust interface -->
-    <!-- This string will be referenced from other apps when they're referring to the Trust interface.
-         Trust is a feature name, it's not suggested to translate this unless there are conflicts due
-         to a different meaning of the word "trust" in your language -->
 </resources>

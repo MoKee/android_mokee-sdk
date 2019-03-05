@@ -16,66 +16,23 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Label for the MoKee system components when they are shown to the user. -->
-    <!-- Labels for the MODIFY_PROFILES permission. -->
-    <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-    <!-- Labels for the WRITE_SETTINGS permission -->
-    <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-    <!-- Labels for the PROTECTED_APP permission. -->
-    <!-- Labels for CHANGE_STYLE permission -->
-    <!-- this is wrong, but google's package manager uses the android:description
-         attribute as description for the runtime permission request dialog
-         with non-default dangerous permissions -->
-    <!-- Profiles -->
-    <!-- Names of default profiles. -->
     <string name="profileNameDefault">ຄ່າເລີ່ມຕົ້ນ</string>
     <string name="profileNameWork">ບ່ອນເຮັດວຽກ</string>
     <string name="profileNameHome">ບ້ານ</string>
     <string name="profileNameSilent">ງຽບ</string>
     <string name="profileNameNight">ກາງຄືນ</string>
-    <!-- Names of application groups. -->
     <string name="profileGroupCalendar">ປະຕິທິນ</string>
     <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">ອີເມວ</string>
     <string name="profileGroupSMS">SMS</string>
-    <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">ອື່ນໆ</string>
-    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <!-- Performance profiles -->
     <string name="perf_profile_pwrsv">ປະຢັດພະລັງງານ</string>
     <string name="perf_profile_bal">ສົມດຸນ</string>
     <string name="perf_profile_perf">ປະສິດທິພາບ</string>
-    <!-- Performance profiles -->
     <string name="perf_profile_pwrsv_summary">ປະຢັດພະລັງງານສູງສຸດ, ຫລຸດປະສິດທິພາບເຄື່ອງ</string>
     <string name="perf_profile_bal_summary">ປັບການໃຊ້ພະລັງງານ ແລະ ປະສິດທິພາບຢ່າງເຫມາະສົມ</string>
-    <!-- LiveDisplay strings -->
     <string name="live_display_off">ປິດ</string>
     <string name="live_display_night">ກາງຄືນ</string>
-    <!-- Performance manager permission title -->
-    <!-- Performance manager permission description -->
-    <!-- Weather Service strings -->
-    <!-- DataUsageProvider write permission title -->
-    <!-- DataUsageProvider write permission description -->
-    <!-- DataUsageProvider read permission title -->
-    <!-- DataUsageProvider read permission description -->
-    <!-- LiveDisplay manager permission -->
-    <!-- MKAudioService - observe session changes permission -->
-    <!-- Privacy Guard -->
-    <!-- Permissions used by remote preferences -->
-    <!-- About device screen, build date -->
-    <!-- About device screen, MoKee version -->
-    <!-- About device screen, vendor security patch -->
-    <!-- General purpose use "unknown" string -->
     <string name="unknown">ບໍ່ຮູ້ຈັກ</string>
-    <!-- Long-press back kill application -->
-    <!-- Status bar network traffic monitor strings -->
-    <!-- Accent colors -->
     <string name="accent_cyan">ຟ້າຂຽວ</string>
-    <!-- Trust interface -->
-    <!-- This string will be referenced from other apps when they're referring to the Trust interface.
-         Trust is a feature name, it's not suggested to translate this unless there are conflicts due
-         to a different meaning of the word "trust" in your language -->
 </resources>
