@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Trust\'ı Keşfet</string>
     <string name="trust_notification_content_onboarding">Cihazınızın güvenliğini nasıl sağlayacağınızı öğrenin</string>
     <string name="trust_notification_action_manage">Uyarıları yönet</string>
+    <string name="license_notification_channel">Lisans uyarısı</string>
+    <string name="license_notification_title">Geçerli lisans dosyası bulunamadı</string>
+    <string name="license_notification_content">Özel sürümler %d CNY bağışı ile kilidi açılmış ve doğrudan cihaz üreticileri tarafından derlenir ve sağlanır.</string>
 </resources>
