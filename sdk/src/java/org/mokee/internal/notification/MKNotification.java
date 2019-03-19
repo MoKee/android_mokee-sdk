@@ -34,4 +34,26 @@ public class MKNotification {
      * a specific light brightness.
      */
     public static final String EXTRA_FORCE_LIGHT_BRIGHTNESS = "mokee.forceLightBrightness";
+
+    /**
+     * Used by light picker in Settings to force
+     * a specific light color.
+     */
+    public static final String EXTRA_FORCE_COLOR = "mokee.forceColor";
+
+    /**
+     * Used by light picker in Settings to force
+     * a specific light on duration.
+     *
+     * Value must be greater than or equal to 0.
+     */
+    public static final String EXTRA_FORCE_LIGHT_ON_MS = "mokee.forceLightOnMs";
+
+    /**
+     * Used by light picker in Settings to force
+     * a specific light off duration.
+     *
+     * Value must be greater than or equal to 0.
+     */
+    public static final String EXTRA_FORCE_LIGHT_OFF_MS = "mokee.forceLightOffMs";
 }
