@@ -127,7 +127,7 @@
     <string name="trust_notification_title_onboarding">Fedezze fel a Trust-ot</string>
     <string name="trust_notification_content_onboarding">Ismerje meg, hogyan garantálhatja a készüléke biztonságát</string>
     <string name="trust_notification_action_manage">Értesítéskezelés</string>
-    <string name="license_notification_channel">Felhasználási engedély (licenc) riasztás</string>
+    <string name="license_notification_channel">Riasztás a Felhasználási engedély (licenc) miatt</string>
     <string name="license_notification_title">Nem található érvényes felhasználási engedély (licenc)</string>
     <string name="license_notification_content">A Prémium-változatok külön-külön készülnek a készülékfelelősök által és %d kínai jüan adománnyal válnak elérhetővé.</string>
 </resources>
