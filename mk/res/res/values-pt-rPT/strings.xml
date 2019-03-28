@@ -107,11 +107,13 @@
     <string name="accent_blue">Mirtilo</string>
     <string name="accent_brown">Chocolate</string>
     <string name="accent_cyan">Ciano</string>
+    <string name="accent_gray">Iceberg</string>
     <string name="accent_green">Alface</string>
     <string name="accent_orange">Abóbora</string>
     <string name="accent_pink">Rosa</string>
     <string name="accent_purple">Lavanda</string>
     <string name="accent_red">Tomate</string>
+    <string name="accent_teal">Verde azulado</string>
     <string name="accent_yellow">Banana</string>
     <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">aceder à interface Trust</string>
