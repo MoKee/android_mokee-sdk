@@ -106,12 +106,14 @@
     <string name="accent_blue">Nabius</string>
     <string name="accent_brown">Cacau</string>
     <string name="accent_cyan">Cian</string>
+    <string name="accent_gray">Iceberg</string>
     <string name="accent_green">Bosc</string>
     <string name="accent_orange">Carbassa</string>
     <string name="accent_pink">Cirera</string>
     <string name="accent_purple">Lavandula</string>
     <string name="accent_red">Tomàquet</string>
     <string name="accent_yellow">Plàtan</string>
+    <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">accedir a la interfície Trust</string>
     <string name="permdesc_trustInterface">Permet que una aplicació mostri avisos i suggeriments Trust</string>
     <string name="trust_notification_channel">Alertes Trust</string>
