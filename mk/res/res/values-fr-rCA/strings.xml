@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Découvrez Trust</string>
     <string name="trust_notification_content_onboarding">Découvrez comment garantir la sécurité de votre appareil</string>
     <string name="trust_notification_action_manage">Gérer les alertes</string>
+    <string name="license_notification_channel">Alertes de licence</string>
+    <string name="license_notification_title">Fichier de licence valide introuvable</string>
+    <string name="license_notification_content">Les versions Premium sont compilées et fournies directement par les responsables de l\'appareil (les maintainers), déverrouillées avec un don de %d CNY.</string>
 </resources>

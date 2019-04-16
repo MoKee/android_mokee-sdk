@@ -117,5 +117,14 @@
     <string name="accent_yellow">Plátano</string>
     <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">acceder a la interfaz de Trust</string>
+    <string name="permdesc_trustInterface">Permite al panel Trust mostrar advertencias y consejos</string>
+    <string name="trust_notification_channel">Alertas del panel Trust</string>
+    <string name="trust_notification_title_security">Panel Trust: Seguridad del sistema</string>
     <string name="trust_notification_content_selinux">SELinux no esta en modo obligatorio, tu seguridad se ha reducido</string>
+    <string name="trust_notification_title_root">Panel Trust: Acceso Raíz</string>
+    <string name="trust_notification_content_root">Una aplicación está usando el acceso Raíz</string>
+    <string name="trust_notification_content_keys">Esta compilación está firmada con claves públicas</string>
+    <string name="trust_notification_title_onboarding">Descubre el panel Trust</string>
+    <string name="trust_notification_content_onboarding">Descubra cómo garantizar la seguridad de su dispositivo</string>
+    <string name="trust_notification_action_manage">Gestionar alertas</string>
 </resources>
