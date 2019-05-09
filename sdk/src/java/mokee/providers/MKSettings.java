@@ -860,6 +860,16 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
+         * Swipe to screenshot
+         * @hide
+         */
+        public static final String SWIPE_TO_SCREENSHOT = "swipe_to_screenshot";
+
+         /** @hide */
+        public static final Validator SWIPE_TO_SCREENSHOT_VALIDATOR = sBooleanValidator;
+
+
+        /**
          * @hide
          */
         public static final String USE_BOTTOM_GESTURE_NAVIGATION =
@@ -2413,6 +2423,7 @@ public final class MKSettings {
                     LONG_SCREEN_APPS_VALIDATOR);
             VALIDATORS.put(FORCE_SHOW_NAVBAR,
                     FORCE_SHOW_NAVBAR_VALIDATOR);
+            VALIDATORS.put(SWIPE_TO_SCREENSHOT, SWIPE_TO_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(FINGERPRINT_SHORTCUTS, FINGERPRINT_SHORTCUTS_VALIDATOR);
         };
         // endregion
