@@ -58,9 +58,6 @@ mokee_sdk_exclude_files := 'mokee/library'
 LOCAL_JAR_EXCLUDE_PACKAGES := $(mokee_sdk_exclude_files)
 LOCAL_JAR_EXCLUDE_FILES := none
 
-LOCAL_JAVA_LIBRARIES := \
-    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
-
 LOCAL_STATIC_JAVA_LIBRARIES := org.mokee.platform.sdk
 
 include $(BUILD_STATIC_JAVA_LIBRARY)
@@ -73,9 +70,7 @@ mokee_platform_docs_src_files := \
     $(call all-html-files-under, $(mokee_sdk_src))
 
 mokee_platform_docs_java_libraries := \
-    android-support-v4 \
-    org.mokee.platform.sdk \
-    $(mokee_sdk_LOCAL_JAVA_LIBRARIES)
+    org.mokee.platform.sdk
 
 # SDK version as defined
 mokee_platform_docs_SDK_VERSION := 81.0

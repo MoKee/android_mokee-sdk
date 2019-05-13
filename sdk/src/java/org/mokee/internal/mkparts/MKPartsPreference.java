@@ -52,7 +52,7 @@ public class MKPartsPreference extends RemotePreference {
     }
 
     public MKPartsPreference(Context context, AttributeSet attrs) {
-        this(context, attrs, android.support.v7.preference.R.attr.preferenceScreenStyle);
+        this(context, attrs, androidx.preference.R.attr.preferenceScreenStyle);
     }
 
     @Override

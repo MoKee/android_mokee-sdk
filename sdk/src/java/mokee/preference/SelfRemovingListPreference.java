@@ -18,10 +18,11 @@
 package mokee.preference;
 
 import android.content.Context;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.PreferenceDataStore;
-import android.support.v7.preference.PreferenceViewHolder;
 import android.util.AttributeSet;
+
+import androidx.preference.ListPreference;
+import androidx.preference.PreferenceDataStore;
+import androidx.preference.PreferenceViewHolder;
 
 /**
  * A Preference which can automatically remove itself from the hierarchy
