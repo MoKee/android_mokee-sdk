@@ -27,10 +27,7 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.text.TextUtils;
 
-import com.mokee.os.Build;
 import com.mokee.security.License;
-
-import java.util.Locale;
 
 import mokee.app.MKContextConstants;
 import mokee.license.DonationInfo;
@@ -65,7 +62,9 @@ public class LicenseInterfaceService extends MKSystemService {
     public void onStart() {
         mNotificationManager = mContext.getSystemService(NotificationManager.class);
         updateLicenseInfoInternal();
+
         if (!LicenseInterface.isPremiumVersion()) return;
+
         if (!mDonationInfo.isAdvanced()) {
             postNotificationForFeatureInternal();
             IntentFilter filter = new IntentFilter();
@@ -160,8 +159,8 @@ public class LicenseInterfaceService extends MKSystemService {
         @Override
         public void updateLicenseInfo() {
             updateLicenseInfoInternal();
-            if (mDonationInfo.isAdvanced()
-                    && TextUtils.equals(Build.RELEASE_TYPE.toLowerCase(Locale.ENGLISH), "premium")) {
+            if (LicenseInterface.isPremiumVersion()
+                    && mDonationInfo.isAdvanced()) {
                 cancelNotificationForFeatureInternal();
             }
         }
