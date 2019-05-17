@@ -24,13 +24,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.text.TextUtils;
+import android.widget.Toast;
 
-import com.mokee.os.Build;
 import com.mokee.security.License;
-
-import java.util.Locale;
 
 import mokee.app.MKContextConstants;
 import mokee.license.DonationInfo;
@@ -49,6 +49,7 @@ public class LicenseInterfaceService extends MKSystemService {
     private Context mContext;
     private NotificationManager mNotificationManager = null;
     private DonationInfo mDonationInfo = new DonationInfo();
+    private Handler mHandler = new Handler(Looper.getMainLooper());
 
     public LicenseInterfaceService(Context context) {
         super(context);
@@ -65,7 +66,9 @@ public class LicenseInterfaceService extends MKSystemService {
     public void onStart() {
         mNotificationManager = mContext.getSystemService(NotificationManager.class);
         updateLicenseInfoInternal();
+
         if (!LicenseInterface.isPremiumVersion()) return;
+
         if (!mDonationInfo.isAdvanced()) {
             postNotificationForFeatureInternal();
             IntentFilter filter = new IntentFilter();
@@ -153,16 +156,23 @@ public class LicenseInterfaceService extends MKSystemService {
         return 0f;
     }
 
-    /* Service */
+    private Runnable mToastRunnable = new Runnable() {
+        @Override
+        public void run() {
+            String message = mContext.getString(R.string.license_notification_content, LicenseInterface.DONATION_ADVANCED);
+            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+        }
+    };
 
+    /* Service */
     private final IBinder mService = new ILicenseInterface.Stub() {
 
         @Override
-        public void updateLicenseInfo() {
-            updateLicenseInfoInternal();
-            if (mDonationInfo.isAdvanced()
-                    && TextUtils.equals(Build.RELEASE_TYPE.toLowerCase(Locale.ENGLISH), "premium")) {
+        public void licenseVerification() {
+            if (mDonationInfo.isAdvanced()) {
                 cancelNotificationForFeatureInternal();
+            } else {
+                mHandler.post(mToastRunnable);
             }
         }
     };

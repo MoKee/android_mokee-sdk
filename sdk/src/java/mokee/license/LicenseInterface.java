@@ -93,10 +93,10 @@ public class LicenseInterface {
         return sService;
     }
 
-    public void updateLicenseInfo() {
+    public void licenseVerification() {
         if (sService != null) {
             try {
-                sService.updateLicenseInfo();
+                sService.licenseVerification();
             } catch (RemoteException e) {
                 Log.e(TAG, e.getLocalizedMessage(), e);
             }

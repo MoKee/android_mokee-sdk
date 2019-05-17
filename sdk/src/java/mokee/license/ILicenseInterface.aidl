@@ -19,5 +19,5 @@ package mokee.license;
 
 /** {@hide} */
 interface ILicenseInterface {
-    void updateLicenseInfo();
+    void licenseVerification();
 }
