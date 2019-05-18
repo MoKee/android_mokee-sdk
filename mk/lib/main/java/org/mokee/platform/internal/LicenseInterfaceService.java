@@ -169,9 +169,7 @@ public class LicenseInterfaceService extends MKSystemService {
 
         @Override
         public void licenseVerification() {
-            if (mDonationInfo.isAdvanced()) {
-                cancelNotificationForFeatureInternal();
-            } else {
+            if (!mDonationInfo.isAdvanced()) {
                 mHandler.post(mToastRunnable);
             }
         }
