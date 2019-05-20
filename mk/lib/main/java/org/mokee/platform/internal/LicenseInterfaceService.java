@@ -147,11 +147,7 @@ public class LicenseInterfaceService extends MKSystemService {
         String deviceLicenseKey = MKSettings.Secure.getString(mContext.getContentResolver(),
                 MKSettings.Secure.DEVICE_LICENSE_KEY);
         if (!TextUtils.isEmpty(deviceLicenseKey)) {
-            try {
-                return License.loadLicenseFromContent(mContext, deviceLicenseKey, LicenseInterface.LICENSE_PUB_KEY).getPrice();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            return License.loadLicenseFromContent(mContext, deviceLicenseKey, LicenseInterface.LICENSE_PUB_KEY).getPrice();
         }
         return 0f;
     }
