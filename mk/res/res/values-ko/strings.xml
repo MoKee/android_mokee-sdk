@@ -107,11 +107,13 @@
     <string name="accent_blue">바다</string>
     <string name="accent_brown">초콜릿</string>
     <string name="accent_cyan">시안</string>
+    <string name="accent_gray">빙산</string>
     <string name="accent_green">산림</string>
     <string name="accent_orange">오렌지</string>
     <string name="accent_pink">체리</string>
     <string name="accent_purple">라벤더</string>
     <string name="accent_red">토마토</string>
+    <string name="accent_teal">짙은 초록</string>
     <string name="accent_yellow">바나나</string>
     <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">Trust 인터페이스 접근</string>

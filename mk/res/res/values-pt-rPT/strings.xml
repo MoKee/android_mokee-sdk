@@ -127,4 +127,6 @@
     <string name="trust_notification_title_onboarding">Descoberta Trust</string>
     <string name="trust_notification_content_onboarding">Fique a saber como garantir que o seu dispositivo é seguro</string>
     <string name="trust_notification_action_manage">Gerir alertas</string>
+    <string name="license_notification_channel">Alertas de licença</string>
+    <string name="license_notification_title">Ficheiro de licença válido não encontrado</string>
 </resources>
