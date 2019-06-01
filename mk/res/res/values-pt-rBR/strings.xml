@@ -127,4 +127,6 @@
     <string name="trust_notification_title_onboarding">Desvendar o Agente de Confiança</string>
     <string name="trust_notification_content_onboarding">Saiba como garantir a segurança de seu dispositivo</string>
     <string name="trust_notification_action_manage">Gerenciar alertas</string>
+    <string name="license_notification_channel">Alertas de licença</string>
+    <string name="license_notification_title">Ficheiro de licença válido não encontrado</string>
 </resources>

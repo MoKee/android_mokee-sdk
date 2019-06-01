@@ -59,6 +59,7 @@
     <string name="live_display_auto_summary">Reguleeri värvitemperatuuri automaatselt peale päikeseloojangut ja päikesetõusu</string>
     <string name="live_display_off">Väljas</string>
     <string name="live_display_off_summary">Keela kõik muudatused</string>
+    <string name="live_display_day">Päev</string>
     <string name="live_display_day_summary">Kasuta ainult päevaseadeid</string>
     <string name="live_display_night">Öö</string>
     <string name="live_display_night_summary">Kasuta ainult ööseadeid</string>
@@ -97,11 +98,13 @@
     <string name="permlab_manageRemotePrefs">kaugtöölaua sätete haldamine</string>
     <string name="permdesc_manageRemotePrefs">Võimaldab rakendusel hallata kaugtöölaua sätteid</string>
     <string name="build_date">Kooste kuupäev</string>
+    <string name="mk_api_level">MoKee API tase</string>
     <string name="mk_version">MoKee versioon</string>
     <string name="mk_vendor_security_patch">Tarnija turvapaiga tase</string>
     <string name="unknown">Teadmata</string>
     <string name="app_killed_message">Rakendus sundsuletud</string>
     <string name="accent_black">Süsinik</string>
+    <string name="accent_blue">Mustikas</string>
     <string name="accent_brown">Kakao</string>
     <string name="accent_cyan">Tsüaan</string>
     <string name="accent_gray">Jäämägi</string>
@@ -124,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Avasta Trust</string>
     <string name="trust_notification_content_onboarding">Õpi oma seadet turvalisena hoidma</string>
     <string name="trust_notification_action_manage">Halda teateid</string>
+    <string name="license_notification_channel">Litsentsi märguanded</string>
+    <string name="license_notification_title">Kehtivat litsentsifaili ei leitud</string>
+    <string name="license_notification_content">Premium versioonid kompileeritakse ja edastatakse otse seadme hooldajatelt, vabastades need annetusega %d CNY.</string>
 </resources>

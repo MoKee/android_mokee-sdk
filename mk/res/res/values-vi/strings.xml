@@ -107,11 +107,13 @@
     <string name="accent_blue">Việt quất</string>
     <string name="accent_brown">Ca cao</string>
     <string name="accent_cyan">Lục lam</string>
+    <string name="accent_gray">Iceberg</string>
     <string name="accent_green">Rừng</string>
     <string name="accent_orange">Bí ngô</string>
     <string name="accent_pink">Anh đào</string>
     <string name="accent_purple">Oải hương</string>
     <string name="accent_red">Cà chua</string>
+    <string name="accent_teal">Lục lam</string>
     <string name="accent_yellow">Chuối</string>
     <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">truy cập giao diện Trust</string>
