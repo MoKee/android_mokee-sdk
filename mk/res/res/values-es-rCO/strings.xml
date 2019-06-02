@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Descubre el panel Trust</string>
     <string name="trust_notification_content_onboarding">Descubra cómo garantizar la seguridad de su dispositivo</string>
     <string name="trust_notification_action_manage">Gestionar alertas</string>
+    <string name="license_notification_channel">Alertas sobre Licencias</string>
+    <string name="license_notification_title">Licencia válida no encontrada</string>
+    <string name="license_notification_content">La versiones Premium son compiladas y proporcionadas por los mantenedores, desbloqueadas con una donación de %d CNY.</string>
 </resources>
