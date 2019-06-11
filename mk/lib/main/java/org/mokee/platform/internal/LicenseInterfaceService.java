@@ -31,6 +31,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.mokee.security.License;
+import com.mokee.security.LicenseInfo;
 
 import mokee.app.MKContextConstants;
 import mokee.license.DonationInfo;
@@ -58,6 +59,23 @@ public class LicenseInterfaceService extends MKSystemService {
     }
 
     @Override
+    public void onBootPhase(int phase) {
+        if (phase == PHASE_BOOT_COMPLETED) {
+            updateLicenseInfoInternal();
+
+            if (!LicenseInterface.isPremiumVersion()) return;
+
+            if (!mDonationInfo.isAdvanced()) {
+                postNotificationForFeatureInternal();
+
+                IntentFilter filter = new IntentFilter();
+                filter.addAction(LicenseInterface.ACTION_LICENSE_CHANGED);
+                mContext.registerReceiver(mIntentReceiver, filter);
+            }
+        }
+    }
+
+    @Override
     public String getFeatureDeclaration() {
         return MKContextConstants.Features.LICENSE;
     }
@@ -65,16 +83,6 @@ public class LicenseInterfaceService extends MKSystemService {
     @Override
     public void onStart() {
         mNotificationManager = mContext.getSystemService(NotificationManager.class);
-        updateLicenseInfoInternal();
-
-        if (!LicenseInterface.isPremiumVersion()) return;
-
-        if (!mDonationInfo.isAdvanced()) {
-            postNotificationForFeatureInternal();
-            IntentFilter filter = new IntentFilter();
-            filter.addAction(LicenseInterface.ACTION_LICENSE_CHANGED);
-            mContext.registerReceiver(mIntentReceiver, filter);
-        }
     }
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -138,18 +146,21 @@ public class LicenseInterfaceService extends MKSystemService {
     }
 
     private void updateLicenseInfoInternal() {
-        mDonationInfo.setPaid(getTotalAmountPaid().intValue());
+        mDonationInfo.setPaid(getTotalAmountPaid());
         mDonationInfo.setBasic(mDonationInfo.getPaid() >= LicenseInterface.DONATION_BASIC);
         mDonationInfo.setAdvanced(mDonationInfo.getPaid() >= LicenseInterface.DONATION_ADVANCED);
     }
 
-    private Float getTotalAmountPaid() {
+    private int getTotalAmountPaid() {
         String deviceLicenseKey = MKSettings.Secure.getString(mContext.getContentResolver(),
                 MKSettings.Secure.DEVICE_LICENSE_KEY);
         if (!TextUtils.isEmpty(deviceLicenseKey)) {
-            return License.loadLicenseFromContent(mContext, deviceLicenseKey, LicenseInterface.LICENSE_PUB_KEY).getPrice();
+            LicenseInfo licenseInfo = License.loadLicenseFromContent(mContext, deviceLicenseKey, LicenseInterface.LICENSE_PUB_KEY);
+            if (licenseInfo != null) {
+                return licenseInfo.getPrice().intValue();
+            }
         }
-        return 0f;
+        return 0;
     }
 
     private Runnable mToastRunnable = new Runnable() {
