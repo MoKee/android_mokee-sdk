@@ -45,9 +45,6 @@
     <protected-broadcast android:name="mokee.intent.action.UPDATE_PREFERENCE" />
     <protected-broadcast android:name="mokee.intent.action.REFRESH_PREFERENCE" />
 
-    <!-- Defined in Masquerade -->
-    <protected-broadcast android:name="projekt.substratum.APP_CRASHED" />
-
     <protected-broadcast android:name="mokee.platform.intent.action.PROFILE_UPDATED" />
     <protected-broadcast android:name="mokee.platform.intent.action.INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED" />
 
