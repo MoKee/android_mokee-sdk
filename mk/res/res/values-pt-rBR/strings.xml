@@ -128,5 +128,6 @@
     <string name="trust_notification_content_onboarding">Saiba como garantir a segurança de seu dispositivo</string>
     <string name="trust_notification_action_manage">Gerenciar alertas</string>
     <string name="license_notification_channel">Alertas de licença</string>
-    <string name="license_notification_title">Ficheiro de licença válido não encontrado</string>
+    <string name="license_notification_title">Arquivo de licença válido não encontrado</string>
+    <string name="license_notification_content">As versões premium são compiladas e fornecidas diretamente pelos mantenedores do dispositivo, desbloqueadas com uma doação de %d CNY.</string>
 </resources>
