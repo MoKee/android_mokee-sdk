@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_display_off">Izslēgt</string>
     <string name="build_date">Būvējuma datums</string>
     <string name="unknown">Nezināms</string>
     <string name="accent_cyan">Ciānzila</string>
