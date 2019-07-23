@@ -208,5 +208,13 @@ public final class MKContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String SETTINGS = "org.mokee.settings";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the MK
+         * fingerprint in screen utilized by the mokee sdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String FOD = "vendor.mokee.biometrics.fingerprint.inscreen";
     }
 }
