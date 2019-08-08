@@ -114,4 +114,11 @@ public class Intent {
      */
     public static final String ACTION_UPDATE_POWER_MENU =
             "mokee.intent.action.UPDATE_POWER_MENU";
+
+    /**
+     * Broadcast action: notify SystemUI that LiveDisplay service has finished initialization.
+     * @hide
+     */
+    public static final String ACTION_INITIALIZE_LIVEDISPLAY =
+            "mokee.intent.action.INITIALIZE_LIVEDISPLAY";
 }

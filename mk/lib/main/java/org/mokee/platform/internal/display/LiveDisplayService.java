@@ -218,6 +218,10 @@ public class LiveDisplayService extends MKSystemService {
             }
 
             updateFeatures(ALL_CHANGED);
+
+            Intent intent = new Intent(mokee.content.Intent.ACTION_INITIALIZE_LIVEDISPLAY);
+            intent.setPackage("com.android.systemui");
+            mContext.sendBroadcastAsUser(intent, UserHandle.SYSTEM);
         }
     }
 
