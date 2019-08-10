@@ -127,4 +127,5 @@
     <string name="trust_notification_title_onboarding">Entdecke Trust</string>
     <string name="trust_notification_content_onboarding">Erfahren Sie, wie sich versichern können, dass Ihr Gerät sicher ist</string>
     <string name="trust_notification_action_manage">Warnungen verwalten</string>
+    <string name="license_notification_title">Gültige Lizenzdatei nicht gefunden</string>
 </resources>

@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Objavte Trust</string>
     <string name="trust_notification_content_onboarding">Zistite, ako zabezpečiť bezpečnosť zariadenia</string>
     <string name="trust_notification_action_manage">Správa upozornení</string>
+    <string name="license_notification_channel">Licenčné oznámenie</string>
+    <string name="license_notification_title">Platný licenčný súbor nebol nájdený</string>
+    <string name="license_notification_content">Prémiová verzia systému je poskytovaná priamo od vývojára po uhradení príspevku vo výške %d CNY.</string>
 </resources>
