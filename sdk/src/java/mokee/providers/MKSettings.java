@@ -3174,6 +3174,14 @@ public final class MKSettings {
         public static final Validator VOLUME_PANEL_ON_LEFT_VALIDATOR =
                 sBooleanValidator;
 
+        /**
+         * Whether tethering is allowed to use VPN upstreams
+         * 0 = false, 1 = true
+         */
+        public static final String TETHERING_ALLOW_VPN_UPSTREAMS = "tethering_allow_vpn_upstreams";
+
+        public static final Validator TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR = sBooleanValidator;
+
         // endregion
 
         /**
@@ -3274,6 +3282,7 @@ public final class MKSettings {
             VALIDATORS.put(PROTECTED_COMPONENT_MANAGERS, PROTECTED_COMPONENTS_MANAGER_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_MODE, NETWORK_TRAFFIC_MODE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE, NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR);
+            VALIDATORS.put(TETHERING_ALLOW_VPN_UPSTREAMS, TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR);
             VALIDATORS.put(TRUST_NOTIFICATIONS, TRUST_NOTIFICATIONS_VALIDATOR);
             VALIDATORS.put(TRUST_RESTRICT_USB_KEYGUARD, TRUST_RESTRICT_USB_KEYGUARD_VALIDATOR);
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
