@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Odkryj Trust</string>
     <string name="trust_notification_content_onboarding">Dowiedz się jak zapewnić bezpieczeństwo twojemu urządzeniu</string>
     <string name="trust_notification_action_manage">Zarządzaj ostrzeżeniami</string>
+    <string name="license_notification_channel">Uwagi licencyjne</string>
+    <string name="license_notification_title">Nie znaleziono ważnego pliku licencji</string>
+    <string name="license_notification_content">Wersję premium są kompilowane i dostarczane bezpośrednio od opiekuna urządzenia, cena za odblokowanie wynosi %d CNY.</string>
 </resources>
