@@ -29,8 +29,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.net.ConnectivityManager;
-import android.net.LinkProperties;
-import android.net.Network;
 import android.net.TrafficStats;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -42,9 +40,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import mokee.providers.MKSettings;
-
 import java.text.DecimalFormat;
-import java.util.HashMap;
 
 import org.mokee.platform.internal.R;
 
@@ -79,6 +75,8 @@ public class NetworkTraffic extends TextView {
     private boolean mNetworkTrafficIsVisible;
     private long mTxBytes;
     private long mRxBytes;
+    private long mLastTxBytesTotal;
+    private long mLastRxBytesTotal;
     private long mLastUpdateTime;
     private int mTextSizeSingle;
     private int mTextSizeMulti;
@@ -89,7 +87,6 @@ public class NetworkTraffic extends TextView {
     private int mIconTint = Color.WHITE;
     private SettingsObserver mObserver;
     private Drawable mDrawable;
-    private HashMap<String, IfaceTrafficStats> mActiveIfaceStats;
 
     public NetworkTraffic(Context context) {
         this(context, null);
@@ -109,9 +106,6 @@ public class NetworkTraffic extends TextView {
         mNetworkTrafficIsVisible = false;
 
         mObserver = new SettingsObserver(mTrafficHandler);
-
-        /* Prepare for extreme case: WiFi + Mobile + Bluetooth + Ethernet */
-        mActiveIfaceStats = new HashMap<>(4);
     }
 
     private MKStatusBarItem.DarkReceiver mDarkReceiver =
@@ -149,7 +143,6 @@ public class NetworkTraffic extends TextView {
         mContext.registerReceiver(mIntentReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
         mObserver.observe();
-        refreshActiveIfaces();
         updateSettings();
     }
 
@@ -169,13 +162,15 @@ public class NetworkTraffic extends TextView {
                     && timeDelta >= REFRESH_INTERVAL * 0.95f) {
                 // Update counters
                 mLastUpdateTime = now;
-                long txBytes = diffAndUpdateTxBytes();
-                long rxBytes = diffAndUpdateRxBytes();
+                long txBytes = TrafficStats.getTotalTxBytes() - mLastTxBytesTotal;
+                long rxBytes = TrafficStats.getTotalRxBytes() - mLastRxBytesTotal;
                 mTxBytes = (long) (txBytes / (timeDelta / 1000f));
                 mRxBytes = (long) (rxBytes / (timeDelta / 1000f));
+                mLastTxBytesTotal += txBytes;
+                mLastRxBytesTotal += rxBytes;
             }
 
-            final boolean enabled = mMode != MODE_DISABLED && mActiveIfaceStats.size() != 0;
+            final boolean enabled = mMode != MODE_DISABLED && isConnectionAvailable();
             final boolean showUpstream =
                     mMode == MODE_UPSTREAM_ONLY || mMode == MODE_UPSTREAM_AND_DOWNSTREAM;
             final boolean showDownstream =
@@ -250,7 +245,6 @@ public class NetworkTraffic extends TextView {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (ConnectivityManager.CONNECTIVITY_ACTION.equals(action)) {
-                refreshActiveIfaces();
                 updateViewState();
             }
         }
@@ -281,48 +275,10 @@ public class NetworkTraffic extends TextView {
         }
     }
 
-    private long diffAndUpdateTxBytes() {
-        long txBytesDelta = 0;
-        for (String iface : mActiveIfaceStats.keySet()) {
-            IfaceTrafficStats stats = mActiveIfaceStats.get(iface);
-            long txBytes = TrafficStats.getTxBytes(iface);
-
-            txBytesDelta += txBytes - stats.mTxBytes;
-            stats.mTxBytes = txBytes;
-        }
-        return txBytesDelta;
-    }
-
-    private long diffAndUpdateRxBytes() {
-        long rxBytesDelta = 0;
-        for (String iface : mActiveIfaceStats.keySet()) {
-            IfaceTrafficStats stats = mActiveIfaceStats.get(iface);
-            long rxBytes = TrafficStats.getRxBytes(iface);
-
-            rxBytesDelta += rxBytes - stats.mRxBytes;
-            stats.mRxBytes = rxBytes;
-        }
-        return rxBytesDelta;
-    }
-
-    private void refreshActiveIfaces() {
+    private boolean isConnectionAvailable() {
         ConnectivityManager cm =
                 (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        mActiveIfaceStats.clear();
-
-        Network[] networks = cm.getAllNetworks();
-        for (Network network : networks) {
-            int networkType = cm.getNetworkInfo(network).getType();
-            if (networkType != ConnectivityManager.TYPE_VPN) {
-                String iface = cm.getLinkProperties(network).getInterfaceName();
-                IfaceTrafficStats stats = new IfaceTrafficStats();
-
-                stats.mRxBytes = TrafficStats.getRxBytes(iface);
-                stats.mTxBytes = TrafficStats.getTxBytes(iface);
-                mActiveIfaceStats.put(iface, stats);
-            }
-        }
+        return cm.getActiveNetworkInfo() != null;
     }
 
     private void updateSettings() {
@@ -369,10 +325,5 @@ public class NetworkTraffic extends TextView {
         if (mDrawable != null) {
             mDrawable.setColorFilter(mIconTint, PorterDuff.Mode.MULTIPLY);
         }
-    }
-
-    private static class IfaceTrafficStats {
-        public long mTxBytes;
-        public long mRxBytes;
     }
 }
