@@ -31,7 +31,6 @@ import android.graphics.Rect;
 import android.net.ConnectivityManager;
 import android.net.LinkProperties;
 import android.net.Network;
-import android.net.NetworkInfo;
 import android.net.TrafficStats;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -91,7 +90,6 @@ public class NetworkTraffic extends TextView {
     private SettingsObserver mObserver;
     private Drawable mDrawable;
     private HashMap<String, IfaceTrafficStats> mActiveIfaceStats;
-    private boolean mIsStatsDirty;
 
     public NetworkTraffic(Context context) {
         this(context, null);
@@ -151,7 +149,7 @@ public class NetworkTraffic extends TextView {
         mContext.registerReceiver(mIntentReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
         mObserver.observe();
-        mIsStatsDirty = true;
+        refreshActiveIfaces();
         updateSettings();
     }
 
@@ -167,15 +165,6 @@ public class NetworkTraffic extends TextView {
         public void handleMessage(Message msg) {
             long now = SystemClock.elapsedRealtime();
             long timeDelta = now - mLastUpdateTime;
-
-            if (mIsStatsDirty) {
-                if (refreshActiveIfaces()) {
-                    mIsStatsDirty = false;
-                } else {
-                    return;
-                }
-            }
-
             if (msg.what == MESSAGE_TYPE_PERIODIC_REFRESH
                     && timeDelta >= REFRESH_INTERVAL * 0.95f) {
                 // Update counters
@@ -261,7 +250,7 @@ public class NetworkTraffic extends TextView {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (ConnectivityManager.CONNECTIVITY_ACTION.equals(action)) {
-                mIsStatsDirty = true;
+                refreshActiveIfaces();
                 updateViewState();
             }
         }
@@ -316,7 +305,7 @@ public class NetworkTraffic extends TextView {
         return rxBytesDelta;
     }
 
-    private boolean refreshActiveIfaces() {
+    private void refreshActiveIfaces() {
         ConnectivityManager cm =
                 (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -324,29 +313,16 @@ public class NetworkTraffic extends TextView {
 
         Network[] networks = cm.getAllNetworks();
         for (Network network : networks) {
-            NetworkInfo networkInfo = cm.getNetworkInfo(network);
-            if (networkInfo == null) {
-                return false;
-            }
+            int networkType = cm.getNetworkInfo(network).getType();
+            if (networkType != ConnectivityManager.TYPE_VPN) {
+                String iface = cm.getLinkProperties(network).getInterfaceName();
+                IfaceTrafficStats stats = new IfaceTrafficStats();
 
-            if (networkInfo.getType() != ConnectivityManager.TYPE_VPN) {
-                LinkProperties properties = cm.getLinkProperties(network);
-                IfaceTrafficStats stats;
-                String iface;
-
-                /* This is likely to be null when switching data SIM */
-                if (properties == null) {
-                    return false;
-                }
-
-                iface = properties.getInterfaceName();
-                stats = new IfaceTrafficStats();
                 stats.mRxBytes = TrafficStats.getRxBytes(iface);
                 stats.mTxBytes = TrafficStats.getTxBytes(iface);
                 mActiveIfaceStats.put(iface, stats);
             }
         }
-        return true;
     }
 
     private void updateSettings() {
