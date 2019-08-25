@@ -340,7 +340,6 @@ public class NetworkTraffic extends TextView {
                 }
 
                 iface = properties.getInterfaceName();
-                if (iface == null) return false;
                 stats = new IfaceTrafficStats();
                 stats.mRxBytes = TrafficStats.getRxBytes(iface);
                 stats.mTxBytes = TrafficStats.getTxBytes(iface);
