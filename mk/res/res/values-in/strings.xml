@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Mengetahui Trust</string>
     <string name="trust_notification_content_onboarding">Kenali cara memastikan perangkat Anda aman</string>
     <string name="trust_notification_action_manage">Kelola lansiran</string>
+    <string name="license_notification_channel">License alerts</string>
+    <string name="license_notification_title">Valid license file not found</string>
+    <string name="license_notification_content">Premium versions are compiled and provided directly by the device maintainers, unlocked with a donation of %d CNY.</string>
 </resources>
