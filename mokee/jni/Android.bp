@@ -15,6 +15,7 @@
 //
 
 cc_library_shared {
+    name: "libmokee-sdk_platform_jni",
     srcs: [
         "src/org_mokee_platform_internal_MKAudioService.cpp",
         "src/onload.cpp",
@@ -36,8 +37,6 @@ cc_library_shared {
         "libmedia",
         "libutils",
     ],
-
-    name: "libmokee-sdk_platform_jni",
 
     cflags: [
         "-Wall",

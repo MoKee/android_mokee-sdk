@@ -15,10 +15,10 @@
 //
 
 android_app {
+    name: "MKSettingsProvider",
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
 
-    name: "MKSettingsProvider",
     certificate: "platform",
     privileged: true,
 
