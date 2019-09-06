@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- *               2014-2018 The MoKee Open Source Project
- *               2018 The LineageOS Project
+ *               2014-2019 The MoKee Open Source Project
+ *               2018-2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,7 +109,7 @@ public class PerformanceManagerService extends MKSystemService {
 
     // PowerManager ServiceType to use when we're only
     // interested in gleaning global battery saver state.
-    private static final int SERVICE_TYPE_DUMMY = ServiceType.GPS;
+    private static final int SERVICE_TYPE_DUMMY = ServiceType.LOCATION;
 
     public PerformanceManagerService(Context context) {
         super(context);
