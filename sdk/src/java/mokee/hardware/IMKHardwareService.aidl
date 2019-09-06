@@ -18,10 +18,6 @@
 
 package mokee.hardware;
 
-import mokee.hardware.DisplayMode;
-import mokee.hardware.HSIC;
-import mokee.hardware.TouchscreenGesture;
-
 /** @hide */
 interface IMKHardwareService {
 
@@ -31,29 +27,4 @@ interface IMKHardwareService {
 
     int[] getDisplayColorCalibration();
     boolean setDisplayColorCalibration(in int[] rgb);
-
-    int[] getVibratorIntensity();
-    boolean setVibratorIntensity(int intensity);
-
-    boolean requireAdaptiveBacklightForSunlightEnhancement();
-
-    DisplayMode[] getDisplayModes();
-    DisplayMode getCurrentDisplayMode();
-    DisplayMode getDefaultDisplayMode();
-    boolean setDisplayMode(in DisplayMode mode, boolean makeDefault);
-
-    boolean isSunlightEnhancementSelfManaged();
-
-    int getColorBalanceMin();
-    int getColorBalanceMax();
-    int getColorBalance();
-    boolean setColorBalance(int value);
-
-    HSIC getPictureAdjustment();
-    HSIC getDefaultPictureAdjustment();
-    boolean setPictureAdjustment(in HSIC hsic);
-    float[] getPictureAdjustmentRanges();
-
-    TouchscreenGesture[] getTouchscreenGestures();
-    boolean setTouchscreenGestureEnabled(in TouchscreenGesture gesture, boolean state);
 }
