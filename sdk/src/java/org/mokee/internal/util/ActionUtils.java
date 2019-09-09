@@ -29,8 +29,6 @@ import android.os.RemoteException;
 import android.os.UserHandle;
 import android.util.Log;
 
-import org.mokee.platform.internal.R;
-
 import java.util.List;
 
 public class ActionUtils {

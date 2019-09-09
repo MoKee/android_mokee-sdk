@@ -33,9 +33,6 @@ import android.util.Slog;
 
 import mokee.providers.MKSettings;
 
-import org.mokee.internal.notification.LedValues;
-import org.mokee.internal.notification.LightsCapabilities;
-
 public final class MKBatteryLights {
     private final String TAG = "MKBatteryLights";
     private final boolean DEBUG = false;

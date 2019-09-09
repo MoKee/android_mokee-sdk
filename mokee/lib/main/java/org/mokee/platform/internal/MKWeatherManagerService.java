@@ -36,7 +36,6 @@ import android.text.TextUtils;
 import android.util.Slog;
 import com.android.internal.content.PackageMonitor;
 import com.android.internal.os.BackgroundThread;
-import com.android.server.SystemService;
 import mokee.app.MKContextConstants;
 import mokee.platform.Manifest;
 import mokee.providers.MKSettings;

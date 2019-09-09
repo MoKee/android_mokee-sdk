@@ -30,10 +30,6 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.util.ArrayUtils;
 
 import mokee.app.MKContextConstants;
-import mokee.hardware.DisplayMode;
-import mokee.hardware.HIDLHelper;
-import mokee.hardware.HSIC;
-import mokee.hardware.TouchscreenGesture;
 
 import vendor.mokee.livedisplay.V2_0.IAdaptiveBacklight;
 import vendor.mokee.livedisplay.V2_0.IAutoContrast;
@@ -49,10 +45,7 @@ import vendor.mokee.touch.V1_0.IKeyDisabler;
 import vendor.mokee.touch.V1_0.IStylusMode;
 import vendor.mokee.touch.V1_0.ITouchscreenGesture;
 
-import java.io.UnsupportedEncodingException;
-import java.lang.IllegalArgumentException;
 import java.lang.reflect.Field;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

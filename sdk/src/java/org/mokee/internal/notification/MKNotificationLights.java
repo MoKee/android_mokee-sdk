@@ -41,10 +41,6 @@ import android.util.Slog;
 import mokee.providers.MKSettings;
 import mokee.util.ColorUtils;
 
-import org.mokee.internal.notification.LedValues;
-import org.mokee.internal.notification.LightsCapabilities;
-import org.mokee.internal.notification.MKNotification;
-
 import java.util.Map;
 
 public final class MKNotificationLights {

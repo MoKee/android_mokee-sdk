@@ -21,8 +21,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import org.mokee.platform.internal.R;
-
 public class MKAPIVersionTextView extends TextView {
     private static final String TAG = "MKAPIVersionTextView";
 

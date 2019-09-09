@@ -49,8 +49,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.os.ParcelUuid;
 
-import com.android.server.SystemService;
-
 import mokee.app.MKContextConstants;
 import mokee.app.Profile;
 import mokee.app.ProfileGroup;

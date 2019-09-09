@@ -23,7 +23,6 @@ import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.hardware.display.DisplayManager;
 import android.net.Uri;
 import android.os.Handler;
@@ -57,12 +56,9 @@ import mokee.hardware.ILiveDisplayService;
 import mokee.hardware.LiveDisplayConfig;
 import mokee.providers.MKSettings;
 
-import static mokee.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MODE;
-import static mokee.hardware.LiveDisplayManager.MODE_DAY;
 import static mokee.hardware.LiveDisplayManager.MODE_FIRST;
 import static mokee.hardware.LiveDisplayManager.MODE_LAST;
 import static mokee.hardware.LiveDisplayManager.MODE_OFF;
-import static mokee.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 /**
  * LiveDisplay is an advanced set of features for improving

@@ -22,11 +22,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
-import android.util.Range;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import mokee.app.MKContextConstants;
 

@@ -28,12 +28,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-import mokee.app.IProfileManager;
-
-import com.android.internal.R;
-import mokee.providers.MKSettings;
-
-
 /**
  * <p>
  * The ProfileManager allows you to create {@link Profile}s and ProfileGroups to create

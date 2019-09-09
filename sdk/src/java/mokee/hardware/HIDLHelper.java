@@ -18,10 +18,6 @@ package mokee.hardware;
 
 import android.util.Range;
 
-import mokee.hardware.DisplayMode;
-import mokee.hardware.HSIC;
-import mokee.hardware.TouchscreenGesture;
-
 import java.util.ArrayList;
 
 class HIDLHelper {

@@ -17,6 +17,7 @@
 package mokee.hardware;
 
 import static mokee.hardware.LiveDisplayManager.FEATURE_COLOR_BALANCE;
+import static mokee.hardware.LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT;
 import static mokee.hardware.LiveDisplayManager.FEATURE_FIRST;
 import static mokee.hardware.LiveDisplayManager.FEATURE_LAST;
 import static mokee.hardware.LiveDisplayManager.MODE_FIRST;
@@ -163,10 +164,10 @@ public class LiveDisplayConfig implements Parcelable {
         sb.append(" defaultCABC=").append(mDefaultCABC);
         sb.append(" defaultColorEnhancement=").append(mDefaultColorEnhancement);
         sb.append(" colorTemperatureRange=").append(mColorTemperatureRange);
-        if (mCapabilities.get(LiveDisplayManager.FEATURE_COLOR_BALANCE)) {
+        if (mCapabilities.get(FEATURE_COLOR_BALANCE)) {
             sb.append(" colorBalanceRange=").append(mColorBalanceRange);
         }
-        if (mCapabilities.get(LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT)) {
+        if (mCapabilities.get(FEATURE_PICTURE_ADJUSTMENT)) {
             sb.append(" hueRange=").append(mHueRange);
             sb.append(" saturationRange=").append(mSaturationRange);
             sb.append(" intensityRange=").append(mIntensityRange);
