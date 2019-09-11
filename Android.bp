@@ -80,7 +80,10 @@ mokee_sdk_LOCAL_STATIC_JAVA_LIBRARIES = [
 
 java_library {
     name: "org.mokee.platform",
-    static_libs: ["telephony-ext"] + mokee_sdk_LOCAL_STATIC_JAVA_LIBRARIES,
+    static_libs: [
+        "libphonenumber",
+        "telephony-ext"
+    ] + mokee_sdk_LOCAL_STATIC_JAVA_LIBRARIES,
 
     libs: [
         "services",
@@ -107,7 +110,10 @@ java_library {
 java_library_static {
     name: "org.mokee.platform.internal",
     required: ["services"],
-    static_libs: ["telephony-ext"] + mokee_sdk_LOCAL_STATIC_JAVA_LIBRARIES,
+    static_libs: [
+        "libphonenumber",
+        "telephony-ext"
+    ] + mokee_sdk_LOCAL_STATIC_JAVA_LIBRARIES,
     libs: mokee_sdk_LOCAL_JAVA_LIBRARIES,
 
     srcs: [
