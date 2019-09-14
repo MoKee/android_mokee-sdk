@@ -96,7 +96,7 @@
     <bool name="def_swap_volume_keys_on_rotation">false</bool>
 
     <!-- Default values for protected component managers -->
-    <string name="def_protected_component_managers" translatable="false">com.android.settings|com.android.launcher3|com.mokee.nox|org.mokee.mkparts|org.mokee.lawnchair</string>
+    <string name="def_protected_component_managers" translatable="false">com.android.settings|com.android.launcher3|org.mokee.lawnchair|org.mokee.mkparts</string>
 
     <!-- Default temperature unit (CELSIUS) -->
     <integer name="def_temperature_unit">1</integer>
