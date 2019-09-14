@@ -19,7 +19,7 @@ android_app {
     name: "org.mokee.platform-res",
     certificate: "platform",
     no_framework_libs: true,
-    manifest: "mk/res/AndroidManifest.xml",
+    manifest: "mokee/res/AndroidManifest.xml",
 
     aaptflags: [
         "--auto-add-overlay",
@@ -38,7 +38,7 @@ android_app {
     ],
 
     resource_dirs: [
-        "mk/res/res",
+        "mokee/res/res",
         "sdk/res/res"
     ],
 
@@ -53,7 +53,7 @@ android_app {
 
 mokee_sdk_src = "sdk/src/java/mokee"
 mokee_sdk_internal_src = "sdk/src/java/org/mokee/internal"
-library_src = "mk/lib/main/java"
+library_src = "mokee/lib/main/java"
 
 mokee_sdk_LOCAL_JAVA_LIBRARIES = [
     "android-support-annotations",

@@ -55,7 +55,7 @@ public class DeviceKeysConstants {
 
     // Masks for checking presence of hardware keys.
     // Must match values in:
-    //   mk/res/res/values/config.xml
+    //   mokee/res/res/values/config.xml
     public static final int KEY_MASK_HOME = 0x01;
     public static final int KEY_MASK_BACK = 0x02;
     public static final int KEY_MASK_MENU = 0x04;
