@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Откријте Trust</string>
     <string name="trust_notification_content_onboarding">Сазнајте како да будете сигурни да Вам је уређај безбедан</string>
     <string name="trust_notification_action_manage">Управљајте упозорењима</string>
+    <string name="license_notification_channel">Упозорење на лиценцу</string>
+    <string name="license_notification_title">Валидна лиценца није пронађена</string>
+    <string name="license_notification_content">Премиум верзије су састављене и обезбеђене директно од стране лица које одржава уређаје, откључане донацијом у износу од %d CNY.</string>
 </resources>
