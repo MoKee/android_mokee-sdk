@@ -1,6 +1,6 @@
 /**
- * Copyright (c) 2015, The CyanogenMod Project
- * Copyright (c) 2015, The MoKee Open Source Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2015-2019 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,11 @@ public class MKSettingsProvider extends ContentProvider {
 
     private static final String ITEM_MATCHER = "/*";
     private static final String NAME_SELECTION = Settings.NameValueTable.NAME + " = ?";
+
+    // Must match definitions in fw/b
+    // packages/SettingsProvider/src/com/android/providers/settings/SettingsProvider.java
+    public static final String RESULT_ROWS_DELETED  = "result_rows_deleted";
+    public static final String RESULT_SETTINGS_LIST = "result_settings_list";
 
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
@@ -297,54 +302,65 @@ public class MKSettingsProvider extends ContentProvider {
             }
         }
 
-        // Migrate methods
-        if (MKSettings.CALL_METHOD_MIGRATE_SETTINGS.equals(method)) {
-            migrateMKSettingsForExistingUsersIfNeeded();
+        switch (method) {
+            // Migrate methods
+           case MKSettings.CALL_METHOD_MIGRATE_SETTINGS:
+                migrateMKSettingsForExistingUsersIfNeeded();
+                return null;
+           case MKSettings.CALL_METHOD_MIGRATE_SETTINGS_FOR_USER:
+                migrateMKSettingsForUser(callingUserId);
+                return null;
 
-            return null;
-        } else if (MKSettings.CALL_METHOD_MIGRATE_SETTINGS_FOR_USER.equals(method)) {
-            migrateMKSettingsForUser(callingUserId);
+            // Get methods
+            case MKSettings.CALL_METHOD_GET_SYSTEM:
+                return lookupSingleValue(callingUserId, MKSettings.System.CONTENT_URI,
+                        request);
+            case MKSettings.CALL_METHOD_GET_SECURE:
+                return lookupSingleValue(callingUserId, MKSettings.Secure.CONTENT_URI,
+                        request);
+            case MKSettings.CALL_METHOD_GET_GLOBAL:
+                return lookupSingleValue(callingUserId, MKSettings.Global.CONTENT_URI,
+                        request);
 
-            return null;
-        }
+            // Put methods
+            case MKSettings.CALL_METHOD_PUT_SYSTEM:
+                enforceWritePermission(mokee.platform.Manifest.permission.WRITE_SETTINGS);
+                callHelperPut(callingUserId, MKSettings.System.CONTENT_URI, request, args);
+                return null;
+            case MKSettings.CALL_METHOD_PUT_SECURE:
+                enforceWritePermission(
+                        mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
+                callHelperPut(callingUserId, MKSettings.Secure.CONTENT_URI, request, args);
+                return null;
+            case MKSettings.CALL_METHOD_PUT_GLOBAL:
+                enforceWritePermission(
+                        mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
+                callHelperPut(callingUserId, MKSettings.Global.CONTENT_URI, request, args);
+                return null;
 
-        // Get methods
-        if (MKSettings.CALL_METHOD_GET_SYSTEM.equals(method)) {
-            return lookupSingleValue(callingUserId, MKSettings.System.CONTENT_URI, request);
-        }
-        else if (MKSettings.CALL_METHOD_GET_SECURE.equals(method)) {
-            return lookupSingleValue(callingUserId, MKSettings.Secure.CONTENT_URI, request);
-        }
-        else if (MKSettings.CALL_METHOD_GET_GLOBAL.equals(method)) {
-            return lookupSingleValue(callingUserId, MKSettings.Global.CONTENT_URI, request);
-        }
+            // List methods
+            case MKSettings.CALL_METHOD_LIST_SYSTEM:
+                return callHelperList(callingUserId, MKSettings.System.CONTENT_URI);
+            case MKSettings.CALL_METHOD_LIST_SECURE:
+                return callHelperList(callingUserId, MKSettings.Secure.CONTENT_URI);
+            case MKSettings.CALL_METHOD_LIST_GLOBAL:
+                return callHelperList(callingUserId, MKSettings.Global.CONTENT_URI);
 
-        // Put methods - new value is in the args bundle under the key named by
-        // the Settings.NameValueTable.VALUE static.
-        final String newValue = (args == null)
-                ? null : args.getString(Settings.NameValueTable.VALUE);
-
-        // Framework can't do automatic permission checking for calls, so we need
-        // to do it here.
-        if (MKSettings.CALL_METHOD_PUT_SYSTEM.equals(method)) {
-            enforceWritePermission(mokee.platform.Manifest.permission.WRITE_SETTINGS);
-        } else {
-            enforceWritePermission(mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
-        }
-
-        // Put methods
-        final ContentValues values = new ContentValues();
-        values.put(Settings.NameValueTable.NAME, request);
-        values.put(Settings.NameValueTable.VALUE, newValue);
-
-        if (MKSettings.CALL_METHOD_PUT_SYSTEM.equals(method)) {
-            insertForUser(callingUserId, MKSettings.System.CONTENT_URI, values);
-        }
-        else if (MKSettings.CALL_METHOD_PUT_SECURE.equals(method)) {
-            insertForUser(callingUserId, MKSettings.Secure.CONTENT_URI, values);
-        }
-        else if (MKSettings.CALL_METHOD_PUT_GLOBAL.equals(method)) {
-            insertForUser(callingUserId, MKSettings.Global.CONTENT_URI, values);
+            // Delete methods
+            case MKSettings.CALL_METHOD_DELETE_SYSTEM:
+                enforceWritePermission(mokee.platform.Manifest.permission.WRITE_SETTINGS);
+                return callHelperDelete(callingUserId, MKSettings.System.CONTENT_URI,
+                        request);
+            case MKSettings.CALL_METHOD_DELETE_SECURE:
+                enforceWritePermission(
+                        mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
+                return callHelperDelete(callingUserId, MKSettings.Secure.CONTENT_URI,
+                        request);
+            case MKSettings.CALL_METHOD_DELETE_GLOBAL:
+                enforceWritePermission(
+                        mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
+                return callHelperDelete(callingUserId, MKSettings.Global.CONTENT_URI,
+                        request);
         }
 
         return null;
@@ -357,6 +373,46 @@ public class MKSettingsProvider extends ContentProvider {
                     String.format("Permission denial: writing to settings requires %s",
                             permission));
         }
+    }
+
+    // Helper for call() CALL_METHOD_DELETE_* methods
+    private Bundle callHelperDelete(int callingUserId, Uri contentUri, String key) {
+        final int rowsDeleted = deleteForUser(callingUserId, contentUri, NAME_SELECTION,
+                new String[]{ key });
+        final Bundle ret = new Bundle();
+        ret.putInt(RESULT_ROWS_DELETED, rowsDeleted);
+        return ret;
+    }
+
+    // Helper for call() CALL_METHOD_LIST_* methods
+    private Bundle callHelperList(int callingUserId, Uri contentUri) {
+        final ArrayList<String> lines = new ArrayList<String>();
+        final Cursor cursor = queryForUser(callingUserId, contentUri, null, null, null, null);
+        try {
+            while (cursor != null && cursor.moveToNext()) {
+                lines.add(cursor.getString(1) + "=" + cursor.getString(2));
+            }
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        final Bundle ret = new Bundle();
+        ret.putStringArrayList(RESULT_SETTINGS_LIST, lines);
+        return ret;
+    }
+
+    // Helper for call() CALL_METHOD_PUT_* methods
+    private void callHelperPut(int callingUserId, Uri contentUri, String key, Bundle args) {
+        // New value is in the args bundle under the key named by
+        // Settings.NameValueTable.VALUE
+        final String newValue = (args == null)
+                ? null : args.getString(Settings.NameValueTable.VALUE);
+        final ContentValues values = new ContentValues();
+        values.put(Settings.NameValueTable.NAME, key);
+        values.put(Settings.NameValueTable.VALUE, newValue);
+
+        insertForUser(callingUserId, contentUri, values);
     }
 
     /**
@@ -559,6 +615,11 @@ public class MKSettingsProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
+        return deleteForUser(UserHandle.getCallingUserId(), uri, selection, selectionArgs);
+    }
+
+    private int deleteForUser(int callingUserId, Uri uri, String selection,
+            String[] selectionArgs) {
         if (uri == null) {
             throw new IllegalArgumentException("Uri cannot be null");
         }
@@ -571,7 +632,6 @@ public class MKSettingsProvider extends ContentProvider {
             String tableName = getTableNameFromUri(uri);
             checkWritePermissions(tableName);
 
-            int callingUserId = UserHandle.getCallingUserId();
             MKDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
                     callingUserId));
 
