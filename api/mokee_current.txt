@@ -821,7 +821,6 @@ package mokee.providers {
     field public static final java.lang.String ENABLE_FORWARD_LOOKUP = "enable_forward_lookup";
     field public static final java.lang.String ENABLE_PEOPLE_LOOKUP = "enable_people_lookup";
     field public static final java.lang.String ENABLE_REVERSE_LOOKUP = "enable_reverse_lookup";
-    field public static final java.lang.String FINGERPRINT_SHORTCUTS = "fingerprint_shortcuts";
     field public static final java.lang.String FORWARD_LOOKUP_PROVIDER = "forward_lookup_provider";
     field public static final java.lang.String HEADSET_CONNECT_PLAYER = "headset_connect_player";
     field public static final java.lang.String HIGH_TOUCH_SENSITIVITY_ENABLE = "high_touch_sensitivity_enable";
