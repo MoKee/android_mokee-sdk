@@ -2746,12 +2746,6 @@ public final class MKSettings {
         public static final String DEVICE_LICENSE_KEY = "device_license_key";
 
         /**
-         * Locked task list in recent view
-         * @hide
-         */
-        public static final String LOCKED_RECENT_TASK_LIST = "locked_recent_task_list";
-
-        /**
          * Whether to enable "advanced mode" for the current user.
          * Boolean setting. 0 = no, 1 = yes.
          * @hide
