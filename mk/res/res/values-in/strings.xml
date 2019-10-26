@@ -16,14 +16,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">Sistem MoKeeOS</string>
-    <string name="permlab_modifyProfiles">memodifikasi profil sistem</string>
-    <string name="permdesc_modifyProfiles">Mengizinkan aplikasi untuk mengubah profil sistem.</string>
-    <string name="permlab_useHardwareFramework">gunakan hardware framework</string>
+    <string name="mokee_system_label">Sistem MoKee</string>
+    <string name="permlab_modifyProfiles">modifikasi profil sistem</string>
+    <string name="permdesc_modifyProfiles">Izinkan aplikasi untuk mengubah profil sistem.</string>
+    <string name="permlab_useHardwareFramework">gunakan kerangka perangkat keras</string>
     <string name="permdesc_useHardwareFramework">Izinkan aplikasi untuk mengakses susunan perangkat keras MoKee.</string>
-    <string name="permlab_writeSettings">mengubah setelah sistem MoKee</string>
+    <string name="permlab_writeSettings">ubah setelan sistem MoKee</string>
     <string name="permdesc_writeSettings">Izinkan aplikasi untuk memodifikasi setelan sistem MoKee.</string>
-    <string name="permlab_writeSecureSettings">memodifikasi setelan sistem keamanan MoKee</string>
+    <string name="permlab_writeSecureSettings">modifikasi setelan sistem keamanan MoKee</string>
     <string name="permdesc_writeSecureSettings">Izinkan aplikasi untuk memodifikasi setelan sistem keamanan MoKee. Tidak untuk digunakan oleh aplikasi yang normal.</string>
     <string name="permlab_protectedApp">tambahkan dan hapus aplikasi untuk aplikasi yang dilindungi</string>
     <string name="permdesc_protectedApp">Mengizinkan aplikasi untuk menandai aplikasi lain sebagai aplikasi yang dilindungi dan menguncinya.</string>
