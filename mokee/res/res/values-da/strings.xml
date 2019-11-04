@@ -92,7 +92,6 @@
     <string name="permdesc_manageLiveDisplay">Tillader en app at konfigurere avancerede skærmindstillinger.</string>
     <string name="permlab_observe_audio_sessions">observér ændringer for lydsession</string>
     <string name="permdesc_observe_audio_sessions">Tillader en app at observere når lyd streams bliver oprettet eller ødelagt.</string>
-    <string name="privacy_guard_manager_title">Privatlivsvagt</string>
     <string name="permlab_manageRemotePrefs">administrere indstillinger for fjernbetjening</string>
     <string name="permdesc_manageRemotePrefs">Gør det muligt for en app til at administrere indstillinger for fjernbetjening</string>
     <string name="build_date">Kørselsdato</string>

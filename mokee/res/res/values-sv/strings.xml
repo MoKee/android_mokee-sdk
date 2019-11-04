@@ -73,7 +73,6 @@
     <string name="permlab_manageLiveDisplay">hantera LiveDisplay-inställningar</string>
     <string name="permdesc_manageLiveDisplay">Tillåter en app att konfigurera avancerade skärminställningar.</string>
     <string name="permlab_observe_audio_sessions">observera ljudsessionsändringar</string>
-    <string name="privacy_guard_manager_title">Integritetsskydd</string>
     <string name="permlab_manageRemotePrefs">hantera fjärrinställningar</string>
     <string name="permdesc_manageRemotePrefs">Tillåter en app att hantera fjärrinställningar</string>
     <string name="build_date">Kompileringsdatum</string>
