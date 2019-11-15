@@ -60,7 +60,7 @@ public class MKSettingsProvider extends ContentProvider {
     private static final boolean USER_CHECK_THROWS = true;
 
     public static final String PREF_HAS_MIGRATED_MK_SETTINGS =
-            "migrated_settings_to_mko-mr1";
+            "migrated_settings_to_mkq";
 
     private static final Bundle NULL_SETTING = Bundle.forPair("value", null);
 
