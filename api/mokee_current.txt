@@ -344,7 +344,6 @@ package mokee.platform {
     ctor public Manifest.permission();
     field public static final java.lang.String ACCESS_WEATHER_MANAGER = "mokee.permission.ACCESS_WEATHER_MANAGER";
     field public static final java.lang.String BIND_WEATHER_PROVIDER_SERVICE = "mokee.permission.BIND_WEATHER_PROVIDER_SERVICE";
-    field public static final java.lang.String CHANGE_STYLE = "mokee.permission.CHANGE_STYLE";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "mokee.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MANAGE_LIVEDISPLAY = "mokee.permission.MANAGE_LIVEDISPLAY";
     field public static final java.lang.String MANAGE_REMOTE_PREFERENCES = "mokee.permission.MANAGE_REMOTE_PREFERENCES";
@@ -984,35 +983,6 @@ package mokee.providers {
   public static final class WeatherContract.WeatherColumns.WindSpeedUnit {
     field public static final int KPH = 1; // 0x1
     field public static final int MPH = 2; // 0x2
-  }
-
-}
-
-package mokee.style {
-
-  public class StyleInterface {
-    method public java.lang.String getAccent();
-    method public int getGlobalStyle();
-    method public static mokee.style.StyleInterface getInstance(android.content.Context);
-    method public mokee.style.Suggestion getSuggestion(android.graphics.Bitmap, int[]);
-    method public java.util.List<java.lang.String> getTrustedAccents();
-    method public boolean isDarkNow();
-    method public boolean setAccent(java.lang.String);
-    method public boolean setGlobalStyle(int, java.lang.String);
-    field public static final java.lang.String ACCENT_DEFAULT = "mokee";
-    field public static final java.lang.String CHANGE_STYLE_SETTINGS_PERMISSION = "mokee.permission.CHANGE_STYLE";
-    field public static final int STYLE_GLOBAL_AUTO_DAYTIME = 1; // 0x1
-    field public static final int STYLE_GLOBAL_AUTO_WALLPAPER = 0; // 0x0
-    field public static final int STYLE_GLOBAL_DARK = 3; // 0x3
-    field public static final int STYLE_GLOBAL_LIGHT = 2; // 0x2
-  }
-
-  public class Suggestion implements android.os.Parcelable {
-    ctor public Suggestion(int, int);
-    method public int describeContents();
-    method public void writeToParcel(android.os.Parcel, int);
-    field public final int globalStyle;
-    field public final int selectedAccent;
   }
 
 }
