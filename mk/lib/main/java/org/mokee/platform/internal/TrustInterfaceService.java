@@ -202,10 +202,10 @@ public class TrustInterfaceService extends MKSystemService {
     }
 
     private void runTestInternal() {
-        int selinuxStatus = getSELinuxStatus();
-        if (selinuxStatus != TrustInterface.TRUST_FEATURE_LEVEL_GOOD) {
-            postNotificationForFeatureInternal(TrustInterface.TRUST_WARN_SELINUX);
-        }
+        // int selinuxStatus = getSELinuxStatus();
+        // if (selinuxStatus != TrustInterface.TRUST_FEATURE_LEVEL_GOOD) {
+        //     postNotificationForFeatureInternal(TrustInterface.TRUST_WARN_SELINUX);
+        // }
 
         int keysStatus = getKeysStatus();
         if (keysStatus != TrustInterface.TRUST_FEATURE_LEVEL_GOOD) {
