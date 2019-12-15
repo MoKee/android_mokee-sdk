@@ -105,17 +105,6 @@ public final class MKContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
-     * {@link mokee.app.StyleInterface} interact with system style.
-     *
-     * @see android.content.Context#getSystemService
-     * @see mokee.app.StyleInterface
-     *
-     * @hide
-     */
-    public static final String MK_STYLE_INTERFACE = "mkstyle";
-
-    /**
-     * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link mokee.trust.TrustInterface} to access the Trust interface.
      *
      * @see android.content.Context#getSystemService
@@ -184,14 +173,6 @@ public final class MKContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String AUDIO = "org.mokee.audio";
-
-        /**
-         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
-         * {@link PackageManager#hasSystemFeature}: The device includes the MK style service
-         * utilized by the mokee sdk.
-         */
-        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
-        public static final String STYLES = "org.mokee.style";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and

@@ -106,7 +106,6 @@
         <item>org.mokee.platform.internal.MKWeatherManagerService</item>
         <item>org.mokee.platform.internal.display.LiveDisplayService</item>
         <item>org.mokee.platform.internal.MKAudioService</item>
-        <item>org.mokee.platform.internal.StyleInterfaceService</item>
         <item>org.mokee.platform.internal.TrustInterfaceService</item>
         <item>org.mokee.platform.internal.MKSettingsService</item>
         <item>org.mokee.platform.internal.LicenseInterfaceService</item>
