@@ -2762,12 +2762,6 @@ public final class MKSettings {
         // region Secure Settings
 
         /**
-         * MoKee license key
-         * @hide
-         */
-        public static final String DEVICE_LICENSE_KEY = "device_license_key";
-
-        /**
          * Whether to enable "advanced mode" for the current user.
          * Boolean setting. 0 = no, 1 = yes.
          * @hide
@@ -3129,7 +3123,6 @@ public final class MKSettings {
          * @hide
          */
         public static final String[] LEGACY_SECURE_SETTINGS = new String[]{
-                MKSettings.Secure.DEVICE_LICENSE_KEY,
                 MKSettings.Secure.ADVANCED_MODE,
                 MKSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
                 MKSettings.Secure.BUTTON_BRIGHTNESS,
