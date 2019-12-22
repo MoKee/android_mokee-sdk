@@ -30,156 +30,131 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.mokee.security.License;
-import com.mokee.security.LicenseInfo;
+import com.mokee.center.model.DonationInfo;
+import com.mokee.utils.DonationUtils;
 
 import mokee.app.MKContextConstants;
-import mokee.license.DonationInfo;
 import mokee.license.ILicenseInterface;
-import mokee.license.LicenseInterface;
-import mokee.providers.MKSettings;
+import mokee.license.LicenseConstants;
+import mokee.license.LicenseUtil;
 
 public class LicenseInterfaceService extends MKSystemService {
-    private static final String TAG = "MKLicenseInterfaceService";
+  private static final String TAG = "MKLicenseInterfaceService";
 
-    private static final String CHANNEL_NAME = "LicenseInterface";
-    private static final int NOTIFICATION_ID = 2019;
+  private static final String CHANNEL_NAME = "LicenseInterface";
+  private static final int NOTIFICATION_ID = 2019;
 
-    private static final String INTENT_SETTINGS = "android.settings.SYSTEM_UPDATE_SETTINGS";
+  private static final String INTENT_SETTINGS = "android.settings.SYSTEM_UPDATE_SETTINGS";
 
-    private Context mContext;
-    private NotificationManager mNotificationManager = null;
-    private DonationInfo mDonationInfo = new DonationInfo();
-    private Handler mHandler = new Handler(Looper.getMainLooper());
+  private Context mContext;
+  private NotificationManager mNotificationManager = null;
+  private DonationInfo mDonationInfo = new DonationInfo();
+  private Handler mHandler = new Handler(Looper.getMainLooper());
 
-    public LicenseInterfaceService(Context context) {
-        super(context);
-        mContext = context;
-        publishBinderService(MKContextConstants.MK_LICENSE_INTERFACE, mService);
-    }
-
+  private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
     @Override
-    public void onBootPhase(int phase) {
-        if (phase == PHASE_BOOT_COMPLETED) {
-            updateLicenseInfoInternal();
-
-            if (!LicenseInterface.isPremiumVersion()) return;
-
-            if (!mDonationInfo.isAdvanced()) {
-                postNotificationForFeatureInternal();
-
-                IntentFilter filter = new IntentFilter();
-                filter.addAction(LicenseInterface.ACTION_LICENSE_CHANGED);
-                mContext.registerReceiver(mIntentReceiver, filter);
-            }
+    public void onReceive(Context context, Intent intent) {
+      String action = intent.getAction();
+      if (TextUtils.equals(action, LicenseConstants.ACTION_LICENSE_CHANGED)) {
+        LicenseUtil.copyLicenseFile(context, intent.getData());
+        DonationUtils.updateDonationInfo(context, mDonationInfo, LicenseUtil.getLicenseFilePath(), LicenseConstants.LICENSE_PUB_KEY);
+        if (mDonationInfo.isAdvanced()) {
+          cancelNotificationForFeatureInternal();
+          mContext.unregisterReceiver(mIntentReceiver);
         }
+      }
     }
+  };
 
+  private Runnable mToastRunnable = new Runnable() {
     @Override
-    public String getFeatureDeclaration() {
-        return MKContextConstants.Features.LICENSE;
+    public void run() {
+      String message = mContext.getString(R.string.license_notification_content, LicenseConstants.DONATION_ADVANCED);
+      Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
     }
+  };
 
+  /* Service */
+  private final IBinder mService = new ILicenseInterface.Stub() {
     @Override
-    public void onStart() {
-        mNotificationManager = mContext.getSystemService(NotificationManager.class);
+    public void licenseVerification() {
+      if (!mDonationInfo.isAdvanced()) {
+        mHandler.post(mToastRunnable);
+      }
     }
+  };
 
-    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (action.equals(LicenseInterface.ACTION_LICENSE_CHANGED)) {
-                String deviceLicenseKey = intent.getStringExtra("data");
-                MKSettings.Secure.putString(mContext.getContentResolver(),
-                        MKSettings.Secure.DEVICE_LICENSE_KEY, deviceLicenseKey);
-                updateLicenseInfoInternal();
-                if (mDonationInfo.isAdvanced()) {
-                    cancelNotificationForFeatureInternal();
-                    mContext.unregisterReceiver(mIntentReceiver);
-                }
-            }
+  public LicenseInterfaceService(Context context) {
+    super(context);
+    mContext = context;
+    publishBinderService(MKContextConstants.MK_LICENSE_INTERFACE, mService);
+  }
+
+  @Override
+  public void onBootPhase(int phase) {
+    if (phase == PHASE_BOOT_COMPLETED) {
+      DonationUtils.updateDonationInfo(getContext(), mDonationInfo, LicenseUtil.getLicenseFilePath(), LicenseConstants.LICENSE_PUB_KEY);
+      if (!mDonationInfo.isAdvanced()) {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(LicenseConstants.ACTION_LICENSE_CHANGED);
+        mContext.registerReceiver(mIntentReceiver, filter);
+        if (LicenseUtil.isPremiumVersion()) {
+          postNotificationForFeatureInternal();
         }
-    };
+      }
+    }
+  }
 
-    /* Public methods implementation */
+  /* Public methods implementation */
 
-    private void postNotificationForFeatureInternal() {
+  @Override
+  public String getFeatureDeclaration() {
+    return MKContextConstants.Features.LICENSE;
+  }
 
-        String title = mContext.getString(R.string.license_notification_title);
-        String message = mContext.getString(R.string.license_notification_content, LicenseInterface.DONATION_ADVANCED);
+  @Override
+  public void onStart() {
+    mNotificationManager = mContext.getSystemService(NotificationManager.class);
+  }
 
-        Intent mainIntent = new Intent(INTENT_SETTINGS);
-        mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent pMainIntent = PendingIntent.getActivity(mContext, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+  private void postNotificationForFeatureInternal() {
+    String title = mContext.getString(R.string.license_notification_title);
+    String message = mContext.getString(R.string.license_notification_content, LicenseConstants.DONATION_ADVANCED);
 
-        Notification.Builder notification = new Notification.Builder(mContext, CHANNEL_NAME)
-                .setContentTitle(title)
-                .setContentText(message)
-                .setStyle(new Notification.BigTextStyle().bigText(message))
-                .setAutoCancel(false)
-                .setOngoing(true)
-                .setContentIntent(pMainIntent)
-                .setColor(mContext.getColor(R.color.color_error))
-                .setSmallIcon(R.drawable.ic_warning);
+    Intent mainIntent = new Intent(INTENT_SETTINGS);
+    mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    PendingIntent pMainIntent = PendingIntent.getActivity(mContext, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        createNotificationChannelIfNeeded();
-        mNotificationManager.notify(NOTIFICATION_ID, notification.build());
+    Notification.Builder notification = new Notification.Builder(mContext, CHANNEL_NAME)
+        .setContentTitle(title)
+        .setContentText(message)
+        .setStyle(new Notification.BigTextStyle().bigText(message))
+        .setAutoCancel(false)
+        .setOngoing(true)
+        .setContentIntent(pMainIntent)
+        .setColor(mContext.getColor(R.color.color_error))
+        .setSmallIcon(R.drawable.ic_warning);
+
+    createNotificationChannelIfNeeded();
+    mNotificationManager.notify(NOTIFICATION_ID, notification.build());
+  }
+
+  private void cancelNotificationForFeatureInternal() {
+    mNotificationManager.cancel(NOTIFICATION_ID);
+  }
+
+  private void createNotificationChannelIfNeeded() {
+    NotificationChannel channel = mNotificationManager.getNotificationChannel(CHANNEL_NAME);
+    if (channel != null) {
+      return;
     }
 
-    private void cancelNotificationForFeatureInternal() {
-        mNotificationManager.cancel(NOTIFICATION_ID);
-    }
-
-    private void createNotificationChannelIfNeeded() {
-        NotificationChannel channel = mNotificationManager.getNotificationChannel(CHANNEL_NAME);
-        if (channel != null) {
-            return;
-        }
-
-        String name = mContext.getString(R.string.license_notification_channel);
-        int importance = NotificationManager.IMPORTANCE_HIGH;
-        NotificationChannel licenseChannel = new NotificationChannel(CHANNEL_NAME,
-                name, importance);
-        licenseChannel.setBlockableSystem(false);
-        mNotificationManager.createNotificationChannel(licenseChannel);
-    }
-
-    private void updateLicenseInfoInternal() {
-        mDonationInfo.setPaid(getTotalAmountPaid());
-        mDonationInfo.setBasic(mDonationInfo.getPaid() >= LicenseInterface.DONATION_BASIC);
-        mDonationInfo.setAdvanced(mDonationInfo.getPaid() >= LicenseInterface.DONATION_ADVANCED);
-    }
-
-    private int getTotalAmountPaid() {
-        String deviceLicenseKey = MKSettings.Secure.getString(mContext.getContentResolver(),
-                MKSettings.Secure.DEVICE_LICENSE_KEY);
-        if (!TextUtils.isEmpty(deviceLicenseKey)) {
-            LicenseInfo licenseInfo = License.loadLicenseFromContent(mContext, deviceLicenseKey, LicenseInterface.LICENSE_PUB_KEY);
-            if (licenseInfo != null) {
-                return licenseInfo.getPrice().intValue();
-            }
-        }
-        return 0;
-    }
-
-    private Runnable mToastRunnable = new Runnable() {
-        @Override
-        public void run() {
-            String message = mContext.getString(R.string.license_notification_content, LicenseInterface.DONATION_ADVANCED);
-            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
-        }
-    };
-
-    /* Service */
-    private final IBinder mService = new ILicenseInterface.Stub() {
-
-        @Override
-        public void licenseVerification() {
-            if (!mDonationInfo.isAdvanced()) {
-                mHandler.post(mToastRunnable);
-            }
-        }
-    };
+    String name = mContext.getString(R.string.license_notification_channel);
+    int importance = NotificationManager.IMPORTANCE_HIGH;
+    NotificationChannel licenseChannel = new NotificationChannel(CHANNEL_NAME,
+        name, importance);
+    licenseChannel.setBlockableSystem(false);
+    mNotificationManager.createNotificationChannel(licenseChannel);
+  }
 
 }
