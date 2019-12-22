@@ -32,13 +32,12 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.mokee.center.model.DonationInfo;
-import com.mokee.security.License;
-import com.mokee.security.LicenseInfo;
+import com.mokee.utils.DonationUtils;
 
 import mokee.app.MKContextConstants;
 import mokee.license.ILicenseInterface;
 import mokee.license.LicenseConstants;
-import mokee.providers.MKSettings;
+import mokee.license.LicenseUtil;
 
 public class LicenseInterfaceService extends MKSystemService {
 
@@ -63,7 +62,7 @@ public class LicenseInterfaceService extends MKSystemService {
     @Override
     public void onBootPhase(int phase) {
         if (phase == PHASE_BOOT_COMPLETED) {
-            updateLicenseInfoInternal();
+            DonationUtils.updateDonationInfo(mContext, mDonationInfo, LicenseUtil.getLicenseFilePath(), LicenseConstants.LICENSE_PUB_KEY);
             if (!mDonationInfo.isAdvanced()) {
                 IntentFilter filter = new IntentFilter();
                 filter.addAction(LicenseConstants.ACTION_LICENSE_CHANGED);
@@ -89,11 +88,9 @@ public class LicenseInterfaceService extends MKSystemService {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (action.equals(LicenseConstants.ACTION_LICENSE_CHANGED)) {
-                String deviceLicenseKey = intent.getStringExtra("data");
-                MKSettings.Secure.putString(mContext.getContentResolver(),
-                        MKSettings.Secure.DEVICE_LICENSE_KEY, deviceLicenseKey);
-                updateLicenseInfoInternal();
+            if (TextUtils.equals(LicenseConstants.ACTION_LICENSE_CHANGED, action)) {
+                LicenseUtil.copyLicenseFile(context, intent.getData());
+                DonationUtils.updateDonationInfo(mContext, mDonationInfo, LicenseUtil.getLicenseFilePath(), LicenseConstants.LICENSE_PUB_KEY);
                 if (mDonationInfo.isAdvanced()) {
                     cancelNotificationForFeatureInternal();
                     mContext.unregisterReceiver(mIntentReceiver);
@@ -105,7 +102,6 @@ public class LicenseInterfaceService extends MKSystemService {
     /* Public methods implementation */
 
     private void postNotificationForFeatureInternal() {
-
         String title = mContext.getString(R.string.license_notification_title);
         String message = mContext.getString(R.string.license_notification_content, LicenseConstants.DONATION_ADVANCED);
 
@@ -145,24 +141,6 @@ public class LicenseInterfaceService extends MKSystemService {
         mNotificationManager.createNotificationChannel(licenseChannel);
     }
 
-    private void updateLicenseInfoInternal() {
-        mDonationInfo.setPaid(getTotalAmountPaid());
-        mDonationInfo.setBasic(mDonationInfo.getPaid() >= LicenseConstants.DONATION_BASIC);
-        mDonationInfo.setAdvanced(mDonationInfo.getPaid() >= LicenseConstants.DONATION_ADVANCED);
-    }
-
-    private int getTotalAmountPaid() {
-        String deviceLicenseKey = MKSettings.Secure.getString(mContext.getContentResolver(),
-                MKSettings.Secure.DEVICE_LICENSE_KEY);
-        if (!TextUtils.isEmpty(deviceLicenseKey)) {
-            LicenseInfo licenseInfo = License.loadLicenseFromContent(mContext, deviceLicenseKey, LicenseConstants.LICENSE_PUB_KEY);
-            if (licenseInfo != null) {
-                return licenseInfo.getPrice().intValue();
-            }
-        }
-        return 0;
-    }
-
     private Runnable mToastRunnable = new Runnable() {
         @Override
         public void run() {
@@ -181,5 +159,4 @@ public class LicenseInterfaceService extends MKSystemService {
             }
         }
     };
-
 }

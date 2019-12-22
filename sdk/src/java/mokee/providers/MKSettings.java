@@ -2819,12 +2819,6 @@ public final class MKSettings {
         // region Secure Settings
 
         /**
-         * MoKee license key
-         * @hide
-         */
-        public static final String DEVICE_LICENSE_KEY = "device_license_key";
-
-        /**
          * Locked task list in recent view
          * @hide
          */
@@ -3188,7 +3182,6 @@ public final class MKSettings {
          * @hide
          */
         public static final String[] LEGACY_SECURE_SETTINGS = new String[]{
-                MKSettings.Secure.DEVICE_LICENSE_KEY,
                 MKSettings.Secure.ADVANCED_MODE,
                 MKSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
                 MKSettings.Secure.BUTTON_BRIGHTNESS,
