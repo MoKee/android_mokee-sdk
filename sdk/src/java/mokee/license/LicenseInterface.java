@@ -19,30 +19,11 @@ import android.content.Context;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.text.TextUtils;
 import android.util.Log;
-
-import com.mokee.os.Build;
-
-import java.util.Locale;
 
 import mokee.app.MKContextConstants;
 
 public class LicenseInterface {
-
-    public static final int DONATION_ADVANCED = 68;
-    public static final int DONATION_BASIC = 30;
-
-    public static final String LICENSE_PUB_KEY =
-            "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwN8FdvNOu5A8yP2Bfb7rk1o6N" +
-                    "dXik/DO+Kw6+q7nIZjTh4qpPL3Gyoa7A3MI01gTRKaM+MU2+zkiZND8qoB8EGlF6" +
-                    "BfDfi9BLyFyx+nOTgz3KDEYutLJhopS18DfrdZTohNXsM7+MEsk5y+GHFjYHePXN" +
-                    "oE4fjtfCg3xbtwU29wIDAQAB";
-
-    /**
-     * Broadcast action: license changed
-     */
-    public static final String ACTION_LICENSE_CHANGED = "mokee.intent.action.LICENSE_CHANGED";
 
     private static final String TAG = "LicenseInterface";
 
@@ -101,9 +82,5 @@ public class LicenseInterface {
                 Log.e(TAG, e.getLocalizedMessage(), e);
             }
         }
-    }
-
-    public static boolean isPremiumVersion() {
-        return TextUtils.equals(Build.RELEASE_TYPE.toLowerCase(Locale.ENGLISH), "premium");
     }
 }
