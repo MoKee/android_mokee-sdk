@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.mokee.utils.MoKeeUtils;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -33,11 +34,11 @@ import android.widget.Toast;
 
 import com.mokee.center.model.DonationInfo;
 import com.mokee.utils.DonationUtils;
+import com.mokee.security.LicenseUtils;
 
 import mokee.app.MKContextConstants;
 import mokee.license.ILicenseInterface;
 import mokee.license.LicenseConstants;
-import mokee.license.LicenseUtil;
 
 public class LicenseInterfaceService extends MKSystemService {
 
@@ -52,6 +53,37 @@ public class LicenseInterfaceService extends MKSystemService {
     private NotificationManager mNotificationManager = null;
     private DonationInfo mDonationInfo = new DonationInfo();
     private Handler mHandler = new Handler(Looper.getMainLooper());
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (TextUtils.equals(LicenseConstants.ACTION_LICENSE_CHANGED, action)) {
+                LicenseUtils.copyLicenseFile(context, intent.getData(), getLicensePath());
+                DonationUtils.updateDonationInfo(mContext, mDonationInfo, getLicensePath(), LicenseConstants.LICENSE_PUB_KEY);
+                if (mDonationInfo.isAdvanced()) {
+                    cancelNotificationForFeatureInternal();
+                    mContext.unregisterReceiver(mIntentReceiver);
+                }
+            }
+        }
+    };
+    private Runnable mToastRunnable = new Runnable() {
+        @Override
+        public void run() {
+            String message = mContext.getString(R.string.license_notification_content, LicenseConstants.DONATION_ADVANCED);
+            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+        }
+    };
+    /* Service */
+    private final IBinder mService = new ILicenseInterface.Stub() {
+
+        @Override
+        public void licenseVerification() {
+            if (!mDonationInfo.isAdvanced()) {
+                mHandler.post(mToastRunnable);
+            }
+        }
+    };
 
     public LicenseInterfaceService(Context context) {
         super(context);
@@ -59,10 +91,16 @@ public class LicenseInterfaceService extends MKSystemService {
         publishBinderService(MKContextConstants.MK_LICENSE_INTERFACE, mService);
     }
 
+    public static String getLicensePath() {
+        return String.join("/", Environment.getDataSystemDirectory().getAbsolutePath(), "mokee.lic");
+    }
+
+    /* Public methods implementation */
+
     @Override
     public void onBootPhase(int phase) {
         if (phase == PHASE_BOOT_COMPLETED) {
-            DonationUtils.updateDonationInfo(mContext, mDonationInfo, LicenseUtil.getLicenseFilePath(), LicenseConstants.LICENSE_PUB_KEY);
+            DonationUtils.updateDonationInfo(mContext, mDonationInfo, getLicensePath(), LicenseConstants.LICENSE_PUB_KEY);
             if (!mDonationInfo.isAdvanced()) {
                 IntentFilter filter = new IntentFilter();
                 filter.addAction(LicenseConstants.ACTION_LICENSE_CHANGED);
@@ -88,23 +126,6 @@ public class LicenseInterfaceService extends MKSystemService {
     public void onStart() {
         mNotificationManager = mContext.getSystemService(NotificationManager.class);
     }
-
-    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (TextUtils.equals(LicenseConstants.ACTION_LICENSE_CHANGED, action)) {
-                LicenseUtil.copyLicenseFile(context, intent.getData());
-                DonationUtils.updateDonationInfo(mContext, mDonationInfo, LicenseUtil.getLicenseFilePath(), LicenseConstants.LICENSE_PUB_KEY);
-                if (mDonationInfo.isAdvanced()) {
-                    cancelNotificationForFeatureInternal();
-                    mContext.unregisterReceiver(mIntentReceiver);
-                }
-            }
-        }
-    };
-
-    /* Public methods implementation */
 
     private void postNotificationForFeatureInternal() {
         String title = mContext.getString(R.string.license_notification_title);
@@ -145,23 +166,4 @@ public class LicenseInterfaceService extends MKSystemService {
         licenseChannel.setBlockableSystem(false);
         mNotificationManager.createNotificationChannel(licenseChannel);
     }
-
-    private Runnable mToastRunnable = new Runnable() {
-        @Override
-        public void run() {
-            String message = mContext.getString(R.string.license_notification_content, LicenseConstants.DONATION_ADVANCED);
-            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
-        }
-    };
-
-    /* Service */
-    private final IBinder mService = new ILicenseInterface.Stub() {
-
-        @Override
-        public void licenseVerification() {
-            if (!mDonationInfo.isAdvanced()) {
-                mHandler.post(mToastRunnable);
-            }
-        }
-    };
 }
