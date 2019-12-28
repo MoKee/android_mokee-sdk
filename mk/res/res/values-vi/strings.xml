@@ -127,4 +127,7 @@
     <string name="trust_notification_title_onboarding">Khám phá Trust</string>
     <string name="trust_notification_content_onboarding">Tìm hiểu cách đảm bảo thiết bị của bạn an toàn</string>
     <string name="trust_notification_action_manage">Quản lý cảnh báo</string>
+    <string name="license_notification_channel">Cảnh báo giấy phép</string>
+    <string name="license_notification_title">Giấy phép hợp lệ không được tìm thấy</string>
+    <string name="license_notification_content">Phiên bản cap cấp được đóng gói và phân phối bởi người duy trì, mở khóa bằng đóng góp %d NDT.</string>
 </resources>
