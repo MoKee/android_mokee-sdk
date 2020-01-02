@@ -18,5 +18,4 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="mokee_system_label">سیستەمی ساینەجنمۆد</string>
     <string name="build_date">بنیاتنانی ڕۆژ</string>
-    <string name="accent_cyan">شینی ئاسمانی</string>
 </resources>

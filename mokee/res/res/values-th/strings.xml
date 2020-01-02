@@ -81,5 +81,4 @@
     <string name="build_date">วันที่สร้าง</string>
     <string name="mk_version">เวอร์ชัน Mokee</string>
     <string name="unknown">ไม่รู้จัก</string>
-    <string name="accent_cyan">ฟ้า</string>
 </resources>

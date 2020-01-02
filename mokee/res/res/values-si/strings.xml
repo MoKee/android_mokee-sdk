@@ -18,5 +18,4 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="build_date">නිමැවූ දිනය</string>
     <string name="unknown">නොදනී</string>
-    <string name="accent_cyan">මයුර නිල්</string>
 </resources>

@@ -27,10 +27,8 @@
     <string name="live_display_night_summary">Defnyddio gosodiadau nos yn unig</string>
     <string name="live_display_outdoor_summary">Defnyddio gosodiadau awyr agored yn unig</string>
     <string name="permlab_weather_write">diweddaru darparwr tywydd</string>
-    <string name="privacy_guard_manager_title">Gwarchodydd Preifatrwydd</string>
     <string name="permlab_manageRemotePrefs">rheoli gosodiadau o bell</string>
     <string name="permdesc_manageRemotePrefs">Mae\'n caniatáu ap i reoli gosodiadau o bell.</string>
     <string name="build_date">Dyddiad adeiledd</string>
     <string name="unknown">Anhysybys</string>
-    <string name="accent_red">Tomato</string>
 </resources>

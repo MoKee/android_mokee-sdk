@@ -69,5 +69,4 @@
     <string name="permlab_manageRemotePrefs">menaxho parametrat në distancë</string>
     <string name="permdesc_manageRemotePrefs">Lejon një aplikacion që të menaxhojë parametrat në distancë</string>
     <string name="build_date">Data e ndërtimit</string>
-    <string name="accent_cyan">E bruztë</string>
 </resources>

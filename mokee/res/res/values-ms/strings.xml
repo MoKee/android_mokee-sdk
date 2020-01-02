@@ -87,10 +87,8 @@
     <string name="permdesc_manageLiveDisplay">Benarkan aplikasi mengkonfigurasi seting lanjutan paparan.</string>
     <string name="permlab_observe_audio_sessions">memerhati perubahan seisi audio</string>
     <string name="permdesc_observe_audio_sessions">Benarkan aplikasi memerhati strim audio dicipta dan dihapuskan.</string>
-    <string name="privacy_guard_manager_title">Pengawal privasi</string>
     <string name="permlab_manageRemotePrefs">mengurus seting jauh</string>
     <string name="permdesc_manageRemotePrefs">Membenarkan aplikasi untuk mengurus seting jauh</string>
     <string name="mk_version">Versi MoKee</string>
     <string name="unknown">Tak diketahui</string>
-    <string name="accent_cyan">Biru kehijauan</string>
 </resources>

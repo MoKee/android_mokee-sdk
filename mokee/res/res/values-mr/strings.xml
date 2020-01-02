@@ -53,5 +53,4 @@
     <string name="permdesc_perfAccessDesc">अॅप ला टॉर्च सेवा ऍक्सेस करण्याची परवानगी देते. सामान्य अॅपसाठी कधीही गरज भासू नये.</string>
     <string name="build_date">बांधणी तारीख</string>
     <string name="unknown">अज्ञात</string>
-    <string name="accent_cyan">निळसर</string>
 </resources>

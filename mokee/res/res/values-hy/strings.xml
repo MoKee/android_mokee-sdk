@@ -17,5 +17,4 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="unknown">Անհայտ</string>
-    <string name="accent_cyan">Երկնագույն</string>
 </resources>

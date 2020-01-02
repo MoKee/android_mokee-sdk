@@ -92,12 +92,10 @@
     <string name="permdesc_manageLiveDisplay">Paghintulot sa app para magkompigura ang mga mas mataas na display setting.</string>
     <string name="permlab_observe_audio_sessions">obserbahan ang mga nabago sa sesyon ng audio</string>
     <string name="permdesc_observe_audio_sessions">Paghintulot sa app na ma obserbahan ang mga nagawa at nasira na mga audio stream.</string>
-    <string name="privacy_guard_manager_title">Privacy Guard</string>
     <string name="permlab_manageRemotePrefs">pamahalaan ang mga remote settings</string>
     <string name="permdesc_manageRemotePrefs">Nagpapahintulot ng isang app upang pamahalaan ang mga remote settings</string>
     <string name="build_date">Petsa ng paggawa</string>
     <string name="mk_version">Bersyon ng MoKee</string>
     <string name="unknown">Hindi alam</string>
     <string name="app_killed_message">Ang application na ito ay hindi gumagana</string>
-    <string name="accent_cyan">Cyan</string>
 </resources>

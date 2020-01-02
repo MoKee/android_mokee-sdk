@@ -52,5 +52,4 @@
     <string name="live_display_hint">LiveDisplay கண்ணழுத்தத்தை குறைத்து, நீங்கள் இரவிலே உறங்க உதவுகிறது. அதை முயற்சிக்க இங்கே கிளிக் செய்க!</string>
     <string name="build_date">கட்டிய தேதி</string>
     <string name="unknown">தெரியாதது</string>
-    <string name="accent_cyan">சியான்</string>
 </resources>

@@ -87,5 +87,4 @@
     <string name="permdesc_manageRemotePrefs">Laat \'n toepassing toe om afgeleë opsies te bestuur</string>
     <string name="build_date">Bou datum</string>
     <string name="unknown">Onbekend</string>
-    <string name="accent_cyan">Groen-blou</string>
 </resources>
