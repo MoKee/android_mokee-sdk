@@ -122,6 +122,12 @@ public class LiveDisplayManager {
      */
     public static final int FEATURE_READING_ENHANCEMENT = 18;
 
+    /**
+     * System supports flicker-free (DC dimming) to avoid PWM flicker
+     * of OLED screens.
+     */
+    public static final int FEATURE_FLICKER_FREE = 19;
+
     public static final int ADJUSTMENT_HUE = 0;
     public static final int ADJUSTMENT_SATURATION = 1;
     public static final int ADJUSTMENT_INTENSITY = 2;
