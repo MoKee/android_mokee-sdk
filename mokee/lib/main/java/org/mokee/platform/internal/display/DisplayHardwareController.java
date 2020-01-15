@@ -51,6 +51,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
     private final boolean mUseCABC;
     private final boolean mUseReaderMode;
     private final boolean mUseDisplayModes;
+    private final boolean mUseFlickerFree;
 
     // default values
     private final boolean mDefaultAutoContrast;
@@ -104,6 +105,9 @@ public class DisplayHardwareController extends LiveDisplayFeature {
 
         mUseReaderMode = mHardware
                 .isSupported(MKHardwareManager.FEATURE_READING_ENHANCEMENT);
+
+        mUseFlickerFree = mHardware
+                .isSupported(MKHardwareManager.FEATURE_FLICKER_FREE);
 
         if (mUseColorAdjustment) {
             mMaxColor = mHardware.getDisplayColorCalibrationMax();
@@ -159,6 +163,9 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         }
         if (mUseReaderMode) {
             caps.set(LiveDisplayManager.FEATURE_READING_ENHANCEMENT);
+        }
+        if (mUseFlickerFree) {
+            caps.set(LiveDisplayManager.FEATURE_FLICKER_FREE);
         }
         return mUseAutoContrast || mUseColorEnhancement || mUseCABC || mUseColorAdjustment ||
             mUseDisplayModes || mUseReaderMode;
