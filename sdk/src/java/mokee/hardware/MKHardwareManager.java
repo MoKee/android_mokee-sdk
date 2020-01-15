@@ -152,6 +152,12 @@ public final class MKHardwareManager {
     @VisibleForTesting
     public static final int FEATURE_TOUCHSCREEN_GESTURES = 0x80000;
 
+    /**
+     * Flicker-free
+     */
+    @VisibleForTesting
+    public static final int FEATURE_FLICKER_FREE = 0x100000;
+
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
         FEATURE_AUTO_CONTRAST,
@@ -160,7 +166,8 @@ public final class MKHardwareManager {
         FEATURE_KEY_DISABLE,
         FEATURE_SUNLIGHT_ENHANCEMENT,
         FEATURE_TOUCH_HOVERING,
-        FEATURE_READING_ENHANCEMENT
+        FEATURE_READING_ENHANCEMENT,
+        FEATURE_FLICKER_FREE
     );
 
     private static IMKHardwareService sService;
@@ -289,6 +296,8 @@ public final class MKHardwareManager {
                     return IStylusMode.getService(true);
                 case FEATURE_TOUCHSCREEN_GESTURES:
                     return ITouchscreenGesture.getService(true);
+                case FEATURE_FLICKER_FREE:
+                    return IFlickerFree.getService(true);
             }
         } catch (NoSuchElementException | RemoteException e) {
         }
@@ -357,6 +366,9 @@ public final class MKHardwareManager {
                     case FEATURE_READING_ENHANCEMENT:
                         IReadingEnhancement readingEnhancement = (IReadingEnhancement) obj;
                         return readingEnhancement.isEnabled();
+                    case FEATURE_FLICKER_FREE:
+                        IFlickerFree flickerFree = (IFlickerFree) obj;
+                        return flickerFree.isEnabled();
                 }
             } else if (checkService()) {
                 return sService.get(feature);
@@ -409,6 +421,9 @@ public final class MKHardwareManager {
                     case FEATURE_READING_ENHANCEMENT:
                         IReadingEnhancement readingEnhancement = (IReadingEnhancement) obj;
                         return readingEnhancement.setEnabled(enable);
+                    case FEATURE_FLICKER_FREE:
+                        IFlickerFree flickerFree = (IFlickerFree) obj;
+                        return flickerFree.setEnabled(enable);
                 }
             } else if (checkService()) {
                 return sService.set(feature, enable);
