@@ -156,7 +156,7 @@ public class PerformanceManagerService extends MKSystemService {
 
                 synchronized (mLock) {
                     mMpctlReady = true;
-                    setPowerProfileLocked(mUserProfile, false);
+                    applyProfileLocked();
                 }
             });
             mWaitMpctlThread.setDaemon(true);
