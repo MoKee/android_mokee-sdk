@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">MoKee Järjestelmä</string>
+    <string name="mokee_system_label">MoKeeOS Järjestelmä</string>
     <string name="permlab_modifyProfiles">muokkaa järjestelmän profiileja</string>
     <string name="permdesc_modifyProfiles">Sallii sovelluksen muokata järjestelmäprofiileja.</string>
     <string name="permlab_useHardwareFramework">käytä laitteiston kehystä</string>
@@ -55,7 +55,7 @@
     <string name="perf_profile_bias_perf_summary">Suosii suorituskykyä. Vähentää latenssia ja lisää hieman virrankulutusta</string>
     <string name="live_display_auto">Automaattinen</string>
     <string name="live_display_auto_summary">Säädä näytön värilämpötilaa automaattisesti auringonlaskun ja -nousun jälkeen</string>
-    <string name="live_display_off">Ei käytössä</string>
+    <string name="live_display_off">Pois</string>
     <string name="live_display_off_summary">Poista kaikki mukautukset</string>
     <string name="live_display_day">Päivä</string>
     <string name="live_display_day_summary">Käytä vain päiväasetusta</string>
@@ -96,11 +96,10 @@
     <string name="permdesc_manageRemotePrefs">Sallii sovellluksen hallita etäasetuksia</string>
     <string name="build_date">Luontipäivä</string>
     <string name="mk_api_level">MoKee API-taso</string>
-    <string name="mk_version">MoKee-versio</string>
+    <string name="mk_version">MoKeeOS-versio</string>
     <string name="mk_vendor_security_patch">Valmistajan tietoturvakorjauksen taso</string>
-    <string name="unknown">Tuntematon</string>
+    <string name="unknown">Ei tiedossa</string>
     <string name="app_killed_message">Sovellus pysäytetty</string>
-    <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">käytä Trust-käyttöliittymää</string>
     <string name="permdesc_trustInterface">Sallii sovelluksen näyttää Trust-varoituksia ja ehdotuksia</string>
     <string name="trust_notification_channel">Trust-hälytykset</string>

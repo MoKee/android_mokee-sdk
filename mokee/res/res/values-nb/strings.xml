@@ -25,7 +25,7 @@
     <string name="profileNameDefault">Standard</string>
     <string name="profileNameWork">Arbeid</string>
     <string name="profileNameHome">Hjemme</string>
-    <string name="profileNameSilent">Lydløs</string>
+    <string name="profileNameSilent">Stille</string>
     <string name="profileNameNight">Natt</string>
     <string name="profileNameAutomobile">Bil</string>
     <string name="profileGroupPhone">Telefon</string>

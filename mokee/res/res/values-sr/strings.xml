@@ -16,28 +16,28 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">MoKee Систем</string>
+    <string name="mokee_system_label">MoKeeOS Систем</string>
     <string name="permlab_modifyProfiles">мењање профила система</string>
     <string name="permdesc_modifyProfiles">Апликација може да мења подешавања системских профила.</string>
     <string name="permlab_useHardwareFramework">коришћење хардверског оквира</string>
-    <string name="permdesc_useHardwareFramework">Апликација може да приступа хардверском оквиру MoKee-а.</string>
+    <string name="permdesc_useHardwareFramework">Апликација може да приступа хардверском оквиру MoKeeOS-а.</string>
     <string name="permlab_writeSettings">измени MoKee системске поставке</string>
     <string name="permdesc_writeSettings">Дозвољава апликацији да мења MoKee системске поставке.</string>
     <string name="permlab_writeSecureSettings">измените MoKee сигурносне поставке система</string>
     <string name="permdesc_writeSecureSettings">Омогућава апликацији да мења MoKee сигурносне поставке система. Није за употребу од стране нормалних апликација.</string>
     <string name="permlab_protectedApp">додавање и уклањање апликација са списка заштићених</string>
     <string name="permdesc_protectedApp">Апликација може да означава друге апликације као заштићене и закључа их.</string>
-    <string name="profileNameDefault">Подразумевани</string>
+    <string name="profileNameDefault">Подразумевано</string>
     <string name="profileNameWork">Посао</string>
     <string name="profileNameHome">Кућа</string>
-    <string name="profileNameSilent">Нечујни</string>
+    <string name="profileNameSilent">Нечујно</string>
     <string name="profileNameNight">Ноћ</string>
     <string name="profileNameAutomobile">Аутомобил</string>
     <string name="profileGroupPhone">Телефон</string>
     <string name="profileGroupCalendar">Календар</string>
     <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">Имејл</string>
-    <string name="profileGroupSMS">SMS</string>
+    <string name="profileGroupSMS">СМС</string>
     <string name="wildcardProfile">Друго</string>
     <string name="permlab_readPhoneLocation">читање локације телефона</string>
     <string name="permdesc_readPhoneLocation">Дозволити апликацијама да користе локацију телефона.</string>
@@ -55,7 +55,7 @@
     <string name="perf_profile_bias_perf_summary">Повећане перформансе. Смањује време одзива уз незнатно већу потрошњу.</string>
     <string name="live_display_auto">Аутоматски</string>
     <string name="live_display_auto_summary">Аутоматски прилагодите температуру боје екрана након сумрака и свитања.</string>
-    <string name="live_display_off">Искључено</string>
+    <string name="live_display_off">Искључене</string>
     <string name="live_display_off_summary">Онемогућите сва прилагођавања.</string>
     <string name="live_display_day">Дан</string>
     <string name="live_display_day_summary">Само дневна подешавања.</string>
@@ -96,9 +96,9 @@
     <string name="permdesc_manageRemotePrefs">Апликација може да управља подешавањима даљинског приступа.</string>
     <string name="build_date">Датум израде</string>
     <string name="mk_api_level">Ниво API-ја MoKee-а</string>
-    <string name="mk_version">Верзија MoKee-а</string>
+    <string name="mk_version">Верзија MoKeeOS-а</string>
     <string name="mk_vendor_security_patch">Ниво заштите произвођача</string>
-    <string name="unknown">Непознат</string>
+    <string name="unknown">Непознато</string>
     <string name="app_killed_message">Апликација је искључена</string>
     <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">приступи Trust интерфејсу</string>

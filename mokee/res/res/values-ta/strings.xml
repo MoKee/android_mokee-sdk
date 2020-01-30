@@ -25,14 +25,13 @@
     <string name="profileNameDefault">இயல்புநிலை</string>
     <string name="profileNameWork">அலுவலகம்</string>
     <string name="profileNameHome">முகப்பு</string>
-    <string name="profileNameSilent">நிசப்தம்</string>
+    <string name="profileNameSilent">அமைதி</string>
     <string name="profileNameNight">இரவு</string>
     <string name="profileNameAutomobile">தானியங்கி</string>
-    <string name="profileGroupPhone">ஃபோன்</string>
+    <string name="profileGroupPhone">அலைபேசி</string>
     <string name="profileGroupCalendar">கேலெண்டர்</string>
-    <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">மின்னஞ்சல்</string>
-    <string name="profileGroupSMS">SMS</string>
+    <string name="profileGroupSMS">குறுஞ்செய்தி</string>
     <string name="wildcardProfile">பிற</string>
     <string name="perf_profile_pwrsv">சக்தி சேமி</string>
     <string name="perf_profile_bal">சமன்பாடான</string>
@@ -41,7 +40,7 @@
     <string name="perf_profile_bias_perf">விரைவு</string>
     <string name="live_display_auto">தானியங்கு</string>
     <string name="live_display_auto_summary">சூரிய மறைவு மற்றும் சூரிய உதயத்திற்கு பிறகு தானாகவே திரையின் வண்ன தட்பவெப்பங்களை சரிசெய்</string>
-    <string name="live_display_off">முடக்கத்தில்</string>
+    <string name="live_display_off">அணை</string>
     <string name="live_display_off_summary">அனைத்து சரிசெய்தல்களையும் முடக்கு</string>
     <string name="live_display_day">பகல்</string>
     <string name="live_display_day_summary">பகல் அமைப்புகளை மட்டும் பயன்படுத்துக</string>

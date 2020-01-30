@@ -17,20 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="mokee_system_label">Sistem MoKee</string>
-    <string name="permlab_modifyProfiles">memodifikasi profil sistem</string>
-    <string name="permdesc_modifyProfiles">Mengizinkan aplikasi untuk mengubah profil sistem.</string>
-    <string name="permlab_useHardwareFramework">gunakan hardware framework</string>
+    <string name="permlab_modifyProfiles">modifikasi profil sistem</string>
+    <string name="permdesc_modifyProfiles">Izinkan aplikasi untuk mengubah profil sistem.</string>
+    <string name="permlab_useHardwareFramework">gunakan kerangka perangkat keras</string>
     <string name="permdesc_useHardwareFramework">Izinkan aplikasi untuk mengakses susunan perangkat keras MoKee.</string>
-    <string name="permlab_writeSettings">mengubah setelah sistem MoKee</string>
+    <string name="permlab_writeSettings">ubah setelan sistem MoKee</string>
     <string name="permdesc_writeSettings">Izinkan aplikasi untuk memodifikasi setelan sistem MoKee.</string>
-    <string name="permlab_writeSecureSettings">memodifikasi setelan sistem keamanan MoKee</string>
+    <string name="permlab_writeSecureSettings">modifikasi setelan sistem keamanan MoKee</string>
     <string name="permdesc_writeSecureSettings">Izinkan aplikasi untuk memodifikasi setelan sistem keamanan MoKee. Tidak untuk digunakan oleh aplikasi yang normal.</string>
     <string name="permlab_protectedApp">tambahkan dan hapus aplikasi untuk aplikasi yang dilindungi</string>
     <string name="permdesc_protectedApp">Mengizinkan aplikasi untuk menandai aplikasi lain sebagai aplikasi yang dilindungi dan menguncinya.</string>
     <string name="profileNameDefault">Standar</string>
     <string name="profileNameWork">Kerja</string>
     <string name="profileNameHome">Beranda</string>
-    <string name="profileNameSilent">Senyap</string>
+    <string name="profileNameSilent">Diam</string>
     <string name="profileNameNight">Malam</string>
     <string name="profileNameAutomobile">Mobil</string>
     <string name="profileGroupPhone">Telepon</string>
@@ -39,7 +39,7 @@
     <string name="profileGroupEmail">Surel</string>
     <string name="profileGroupSMS">SMS</string>
     <string name="wildcardProfile">Lainnya</string>
-    <string name="permlab_readPhoneLocation">membaca lokasi telepon</string>
+    <string name="permlab_readPhoneLocation">baca lokasi telepon</string>
     <string name="permdesc_readPhoneLocation">Izinkan aplikasi untuk membaca informasi tentang lokasi telepon.</string>
     <string name="permlab_writePhoneLocation">tulis lokasi telepon</string>
     <string name="permdesc_writePhoneLocation">Memungkinkan aplikasi untuk mengubah lokasi telepon.</string>
@@ -55,8 +55,8 @@
     <string name="perf_profile_bias_perf_summary">Mendukung kinerja. Mengurangi latensi dengan konsumsi daya yang sedikit meningkat</string>
     <string name="live_display_auto">Otomatis</string>
     <string name="live_display_auto_summary">Menyesuaikan suhu warna layar secara otomatis setelah matahari terbenam dan terbit</string>
-    <string name="live_display_off">Mati</string>
-    <string name="live_display_off_summary">Menonaktifkan semua penyesuaian</string>
+    <string name="live_display_off">Nonaktif</string>
+    <string name="live_display_off_summary">Menonaktifkan semua pengaturan</string>
     <string name="live_display_day">Siang</string>
     <string name="live_display_day_summary">Hanya menggunakan setelan siang hari</string>
     <string name="live_display_night">Malam</string>
@@ -96,7 +96,7 @@
     <string name="permdesc_manageRemotePrefs">Memungkinkan aplikasi untuk mengelola pengaturan jarak jauh</string>
     <string name="build_date">Tanggal pembuatan</string>
     <string name="mk_api_level">Tingkat API MoKee</string>
-    <string name="mk_version">Versi MoKee</string>
+    <string name="mk_version">Versi MoKeeOS</string>
     <string name="mk_vendor_security_patch">Tingkat patch keamanan vendor</string>
     <string name="unknown">Tidak dikenal</string>
     <string name="app_killed_message">Aplikasi dimatikan</string>

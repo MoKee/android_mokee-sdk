@@ -35,7 +35,7 @@
     <string name="profileNameAutomobile">Bil</string>
     <string name="profileGroupPhone">Telefon</string>
     <string name="profileGroupCalendar">Kalender</string>
-    <string name="profileGroupGmail">Gmail</string>
+    <string name="profileGroupGmail">GMail</string>
     <string name="profileGroupEmail">E-mail</string>
     <string name="profileGroupSMS">SMS</string>
     <string name="wildcardProfile">Andre</string>

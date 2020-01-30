@@ -16,13 +16,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">מערכת MoKee</string>
+    <string name="mokee_system_label">מערכת MoKeeOS</string>
     <string name="permlab_modifyProfiles">שנה פרופילי מערכת</string>
     <string name="permdesc_modifyProfiles">מאפשר ליישום לשנות פרופילי מערכת.</string>
     <string name="permlab_useHardwareFramework">השתמש במסגרת חומרה</string>
-    <string name="permdesc_useHardwareFramework">אפשר ליישומים גישה לתשתית החומרה של MoKee.</string>
+    <string name="permdesc_useHardwareFramework">אפשר ליישומים גישה לתשתית החומרה של MoKeeOS.</string>
     <string name="permlab_writeSettings">שינוי הגדרות המערכת</string>
-    <string name="permdesc_writeSettings">מאפשר ליישום לשנות את הגדרות מערכת MoKee.</string>
+    <string name="permdesc_writeSettings">מאפשר ליישום לשנות את הגדרות מערכת MoKeeOS.</string>
     <string name="permlab_writeSecureSettings">שינוי הגדרות אבטחה של המערכת</string>
     <string name="permdesc_writeSecureSettings">מאפשר ליישום לשנות הגדרות אבטחה של המערכת, לא נועד לשימוש ע\"י יישומים רגילים.</string>
     <string name="permlab_protectedApp">הוספה והסרה של יישומים מהיישומים המוגנים</string>
@@ -37,7 +37,7 @@
     <string name="profileGroupCalendar">לוח שנה</string>
     <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">דוא\"ל</string>
-    <string name="profileGroupSMS">SMS</string>
+    <string name="profileGroupSMS">הודעות טקסט</string>
     <string name="wildcardProfile">אחר</string>
     <string name="permlab_readPhoneLocation">לקרוא את מיקום המכשיר</string>
     <string name="permdesc_readPhoneLocation">אפשר לישום לקרוא את מיקום המכשיר.</string>
@@ -55,7 +55,7 @@
     <string name="perf_profile_bias_perf_summary">ביצועים טובים. משפר את זמן התגובה עם עליה קלה בצריכת החשמל</string>
     <string name="live_display_auto">אוטומטי</string>
     <string name="live_display_auto_summary">התאם אוטומטית את טמפרטורת הצבע של המסך לאחר הזריחה והשקיעה</string>
-    <string name="live_display_off">כבוי</string>
+    <string name="live_display_off">ללא</string>
     <string name="live_display_off_summary">השבת את כל ההתאמות</string>
     <string name="live_display_day">יום</string>
     <string name="live_display_day_summary">השתמש בהגדרות יום בלבד</string>
@@ -96,7 +96,7 @@
     <string name="permdesc_manageRemotePrefs">מאפשר ליישום לנהל הגדרות מרחוק</string>
     <string name="build_date">תאריך בנייה</string>
     <string name="mk_api_level">רמת ה־API של MoKee</string>
-    <string name="mk_version">גרסת MoKee</string>
+    <string name="mk_version">גרסת MoKeeOS</string>
     <string name="mk_vendor_security_patch">‏רמת עדכוני אבטחה</string>
     <string name="unknown">לא ידוע</string>
     <string name="app_killed_message">היישום נסגר</string>

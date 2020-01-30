@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">Système MoKee</string>
+    <string name="mokee_system_label">Système MoKeeOS</string>
     <string name="permlab_modifyProfiles">modifier les profils système</string>
     <string name="permdesc_modifyProfiles">Permet à une application de modifier les profils système.</string>
     <string name="permlab_useHardwareFramework">utiliser le framework matériel</string>
@@ -27,13 +27,13 @@
     <string name="permdesc_writeSecureSettings">Autorise une application à modifier les paramètres de sécurité du système. Les applications standards ne doivent pas utiliser cette fonctionnalité.</string>
     <string name="permlab_protectedApp">ajouter et supprimer des applications pour les applications protégées</string>
     <string name="permdesc_protectedApp">Permet à une application de marquer d\'autres applications comme protégées et de les verrouiller.</string>
-    <string name="profileNameDefault">Par défaut</string>
+    <string name="profileNameDefault">Par Défaut</string>
     <string name="profileNameWork">Bureau</string>
     <string name="profileNameHome">Domicile</string>
     <string name="profileNameSilent">Silencieux</string>
     <string name="profileNameNight">Nuit</string>
-    <string name="profileNameAutomobile">Automobile</string>
-    <string name="profileGroupPhone">Téléphone</string>
+    <string name="profileNameAutomobile">Transport</string>
+    <string name="profileGroupPhone">Téléphone </string>
     <string name="profileGroupCalendar">Agenda</string>
     <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">E-mail</string>
@@ -96,9 +96,9 @@
     <string name="permdesc_manageRemotePrefs">Autoriser une application à gérer les paramètres distants</string>
     <string name="build_date">Date de compilation</string>
     <string name="mk_api_level">Niveau de l\'API MoKee</string>
-    <string name="mk_version">Version MoKee</string>
+    <string name="mk_version">Version MoKeeOS</string>
     <string name="mk_vendor_security_patch">Niveau du correctif de sécurité du fournisseur</string>
-    <string name="unknown">Inconnu</string>
+    <string name="unknown">Inconnue</string>
     <string name="app_killed_message">Application arrêtée</string>
     <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">accéder à l\'interface Trust</string>

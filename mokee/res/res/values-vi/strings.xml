@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">Hệ thống MoKee</string>
+    <string name="mokee_system_label">Hệ thống MoKeeOS</string>
     <string name="permlab_modifyProfiles">sửa đổi cấu hình hệ thống</string>
     <string name="permdesc_modifyProfiles">Cho phép một ứng dụng sửa đổi cấu hình hệ thống.</string>
     <string name="permlab_useHardwareFramework">dùng khung làm việc phần cứng</string>
@@ -31,12 +31,12 @@
     <string name="profileNameWork">Văn phòng</string>
     <string name="profileNameHome">Ở nhà</string>
     <string name="profileNameSilent">Im lặng</string>
-    <string name="profileNameNight">Ban đêm</string>
+    <string name="profileNameNight">Đêm</string>
     <string name="profileNameAutomobile">Trên ôtô</string>
     <string name="profileGroupPhone">Điện thoại</string>
     <string name="profileGroupCalendar">Lịch</string>
     <string name="profileGroupGmail">Gmail</string>
-    <string name="profileGroupEmail">Email</string>
+    <string name="profileGroupEmail">Thư điện tử</string>
     <string name="profileGroupSMS">SMS</string>
     <string name="wildcardProfile">Khác</string>
     <string name="permlab_readPhoneLocation">đọc địa điểm điện thoại</string>
@@ -47,7 +47,7 @@
     <string name="perf_profile_bal">Cân đối</string>
     <string name="perf_profile_perf">Hiệu suất cao</string>
     <string name="perf_profile_bias_power">Hiệu quả</string>
-    <string name="perf_profile_bias_perf">Nhanh</string>
+    <string name="perf_profile_bias_perf">Nhanh chóng</string>
     <string name="perf_profile_pwrsv_summary">Tiết kiệm năng lượng tối đa, giảm hiệu suất thiết bị</string>
     <string name="perf_profile_bal_summary">Cân bằng của tối ưu hiệu suất và điện năng</string>
     <string name="perf_profile_perf_summary">Chế độ hiệu suất cao. Hữu ích cho các ứng dụng đòi hỏi độ trễ thấp và băng thông cao nhất khi tiêu thụ điện năng không phải là một mối quan tâm</string>
@@ -59,16 +59,16 @@
     <string name="live_display_off_summary">Vô hiệu hoá tất cả điều chỉnh</string>
     <string name="live_display_day">Ngày</string>
     <string name="live_display_day_summary">Chỉ sử dụng cài đặt ban ngày</string>
-    <string name="live_display_night">Ban đêm</string>
+    <string name="live_display_night">Đêm</string>
     <string name="live_display_night_summary">Chỉ sử dụng cài đặt ban đêm</string>
     <string name="live_display_outdoor">Ngoài trời (ánh sáng mạnh)</string>
     <string name="live_display_outdoor_summary">Chỉ sử dụng cài đặt ngoài trời</string>
-    <string name="live_display_hint">LiveDisplay có thể giúp giảm mỏi mắt và giúp bạn ngủ vào ban đêm. Nhấn vào đây để thử!</string>
-    <string name="accessibility_quick_settings_live_display_off">LiveDisplay tắt.</string>
-    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: chế độ tự động.</string>
+    <string name="live_display_hint">Chế độ Đọc sách có thể giúp làm giảm mỏi mắt và hạn chế ánh sáng xanh. Chạm vào đây để thử!</string>
+    <string name="accessibility_quick_settings_live_display_off">Đọc sách tắt.</string>
+    <string name="accessibility_quick_settings_live_display_auto">Đọc sách: tự động.</string>
     <string name="accessibility_quick_settings_live_display_day">LiveDisplay: chế độ ban ngày.</string>
-    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: chế độ ban đêm.</string>
-    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: chế độ ngoài trời.</string>
+    <string name="accessibility_quick_settings_live_display_night">Đọc sách: đêm.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">Đọc sách: ngoài trời.</string>
     <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay đã tắt.</string>
     <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay đã đổi sang chế độ tự động.</string>
     <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay đã đổi sang chế độ ban ngày.</string>
@@ -88,7 +88,7 @@
     <string name="permdesc_dataUsageWrite">Cho phép ứng dụng cập nhật nội dung của cơ sở dữ liệu sử dụng dữ liệu.</string>
     <string name="permlab_dataUsageRead">đọc cơ sở dữ liệu sử dụng dữ liệu</string>
     <string name="permdesc_dataUsageRead">Cho phép ứng dụng đọc nội dung từ cơ sở dữ liệu sử dụng dữ liệu.</string>
-    <string name="permlab_manageLiveDisplay">quản lý cài đặt LiveDisplay</string>
+    <string name="permlab_manageLiveDisplay">quản lý cài đặt Đọc sách</string>
     <string name="permdesc_manageLiveDisplay">Cho phép ứng dụng thiết lập cấu hình cài đặt hiển thị nâng cao.</string>
     <string name="permlab_observe_audio_sessions">quan sát các thay đổi về phiên âm thanh</string>
     <string name="permdesc_observe_audio_sessions">Cho phép ứng dụng quan sát dòng âm thanh được tạo và bị hủy.</string>
@@ -96,11 +96,11 @@
     <string name="permdesc_manageRemotePrefs">Cho phép một ứng dụng quản lý cài đặt từ xa</string>
     <string name="build_date">Ngày dựng</string>
     <string name="mk_api_level">Cấp độ API MoKee</string>
-    <string name="mk_version">Phiên bản MoKee</string>
+    <string name="mk_version">Phiên bản MoKeeOS</string>
     <string name="mk_vendor_security_patch">Nhà cung cấp mức bản vá bảo mật</string>
-    <string name="unknown">Không rõ</string>
+    <string name="unknown">Không xác định</string>
     <string name="app_killed_message">Đã dừng ứng dụng</string>
-    <string name="trust_feature_name">Trust</string>
+    <string name="trust_feature_name">Độ tin cậy</string>
     <string name="permlab_trustInterface">truy cập giao diện Trust</string>
     <string name="permdesc_trustInterface">Cho phép ứng dụng hiển thị cảnh báo và đề xuất Trust</string>
     <string name="trust_notification_channel">Cảnh báo Trust</string>

@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">MoKee-System</string>
+    <string name="mokee_system_label">MoKeeOS-System</string>
     <string name="permlab_modifyProfiles">Systemprofile ändern</string>
     <string name="permdesc_modifyProfiles">Ermöglicht der App, Systemprofile zu ändern.</string>
     <string name="permlab_useHardwareFramework">Hardware-Framework verwenden</string>
@@ -30,12 +30,12 @@
     <string name="profileNameDefault">Standard</string>
     <string name="profileNameWork">Arbeit</string>
     <string name="profileNameHome">Zu Hause</string>
-    <string name="profileNameSilent">Lautlos</string>
+    <string name="profileNameSilent">Stumm</string>
     <string name="profileNameNight">Nacht</string>
     <string name="profileNameAutomobile">Fahrzeug</string>
     <string name="profileGroupPhone">Telefon</string>
     <string name="profileGroupCalendar">Kalender</string>
-    <string name="profileGroupGmail">Gmail</string>
+    <string name="profileGroupGmail">Google Mail</string>
     <string name="profileGroupEmail">E-Mail</string>
     <string name="profileGroupSMS">SMS</string>
     <string name="wildcardProfile">Anderes</string>
@@ -55,7 +55,7 @@
     <string name="perf_profile_bias_perf_summary">Auf Leistung ausrichten. Reduziert die Latenz und erhöht den Stromverbrauch leicht</string>
     <string name="live_display_auto">Automatisch</string>
     <string name="live_display_auto_summary">Farbtemperatur des Bildschirms nach Sonnenaufgang und Sonnenuntergang automatisch anpassen</string>
-    <string name="live_display_off">Aus</string>
+    <string name="live_display_off">Deaktiviert</string>
     <string name="live_display_off_summary">Alle Anpassungen deaktivieren</string>
     <string name="live_display_day">Tag</string>
     <string name="live_display_day_summary">Nur Tag-Modus verwenden</string>
@@ -96,7 +96,7 @@
     <string name="permdesc_manageRemotePrefs">Ermöglicht der App, Remote-Einstellungen zu verwalten</string>
     <string name="build_date">Build-Datum</string>
     <string name="mk_api_level">MoKee API-Level</string>
-    <string name="mk_version">MoKee-Version</string>
+    <string name="mk_version">MoKeeOS-Version</string>
     <string name="mk_vendor_security_patch">Hersteller-Sicherheitspatch-Level</string>
     <string name="unknown">Unbekannt</string>
     <string name="app_killed_message">Anwendung beendet</string>
@@ -110,5 +110,7 @@
     <string name="trust_notification_title_onboarding">Entdecke Trust</string>
     <string name="trust_notification_content_onboarding">Erfahren Sie, wie sich versichern können, dass Ihr Gerät sicher ist</string>
     <string name="trust_notification_action_manage">Warnungen verwalten</string>
+    <string name="license_notification_channel">Lizenzbenachrichtigungen</string>
     <string name="license_notification_title">Gültige Lizenzdatei nicht gefunden</string>
+    <string name="license_notification_content">Premium-Versionen werden direkt von den Entwicklern des Geräts kompiliert und bereitgestellt. Diese werden mit einer Spende von %d CNY freigeschaltet.</string>
 </resources>

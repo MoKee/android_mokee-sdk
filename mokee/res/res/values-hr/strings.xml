@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">MoKee Sustav</string>
+    <string name="mokee_system_label">MoKeeOS Sustav</string>
     <string name="permlab_modifyProfiles">izmijeni profile sustava</string>
     <string name="permdesc_modifyProfiles">Dopušta aplikaciji da izmijeni profile sustava.</string>
     <string name="permlab_useHardwareFramework">koristi hardware framework</string>
@@ -96,7 +96,7 @@
     <string name="permdesc_manageRemotePrefs">Omogućuje aplikaciji upravljanje udaljenim postavkama</string>
     <string name="build_date">Datum izdavanja</string>
     <string name="mk_api_level">MoKee API razina</string>
-    <string name="mk_version">MoKee verzija</string>
+    <string name="mk_version">MoKeeOS verzija</string>
     <string name="mk_vendor_security_patch">Razina sigurnosne zakrpe dobavljača</string>
     <string name="unknown">Nepoznato</string>
     <string name="app_killed_message">Aplikacija je zaustavljena</string>
