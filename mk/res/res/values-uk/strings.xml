@@ -102,7 +102,17 @@
     <string name="mk_vendor_security_patch">Рівень виправлень системи безпеки Android</string>
     <string name="unknown">Невідомо</string>
     <string name="app_killed_message">Додаток зупинено</string>
+    <string name="accent_black">Карбоновий</string>
+    <string name="accent_brown">Какавовий</string>
     <string name="accent_cyan">Блакитний</string>
+    <string name="accent_gray">Холодно-сірий</string>
+    <string name="accent_green">Лісовий</string>
+    <string name="accent_orange">Гарбузовий</string>
+    <string name="accent_pink">Вишневий</string>
+    <string name="accent_purple">Лавандовий</string>
+    <string name="accent_red">Томатний</string>
+    <string name="accent_teal">Морський</string>
+    <string name="accent_yellow">Банановий</string>
     <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">доступу до інтерфейсу Trust</string>
     <string name="permdesc_trustInterface">Дозволяє додатку відображати попередження та пропозиції Trust</string>
