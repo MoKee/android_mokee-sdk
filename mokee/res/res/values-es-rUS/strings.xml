@@ -76,13 +76,13 @@
     <string name="permlab_perfAccess">acceso al gestor de rendimiento</string>
     <string name="permdesc_perfAccessDesc">Permite que la aplicación acceda al servicio de temas. Nunca debería ser necesario para aplicaciones normales.</string>
     <string name="permlab_weather_read">leer el tiempo</string>
-    <string name="permdesc_weather_read">Permite una aplicación leer contenido desde el proveedor de tiempo.</string>
+    <string name="permdesc_weather_read">Permite a una aplicación leer contenido desde el proveedor de tiempo.</string>
     <string name="permlab_weather_write">actualizar proveedor del tiempo</string>
     <string name="permdesc_weather_write">Permite a una aplicación actualizar el contenido del proveedor de tiempo.</string>
     <string name="permlab_weather_bind">enlazar como un servicio de proveedor de tiempo</string>
     <string name="permdesc_weather_bind">Permite a una aplicación ser identificado como un servicio de proveedor de tiempo.</string>
     <string name="permlab_weather_access_mgr">acceso al servicio de tiempo</string>
-    <string name="permdesc_weather_access_mgr">Permite una aplicación acceder al servicio de tiempo en el sistema. Nunca debe ser necesario para aplicaciones normales.</string>
+    <string name="permdesc_weather_access_mgr">Permite a una aplicación acceder al servicio de tiempo en el sistema. Nunca debe ser necesario para aplicaciones normales.</string>
     <string name="permlab_dataUsageWrite">modificar el uso de datos de la base de datos</string>
     <string name="permdesc_dataUsageWrite">Permite a una aplicación actualizar el contenido de la base de datos sobre el uso de datos.</string>
     <string name="permlab_dataUsageRead">leer uso de datos de la base de datos</string>
