@@ -97,11 +97,13 @@
     <string name="permlab_manageRemotePrefs">керування віддаленими параметрами</string>
     <string name="permdesc_manageRemotePrefs">Дозволяє застосункові керувати налаштуваннями віддаленого підключення</string>
     <string name="build_date">Дата збірки</string>
+    <string name="mk_api_level">Версія API MoKee</string>
     <string name="mk_version">Версія MoKee</string>
     <string name="mk_vendor_security_patch">Рівень виправлень системи безпеки Android</string>
     <string name="unknown">Невідомо</string>
     <string name="app_killed_message">Додаток зупинено</string>
     <string name="accent_black">Карбоновий</string>
+    <string name="accent_blue">Чорниця</string>
     <string name="accent_brown">Какавовий</string>
     <string name="accent_cyan">Блакитний</string>
     <string name="accent_gray">Холодно-сірий</string>
@@ -124,4 +126,7 @@
     <string name="trust_notification_title_onboarding">Відкрийте для себе Trust</string>
     <string name="trust_notification_content_onboarding">Дізнайтесь, як впевнитись, що ваш пристрій безпечний</string>
     <string name="trust_notification_action_manage">Керування сповіщеннями</string>
+    <string name="license_notification_channel">Сповіщення про ліцензії</string>
+    <string name="license_notification_title">Файл ліцензії не знайдено</string>
+    <string name="license_notification_content">Преміум-версії збираються і надаються безпосередньо власникам пристроїв, які пожертвували %d юанів.</string>
 </resources>
