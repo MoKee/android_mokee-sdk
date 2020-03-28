@@ -72,5 +72,6 @@ public class MKMetricsLogger extends MetricsLogger {
     public static final int TILE_THEMES = BASE + 43;
     public static final int TILE_LOCATION_DETAIL = BASE + 44;
     public static final int TILE_READING_MODE = BASE + 45;
-    public static final int TILE_SCREENSHOT = BASE + 46;
+    public static final int TILE_AOD = BASE + 46;
+    public static final int TILE_SCREENSHOT = BASE + 47;
 }
