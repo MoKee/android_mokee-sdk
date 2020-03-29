@@ -15,5 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_display_off">Անջ.</string>
     <string name="unknown">Անհայտ</string>
 </resources>
