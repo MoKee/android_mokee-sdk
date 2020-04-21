@@ -15,7 +15,7 @@
  */
 
 package mokee.profiles;
-
+import android.telephony.SubscriptionInfo;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -253,6 +253,7 @@ public final class ConnectionSettings implements Parcelable {
         BluetoothAdapter bta = BluetoothAdapter.getDefaultAdapter();
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+       SubscriptionManager sm = context.getSystemService(SubscriptionManager.class);
         ConnectivityManager cm =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         TelephonyManager tm = (TelephonyManager)
@@ -269,17 +270,19 @@ public final class ConnectionSettings implements Parcelable {
 
         switch (getConnectionId()) {
             case PROFILE_CONNECTION_MOBILEDATA:
-                currentState = tm.getDataEnabled();
-                if (forcedState != currentState) {
-                    int phoneCount = tm.getPhoneCount();
-                    for (int i = 0; i < phoneCount; i++) {
-                        Settings.Global.putInt(context.getContentResolver(),
-                                Settings.Global.MOBILE_DATA + i, (forcedState) ? 1 : 0);
-                        int[] subId = SubscriptionManager.getSubId(i);
-                        tm.setDataEnabled(subId[0], forcedState);
+           List<SubscriptionInfo> list = sm.getActiveSubscriptionInfoList();
+                if (list != null) {
+                    for (int i = 0; i < list.size(); i++) {
+                       int subId = list.get(i).getSubscriptionId();
+                      int slotIndex = list.get(i).getSimSlotIndex();
+                    currentState = tm.getDataEnabled(subId);
+                      if (forcedState != currentState) {
+                       Settings.Global.putInt(context.getContentResolver(),
+                                  Settings.Global.MOBILE_DATA + i, (forcedState) ? 1 : 0);
+                      tm.setDataEnabled(subId, forcedState);
+                      }
                     }
                 }
-                break;
             case PROFILE_CONNECTION_2G3G4G:
                 if (Build.MK_VERSION.SDK_INT >= Build.MK_VERSION_CODES.ELDERBERRY) {
                     Intent intent = new Intent(ACTION_MODIFY_NETWORK_MODE);
