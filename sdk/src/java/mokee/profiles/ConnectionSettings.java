@@ -271,13 +271,11 @@ public final class ConnectionSettings implements Parcelable {
             case PROFILE_CONNECTION_MOBILEDATA:
                 currentState = tm.getDataEnabled();
                 if (forcedState != currentState) {
-                    int phoneCount = tm.getPhoneCount();
-                    for (int i = 0; i < phoneCount; i++) {
-                        Settings.Global.putInt(context.getContentResolver(),
-                                Settings.Global.MOBILE_DATA + i, (forcedState) ? 1 : 0);
-                        int[] subId = SubscriptionManager.getSubId(i);
-                        tm.setDataEnabled(subId[0], forcedState);
-                    }
+                    int phoneId = SubscriptionManager.from(context).getDefaultDataPhoneId();
+                    Settings.Global.putInt(context.getContentResolver(),
+                            Settings.Global.MOBILE_DATA + phoneId, forcedState ? 1 : 0);
+                    int subId = SubscriptionManager.getDefaultDataSubscriptionId();
+                    tm.createForSubscriptionId(subId).setDataEnabled(forcedState);
                 }
                 break;
             case PROFILE_CONNECTION_2G3G4G:
