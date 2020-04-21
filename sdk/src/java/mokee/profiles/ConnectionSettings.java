@@ -276,7 +276,7 @@ public final class ConnectionSettings implements Parcelable {
                         Settings.Global.putInt(context.getContentResolver(),
                                 Settings.Global.MOBILE_DATA + i, (forcedState) ? 1 : 0);
                         int[] subId = SubscriptionManager.getSubId(i);
-                        tm.setDataEnabled(subId[0], forcedState);
+                        tm.createForSubscriptionId(subId[0]).setDataEnabled(forcedState);
                     }
                 }
                 break;
