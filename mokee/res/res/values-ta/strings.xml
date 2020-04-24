@@ -19,6 +19,7 @@
     <string name="permlab_modifyProfiles">கணினி சுயவிவரங்களை மாற்றியமை.</string>
     <string name="permdesc_modifyProfiles">ஒரு பயன்பாடானது கணினி சுயவிவரங்களை மாற்றியமைக்க அனுமதிக்கிறது.</string>
     <string name="permlab_useHardwareFramework">வன்பொருள் கட்டமைப்பைப் பயன்படுத்து</string>
+    <string name="permlab_writeSettings">MoKee முறைமை அமைப்புகளை மாற்று</string>
     <string name="permlab_protectedApp">பயன்பாடுகளை பாதுகாக்க பயன்பாடுகளை சேர்க்கவும் மற்றும் அகற்றவும்</string>
     <string name="permdesc_protectedApp">மற்ற பயன்பாடுகள் பாதுகாக்கப்பட்டவை என்று குறிப்பிட்டு அவற்றை பூட்டுவதற்கு ஒரு பயன்பாட்டை அனுமதிக்கிறது.</string>
     <string name="profileNameDefault">இயல்புநிலை</string>
@@ -29,6 +30,7 @@
     <string name="profileNameAutomobile">தானியங்கி</string>
     <string name="profileGroupPhone">அலைபேசி</string>
     <string name="profileGroupCalendar">கேலெண்டர்</string>
+    <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">மின்னஞ்சல்</string>
     <string name="profileGroupSMS">குறுஞ்செய்தி</string>
     <string name="wildcardProfile">பிற</string>
@@ -48,6 +50,12 @@
     <string name="live_display_outdoor">வெளியிடம் (பிரகாசமான சூரியன்)</string>
     <string name="live_display_outdoor_summary">வெளிப்புற அமைப்புகளை மட்டுமே பயன்படுத்து.</string>
     <string name="live_display_hint">LiveDisplay கண்ணழுத்தத்தை குறைத்து, நீங்கள் இரவிலே உறங்க உதவுகிறது. அதை முயற்சிக்க இங்கே கிளிக் செய்க!</string>
+    <string name="permlab_weather_read">வானிலையை படி</string>
+    <string name="permlab_weather_write">வானிலை வழங்குநரை புதுப்பி</string>
+    <string name="permlab_weather_access_mgr">வானிலை சேவையை அணுகுக</string>
+    <string name="permlab_manageLiveDisplay">LiveDisplay அமைப்புகளை நிர்வகி</string>
+    <string name="permlab_manageRemotePrefs">தொலைநிலை அமைப்புகளை நிர்வகி</string>
     <string name="build_date">கட்டிய தேதி</string>
+    <string name="mk_version">MoKee பதிப்பு</string>
     <string name="unknown">தெரியாதது</string>
 </resources>
