@@ -2131,6 +2131,16 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
+         * Whether to take partial screenshot with volume down + power click.
+         * 0 = 0ff, 1 = on
+         */
+        public static final String CLICK_PARTIAL_SCREENSHOT = "click_partial_screenshot";
+
+        /** @hide */
+        public static final Validator CLICK_PARTIAL_SCREENSHOT_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Screen off fod
          * @hide
          */
@@ -2404,6 +2414,8 @@ public final class MKSettings {
                     LONG_SCREEN_APPS_VALIDATOR);
             VALIDATORS.put(FORCE_SHOW_NAVBAR,
                     FORCE_SHOW_NAVBAR_VALIDATOR);
+            VALIDATORS.put(CLICK_PARTIAL_SCREENSHOT,
+                    CLICK_PARTIAL_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(SWIPE_TO_SCREENSHOT, SWIPE_TO_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(FOD_GESTURE, FOD_GESTURE_VALIDATOR);
         };
