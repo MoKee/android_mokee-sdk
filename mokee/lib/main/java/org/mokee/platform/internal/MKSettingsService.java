@@ -45,7 +45,9 @@ public class MKSettingsService extends MKSystemService {
             // Load custom hostname
             String hostname = MKSettings.Secure.getString(mContext.getContentResolver(),
                     MKSettings.Secure.DEVICE_HOSTNAME);
-            SystemProperties.set("net.hostname", hostname);
+            if (hostname != null) {
+                SystemProperties.set("net.hostname", hostname);
+            }
         }
     }
 
