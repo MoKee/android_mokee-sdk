@@ -34,6 +34,7 @@
     <string name="profileGroupEmail">மின்னஞ்சல்</string>
     <string name="profileGroupSMS">குறுஞ்செய்தி</string>
     <string name="wildcardProfile">பிற</string>
+    <string name="permlab_readPhoneLocation">கைபேசி இருப்பிடத்தை படி</string>
     <string name="permlab_writePhoneLocation">கைபேசி இருப்பிடம் எழுதுதல்</string>
     <string name="perf_profile_pwrsv">சக்தி சேமி</string>
     <string name="perf_profile_bal">சமன்பாடான</string>
@@ -51,6 +52,13 @@
     <string name="live_display_outdoor">வெளியிடம் (பிரகாசமான சூரியன்)</string>
     <string name="live_display_outdoor_summary">வெளிப்புற அமைப்புகளை மட்டுமே பயன்படுத்து.</string>
     <string name="live_display_hint">LiveDisplay கண்ணழுத்தத்தை குறைத்து, நீங்கள் இரவிலே உறங்க உதவுகிறது. அதை முயற்சிக்க இங்கே கிளிக் செய்க!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay அணை.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: தானியங்கு பயன்முறை.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: பகல் பயன்முறை.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: இரவு பயன்முறை.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: வெளிப்புற பயன்முறை.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay அணைக்கப்பட்டது.</string>
+    <string name="permlab_perfAccess">செயல்திறன் மேலாளரை அணுகுக</string>
     <string name="permlab_weather_read">வானிலையை படி</string>
     <string name="permlab_weather_write">வானிலை வழங்குநரை புதுப்பி</string>
     <string name="permlab_weather_access_mgr">வானிலை சேவையை அணுகுக</string>
@@ -61,4 +69,5 @@
     <string name="unknown">தெரியாதது</string>
     <string name="app_killed_message">பயன்பாடு நிறுத்தப்பட்டது</string>
     <string name="trust_feature_name">Trust</string>
+    <string name="trust_notification_action_manage">அறிக்கைகளை நிர்வகி</string>
 </resources>
