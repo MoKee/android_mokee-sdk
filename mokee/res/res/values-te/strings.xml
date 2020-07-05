@@ -22,6 +22,7 @@
     <string name="permdesc_protectedApp">ఇతర ప్రోగ్రాంలను సంరక్షించబడినవి అని గుర్తించుటకు మరియు వాటిని లాక్ చేయుటకు ఒక ప్రోగ్రాంను అనుమతిస్తుంది</string>
     <string name="profileNameWork">కార్యాలయం</string>
     <string name="profileNameHome">హోమ్</string>
+    <string name="profileNameSilent">నిశ్శబ్దం</string>
     <string name="profileNameAutomobile">ఆటోమొబైల్</string>
     <string name="profileGroupCalendar">క్యాలెండర్</string>
     <string name="profileGroupEmail">ఈమెయిల్‌</string>
@@ -33,6 +34,7 @@
     <string name="perf_profile_bias_perf">త్వరగా</string>
     <string name="live_display_auto">స్వయంచాలకం</string>
     <string name="live_display_auto_summary">సూర్యాస్తమయం మరియు సూర్యోదయం తరువాత స్వయంచాలకంగా స్క్రీన్ యొక్క వర్ణ ఉష్ణోగ్రతను సవరించుము.</string>
+    <string name="live_display_off">ఆఫ్‌లో ఉంది</string>
     <string name="live_display_off_summary">అన్ని సవరణలను నిలిపివేయుము</string>
     <string name="live_display_day_summary">పగటి సెట్టింగులను మాత్రమే ఉపయోగించుము</string>
     <string name="live_display_night_summary">రాత్రి సెట్టింగులను మాత్రమే ఉపయోగించుము</string>
