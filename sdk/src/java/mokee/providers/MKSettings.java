@@ -2131,6 +2131,15 @@ public final class MKSettings {
                 sBooleanValidator;
 
         /**
+         * Screen off fod
+         * @hide
+         */
+        public static final String FOD_GESTURE = "fod_gesture";
+
+        /** @hide */
+        public static final Validator FOD_GESTURE_VALIDATOR = sBooleanValidator;
+
+        /**
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
@@ -2396,6 +2405,7 @@ public final class MKSettings {
             VALIDATORS.put(FORCE_SHOW_NAVBAR,
                     FORCE_SHOW_NAVBAR_VALIDATOR);
             VALIDATORS.put(SWIPE_TO_SCREENSHOT, SWIPE_TO_SCREENSHOT_VALIDATOR);
+            VALIDATORS.put(FOD_GESTURE, FOD_GESTURE_VALIDATOR);
         };
         // endregion
     }
