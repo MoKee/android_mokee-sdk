@@ -78,4 +78,5 @@
     <string name="accent_yellow">வாழைப்பழம்</string>
     <string name="trust_feature_name">Trust</string>
     <string name="trust_notification_action_manage">அறிக்கைகளை நிர்வகி</string>
+    <string name="license_notification_title">செல்லும் உரிம கோப்பு கண்டறியப்படவில்லை</string>
 </resources>
