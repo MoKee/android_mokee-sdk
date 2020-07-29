@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- * Copyright (C) 2016-2019 The MoKee Open Source Project
- *               2019 The LineageOS Project
+ * Copyright (C) 2016-2021 The MoKee Open Source Project
+ *               2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -377,6 +377,18 @@ public class LiveDisplayService extends MoKeeSystemService {
         public boolean isNight() {
             final TwilightState twilight = mTwilightTracker.getCurrentState();
             return twilight != null && twilight.isNight();
+        }
+
+        @Override
+        public boolean isAntiFlickerEnabled() {
+            return mDHC.isAntiFlickerEnabled();
+        }
+
+        @Override
+        public boolean setAntiFlickerEnabled(boolean enabled) {
+            mContext.enforceCallingOrSelfPermission(
+                    mokee.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+            return mDHC.setAntiFlickerEnabled(enabled);
         }
     };
 
