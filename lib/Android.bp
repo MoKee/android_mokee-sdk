@@ -17,7 +17,7 @@
 
 mokee_sdk_lib_src = "src/java/org/mokee/lib/"
 
-java_library_static {
+java_library {
     name: "org.mokee.lib.phone",
     static_libs: [
         "libphonenumber",
