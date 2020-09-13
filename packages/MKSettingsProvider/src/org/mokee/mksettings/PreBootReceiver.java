@@ -42,7 +42,8 @@ public class PreBootReceiver extends BroadcastReceiver{
                 MKSettings.AUTHORITY);
 
         try{
-            contentProvider.call(contentResolver.getPackageName(), MKSettings.AUTHORITY,
+            contentProvider.call(contentResolver.getPackageName(),
+                    contentResolver.getAttributionTag(), MKSettings.AUTHORITY,
                     MKSettings.CALL_METHOD_MIGRATE_SETTINGS, null, null);
         } catch (RemoteException ex) {
             Log.w(TAG, "Failed to trigger settings migration due to RemoteException");
