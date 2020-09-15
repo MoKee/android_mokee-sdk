@@ -247,7 +247,7 @@ public class TrustInterfaceService extends MKSystemService {
         int importance = NotificationManager.IMPORTANCE_HIGH;
         NotificationChannel trustChannel = new NotificationChannel(CHANNEL_NAME,
                 name, importance);
-        trustChannel.setBlockableSystem(true);
+        trustChannel.setBlockable(true);
         mNotificationManager.createNotificationChannel(trustChannel);
     }
 
