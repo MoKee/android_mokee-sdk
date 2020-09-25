@@ -71,6 +71,7 @@ public class TrustInterfaceService extends MKSystemService {
     public TrustInterfaceService(Context context) {
         super(context);
         mContext = context;
+        mNotificationManager = context.getSystemService(NotificationManager.class);
         if (context.getPackageManager().hasSystemFeature(MKContextConstants.Features.TRUST)) {
             publishBinderService(MKContextConstants.MK_TRUST_INTERFACE, mService);
         } else {
@@ -86,8 +87,6 @@ public class TrustInterfaceService extends MKSystemService {
 
     @Override
     public void onStart() {
-        mNotificationManager = mContext.getSystemService(NotificationManager.class);
-
         try {
             mUsbRestrictor = IUsbRestrict.getService();
         } catch (NoSuchElementException | RemoteException e) {
