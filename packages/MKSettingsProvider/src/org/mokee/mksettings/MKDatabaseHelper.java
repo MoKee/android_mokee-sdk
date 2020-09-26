@@ -49,7 +49,7 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "mksettings.db";
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 14;
 
     public static class MKTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -405,6 +405,32 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
                 }
             }
             upgradeVersion = 13;
+        }
+
+        if (upgradeVersion < 14) {
+            // Update button/keyboard brightness range
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                for (String key : new String[] {
+                    MKSettings.Secure.BUTTON_BRIGHTNESS,
+                    MKSettings.Secure.KEYBOARD_BRIGHTNESS,
+                }) {
+                    db.beginTransaction();
+                    SQLiteStatement stmt = null;
+                    try {
+                        stmt = db.compileStatement(
+                                "UPDATE secure SET value=round(value / 255.0, 2) WHERE name=?");
+                        stmt.bindString(1, key);
+                        stmt.execute();
+                        db.setTransactionSuccessful();
+                    } catch (SQLiteDoneException ex) {
+                        // key is not set
+                    } finally {
+                        if (stmt != null) stmt.close();
+                        db.endTransaction();
+                    }
+                }
+            }
+            upgradeVersion = 14;
         }
         // *** Remember to update DATABASE_VERSION above!
     }
