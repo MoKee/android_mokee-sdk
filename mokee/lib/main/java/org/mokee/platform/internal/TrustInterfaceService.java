@@ -71,13 +71,6 @@ public class TrustInterfaceService extends MKSystemService {
     public TrustInterfaceService(Context context) {
         super(context);
         mContext = context;
-        mNotificationManager = context.getSystemService(NotificationManager.class);
-        if (context.getPackageManager().hasSystemFeature(MKContextConstants.Features.TRUST)) {
-            publishBinderService(MKContextConstants.MK_TRUST_INTERFACE, mService);
-        } else {
-            Log.wtf(TAG, "MoKee Trust service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
     }
 
     @Override
@@ -87,20 +80,34 @@ public class TrustInterfaceService extends MKSystemService {
 
     @Override
     public void onStart() {
-        try {
-            mUsbRestrictor = IUsbRestrict.getService();
-        } catch (NoSuchElementException | RemoteException e) {
-            // ignore, the hal is not available
+        if (mContext.getPackageManager().hasSystemFeature(MKContextConstants.Features.TRUST)) {
+            publishBinderService(MKContextConstants.MK_TRUST_INTERFACE, mService);
+        } else {
+            Log.wtf(TAG, "MoKee Trust service started by system server but feature xml not" +
+                    " declared. Not publishing binder service!");
         }
+    }
 
-        // Onboard
-        if (!hasOnboardedUser()) {
-            postOnBoardingNotification();
-            registerLocaleChangedReceiver();
-            return;
+    @Override
+    public void onBootPhase(int phase) {
+        if (phase == PHASE_BOOT_COMPLETED) {
+            mNotificationManager = mContext.getSystemService(NotificationManager.class);
+
+            try {
+                mUsbRestrictor = IUsbRestrict.getService();
+            } catch (NoSuchElementException | RemoteException e) {
+                // ignore, the hal is not available
+            }
+
+            // Onboard
+            if (!hasOnboardedUser()) {
+                postOnBoardingNotification();
+                registerLocaleChangedReceiver();
+                return;
+            }
+
+            runTestInternal();
         }
-
-        runTestInternal();
     }
 
     /* Public methods implementation */
