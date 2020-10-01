@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017-2019 The LineageOS Project
- *               2017-2019 The MoKee Open Source Project
+ *               2017-2020 The LineageOS Project
+ *               2017-2020 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class MKHardwareService extends MKSystemService {
         super(context);
         mContext = context;
         mMKHwImpl = getImpl(context);
-        publishBinderService(MKContextConstants.MK_HARDWARE_SERVICE, mService);
     }
 
     @Override
@@ -197,6 +196,7 @@ public class MKHardwareService extends MKSystemService {
 
     @Override
     public void onStart() {
+        publishBinderService(MKContextConstants.MK_HARDWARE_SERVICE, mService);
     }
 
     private final IBinder mService = new IMKHardwareService.Stub() {
