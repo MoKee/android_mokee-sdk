@@ -2971,8 +2971,10 @@ public final class MKSettings {
 
         /**
          * Whether to allow killing of the foreground app by long-pressing the Back button
+         * @deprecated
          * @hide
          */
+        @Deprecated
         public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
         /**
