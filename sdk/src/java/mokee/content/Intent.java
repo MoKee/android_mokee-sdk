@@ -86,8 +86,8 @@ public class Intent {
      * Requires {@link mokee.platform.Manifest.permission#HARDWARE_ABSTRACTION_ACCESS}.
      * @hide
      */
-    public static final String ACTION_INITIALIZE_MK_HARDWARE =
-            "mokee.intent.action.INITIALIZE_MK_HARDWARE";
+    public static final String ACTION_INITIALIZE_MOKEE_HARDWARE =
+            "mokee.intent.action.INITIALIZE_MOKEE_HARDWARE";
 
     /**
      * Broadcast action: lid state changed

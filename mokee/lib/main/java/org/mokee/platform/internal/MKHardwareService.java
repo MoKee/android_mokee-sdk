@@ -187,7 +187,7 @@ public class MKHardwareService extends MKSystemService {
     @Override
     public void onBootPhase(int phase) {
         if (phase == PHASE_BOOT_COMPLETED) {
-            Intent intent = new Intent(mokee.content.Intent.ACTION_INITIALIZE_MK_HARDWARE);
+            Intent intent = new Intent(mokee.content.Intent.ACTION_INITIALIZE_MOKEE_HARDWARE);
             intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
             mContext.sendBroadcastAsUser(intent, UserHandle.ALL,
                     mokee.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS);
