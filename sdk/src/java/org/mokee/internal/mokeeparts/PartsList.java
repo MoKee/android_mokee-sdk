@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.mokee.internal.mkparts;
+package org.mokee.internal.mokeeparts;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -54,12 +54,12 @@ public class PartsList {
 
     public static final String EXTRA_PART = ":mk:part";
 
-    public static final String MKPARTS_PACKAGE = "org.mokee.mkparts";
+    public static final String MOKEEPARTS_PACKAGE = "org.mokee.mokeeparts";
 
-    public static final ComponentName MKPARTS_ACTIVITY = new ComponentName(
-            MKPARTS_PACKAGE, MKPARTS_PACKAGE + ".PartsActivity");
+    public static final ComponentName MOKEEPARTS_ACTIVITY = new ComponentName(
+            MOKEEPARTS_PACKAGE, MOKEEPARTS_PACKAGE + ".PartsActivity");
 
-    public static final String PARTS_ACTION_PREFIX = MKPARTS_PACKAGE + ".parts";
+    public static final String PARTS_ACTION_PREFIX = MOKEEPARTS_PACKAGE + ".parts";
 
     private final Map<String, PartInfo> mParts = new ArrayMap<>();
 
@@ -86,16 +86,16 @@ public class PartsList {
         synchronized (mParts) {
             final PackageManager pm = mContext.getPackageManager();
             try {
-                final Resources r = pm.getResourcesForApplication(MKPARTS_PACKAGE);
+                final Resources r = pm.getResourcesForApplication(MOKEEPARTS_PACKAGE);
                 if (r == null) {
                     return;
                 }
-                int resId = r.getIdentifier("parts_catalog", "xml", MKPARTS_PACKAGE);
+                int resId = r.getIdentifier("parts_catalog", "xml", MOKEEPARTS_PACKAGE);
                 if (resId > 0) {
                     loadPartsFromResourceLocked(r, resId, mParts);
                 }
             } catch (PackageManager.NameNotFoundException e) {
-                // no mkparts installed
+                // no mokeeparts installed
             }
         }
     }

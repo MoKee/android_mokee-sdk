@@ -15,6 +15,6 @@
  * limitations under the License.
  */
 
-package org.mokee.internal.mkparts;
+package org.mokee.internal.mokeeparts;
 
 parcelable PartInfo;

@@ -57,8 +57,8 @@ public class TrustInterfaceService extends MKSystemService {
     private static final String LINEAGE_VENDOR_SECURITY_PATCHES =
             "ro.lineage.build.vendor_security_patch";
 
-    private static final String INTENT_PARTS = "org.mokee.mkparts.TRUST_INTERFACE";
-    private static final String INTENT_ONBOARDING = "org.mokee.mkparts.TRUST_HINT";
+    private static final String INTENT_PARTS = "org.mokee.mokeeparts.TRUST_INTERFACE";
+    private static final String INTENT_ONBOARDING = "org.mokee.mokeeparts.TRUST_HINT";
 
     private static final String CHANNEL_NAME = "TrustInterface";
     private static final int ONBOARDING_NOTIFCATION_ID = 89;

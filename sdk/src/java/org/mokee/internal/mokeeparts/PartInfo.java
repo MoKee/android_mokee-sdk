@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.mokee.internal.mkparts;
+package org.mokee.internal.mokeeparts;
 
 import android.content.Intent;
 import android.os.Parcel;
@@ -181,7 +181,7 @@ public class PartInfo implements Parcelable {
 
     public Intent getIntentForActivity() {
         Intent i = new Intent(getAction());
-        i.setComponent(PartsList.MKPARTS_ACTIVITY);
+        i.setComponent(PartsList.MOKEEPARTS_ACTIVITY);
         return i;
     }
 

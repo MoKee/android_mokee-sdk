@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.mokee.internal.mkparts;
+package org.mokee.internal.mokeeparts;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -26,15 +26,15 @@ import mokee.preference.RemotePreference;
  * A link to a remote preference screen which can be used with a minimum amount
  * of information. Supports summary updates asynchronously.
  */
-public class MKPartsPreference extends RemotePreference {
+public class MoKeePartsPreference extends RemotePreference {
 
-    private static final String TAG = "MKPartsPreference";
+    private static final String TAG = "MoKeePartsPreference";
 
     private final PartInfo mPart;
 
     private final Context mContext;
 
-    public MKPartsPreference(Context context, AttributeSet attrs,
+    public MoKeePartsPreference(Context context, AttributeSet attrs,
                             int defStyle, int defStyleRes) {
         super(context, attrs, defStyle, defStyleRes);
         mContext = context;
@@ -47,11 +47,11 @@ public class MKPartsPreference extends RemotePreference {
         setIntent(mPart.getIntentForActivity());
     }
 
-    public MKPartsPreference(Context context, AttributeSet attrs, int defStyle) {
+    public MoKeePartsPreference(Context context, AttributeSet attrs, int defStyle) {
         this(context, attrs, defStyle, 0);
     }
 
-    public MKPartsPreference(Context context, AttributeSet attrs) {
+    public MoKeePartsPreference(Context context, AttributeSet attrs) {
         this(context, attrs, androidx.preference.R.attr.preferenceScreenStyle);
     }
 

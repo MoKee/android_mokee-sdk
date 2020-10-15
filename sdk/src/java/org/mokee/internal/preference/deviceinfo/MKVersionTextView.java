@@ -32,7 +32,7 @@ public class MKVersionTextView extends TextView implements View.OnClickListener 
 
     private static final String KEY_MOKEE_VERSION_PROP = "ro.mk.version";
 
-    private static final String PLATLOGO_PACKAGE_NAME = "org.mokee.mkparts";
+    private static final String PLATLOGO_PACKAGE_NAME = "org.mokee.mokeeparts";
     private static final String PLATLOGO_ACTIVITY_CLASS =
             PLATLOGO_PACKAGE_NAME + ".logo.PlatLogoActivity";
 
