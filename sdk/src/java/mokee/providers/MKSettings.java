@@ -130,12 +130,12 @@ public final class MKSettings {
     public static final String CALL_METHOD_PUT_GLOBAL= "PUT_global";
 
     /**
-     * @hide - Private call() method on MKSettingsProvider to migrate MK settings
+     * @hide - Private call() method on MoKeeSettingsProvider to migrate MK settings
      */
     public static final String CALL_METHOD_MIGRATE_SETTINGS = "migrate_settings";
 
     /**
-     * @hide - Private call() method on MKSettingsProvider to migrate MK settings for a user
+     * @hide - Private call() method on MoKeeSettingsProvider to migrate MK settings for a user
      */
     public static final String CALL_METHOD_MIGRATE_SETTINGS_FOR_USER = "migrate_settings_for_user";
 

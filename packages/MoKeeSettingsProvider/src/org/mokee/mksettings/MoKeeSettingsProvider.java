@@ -51,10 +51,10 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * The MKSettingsProvider serves as a {@link ContentProvider} for MK specific settings
+ * The MoKeeSettingsProvider serves as a {@link ContentProvider} for MK specific settings
  */
-public class MKSettingsProvider extends ContentProvider {
-    public static final String TAG = "MKSettingsProvider";
+public class MoKeeSettingsProvider extends ContentProvider {
+    public static final String TAG = "MoKeeSettingsProvider";
     private static final boolean LOCAL_LOGV = false;
 
     private static final boolean USER_CHECK_THROWS = true;
@@ -106,7 +106,7 @@ public class MKSettingsProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        if (LOCAL_LOGV) Log.d(TAG, "Creating MKSettingsProvider");
+        if (LOCAL_LOGV) Log.d(TAG, "Creating MoKeeSettingsProvider");
 
         mUserManager = UserManager.get(getContext());
 

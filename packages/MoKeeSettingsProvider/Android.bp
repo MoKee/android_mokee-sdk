@@ -15,7 +15,7 @@
 //
 
 android_app {
-    name: "MKSettingsProvider",
+    name: "MoKeeSettingsProvider",
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
 

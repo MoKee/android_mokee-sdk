@@ -33,7 +33,7 @@
                  android:defaultToDeviceProtectedStorage="true"
                  android:directBootAware="true">
 
-        <provider android:name="MKSettingsProvider"
+        <provider android:name="MoKeeSettingsProvider"
                   android:authorities="mksettings"
                   android:multiprocess="false"
                   android:exported="true"
