@@ -126,4 +126,7 @@
     <string name="trust_notification_title_onboarding">Otkrijte povjerenje</string>
     <string name="trust_notification_content_onboarding">Upoznajte kako osigurati da je vaš uređaj siguran</string>
     <string name="trust_notification_action_manage">Upravljanje upozorenjima</string>
+    <string name="license_notification_channel">Upozrenje za licencu</string>
+    <string name="license_notification_title">Ispravna licenca nije pronađena </string>
+    <string name="license_notification_content">Premijum verzija je spremna od strane  programera , možete je otključati putem donacije od %d CNY.</string>
 </resources>
