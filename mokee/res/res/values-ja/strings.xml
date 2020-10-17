@@ -95,8 +95,8 @@
     <string name="permdesc_manageRemotePrefs">リモートの設定を管理することをアプリに許可します。</string>
     <string name="build_date">ビルド日時</string>
     <string name="mk_api_level">MoKee API レベル</string>
-    <string name="mk_version">MoKeeOS バージョン</string>
-    <string name="mk_vendor_security_patch">ベンダーセキュリティパッチレベル</string>
+    <string name="mokee_version">MoKeeOS バージョン</string>
+    <string name="mokee_vendor_security_patch">ベンダーセキュリティパッチレベル</string>
     <string name="unknown">不明</string>
     <string name="app_killed_message">アプリを終了しました。</string>
     <string name="trust_feature_name">Trust</string>

@@ -38,6 +38,6 @@
     <string name="live_display_night">Naktis</string>
     <string name="live_display_night_summary">Naudoti tik nakties nustatymus</string>
     <string name="build_date">Surinkimo data</string>
-    <string name="mk_version">MoKee versija</string>
+    <string name="mokee_version">MoKee versija</string>
     <string name="unknown">Nežinoma</string>
 </resources>

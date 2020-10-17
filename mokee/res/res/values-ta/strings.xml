@@ -65,7 +65,7 @@
     <string name="permlab_manageLiveDisplay">LiveDisplay அமைப்புகளை நிர்வகி</string>
     <string name="permlab_manageRemotePrefs">தொலைநிலை அமைப்புகளை நிர்வகி</string>
     <string name="build_date">கட்டிய தேதி</string>
-    <string name="mk_version">MoKee பதிப்பு</string>
+    <string name="mokee_version">MoKee பதிப்பு</string>
     <string name="unknown">தெரியாதது</string>
     <string name="app_killed_message">பயன்பாடு நிறுத்தப்பட்டது</string>
     <string name="trust_feature_name">Trust</string>

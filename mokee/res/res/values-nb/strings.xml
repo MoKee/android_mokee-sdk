@@ -88,6 +88,6 @@
     <string name="permlab_manageRemotePrefs">administrer fjernkontroll innstillinger</string>
     <string name="permdesc_manageRemotePrefs">Gir en app tilgang til å endre fjernkontroll innstillingene</string>
     <string name="build_date">Build-dato</string>
-    <string name="mk_version">MoKee versjon</string>
+    <string name="mokee_version">MoKee versjon</string>
     <string name="unknown">Ukjent</string>
 </resources>

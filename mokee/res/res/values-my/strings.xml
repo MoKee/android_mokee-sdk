@@ -28,6 +28,6 @@
     <string name="wildcardProfile">အခြား</string>
     <string name="perf_profile_bal">မျှခြေ</string>
     <string name="live_display_night">ည</string>
-    <string name="mk_version">MoKee ဗားရှင်း</string>
+    <string name="mokee_version">MoKee ဗားရှင်း</string>
     <string name="unknown">မသိ</string>
 </resources>

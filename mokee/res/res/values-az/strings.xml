@@ -46,6 +46,6 @@
     <string name="live_display_outdoor_summary">Yalnız açıq hava tənzm. istifadə et</string>
     <string name="live_display_hint">LiveDisplay göz yorğunluğunuzu azaldıb, gecələr yuxulamağınıza kömək edə bilər. Sınamaq üçün bura klikləyin!</string>
     <string name="build_date">Quruluş tarixi</string>
-    <string name="mk_version">MoKee versiyası</string>
+    <string name="mokee_version">MoKee versiyası</string>
     <string name="unknown">Naməlum</string>
 </resources>

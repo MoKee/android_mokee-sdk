@@ -95,8 +95,8 @@
     <string name="permdesc_manageRemotePrefs">Cho phép một ứng dụng quản lý cài đặt từ xa</string>
     <string name="build_date">Ngày dựng</string>
     <string name="mk_api_level">Cấp độ API MoKee</string>
-    <string name="mk_version">Phiên bản MoKeeOS</string>
-    <string name="mk_vendor_security_patch">Nhà cung cấp mức bản vá bảo mật</string>
+    <string name="mokee_version">Phiên bản MoKeeOS</string>
+    <string name="mokee_vendor_security_patch">Nhà cung cấp mức bản vá bảo mật</string>
     <string name="unknown">Không xác định</string>
     <string name="app_killed_message">Đã dừng ứng dụng</string>
     <string name="trust_feature_name">Độ tin cậy</string>

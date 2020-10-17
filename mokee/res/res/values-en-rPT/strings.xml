@@ -17,5 +17,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="mokee_system_label">MoKee System</string>
     <string name="profileNameDefault">Default</string>
-    <string name="mk_version">MoKee version</string>
+    <string name="mokee_version">MoKee version</string>
 </resources>

@@ -95,8 +95,8 @@
     <string name="permdesc_manageRemotePrefs">Zezwala aplikacji na zdalne zarządzanie usługami</string>
     <string name="build_date">Data kompilacji</string>
     <string name="mk_api_level">Poziom API MoKee</string>
-    <string name="mk_version">Wersja MoKee</string>
-    <string name="mk_vendor_security_patch">Poziom poprawek zabezpieczeń producenta</string>
+    <string name="mokee_version">Wersja MoKee</string>
+    <string name="mokee_vendor_security_patch">Poziom poprawek zabezpieczeń producenta</string>
     <string name="unknown">Nieznana</string>
     <string name="app_killed_message">Aplikacja zabita</string>
     <string name="trust_feature_name">Zaufaj</string>

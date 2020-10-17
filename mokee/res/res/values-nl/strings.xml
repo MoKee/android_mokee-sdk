@@ -95,7 +95,7 @@
     <string name="permdesc_manageRemotePrefs">Hiermee kan de app instellingen voor beheer op afstand beheren</string>
     <string name="build_date">Build-datum</string>
     <string name="mk_api_level">Niveau van MoKee-API</string>
-    <string name="mk_version">MoKeeOS-versie</string>
+    <string name="mokee_version">MoKeeOS-versie</string>
     <string name="unknown">Onbekend</string>
     <string name="app_killed_message">App afgesloten</string>
     <string name="trust_feature_name">Trust</string>

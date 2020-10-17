@@ -34,6 +34,6 @@
     <string name="live_display_off">Lazhet</string>
     <string name="live_display_day">Deiz</string>
     <string name="live_display_night">Noz</string>
-    <string name="mk_version">Handelv MoKee</string>
+    <string name="mokee_version">Handelv MoKee</string>
     <string name="unknown">Dianav</string>
 </resources>

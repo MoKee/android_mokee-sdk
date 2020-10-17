@@ -88,6 +88,6 @@
     <string name="permdesc_observe_audio_sessions">Benarkan aplikasi memerhati strim audio dicipta dan dihapuskan.</string>
     <string name="permlab_manageRemotePrefs">mengurus seting jauh</string>
     <string name="permdesc_manageRemotePrefs">Membenarkan aplikasi untuk mengurus seting jauh</string>
-    <string name="mk_version">Versi MoKee</string>
+    <string name="mokee_version">Versi MoKee</string>
     <string name="unknown">Tak diketahui</string>
 </resources>

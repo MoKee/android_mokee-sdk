@@ -63,6 +63,6 @@
     <string name="permlab_perfAccess">access performance manager</string>
     <string name="permdesc_perfAccessDesc">Allows an app to access the performance service. Should never be needed for normal apps.</string>
     <string name="mk_api_level">MoKee API level</string>
-    <string name="mk_version">MoKeeOS version</string>
+    <string name="mokee_version">MoKeeOS version</string>
     <string name="unknown">Unknown</string>
 </resources>

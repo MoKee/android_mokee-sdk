@@ -36,6 +36,6 @@
     <string name="permdesc_writePhoneLocation">App টি ফোনের অবস্থান পরিবর্তন করতে পারবে।</string>
     <string name="live_display_off">Off</string>
     <string name="build_date">তৈরী তারিখ</string>
-    <string name="mk_version">MoKee version</string>
+    <string name="mokee_version">MoKee version</string>
     <string name="unknown">Unknown</string>
 </resources>

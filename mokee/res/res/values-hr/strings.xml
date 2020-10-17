@@ -95,8 +95,8 @@
     <string name="permdesc_manageRemotePrefs">Omogućuje aplikaciji upravljanje udaljenim postavkama</string>
     <string name="build_date">Datum izdavanja</string>
     <string name="mk_api_level">MoKee API razina</string>
-    <string name="mk_version">MoKeeOS verzija</string>
-    <string name="mk_vendor_security_patch">Razina sigurnosne zakrpe dobavljača</string>
+    <string name="mokee_version">MoKeeOS verzija</string>
+    <string name="mokee_vendor_security_patch">Razina sigurnosne zakrpe dobavljača</string>
     <string name="unknown">Nepoznato</string>
     <string name="app_killed_message">Aplikacija je zaustavljena</string>
     <string name="trust_feature_name">Povjerenje</string>

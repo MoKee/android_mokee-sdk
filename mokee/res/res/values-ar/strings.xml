@@ -95,8 +95,8 @@
     <string name="permdesc_manageRemotePrefs">السماح للتطبيق بإدارة الإعدادات عن بعد</string>
     <string name="build_date">تاريخ إنشاء</string>
     <string name="mk_api_level">مستوى API موكي</string>
-    <string name="mk_version">إصدار موكي</string>
-    <string name="mk_vendor_security_patch">‏مستوى رمز تصحيح أمان Android</string>
+    <string name="mokee_version">إصدار موكي</string>
+    <string name="mokee_vendor_security_patch">‏مستوى رمز تصحيح أمان Android</string>
     <string name="unknown">غير معروف</string>
     <string name="app_killed_message">تم اغلاق التطبيق</string>
     <string name="trust_feature_name">الائتمان</string>

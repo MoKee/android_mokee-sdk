@@ -95,8 +95,8 @@
     <string name="permdesc_manageRemotePrefs">Апликација може да управља подешавањима даљинског приступа.</string>
     <string name="build_date">Датум израде</string>
     <string name="mk_api_level">Ниво API-ја MoKee-а</string>
-    <string name="mk_version">Верзија MoKeeOS-а</string>
-    <string name="mk_vendor_security_patch">Ниво заштите произвођача</string>
+    <string name="mokee_version">Верзија MoKeeOS-а</string>
+    <string name="mokee_vendor_security_patch">Ниво заштите произвођача</string>
     <string name="unknown">Непознато</string>
     <string name="app_killed_message">Апликација је искључена</string>
     <string name="trust_feature_name">Trust</string>

@@ -95,8 +95,8 @@
     <string name="permdesc_manageRemotePrefs">允許應用程式來管理遠端設定</string>
     <string name="build_date">版本日期</string>
     <string name="mk_api_level">魔趣API等級</string>
-    <string name="mk_version">MoKee 版本</string>
-    <string name="mk_vendor_security_patch">供應商安全性修補程式等級</string>
+    <string name="mokee_version">MoKee 版本</string>
+    <string name="mokee_vendor_security_patch">供應商安全性修補程式等級</string>
     <string name="unknown">不明</string>
     <string name="app_killed_message">已強制結束應用程式</string>
     <string name="trust_feature_name">信任</string>

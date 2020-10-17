@@ -77,7 +77,7 @@
     <string name="permlab_manageRemotePrefs">hantera fjärrinställningar</string>
     <string name="permdesc_manageRemotePrefs">Tillåter en app att hantera fjärrinställningar</string>
     <string name="build_date">Kompileringsdatum</string>
-    <string name="mk_version">MoKeeOS-version</string>
+    <string name="mokee_version">MoKeeOS-version</string>
     <string name="unknown">Okänd</string>
     <string name="app_killed_message">Applikationen har tvångsavslutats</string>
     <string name="trust_notification_channel">Trust larm</string>

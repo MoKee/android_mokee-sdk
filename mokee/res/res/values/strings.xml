@@ -148,9 +148,9 @@
     <!-- About device screen, MoKee API Level -->
     <string name="mk_api_level">MoKee API level</string>
     <!-- About device screen, MoKee version -->
-    <string name="mk_version">MoKee version</string>
+    <string name="mokee_version">MoKee version</string>
     <!-- About device screen, vendor security patch -->
-    <string name="mk_vendor_security_patch">Vendor security patch level</string>
+    <string name="mokee_vendor_security_patch">Vendor security patch level</string>
 
     <!-- General purpose use "unknown" string -->
     <string name="unknown">Unknown</string>

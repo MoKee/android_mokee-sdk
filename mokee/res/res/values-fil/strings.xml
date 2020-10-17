@@ -94,7 +94,7 @@
     <string name="permlab_manageRemotePrefs">pamahalaan ang mga remote settings</string>
     <string name="permdesc_manageRemotePrefs">Nagpapahintulot ng isang app upang pamahalaan ang mga remote settings</string>
     <string name="build_date">Petsa ng paggawa</string>
-    <string name="mk_version">Bersyon ng MoKee</string>
+    <string name="mokee_version">Bersyon ng MoKee</string>
     <string name="unknown">Hindi alam</string>
     <string name="app_killed_message">Ang application na ito ay hindi gumagana</string>
 </resources>
