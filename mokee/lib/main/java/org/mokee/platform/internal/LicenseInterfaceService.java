@@ -163,7 +163,7 @@ public class LicenseInterfaceService extends MKSystemService {
         int importance = NotificationManager.IMPORTANCE_HIGH;
         NotificationChannel licenseChannel = new NotificationChannel(CHANNEL_NAME,
                 name, importance);
-        licenseChannel.setBlockableSystem(false);
+        licenseChannel.setBlockable(false);
         mNotificationManager.createNotificationChannel(licenseChannel);
     }
 }
