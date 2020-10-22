@@ -28,13 +28,13 @@ android_app {
     ],
 
     required: [
-        "privapp_whitelist_org.mokee.mksettings",
+        "privapp_whitelist_org.mokee.mokeesettings",
     ],
 }
 
 prebuilt_etc {
-    name: "privapp_whitelist_org.mokee.mksettings",
+    name: "privapp_whitelist_org.mokee.mokeesettings",
     sub_dir: "permissions",
-    src: "privapp_whitelist_org.mokee.mksettings.xml",
+    src: "privapp_whitelist_org.mokee.mokeesettings.xml",
     filename_from_src: true,
 }

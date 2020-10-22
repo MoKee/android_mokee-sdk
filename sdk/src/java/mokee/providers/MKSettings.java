@@ -54,7 +54,7 @@ public final class MKSettings {
     private static final String TAG = "MKSettings";
     private static final boolean LOCAL_LOGV = false;
 
-    public static final String AUTHORITY = "mksettings";
+    public static final String AUTHORITY = "mokeesettings";
 
     public static class MKSettingNotFoundException extends AndroidException {
         public MKSettingNotFoundException(String msg) {

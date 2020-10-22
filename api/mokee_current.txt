@@ -712,7 +712,7 @@ package mokee.providers {
     ctor public MKSettings();
     field public static final java.lang.String ACTION_DATA_USAGE = "mokee.settings.ACTION_DATA_USAGE";
     field public static final java.lang.String ACTION_LIVEDISPLAY_SETTINGS = "mokee.settings.LIVEDISPLAY_SETTINGS";
-    field public static final java.lang.String AUTHORITY = "mksettings";
+    field public static final java.lang.String AUTHORITY = "mokeesettings";
   }
 
   public static final class MKSettings.Global extends android.provider.Settings.NameValueTable {
