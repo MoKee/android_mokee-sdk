@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.mokee.mksettings;
+package org.mokee.mokeesettings;
 
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;

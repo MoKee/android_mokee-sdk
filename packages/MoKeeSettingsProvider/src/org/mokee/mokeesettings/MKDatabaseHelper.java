@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.mokee.mksettings;
+package org.mokee.mokeesettings;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -48,7 +48,7 @@ public class MKDatabaseHelper extends SQLiteOpenHelper{
     private static final String TAG = "MKDatabaseHelper";
     private static final boolean LOCAL_LOGV = false;
 
-    private static final String DATABASE_NAME = "mksettings.db";
+    private static final String DATABASE_NAME = "mokeesettings.db";
     private static final int DATABASE_VERSION = 14;
 
     public static class MKTableNames {

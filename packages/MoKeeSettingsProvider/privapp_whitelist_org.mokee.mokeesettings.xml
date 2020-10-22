@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <permissions>
-    <privapp-permissions package="org.mokee.mksettings">
+    <privapp-permissions package="org.mokee.mokeesettings">
         <permission name="android.permission.MANAGE_USERS"/>
     </privapp-permissions>
 </permissions>

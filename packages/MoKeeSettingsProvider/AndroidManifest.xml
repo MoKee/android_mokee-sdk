@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="org.mokee.mksettings"
+          package="org.mokee.mokeesettings"
           coreApp="true"
           android:sharedUserId="android.uid.system">
     <!-- It is necessary to be a system app in order to update table versions in SystemProperties for
@@ -34,7 +34,7 @@
                  android:directBootAware="true">
 
         <provider android:name="MoKeeSettingsProvider"
-                  android:authorities="mksettings"
+                  android:authorities="mokeesettings"
                   android:multiprocess="false"
                   android:exported="true"
                   android:writePermission="mokee.permission.WRITE_SETTINGS"
