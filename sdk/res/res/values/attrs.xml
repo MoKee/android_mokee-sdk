@@ -29,7 +29,7 @@
     </declare-styleable>
 
     <!--Settings search providers-->
-    <declare-styleable name="mk_Searchable">
+    <declare-styleable name="mokee_Searchable">
         <attr name="xmlRes" format="reference" />
     </declare-styleable>
 
