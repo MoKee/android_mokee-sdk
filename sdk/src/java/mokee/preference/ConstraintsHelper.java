@@ -77,9 +77,9 @@ public class ConstraintsHelper {
         mPref = pref;
 
         TypedArray a = context.getResources().obtainAttributes(attrs,
-                R.styleable.mk_SelfRemovingPreference);
-        mSummaryMinLines = a.getInteger(R.styleable.mk_SelfRemovingPreference_minSummaryLines, -1);
-        String replacesKey = a.getString(R.styleable.mk_SelfRemovingPreference_replacesKey);
+                R.styleable.mokee_SelfRemovingPreference);
+        mSummaryMinLines = a.getInteger(R.styleable.mokee_SelfRemovingPreference_minSummaryLines, -1);
+        String replacesKey = a.getString(R.styleable.mokee_SelfRemovingPreference_replacesKey);
         if (replacesKey != null) {
             mReplacesKey = replacesKey.split("\\|");
         }
@@ -141,18 +141,18 @@ public class ConstraintsHelper {
         }
 
         TypedArray a = mContext.getResources().obtainAttributes(mAttrs,
-                R.styleable.mk_SelfRemovingPreference);
+                R.styleable.mokee_SelfRemovingPreference);
 
         try {
 
             // Check if the current user is an owner
-            boolean rOwner = a.getBoolean(R.styleable.mk_SelfRemovingPreference_requiresOwner, false);
+            boolean rOwner = a.getBoolean(R.styleable.mokee_SelfRemovingPreference_requiresOwner, false);
             if (rOwner && UserHandle.myUserId() != UserHandle.USER_OWNER) {
                 return false;
             }
 
             // Check if a specific package is installed
-            String rPackage = a.getString(R.styleable.mk_SelfRemovingPreference_requiresPackage);
+            String rPackage = a.getString(R.styleable.mokee_SelfRemovingPreference_requiresPackage);
             if (rPackage != null) {
                 boolean negated = isNegated(rPackage);
                 if (negated) {
@@ -165,7 +165,7 @@ public class ConstraintsHelper {
             }
 
             // Check if an intent can be resolved to handle the given action
-            String rAction = a.getString(R.styleable.mk_SelfRemovingPreference_requiresAction);
+            String rAction = a.getString(R.styleable.mokee_SelfRemovingPreference_requiresAction);
             if (rAction != null) {
                 boolean negated = isNegated(rAction);
                 if (negated) {
@@ -178,7 +178,7 @@ public class ConstraintsHelper {
             }
 
             // Check if a system feature is available
-            String rFeature = a.getString(R.styleable.mk_SelfRemovingPreference_requiresFeature);
+            String rFeature = a.getString(R.styleable.mokee_SelfRemovingPreference_requiresFeature);
             if (rFeature != null) {
                 boolean negated = isNegated(rFeature);
                 if (negated) {
@@ -194,7 +194,7 @@ public class ConstraintsHelper {
             }
 
             // Check a boolean system property
-            String rProperty = a.getString(R.styleable.mk_SelfRemovingPreference_requiresProperty);
+            String rProperty = a.getString(R.styleable.mokee_SelfRemovingPreference_requiresProperty);
             if (rProperty != null) {
                 boolean negated = isNegated(rProperty);
                 if (negated) {
@@ -214,7 +214,7 @@ public class ConstraintsHelper {
             // * An integer resource is zero.
             // * An integer is non-zero and when bitwise logically ANDed with
             //   attribute requiresConfigMask, the result is zero.
-            TypedValue tv = a.peekValue(R.styleable.mk_SelfRemovingPreference_requiresConfig);
+            TypedValue tv = a.peekValue(R.styleable.mokee_SelfRemovingPreference_requiresConfig);
             if (tv != null && tv.resourceId != 0) {
                 if (tv.type == TypedValue.TYPE_STRING &&
                         mContext.getResources().getString(tv.resourceId) == null) {
@@ -223,7 +223,7 @@ public class ConstraintsHelper {
                     return false;
                 } else if (tv.type == TypedValue.TYPE_INT_DEC) {
                     int mask = a.getInt(
-                            R.styleable.mk_SelfRemovingPreference_requiresConfigMask, -1);
+                            R.styleable.mokee_SelfRemovingPreference_requiresConfigMask, -1);
                     if (tv.data == 0 || (mask >= 0 && (tv.data & mask) == 0)) {
                         return false;
                     }

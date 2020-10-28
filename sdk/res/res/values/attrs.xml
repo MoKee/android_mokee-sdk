@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources>
-    <declare-styleable name="mk_SelfRemovingPreference">
+    <declare-styleable name="mokee_SelfRemovingPreference">
         <attr name="requiresPackage" format="string" />
         <attr name="requiresFeature" format="string" />
         <attr name="requiresConfig" format="string" />
