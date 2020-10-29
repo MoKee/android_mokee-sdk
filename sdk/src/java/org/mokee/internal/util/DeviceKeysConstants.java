@@ -20,12 +20,12 @@ package org.mokee.internal.util;
 import android.content.ContentResolver;
 import android.os.UserHandle;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class DeviceKeysConstants {
     // Available custom actions to perform on a key press.
     // Must match values for KEY_HOME_LONG_PRESS_ACTION in:
-    //   sdk/src/java/mokee/providers/MKSettings.java
+    //   sdk/src/java/mokee/providers/MoKeeSettings.java
     public enum Action {
         NOTHING,
         MENU,
@@ -48,7 +48,7 @@ public class DeviceKeysConstants {
         }
 
         public static Action fromSettings(ContentResolver cr, String setting, Action def) {
-            return fromIntSafe(MKSettings.System.getIntForUser(cr,
+            return fromIntSafe(MoKeeSettings.System.getIntForUser(cr,
                     setting, def.ordinal(), UserHandle.USER_CURRENT));
         }
     }

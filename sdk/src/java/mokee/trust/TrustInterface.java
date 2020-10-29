@@ -22,7 +22,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-import mokee.app.MKContextConstants;
+import mokee.app.MoKeeContextConstants;
 
 public class TrustInterface {
     /**
@@ -172,7 +172,7 @@ public class TrustInterface {
         mContext = appContext == null ? context : appContext;
         sService = getService();
         if (context.getPackageManager().hasSystemFeature(
-                MKContextConstants.Features.TRUST) && sService == null) {
+                MoKeeContextConstants.Features.TRUST) && sService == null) {
             throw new RuntimeException("Unable to get TrustInterfaceService. The service" +
                     " either crashed, was not started, or the interface has been called to early" +
                     " in SystemServer init");
@@ -197,7 +197,7 @@ public class TrustInterface {
         if (sService != null) {
             return sService;
         }
-        IBinder b = ServiceManager.getService(MKContextConstants.MK_TRUST_INTERFACE);
+        IBinder b = ServiceManager.getService(MoKeeContextConstants.MK_TRUST_INTERFACE);
         sService = ITrustInterface.Stub.asInterface(b);
 
         if (b == null) {

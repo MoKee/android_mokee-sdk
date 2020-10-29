@@ -29,7 +29,7 @@ import android.net.wifi.WifiManager;
 import android.os.Message;
 import android.util.ArraySet;
 import com.android.internal.policy.IKeyguardService;
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -50,7 +50,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.os.ParcelUuid;
 
-import mokee.app.MKContextConstants;
+import mokee.app.MoKeeContextConstants;
 import mokee.app.Profile;
 import mokee.app.ProfileGroup;
 import mokee.app.ProfileManager;
@@ -69,7 +69,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /** @hide */
-public class ProfileManagerService extends MKSystemService {
+public class ProfileManagerService extends MoKeeSystemService {
 
     private static final String TAG = "MKProfileService";
     // Enable the below for detailed logging of this class
@@ -227,8 +227,8 @@ public class ProfileManagerService extends MKSystemService {
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-            int state = MKSettings.System.getInt(mContext.getContentResolver(),
-                    MKSettings.System.SYSTEM_PROFILES_ENABLED,
+            int state = MoKeeSettings.System.getInt(mContext.getContentResolver(),
+                    MoKeeSettings.System.SYSTEM_PROFILES_ENABLED,
                     ProfileManager.PROFILES_STATE_ENABLED);
             mHandler.obtainMessage(MSG_SEND_PROFILE_STATE, state, 0 /* unused */).sendToTarget();
         }
@@ -242,7 +242,7 @@ public class ProfileManagerService extends MKSystemService {
 
     @Override
     public String getFeatureDeclaration() {
-        return MKContextConstants.Features.PROFILES;
+        return MoKeeContextConstants.Features.PROFILES;
     }
 
     @Override
@@ -265,8 +265,8 @@ public class ProfileManagerService extends MKSystemService {
         mContext.registerReceiver(mIntentReceiver, filter);
 
         if (mContext.getPackageManager().hasSystemFeature(
-                MKContextConstants.Features.PROFILES)) {
-            publishBinderService(MKContextConstants.MK_PROFILE_SERVICE, mService);
+                MoKeeContextConstants.Features.PROFILES)) {
+            publishBinderService(MoKeeContextConstants.MK_PROFILE_SERVICE, mService);
         } else {
             Log.wtf(TAG, "MoKee profile service started by system server but feature xml not" +
                     " declared. Not publishing binder service!");
@@ -291,7 +291,7 @@ public class ProfileManagerService extends MKSystemService {
             bindKeyguard();
         } else if (phase == PHASE_BOOT_COMPLETED) {
             mContext.getContentResolver().registerContentObserver(
-                    MKSettings.System.getUriFor(MKSettings.System.SYSTEM_PROFILES_ENABLED),
+                    MoKeeSettings.System.getUriFor(MoKeeSettings.System.SYSTEM_PROFILES_ENABLED),
                     false, new ProfilesObserver(mHandler), UserHandle.USER_ALL);
         }
     }
@@ -561,8 +561,8 @@ public class ProfileManagerService extends MKSystemService {
         public boolean isEnabled() {
             long token = clearCallingIdentity();
             try {
-                return MKSettings.System.getIntForUser(mContext.getContentResolver(),
-                        MKSettings.System.SYSTEM_PROFILES_ENABLED,
+                return MoKeeSettings.System.getIntForUser(mContext.getContentResolver(),
+                        MoKeeSettings.System.SYSTEM_PROFILES_ENABLED,
                         ProfileManager.PROFILES_STATE_ENABLED,
                         UserHandle.USER_CURRENT) == ProfileManager.PROFILES_STATE_ENABLED;
             } finally {

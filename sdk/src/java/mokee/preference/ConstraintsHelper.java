@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import mokee.hardware.MKHardwareManager;
+import mokee.hardware.MoKeeHardwareManager;
 import mokee.platform.R;
 
 
@@ -184,9 +184,9 @@ public class ConstraintsHelper {
                 if (negated) {
                     rFeature = rFeature.substring(1);
                 }
-                boolean available = rFeature.startsWith("mkhardware:") ?
-                        MKHardwareManager.getInstance(mContext).isSupported(
-                                rFeature.substring("mkhardware:".length())) :
+                boolean available = rFeature.startsWith("mokeehardware:") ?
+                        MoKeeHardwareManager.getInstance(mContext).isSupported(
+                                rFeature.substring("mokeehardware:".length())) :
                         hasSystemFeature(mContext, rFeature);
                 if (available == negated) {
                     return false;

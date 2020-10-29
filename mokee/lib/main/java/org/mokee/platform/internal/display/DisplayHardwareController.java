@@ -36,13 +36,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
 
-import mokee.hardware.MKHardwareManager;
+import mokee.hardware.MoKeeHardwareManager;
 import mokee.hardware.LiveDisplayManager;
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class DisplayHardwareController extends LiveDisplayFeature {
 
-    private final MKHardwareManager mHardware;
+    private final MoKeeHardwareManager mHardware;
 
     // hardware capabilities
     private final boolean mUseAutoContrast;
@@ -67,43 +67,43 @@ public class DisplayHardwareController extends LiveDisplayFeature {
 
     // settings uris
     private static final Uri DISPLAY_AUTO_CONTRAST =
-            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_AUTO_CONTRAST);
+            MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_AUTO_CONTRAST);
     private static final Uri DISPLAY_COLOR_ADJUSTMENT =
-            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_COLOR_ADJUSTMENT);
+            MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_COLOR_ADJUSTMENT);
     private static final Uri DISPLAY_COLOR_ENHANCE =
-            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_COLOR_ENHANCE);
+            MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_COLOR_ENHANCE);
     private static final Uri DISPLAY_CABC =
-            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_CABC);
+            MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_CABC);
     private static final Uri DISPLAY_READING_MODE =
-            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_READING_MODE);
+            MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_READING_MODE);
 
     public DisplayHardwareController(Context context, Handler handler) {
         super(context, handler);
 
-        mHardware = MKHardwareManager.getInstance(mContext);
+        mHardware = MoKeeHardwareManager.getInstance(mContext);
         mUseCABC = mHardware
-                .isSupported(MKHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT);
+                .isSupported(MoKeeHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT);
         mDefaultCABC = mContext.getResources().getBoolean(
                 org.mokee.platform.internal.R.bool.config_defaultCABC);
 
         mUseColorEnhancement = mHardware
-                .isSupported(MKHardwareManager.FEATURE_COLOR_ENHANCEMENT);
+                .isSupported(MoKeeHardwareManager.FEATURE_COLOR_ENHANCEMENT);
         mDefaultColorEnhancement = mContext.getResources().getBoolean(
                 org.mokee.platform.internal.R.bool.config_defaultColorEnhancement);
 
         mUseAutoContrast = mHardware
-                .isSupported(MKHardwareManager.FEATURE_AUTO_CONTRAST);
+                .isSupported(MoKeeHardwareManager.FEATURE_AUTO_CONTRAST);
         mDefaultAutoContrast = mContext.getResources().getBoolean(
                 org.mokee.platform.internal.R.bool.config_defaultAutoContrast);
 
         mUseColorAdjustment = mHardware
-                .isSupported(MKHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION);
+                .isSupported(MoKeeHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION);
 
         mUseDisplayModes = mHardware
-                .isSupported(MKHardwareManager.FEATURE_DISPLAY_MODES);
+                .isSupported(MoKeeHardwareManager.FEATURE_DISPLAY_MODES);
 
         mUseReaderMode = mHardware
-                .isSupported(MKHardwareManager.FEATURE_READING_ENHANCEMENT);
+                .isSupported(MoKeeHardwareManager.FEATURE_READING_ENHANCEMENT);
 
         if (mUseColorAdjustment) {
             mMaxColor = mHardware.getDisplayColorCalibrationMax();
@@ -232,7 +232,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (!mUseAutoContrast) {
             return;
         }
-        mHardware.set(MKHardwareManager.FEATURE_AUTO_CONTRAST, isAutoContrastEnabled());
+        mHardware.set(MoKeeHardwareManager.FEATURE_AUTO_CONTRAST, isAutoContrastEnabled());
     }
 
     /**
@@ -242,7 +242,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (!mUseColorEnhancement) {
             return;
         }
-        mHardware.set(MKHardwareManager.FEATURE_COLOR_ENHANCEMENT,
+        mHardware.set(MoKeeHardwareManager.FEATURE_COLOR_ENHANCEMENT,
                 (!isLowPowerMode() || mDefaultColorEnhancement) && isColorEnhancementEnabled());
     }
 
@@ -253,7 +253,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (!mUseCABC) {
             return;
         }
-        mHardware.set(MKHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT, isCABCEnabled());
+        mHardware.set(MoKeeHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT, isCABCEnabled());
     }
 
     private synchronized void updateColorAdjustment() {
@@ -429,33 +429,33 @@ public class DisplayHardwareController extends LiveDisplayFeature {
 
     boolean isAutoContrastEnabled() {
         return mUseAutoContrast &&
-                getBoolean(MKSettings.System.DISPLAY_AUTO_CONTRAST, mDefaultAutoContrast);
+                getBoolean(MoKeeSettings.System.DISPLAY_AUTO_CONTRAST, mDefaultAutoContrast);
     }
 
     boolean setAutoContrastEnabled(boolean enabled) {
         if (!mUseAutoContrast) {
             return false;
         }
-        putBoolean(MKSettings.System.DISPLAY_AUTO_CONTRAST, enabled);
+        putBoolean(MoKeeSettings.System.DISPLAY_AUTO_CONTRAST, enabled);
         return true;
     }
 
     boolean isCABCEnabled() {
         return mUseCABC &&
-                getBoolean(MKSettings.System.DISPLAY_CABC, mDefaultCABC);
+                getBoolean(MoKeeSettings.System.DISPLAY_CABC, mDefaultCABC);
     }
 
     boolean setCABCEnabled(boolean enabled) {
         if (!mUseCABC) {
             return false;
         }
-        putBoolean(MKSettings.System.DISPLAY_CABC, enabled);
+        putBoolean(MoKeeSettings.System.DISPLAY_CABC, enabled);
         return true;
     }
 
     boolean isColorEnhancementEnabled() {
         return mUseColorEnhancement &&
-                getBoolean(MKSettings.System.DISPLAY_COLOR_ENHANCE,
+                getBoolean(MoKeeSettings.System.DISPLAY_COLOR_ENHANCE,
                 mDefaultColorEnhancement);
     }
 
@@ -463,7 +463,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (!mUseColorEnhancement) {
             return false;
         }
-        putBoolean(MKSettings.System.DISPLAY_COLOR_ENHANCE, enabled);
+        putBoolean(MoKeeSettings.System.DISPLAY_COLOR_ENHANCE, enabled);
         return true;
     }
 
@@ -472,7 +472,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
             return getDefaultAdjustment();
         }
         float[] cur = new float[3];
-        if (!parseColorAdjustment(getString(MKSettings.System.DISPLAY_COLOR_ADJUSTMENT), cur)) {
+        if (!parseColorAdjustment(getString(MoKeeSettings.System.DISPLAY_COLOR_ADJUSTMENT), cur)) {
             // clear it out if invalid
             cur = getDefaultAdjustment();
             saveColorAdjustmentString(cur);
@@ -492,7 +492,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
     private void saveColorAdjustmentString(final float[] adj) {
         StringBuilder sb = new StringBuilder();
         sb.append(adj[0]).append(" ").append(adj[1]).append(" ").append(adj[2]);
-        putString(MKSettings.System.DISPLAY_COLOR_ADJUSTMENT, sb.toString());
+        putString(MoKeeSettings.System.DISPLAY_COLOR_ADJUSTMENT, sb.toString());
     }
 
     boolean hasColorAdjustment() {

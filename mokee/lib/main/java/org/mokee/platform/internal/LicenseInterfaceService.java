@@ -36,11 +36,11 @@ import com.mokee.center.model.DonationInfo;
 import com.mokee.utils.DonationUtils;
 import com.mokee.security.LicenseUtils;
 
-import mokee.app.MKContextConstants;
+import mokee.app.MoKeeContextConstants;
 import mokee.license.ILicenseInterface;
 import mokee.license.LicenseConstants;
 
-public class LicenseInterfaceService extends MKSystemService {
+public class LicenseInterfaceService extends MoKeeSystemService {
 
     private static final String TAG = "MKLicenseInterfaceService";
 
@@ -88,7 +88,7 @@ public class LicenseInterfaceService extends MKSystemService {
     public LicenseInterfaceService(Context context) {
         super(context);
         mContext = context;
-        publishBinderService(MKContextConstants.MK_LICENSE_INTERFACE, mService);
+        publishBinderService(MoKeeContextConstants.MK_LICENSE_INTERFACE, mService);
     }
 
     public static String getLicensePath() {
@@ -119,7 +119,7 @@ public class LicenseInterfaceService extends MKSystemService {
 
     @Override
     public String getFeatureDeclaration() {
-        return MKContextConstants.Features.LICENSE;
+        return MoKeeContextConstants.Features.LICENSE;
     }
 
     @Override

@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class LongScreen {
     private Set<String> mApps = new HashSet<>();
@@ -66,14 +66,14 @@ public class LongScreen {
 
     public void addApp(String packageName) {
         mApps.add(packageName);
-        MKSettings.System.putString(mContext.getContentResolver(),
-                MKSettings.System.LONG_SCREEN_APPS, String.join(",", mApps));
+        MoKeeSettings.System.putString(mContext.getContentResolver(),
+                MoKeeSettings.System.LONG_SCREEN_APPS, String.join(",", mApps));
     }
 
     public void removeApp(String packageName) {
         mApps.remove(packageName);
-        MKSettings.System.putString(mContext.getContentResolver(),
-                MKSettings.System.LONG_SCREEN_APPS, String.join(",", mApps));
+        MoKeeSettings.System.putString(mContext.getContentResolver(),
+                MoKeeSettings.System.LONG_SCREEN_APPS, String.join(",", mApps));
     }
 
     public void setApps(Set<String> apps) {
@@ -88,8 +88,8 @@ public class LongScreen {
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
 
-            resolver.registerContentObserver(MKSettings.System.getUriFor(
-                    MKSettings.System.LONG_SCREEN_APPS), false, this,
+            resolver.registerContentObserver(MoKeeSettings.System.getUriFor(
+                    MoKeeSettings.System.LONG_SCREEN_APPS), false, this,
                     UserHandle.USER_ALL);
 
             update();
@@ -103,8 +103,8 @@ public class LongScreen {
         public void update() {
             ContentResolver resolver = mContext.getContentResolver();
 
-            String apps = MKSettings.System.getStringForUser(resolver,
-                    MKSettings.System.LONG_SCREEN_APPS,
+            String apps = MoKeeSettings.System.getStringForUser(resolver,
+                    MoKeeSettings.System.LONG_SCREEN_APPS,
                     UserHandle.USER_CURRENT);
             if (apps != null) {
                 setApps(new HashSet<>(Arrays.asList(apps.split(","))));

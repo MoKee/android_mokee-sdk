@@ -50,21 +50,21 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
-import mokee.app.MKContextConstants;
+import mokee.app.MoKeeContextConstants;
 import mokee.power.IPerformanceManager;
 import mokee.power.PerformanceProfile;
 
 import static mokee.power.PerformanceManager.PROFILE_BALANCED;
 import static mokee.power.PerformanceManager.PROFILE_POWER_SAVE;
-import static mokee.providers.MKSettings.Secure.PERFORMANCE_PROFILE;
-import static mokee.providers.MKSettings.Secure.getInt;
-import static mokee.providers.MKSettings.Secure.getUriFor;
-import static mokee.providers.MKSettings.Secure.putInt;
+import static mokee.providers.MoKeeSettings.Secure.PERFORMANCE_PROFILE;
+import static mokee.providers.MoKeeSettings.Secure.getInt;
+import static mokee.providers.MoKeeSettings.Secure.getUriFor;
+import static mokee.providers.MoKeeSettings.Secure.putInt;
 
 /**
  * @hide
  */
-public class PerformanceManagerService extends MKSystemService {
+public class PerformanceManagerService extends MoKeeSystemService {
 
     private static final String TAG = "PerformanceManager";
 
@@ -201,12 +201,12 @@ public class PerformanceManagerService extends MKSystemService {
 
     @Override
     public String getFeatureDeclaration() {
-        return MKContextConstants.Features.PERFORMANCE;
+        return MoKeeContextConstants.Features.PERFORMANCE;
     }
 
     @Override
     public void onStart() {
-        publishBinderService(MKContextConstants.MK_PERFORMANCE_SERVICE, mBinder);
+        publishBinderService(MoKeeContextConstants.MK_PERFORMANCE_SERVICE, mBinder);
     }
 
     private void populateProfilesLocked() {

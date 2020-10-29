@@ -21,7 +21,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-import mokee.app.MKContextConstants;
+import mokee.app.MoKeeContextConstants;
 
 public class LicenseInterface {
 
@@ -37,7 +37,7 @@ public class LicenseInterface {
         mContext = appContext == null ? context : appContext;
         sService = getService();
         if (context.getPackageManager().hasSystemFeature(
-                MKContextConstants.Features.LICENSE) && sService == null) {
+                MoKeeContextConstants.Features.LICENSE) && sService == null) {
             throw new RuntimeException("Unable to get LicenseInterfaceService. The service" +
                     " either crashed, was not started, or the interface has been called to early" +
                     " in SystemServer init");
@@ -62,7 +62,7 @@ public class LicenseInterface {
         if (sService != null) {
             return sService;
         }
-        IBinder b = ServiceManager.getService(MKContextConstants.MK_LICENSE_INTERFACE);
+        IBinder b = ServiceManager.getService(MoKeeContextConstants.MK_LICENSE_INTERFACE);
         sService = ILicenseInterface.Stub.asInterface(b);
 
         if (b == null) {

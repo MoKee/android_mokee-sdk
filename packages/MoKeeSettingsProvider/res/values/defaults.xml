@@ -17,59 +17,59 @@
 <resources>
     <!-- Defaults for System -->
 
-    <!-- Default for MKSettings.System.QS_QUICK_PULLDOWN
+    <!-- Default for MoKeeSettings.System.QS_QUICK_PULLDOWN
          0. Off
          1. Right
          2. Left -->
     <integer name="def_qs_quick_pulldown">0</integer>
 
-    <!-- Default for MKSettings.System.SYSTEM_PROFILES_ENABLED -->
+    <!-- Default for MoKeeSettings.System.SYSTEM_PROFILES_ENABLED -->
     <bool name="def_profiles_enabled">true</bool>
 
     <!-- Defaults for Secure -->
 
-    <!-- Default for MKSettings.Secure.ADVANCED_MODE -->
+    <!-- Default for MoKeeSettings.Secure.ADVANCED_MODE -->
     <bool name="def_advanced_mode">true</bool>
 
-    <!-- Default for MKSettings.System.STATUS_BAR_BATTERY_STYLE
+    <!-- Default for MoKeeSettings.System.STATUS_BAR_BATTERY_STYLE
          * 0: Display the battery as icon in portrait mode
          * 1: Display the battery as a circle
          * 2: Display the battery as plain text
     -->
     <integer name="def_battery_style">1</integer>
 
-    <!-- Default for MKSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED -->
+    <!-- Default for MoKeeSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED -->
     <bool name="def_lockscreen_visualizer">true</bool>
 
-    <!-- Default value of MKSettings.System.ENABLE_FORWARD_LOOKUP -->
+    <!-- Default value of MoKeeSettings.System.ENABLE_FORWARD_LOOKUP -->
     <integer name="def_forward_lookup">1</integer>
 
-    <!-- Default value of MKSettings.System.ENABLE_PEOPLE_LOOKUP -->
+    <!-- Default value of MoKeeSettings.System.ENABLE_PEOPLE_LOOKUP -->
     <integer name="def_people_lookup">1</integer>
 
-    <!-- Default value of MKSettings.System.ENABLE_REVERSE_LOOKUP -->
+    <!-- Default value of MoKeeSettings.System.ENABLE_REVERSE_LOOKUP -->
     <integer name="def_reverse_lookup">1</integer>
 
     <!-- Defaults for Global -->
 
-    <!-- Default for MKSettings.Global.DEVICE_NAME
+    <!-- Default for MoKeeSettings.Global.DEVICE_NAME
          $1=MODEL -->
     <string name="def_device_name">%1$s</string>
 
-    <!-- Defaults for MKSettings.System.FORCE_SHOW_NAVBAR -->
+    <!-- Defaults for MoKeeSettings.System.FORCE_SHOW_NAVBAR -->
     <integer name="def_force_show_navbar">0</integer>
 
-    <!-- Default for MKSettings.Global.HEADS_UP_NOTIFICATIONS_ENABLED
+    <!-- Default for MoKeeSettings.Global.HEADS_UP_NOTIFICATIONS_ENABLED
          1==on -->
     <integer name="def_heads_up_enabled">1</integer>
 
-    <!-- Default for MKSettings.Global.POWER_NOTIFICATIONS_ENABLED -->
+    <!-- Default for MoKeeSettings.Global.POWER_NOTIFICATIONS_ENABLED -->
     <bool name="def_power_notifications_enabled">true</bool>
 
-    <!-- Default for MKSettings.Global.POWER_NOTIFICATIONS_VIBRATE -->
+    <!-- Default for MoKeeSettings.Global.POWER_NOTIFICATIONS_VIBRATE -->
     <bool name="def_power_notifications_vibrate">false</bool>
 
-    <!-- Default for MKSettings.Global.POWER_NOTIFICATIONS_RINGTONE -->
+    <!-- Default for MoKeeSettings.Global.POWER_NOTIFICATIONS_RINGTONE -->
     <string name="def_power_notifications_ringtone" translatable="false">/system/product/media/audio/ui/WirelessChargingStarted.ogg</string>
 
     <!-- Default value for the battery LEDs brightness -->

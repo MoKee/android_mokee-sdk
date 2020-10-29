@@ -21,14 +21,14 @@ import android.app.KeyguardManager;
 import android.content.Context;
 import android.os.UserHandle;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public final class PowerMenuUtils {
     public static boolean isAdvancedRestartPossible(final Context context) {
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean keyguardLocked = km.inKeyguardRestrictedInputMode() && km.isKeyguardSecure();
-        boolean advancedRestartEnabled = MKSettings.Secure.getInt(context.getContentResolver(),
-                MKSettings.Secure.ADVANCED_REBOOT, 0) == 1;
+        boolean advancedRestartEnabled = MoKeeSettings.Secure.getInt(context.getContentResolver(),
+                MoKeeSettings.Secure.ADVANCED_REBOOT, 0) == 1;
         boolean isPrimaryUser = UserHandle.getCallingUserId() == UserHandle.USER_OWNER;
 
         return advancedRestartEnabled && !keyguardLocked && isPrimaryUser;

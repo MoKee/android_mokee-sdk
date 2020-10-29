@@ -98,21 +98,21 @@
          pulsating and RGB control would set this config to 75. -->
     <integer name="config_deviceLightCapabilities">8</integer>
 
-    <!-- Defines external services to be started by the MKSystemServer at boot. The service itself
+    <!-- Defines external services to be started by the MoKeeSystemServer at boot. The service itself
          should publish as a binder services in its onStart -->
     <string-array name="config_externalMKServices">
         <item>org.mokee.platform.internal.ProfileManagerService</item>
-        <item>org.mokee.platform.internal.MKHardwareService</item>
+        <item>org.mokee.platform.internal.MoKeeHardwareService</item>
         <item>org.mokee.platform.internal.PerformanceManagerService</item>
         <item>org.mokee.platform.internal.display.LiveDisplayService</item>
-        <item>org.mokee.platform.internal.MKAudioService</item>
+        <item>org.mokee.platform.internal.MoKeeAudioService</item>
         <item>org.mokee.platform.internal.TrustInterfaceService</item>
-        <item>org.mokee.platform.internal.MKSettingsService</item>
+        <item>org.mokee.platform.internal.MoKeeSettingsService</item>
         <item>org.mokee.platform.internal.LicenseInterfaceService</item>
     </string-array>
 
-    <!-- The MKSystemServer class that is invoked from Android's SystemServer -->
-    <string name="config_externalSystemServer" translatable="false">org.mokee.platform.internal.MKSystemServer</string>
+    <!-- The MoKeeSystemServer class that is invoked from Android's SystemServer -->
+    <string name="config_externalSystemServer" translatable="false">org.mokee.platform.internal.MoKeeSystemServer</string>
 
     <!-- Paths to the libraries that contain device specific key handlers -->
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">

@@ -32,9 +32,9 @@ import org.mokee.platform.internal.display.TwilightTracker.TwilightState;
 import java.io.PrintWriter;
 import java.util.BitSet;
 
-import mokee.hardware.MKHardwareManager;
+import mokee.hardware.MoKeeHardwareManager;
 import mokee.hardware.LiveDisplayManager;
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 import mokee.util.ColorUtils;
 
 import static mokee.hardware.LiveDisplayManager.MODE_AUTO;
@@ -62,23 +62,23 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     private AccelerateDecelerateInterpolator mInterpolator;
     private ValueAnimator mAnimator;
 
-    private final MKHardwareManager mHardware;
+    private final MoKeeHardwareManager mHardware;
 
     private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS / 2;
 
     private static final Uri DISPLAY_TEMPERATURE_DAY =
-            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_TEMPERATURE_DAY);
+            MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_TEMPERATURE_DAY);
     private static final Uri DISPLAY_TEMPERATURE_NIGHT =
-            MKSettings.System.getUriFor(MKSettings.System.DISPLAY_TEMPERATURE_NIGHT);
+            MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_TEMPERATURE_NIGHT);
 
     public ColorTemperatureController(Context context,
             Handler handler, DisplayHardwareController displayHardware) {
         super(context, handler);
         mDisplayHardware = displayHardware;
-        mHardware = MKHardwareManager.getInstance(mContext);
+        mHardware = MoKeeHardwareManager.getInstance(mContext);
 
         mUseColorBalance = mHardware
-                .isSupported(MKHardwareManager.FEATURE_COLOR_BALANCE);
+                .isSupported(MoKeeHardwareManager.FEATURE_COLOR_BALANCE);
         mColorBalanceRange = mHardware.getColorBalanceRange();
 
         mUseTemperatureAdjustment = !mNightDisplayAvailable &&
@@ -349,21 +349,21 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     }
 
     int getDayColorTemperature() {
-        return getInt(MKSettings.System.DISPLAY_TEMPERATURE_DAY,
+        return getInt(MoKeeSettings.System.DISPLAY_TEMPERATURE_DAY,
                 mDefaultDayTemperature);
     }
 
     void setDayColorTemperature(int temperature) {
-        putInt(MKSettings.System.DISPLAY_TEMPERATURE_DAY, temperature);
+        putInt(MoKeeSettings.System.DISPLAY_TEMPERATURE_DAY, temperature);
     }
 
     int getNightColorTemperature() {
-        return getInt(MKSettings.System.DISPLAY_TEMPERATURE_NIGHT,
+        return getInt(MoKeeSettings.System.DISPLAY_TEMPERATURE_NIGHT,
                 mDefaultNightTemperature);
     }
 
     void setNightColorTemperature(int temperature) {
-        putInt(MKSettings.System.DISPLAY_TEMPERATURE_NIGHT, temperature);
+        putInt(MoKeeSettings.System.DISPLAY_TEMPERATURE_NIGHT, temperature);
     }
 
     Range<Integer> getColorTemperatureRange() {

@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import mokee.app.MKContextConstants;
+import mokee.app.MoKeeContextConstants;
 
 /**
  *
@@ -96,7 +96,7 @@ public class PerformanceManager {
     private PerformanceManager(Context context) {
         sService = getService();
         if (context.getPackageManager().hasSystemFeature(
-                MKContextConstants.Features.PERFORMANCE) && sService == null) {
+                MoKeeContextConstants.Features.PERFORMANCE) && sService == null) {
             Log.wtf(TAG, "Unable to get PerformanceManagerService. The service" +
                     " either crashed, was not started, or the interface has been called to early" +
                     " in SystemServer init");
@@ -121,7 +121,7 @@ public class PerformanceManager {
         if (sService != null) {
             return sService;
         }
-        IBinder b = ServiceManager.getService(MKContextConstants.MK_PERFORMANCE_SERVICE);
+        IBinder b = ServiceManager.getService(MoKeeContextConstants.MK_PERFORMANCE_SERVICE);
         if (b != null) {
             sService = IPerformanceManager.Stub.asInterface(b);
             return sService;

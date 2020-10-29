@@ -231,7 +231,7 @@ package mokee.hardware {
     field public static final int MODE_OUTDOOR = 3; // 0x3
   }
 
-  public final class MKHardwareManager {
+  public final class MoKeeHardwareManager {
     method public boolean get(int);
     method public int getColorBalance();
     method public android.util.Range<java.lang.Integer> getColorBalanceRange();
@@ -242,7 +242,7 @@ package mokee.hardware {
     method public int getDisplayColorCalibrationMax();
     method public int getDisplayColorCalibrationMin();
     method public mokee.hardware.DisplayMode[] getDisplayModes();
-    method public static mokee.hardware.MKHardwareManager getInstance(android.content.Context);
+    method public static mokee.hardware.MoKeeHardwareManager getInstance(android.content.Context);
     method public mokee.hardware.HSIC getPictureAdjustment();
     method public java.util.List<android.util.Range<java.lang.Float>> getPictureAdjustmentRanges();
     method public mokee.hardware.TouchscreenGesture[] getTouchscreenGestures();
@@ -446,40 +446,40 @@ package mokee.preference {
     ctor public GlobalSettingSwitchPreference(android.content.Context);
   }
 
-  public class MKGlobalSettingSwitchPreference extends mokee.preference.SelfRemovingSwitchPreference {
-    ctor public MKGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
-    ctor public MKGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
-    ctor public MKGlobalSettingSwitchPreference(android.content.Context);
+  public class MoKeeGlobalSettingSwitchPreference extends mokee.preference.SelfRemovingSwitchPreference {
+    ctor public MoKeeGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public MoKeeGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public MoKeeGlobalSettingSwitchPreference(android.content.Context);
   }
 
-  public class MKSecureSettingListPreference extends mokee.preference.SelfRemovingListPreference {
-    ctor public MKSecureSettingListPreference(android.content.Context, android.util.AttributeSet, int);
-    ctor public MKSecureSettingListPreference(android.content.Context, android.util.AttributeSet);
+  public class MoKeeSecureSettingListPreference extends mokee.preference.SelfRemovingListPreference {
+    ctor public MoKeeSecureSettingListPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public MoKeeSecureSettingListPreference(android.content.Context, android.util.AttributeSet);
     method public int getIntValue(int);
   }
 
-  public class MKSecureSettingSwitchPreference extends mokee.preference.SelfRemovingSwitchPreference {
-    ctor public MKSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
-    ctor public MKSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
-    ctor public MKSecureSettingSwitchPreference(android.content.Context);
+  public class MoKeeSecureSettingSwitchPreference extends mokee.preference.SelfRemovingSwitchPreference {
+    ctor public MoKeeSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public MoKeeSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public MoKeeSecureSettingSwitchPreference(android.content.Context);
   }
 
-  public class MKSystemSettingDropDownPreference extends mokee.preference.SelfRemovingDropDownPreference {
-    ctor public MKSystemSettingDropDownPreference(android.content.Context, android.util.AttributeSet, int);
-    ctor public MKSystemSettingDropDownPreference(android.content.Context, android.util.AttributeSet);
+  public class MoKeeSystemSettingDropDownPreference extends mokee.preference.SelfRemovingDropDownPreference {
+    ctor public MoKeeSystemSettingDropDownPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public MoKeeSystemSettingDropDownPreference(android.content.Context, android.util.AttributeSet);
     method public int getIntValue(int);
   }
 
-  public class MKSystemSettingListPreference extends mokee.preference.SelfRemovingListPreference {
-    ctor public MKSystemSettingListPreference(android.content.Context, android.util.AttributeSet, int);
-    ctor public MKSystemSettingListPreference(android.content.Context, android.util.AttributeSet);
+  public class MoKeeSystemSettingListPreference extends mokee.preference.SelfRemovingListPreference {
+    ctor public MoKeeSystemSettingListPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public MoKeeSystemSettingListPreference(android.content.Context, android.util.AttributeSet);
     method public int getIntValue(int);
   }
 
-  public class MKSystemSettingSwitchPreference extends mokee.preference.SelfRemovingSwitchPreference {
-    ctor public MKSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
-    ctor public MKSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
-    ctor public MKSystemSettingSwitchPreference(android.content.Context);
+  public class MoKeeSystemSettingSwitchPreference extends mokee.preference.SelfRemovingSwitchPreference {
+    ctor public MoKeeSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public MoKeeSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public MoKeeSystemSettingSwitchPreference(android.content.Context);
   }
 
   public class RemotePreference extends mokee.preference.SelfRemovingPreference {
@@ -708,21 +708,21 @@ package mokee.providers {
     field public static final java.lang.String _ID = "_id";
   }
 
-  public final class MKSettings {
-    ctor public MKSettings();
+  public final class MoKeeSettings {
+    ctor public MoKeeSettings();
     field public static final java.lang.String ACTION_DATA_USAGE = "mokee.settings.ACTION_DATA_USAGE";
     field public static final java.lang.String ACTION_LIVEDISPLAY_SETTINGS = "mokee.settings.LIVEDISPLAY_SETTINGS";
     field public static final java.lang.String AUTHORITY = "mokeesettings";
   }
 
-  public static final class MKSettings.Global extends android.provider.Settings.NameValueTable {
-    ctor public MKSettings.Global();
+  public static final class MoKeeSettings.Global extends android.provider.Settings.NameValueTable {
+    ctor public MoKeeSettings.Global();
     method public static float getFloat(android.content.ContentResolver, java.lang.String, float);
-    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static int getInt(android.content.ContentResolver, java.lang.String, int);
-    method public static int getInt(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static int getInt(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static long getLong(android.content.ContentResolver, java.lang.String, long);
-    method public static long getLong(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static long getLong(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String, java.lang.String);
     method public static android.net.Uri getUriFor(java.lang.String);
@@ -735,18 +735,18 @@ package mokee.providers {
     field public static final java.lang.String WEATHER_TEMPERATURE_UNIT = "weather_temperature_unit";
   }
 
-  public static class MKSettings.MKSettingNotFoundException extends android.util.AndroidException {
-    ctor public MKSettings.MKSettingNotFoundException(java.lang.String);
+  public static class MoKeeSettings.MoKeeSettingNotFoundException extends android.util.AndroidException {
+    ctor public MoKeeSettings.MoKeeSettingNotFoundException(java.lang.String);
   }
 
-  public static final class MKSettings.Secure extends android.provider.Settings.NameValueTable {
-    ctor public MKSettings.Secure();
+  public static final class MoKeeSettings.Secure extends android.provider.Settings.NameValueTable {
+    ctor public MoKeeSettings.Secure();
     method public static float getFloat(android.content.ContentResolver, java.lang.String, float);
-    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static int getInt(android.content.ContentResolver, java.lang.String, int);
-    method public static int getInt(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static int getInt(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static long getLong(android.content.ContentResolver, java.lang.String, long);
-    method public static long getLong(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static long getLong(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String, java.lang.String);
     method public static android.net.Uri getUriFor(java.lang.String);
@@ -760,14 +760,14 @@ package mokee.providers {
     field public static final java.lang.String TRUST_WARNINGS = "trust_warnings";
   }
 
-  public static final class MKSettings.System extends android.provider.Settings.NameValueTable {
-    ctor public MKSettings.System();
+  public static final class MoKeeSettings.System extends android.provider.Settings.NameValueTable {
+    ctor public MoKeeSettings.System();
     method public static float getFloat(android.content.ContentResolver, java.lang.String, float);
-    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static int getInt(android.content.ContentResolver, java.lang.String, int);
-    method public static int getInt(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static int getInt(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static long getLong(android.content.ContentResolver, java.lang.String, long);
-    method public static long getLong(android.content.ContentResolver, java.lang.String) throws mokee.providers.MKSettings.MKSettingNotFoundException;
+    method public static long getLong(android.content.ContentResolver, java.lang.String) throws mokee.providers.MoKeeSettings.MoKeeSettingNotFoundException;
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String, java.lang.String);
     method public static android.net.Uri getUriFor(java.lang.String);
@@ -1023,22 +1023,22 @@ package mokee.util {
 
 package mokee.weather {
 
-  public class MKWeatherManager {
+  public class MoKeeWeatherManager {
     method public void cancelRequest(int);
     method public java.lang.String getActiveWeatherServiceProviderLabel();
-    method public static mokee.weather.MKWeatherManager getInstance(android.content.Context);
-    method public int lookupCity(java.lang.String, mokee.weather.MKWeatherManager.LookupCityRequestListener);
-    method public void registerWeatherServiceProviderChangeListener(mokee.weather.MKWeatherManager.WeatherServiceProviderChangeListener);
-    method public int requestWeatherUpdate(android.location.Location, mokee.weather.MKWeatherManager.WeatherUpdateRequestListener);
-    method public int requestWeatherUpdate(mokee.weather.WeatherLocation, mokee.weather.MKWeatherManager.WeatherUpdateRequestListener);
-    method public void unregisterWeatherServiceProviderChangeListener(mokee.weather.MKWeatherManager.WeatherServiceProviderChangeListener);
+    method public static mokee.weather.MoKeeWeatherManager getInstance(android.content.Context);
+    method public int lookupCity(java.lang.String, mokee.weather.MoKeeWeatherManager.LookupCityRequestListener);
+    method public void registerWeatherServiceProviderChangeListener(mokee.weather.MoKeeWeatherManager.WeatherServiceProviderChangeListener);
+    method public int requestWeatherUpdate(android.location.Location, mokee.weather.MoKeeWeatherManager.WeatherUpdateRequestListener);
+    method public int requestWeatherUpdate(mokee.weather.WeatherLocation, mokee.weather.MoKeeWeatherManager.WeatherUpdateRequestListener);
+    method public void unregisterWeatherServiceProviderChangeListener(mokee.weather.MoKeeWeatherManager.WeatherServiceProviderChangeListener);
   }
 
-  public static abstract interface MKWeatherManager.LookupCityRequestListener {
+  public static abstract interface MoKeeWeatherManager.LookupCityRequestListener {
     method public abstract void onLookupCityRequestCompleted(int, java.util.List<mokee.weather.WeatherLocation>);
   }
 
-  public static final class MKWeatherManager.RequestStatus {
+  public static final class MoKeeWeatherManager.RequestStatus {
     field public static final int ALREADY_IN_PROGRESS = -3; // 0xfffffffd
     field public static final int COMPLETED = 1; // 0x1
     field public static final int FAILED = -1; // 0xffffffff
@@ -1046,11 +1046,11 @@ package mokee.weather {
     field public static final int SUBMITTED_TOO_SOON = -2; // 0xfffffffe
   }
 
-  public static abstract interface MKWeatherManager.WeatherServiceProviderChangeListener {
+  public static abstract interface MoKeeWeatherManager.WeatherServiceProviderChangeListener {
     method public abstract void onWeatherServiceProviderChanged(java.lang.String);
   }
 
-  public static abstract interface MKWeatherManager.WeatherUpdateRequestListener {
+  public static abstract interface MoKeeWeatherManager.WeatherUpdateRequestListener {
     method public abstract void onWeatherRequestCompleted(int, mokee.weather.WeatherInfo);
   }
 

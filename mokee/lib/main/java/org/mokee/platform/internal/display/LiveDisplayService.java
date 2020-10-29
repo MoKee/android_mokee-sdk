@@ -37,7 +37,7 @@ import android.view.Display;
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
 
-import org.mokee.platform.internal.MKSystemService;
+import org.mokee.platform.internal.MoKeeSystemService;
 import org.mokee.platform.internal.common.UserContentObserver;
 import org.mokee.platform.internal.display.TwilightTracker.TwilightListener;
 import org.mokee.platform.internal.display.TwilightTracker.TwilightState;
@@ -50,11 +50,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import mokee.app.MKContextConstants;
+import mokee.app.MoKeeContextConstants;
 import mokee.hardware.HSIC;
 import mokee.hardware.ILiveDisplayService;
 import mokee.hardware.LiveDisplayConfig;
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 import static mokee.hardware.LiveDisplayManager.MODE_FIRST;
 import static mokee.hardware.LiveDisplayManager.MODE_LAST;
@@ -66,10 +66,10 @@ import static mokee.hardware.LiveDisplayManager.MODE_OFF;
  *
  * The service is constructed with a set of LiveDisplayFeatures
  * which provide capabilities such as outdoor mode, night mode,
- * and calibration. It interacts with MKHardwareService to relay
+ * and calibration. It interacts with MoKeeHardwareService to relay
  * changes down to the lower layers.
  */
-public class LiveDisplayService extends MKSystemService {
+public class LiveDisplayService extends MoKeeSystemService {
 
     private static final String TAG = "LiveDisplay";
 
@@ -134,7 +134,7 @@ public class LiveDisplayService extends MKSystemService {
 
     @Override
     public String getFeatureDeclaration() {
-        return MKContextConstants.Features.LIVEDISPLAY;
+        return MoKeeContextConstants.Features.LIVEDISPLAY;
     }
 
     @Override
@@ -144,7 +144,7 @@ public class LiveDisplayService extends MKSystemService {
 
     @Override
     public void onStart() {
-        publishBinderService(MKContextConstants.MK_LIVEDISPLAY_SERVICE, mBinder);
+        publishBinderService(MoKeeContextConstants.MK_LIVEDISPLAY_SERVICE, mBinder);
     }
 
     @Override
@@ -426,7 +426,7 @@ public class LiveDisplayService extends MKSystemService {
     private final class ModeObserver extends UserContentObserver {
 
         private final Uri MODE_SETTING =
-                MKSettings.System.getUriFor(MKSettings.System.DISPLAY_TEMPERATURE_MODE);
+                MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_TEMPERATURE_MODE);
 
         ModeObserver(Handler handler) {
             super(handler);
@@ -448,13 +448,13 @@ public class LiveDisplayService extends MKSystemService {
         }
 
         int getMode() {
-            return getInt(MKSettings.System.DISPLAY_TEMPERATURE_MODE,
+            return getInt(MoKeeSettings.System.DISPLAY_TEMPERATURE_MODE,
                     mConfig.getDefaultMode());
         }
 
         boolean setMode(int mode) {
             if (mConfig.hasFeature(mode) && mode >= MODE_FIRST && mode <= MODE_LAST) {
-                putInt(MKSettings.System.DISPLAY_TEMPERATURE_MODE, mode);
+                putInt(MoKeeSettings.System.DISPLAY_TEMPERATURE_MODE, mode);
                 if (mode != mConfig.getDefaultMode()) {
                     stopNudgingMe();
                 }
@@ -482,16 +482,16 @@ public class LiveDisplayService extends MKSystemService {
     private int getSunsetCounter() {
         // Counter used to determine when we should tell the user about this feature.
         // If it's not used after 3 sunsets, we'll show the hint once.
-        return MKSettings.System.getIntForUser(mContext.getContentResolver(),
-                MKSettings.System.LIVE_DISPLAY_HINTED,
+        return MoKeeSettings.System.getIntForUser(mContext.getContentResolver(),
+                MoKeeSettings.System.LIVE_DISPLAY_HINTED,
                 -3,
                 UserHandle.USER_CURRENT);
     }
 
 
     private void updateSunsetCounter(int count) {
-        MKSettings.System.putIntForUser(mContext.getContentResolver(),
-                MKSettings.System.LIVE_DISPLAY_HINTED,
+        MoKeeSettings.System.putIntForUser(mContext.getContentResolver(),
+                MoKeeSettings.System.LIVE_DISPLAY_HINTED,
                 count,
                 UserHandle.USER_CURRENT);
         mAwaitingNudge = count > 0;
@@ -533,7 +533,7 @@ public class LiveDisplayService extends MKSystemService {
         }
         if (counter == 0) {
             //show the notification and don't come back here
-            final Intent intent = new Intent(MKSettings.ACTION_LIVEDISPLAY_SETTINGS);
+            final Intent intent = new Intent(MoKeeSettings.ACTION_LIVEDISPLAY_SETTINGS);
             PendingIntent result = PendingIntent.getActivity(
                     mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             Notification.Builder builder = new Notification.Builder(mContext)
@@ -557,12 +557,12 @@ public class LiveDisplayService extends MKSystemService {
     }
 
     private int getInt(String setting, int defValue) {
-        return MKSettings.System.getIntForUser(mContext.getContentResolver(),
+        return MoKeeSettings.System.getIntForUser(mContext.getContentResolver(),
                 setting, defValue, UserHandle.USER_CURRENT);
     }
 
     private void putInt(String setting, int value) {
-        MKSettings.System.putIntForUser(mContext.getContentResolver(),
+        MoKeeSettings.System.putIntForUser(mContext.getContentResolver(),
                 setting, value, UserHandle.USER_CURRENT);
     }
 }

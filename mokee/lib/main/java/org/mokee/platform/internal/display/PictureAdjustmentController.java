@@ -29,17 +29,17 @@ import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
 
-import mokee.hardware.MKHardwareManager;
+import mokee.hardware.MoKeeHardwareManager;
 import mokee.hardware.DisplayMode;
 import mokee.hardware.HSIC;
 import mokee.hardware.LiveDisplayManager;
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class PictureAdjustmentController extends LiveDisplayFeature {
 
     private static final String TAG = "LiveDisplay-PAC";
 
-    private final MKHardwareManager mHardware;
+    private final MoKeeHardwareManager mHardware;
     private final boolean mUsePictureAdjustment;
     private final boolean mHasDisplayModes;
 
@@ -47,10 +47,10 @@ public class PictureAdjustmentController extends LiveDisplayFeature {
 
     public PictureAdjustmentController(Context context, Handler handler) {
         super(context, handler);
-        mHardware = MKHardwareManager.getInstance(context);
-        mHasDisplayModes = mHardware.isSupported(MKHardwareManager.FEATURE_DISPLAY_MODES);
+        mHardware = MoKeeHardwareManager.getInstance(context);
+        mHasDisplayModes = mHardware.isSupported(MoKeeHardwareManager.FEATURE_DISPLAY_MODES);
 
-        boolean usePA = mHardware.isSupported(MKHardwareManager.FEATURE_PICTURE_ADJUSTMENT);
+        boolean usePA = mHardware.isSupported(MoKeeHardwareManager.FEATURE_PICTURE_ADJUSTMENT);
         if (usePA) {
             mRanges.addAll(mHardware.getPictureAdjustmentRanges());
             if (mRanges.size() < 4) {
@@ -77,7 +77,7 @@ public class PictureAdjustmentController extends LiveDisplayFeature {
         }
 
         registerSettings(
-                MKSettings.System.getUriFor(MKSettings.System.DISPLAY_PICTURE_ADJUSTMENT));
+                MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_PICTURE_ADJUSTMENT));
     }
 
     @Override
@@ -213,7 +213,7 @@ public class PictureAdjustmentController extends LiveDisplayFeature {
     private SparseArray<HSIC> unpackPreference() {
         final SparseArray<HSIC> ret = new SparseArray<HSIC>();
 
-        String pref = getString(MKSettings.System.DISPLAY_PICTURE_ADJUSTMENT);
+        String pref = getString(MoKeeSettings.System.DISPLAY_PICTURE_ADJUSTMENT);
         if (pref != null) {
             String[] byMode = TextUtils.split(pref, ",");
             for (String mode : byMode) {
@@ -236,7 +236,7 @@ public class PictureAdjustmentController extends LiveDisplayFeature {
             }
             sb.append(id).append(":").append(m.flatten());
         }
-        putString(MKSettings.System.DISPLAY_PICTURE_ADJUSTMENT, sb.toString());
+        putString(MoKeeSettings.System.DISPLAY_PICTURE_ADJUSTMENT, sb.toString());
     }
 
 }

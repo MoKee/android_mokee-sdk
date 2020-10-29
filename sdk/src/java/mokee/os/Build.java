@@ -91,8 +91,8 @@ public class Build {
          * <ul>
          * <li>Profiles API via {@link mokee.app.ProfileManager}
          * <li>Hardware Abstraction Framework Access via
-         * {@link mokee.hardware.MKHardwareManager} (Not for use by 3rd parties)
-         * <li>Introductory Settings Provider {@link mokee.providers.MKSettings}
+         * {@link mokee.hardware.MoKeeHardwareManager} (Not for use by 3rd parties)
+         * <li>Introductory Settings Provider {@link mokee.providers.MoKeeSettings}
          * </ul>
          */
         public static final int BOYSENBERRY = 2;
@@ -113,7 +113,7 @@ public class Build {
          * the type of mode to have the device be placed in via
          * {@link mokee.power.PerformanceManager}</li>
          * <li>Numerous new "System" settings exposed via the
-         * {@link mokee.providers.MKSettings.System} interface</li>
+         * {@link mokee.providers.MoKeeSettings.System} interface</li>
          * </ul>
          */
         public static final int DRAGON_FRUIT = 4;
@@ -125,7 +125,7 @@ public class Build {
          * new features!</p>
          * <ul>
          * <li>Weather request api to fetch weather data from providers on the device
-         * {@link mokee.weather.MKWeatherManager}</li>
+         * {@link mokee.weather.MoKeeWeatherManager}</li>
          * <li>Weather provider api to provide weather data to any listener on the device
          * {@link mokee.weatherservice.WeatherProviderService}</li>
          * <li>Parceling helper class {@link mokee.os.Concierge} to help with parcel
@@ -141,12 +141,12 @@ public class Build {
          * new features!</p>
          * <ul>
          * <li>Ability to query and color balance ranges from the
-         * {@link mokee.hardware.MKHardwareManager}, as well as do picture adjustment</li>
+         * {@link mokee.hardware.MoKeeHardwareManager}, as well as do picture adjustment</li>
          * <li>Extended capabilities of the LiveDisplay interfaces, now providing
          * {@link mokee.hardware.LiveDisplayConfig} and a dedicated
          * {@link mokee.hardware.LiveDisplayManager}</li>
          * <li>Added new settings, such as LOCKSCREEN_ROTATION and DISPLAY_LOW_POWER
-         * to {@link mokee.providers.MKSettings}</li>
+         * to {@link mokee.providers.MoKeeSettings}</li>
          * </ul>
          *
          * Signing out, Adnan \u270C

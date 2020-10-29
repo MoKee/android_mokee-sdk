@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class SettingsHelper {
 
@@ -37,9 +37,9 @@ public class SettingsHelper {
     private static final String SETTINGS_SECURE = Settings.Secure.CONTENT_URI.toString();
     private static final String SETTINGS_SYSTEM = Settings.System.CONTENT_URI.toString();
 
-    private static final String MKSETTINGS_GLOBAL = MKSettings.Global.CONTENT_URI.toString();
-    private static final String MKSETTINGS_SECURE = MKSettings.Secure.CONTENT_URI.toString();
-    private static final String MKSETTINGS_SYSTEM = MKSettings.System.CONTENT_URI.toString();
+    private static final String MOKEESETTINGS_GLOBAL = MoKeeSettings.Global.CONTENT_URI.toString();
+    private static final String MOKEESETTINGS_SECURE = MoKeeSettings.Secure.CONTENT_URI.toString();
+    private static final String MOKEESETTINGS_SYSTEM = MoKeeSettings.System.CONTENT_URI.toString();
 
     private static SettingsHelper sInstance;
 
@@ -68,12 +68,12 @@ public class SettingsHelper {
             return Settings.System.getString(resolver, uri.substring(SETTINGS_SYSTEM.length()));
         } else if (uri.startsWith(SETTINGS_GLOBAL)) {
             return Settings.Global.getString(resolver, uri.substring(SETTINGS_GLOBAL.length()));
-        } else if (uri.startsWith(MKSETTINGS_SECURE)) {
-            return MKSettings.Secure.getString(resolver, uri.substring(MKSETTINGS_SECURE.length()));
-        } else if (uri.startsWith(MKSETTINGS_SYSTEM)) {
-            return MKSettings.System.getString(resolver, uri.substring(MKSETTINGS_SYSTEM.length()));
-        } else if (uri.startsWith(MKSETTINGS_GLOBAL)) {
-            return MKSettings.Global.getString(resolver, uri.substring(MKSETTINGS_GLOBAL.length()));
+        } else if (uri.startsWith(MOKEESETTINGS_SECURE)) {
+            return MoKeeSettings.Secure.getString(resolver, uri.substring(MOKEESETTINGS_SECURE.length()));
+        } else if (uri.startsWith(MOKEESETTINGS_SYSTEM)) {
+            return MoKeeSettings.System.getString(resolver, uri.substring(MOKEESETTINGS_SYSTEM.length()));
+        } else if (uri.startsWith(MOKEESETTINGS_GLOBAL)) {
+            return MoKeeSettings.Global.getString(resolver, uri.substring(MOKEESETTINGS_GLOBAL.length()));
         }
         return null;
     }
@@ -88,12 +88,12 @@ public class SettingsHelper {
             return Settings.System.getInt(resolver, uri.substring(SETTINGS_SYSTEM.length()), def);
         } else if (uri.startsWith(SETTINGS_GLOBAL)) {
             return Settings.Global.getInt(resolver, uri.substring(SETTINGS_GLOBAL.length()), def);
-        } else if (uri.startsWith(MKSETTINGS_SECURE)) {
-            return MKSettings.Secure.getInt(resolver, uri.substring(MKSETTINGS_SECURE.length()), def);
-        } else if (uri.startsWith(MKSETTINGS_SYSTEM)) {
-            return MKSettings.System.getInt(resolver, uri.substring(MKSETTINGS_SYSTEM.length()), def);
-        } else if (uri.startsWith(MKSETTINGS_GLOBAL)) {
-            return MKSettings.Global.getInt(resolver, uri.substring(MKSETTINGS_GLOBAL.length()), def);
+        } else if (uri.startsWith(MOKEESETTINGS_SECURE)) {
+            return MoKeeSettings.Secure.getInt(resolver, uri.substring(MOKEESETTINGS_SECURE.length()), def);
+        } else if (uri.startsWith(MOKEESETTINGS_SYSTEM)) {
+            return MoKeeSettings.System.getInt(resolver, uri.substring(MOKEESETTINGS_SYSTEM.length()), def);
+        } else if (uri.startsWith(MOKEESETTINGS_GLOBAL)) {
+            return MoKeeSettings.Global.getInt(resolver, uri.substring(MOKEESETTINGS_GLOBAL.length()), def);
         }
         return def;
     }
@@ -113,12 +113,12 @@ public class SettingsHelper {
             Settings.System.putString(resolver, uri.substring(SETTINGS_SYSTEM.length()), value);
         } else if (uri.startsWith(SETTINGS_GLOBAL)) {
             Settings.Global.putString(resolver, uri.substring(SETTINGS_GLOBAL.length()), value);
-        } else if (uri.startsWith(MKSETTINGS_SECURE)) {
-            MKSettings.Secure.putString(resolver, uri.substring(MKSETTINGS_SECURE.length()), value);
-        } else if (uri.startsWith(MKSETTINGS_SYSTEM)) {
-            MKSettings.System.putString(resolver, uri.substring(MKSETTINGS_SYSTEM.length()), value);
-        } else if (uri.startsWith(MKSETTINGS_GLOBAL)) {
-            MKSettings.Global.putString(resolver, uri.substring(MKSETTINGS_GLOBAL.length()), value);
+        } else if (uri.startsWith(MOKEESETTINGS_SECURE)) {
+            MoKeeSettings.Secure.putString(resolver, uri.substring(MOKEESETTINGS_SECURE.length()), value);
+        } else if (uri.startsWith(MOKEESETTINGS_SYSTEM)) {
+            MoKeeSettings.System.putString(resolver, uri.substring(MOKEESETTINGS_SYSTEM.length()), value);
+        } else if (uri.startsWith(MOKEESETTINGS_GLOBAL)) {
+            MoKeeSettings.Global.putString(resolver, uri.substring(MOKEESETTINGS_GLOBAL.length()), value);
         }
     }
 
@@ -132,12 +132,12 @@ public class SettingsHelper {
             Settings.System.putInt(resolver, uri.substring(SETTINGS_SYSTEM.length()), value);
         } else if (uri.startsWith(SETTINGS_GLOBAL)) {
             Settings.Global.putInt(resolver, uri.substring(SETTINGS_GLOBAL.length()), value);
-        } else if (uri.startsWith(MKSETTINGS_SECURE)) {
-            MKSettings.Secure.putInt(resolver, uri.substring(MKSETTINGS_SECURE.length()), value);
-        } else if (uri.startsWith(MKSETTINGS_SYSTEM)) {
-            MKSettings.System.putInt(resolver, uri.substring(MKSETTINGS_SYSTEM.length()), value);
-        } else if (uri.startsWith(MKSETTINGS_GLOBAL)) {
-            MKSettings.Global.putInt(resolver, uri.substring(MKSETTINGS_GLOBAL.length()), value);
+        } else if (uri.startsWith(MOKEESETTINGS_SECURE)) {
+            MoKeeSettings.Secure.putInt(resolver, uri.substring(MOKEESETTINGS_SECURE.length()), value);
+        } else if (uri.startsWith(MOKEESETTINGS_SYSTEM)) {
+            MoKeeSettings.System.putInt(resolver, uri.substring(MOKEESETTINGS_SYSTEM.length()), value);
+        } else if (uri.startsWith(MOKEESETTINGS_GLOBAL)) {
+            MoKeeSettings.Global.putInt(resolver, uri.substring(MOKEESETTINGS_GLOBAL.length()), value);
         }
     }
 

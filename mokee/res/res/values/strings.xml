@@ -135,7 +135,7 @@
     <string name="permlab_manageLiveDisplay">manage LiveDisplay settings</string>
     <string name="permdesc_manageLiveDisplay">Allows an app to configure advanced display settings.</string>
 
-    <!-- MKAudioService - observe session changes permission -->
+    <!-- MoKeeAudioService - observe session changes permission -->
     <string name="permlab_observe_audio_sessions">observe audio session changes</string>
     <string name="permdesc_observe_audio_sessions">Allows an app to observe audio streams being created and destroyed.</string>
 

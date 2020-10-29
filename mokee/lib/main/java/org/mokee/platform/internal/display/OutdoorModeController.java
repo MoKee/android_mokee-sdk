@@ -28,13 +28,13 @@ import android.os.Handler;
 import java.io.PrintWriter;
 import java.util.BitSet;
 
-import mokee.hardware.MKHardwareManager;
+import mokee.hardware.MoKeeHardwareManager;
 import mokee.hardware.LiveDisplayManager;
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class OutdoorModeController extends LiveDisplayFeature {
 
-    private final MKHardwareManager mHardware;
+    private final MoKeeHardwareManager mHardware;
     private AmbientLuxObserver mLuxObserver;
 
     // hardware capabilities
@@ -55,8 +55,8 @@ public class OutdoorModeController extends LiveDisplayFeature {
     public OutdoorModeController(Context context, Handler handler) {
         super(context, handler);
 
-        mHardware = MKHardwareManager.getInstance(mContext);
-        mUseOutdoorMode = mHardware.isSupported(MKHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT);
+        mHardware = MoKeeHardwareManager.getInstance(mContext);
+        mUseOutdoorMode = mHardware.isSupported(MoKeeHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT);
 
         mDefaultOutdoorLux = mContext.getResources().getInteger(
                 org.mokee.platform.internal.R.integer.config_outdoorAmbientLux);
@@ -76,7 +76,7 @@ public class OutdoorModeController extends LiveDisplayFeature {
                 mDefaultOutdoorLux, mOutdoorLuxHysteresis, SENSOR_WINDOW_MS);
 
         registerSettings(
-                MKSettings.System.getUriFor(MKSettings.System.DISPLAY_AUTO_OUTDOOR_MODE));
+                MoKeeSettings.System.getUriFor(MoKeeSettings.System.DISPLAY_AUTO_OUTDOOR_MODE));
     }
 
     @Override
@@ -111,7 +111,7 @@ public class OutdoorModeController extends LiveDisplayFeature {
         // face if they turn it back on in normal conditions
         if (!isScreenOn() && getMode() != MODE_OUTDOOR) {
             mIsOutdoor = false;
-            mHardware.set(MKHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT, false);
+            mHardware.set(MoKeeHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT, false);
         }
     }
 
@@ -132,7 +132,7 @@ public class OutdoorModeController extends LiveDisplayFeature {
         pw.println("    mIsOutdoor=" + mIsOutdoor);
         pw.println("    mIsNight=" + isNight());
         pw.println("    hardware state=" +
-                mHardware.get(MKHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT));
+                mHardware.get(MoKeeHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT));
         mLuxObserver.dump(pw);
     }
 
@@ -209,7 +209,7 @@ public class OutdoorModeController extends LiveDisplayFeature {
                     }
                 }
             }
-            mHardware.set(MKHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT, enabled);
+            mHardware.set(MoKeeHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT, enabled);
         }
     }
 
@@ -233,13 +233,13 @@ public class OutdoorModeController extends LiveDisplayFeature {
         if (!mUseOutdoorMode) {
             return false;
         }
-        putBoolean(MKSettings.System.DISPLAY_AUTO_OUTDOOR_MODE, enabled);
+        putBoolean(MoKeeSettings.System.DISPLAY_AUTO_OUTDOOR_MODE, enabled);
         return true;
     }
 
     boolean isAutomaticOutdoorModeEnabled() {
         return mUseOutdoorMode && (mNightDisplayAvailable ||
-                getBoolean(MKSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
+                getBoolean(MoKeeSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
                            getDefaultAutoOutdoorMode()));
     }
 

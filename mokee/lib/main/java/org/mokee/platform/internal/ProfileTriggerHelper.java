@@ -31,7 +31,7 @@ import android.util.Log;
 import mokee.app.Profile;
 import mokee.app.Profile.ProfileTrigger;
 import mokee.app.ProfileManager;
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 import java.util.UUID;
 
@@ -79,13 +79,13 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
         updateEnabled();
 
         mContext.getContentResolver().registerContentObserver(
-                MKSettings.System.getUriFor(MKSettings.System.SYSTEM_PROFILES_ENABLED), false,
+                MoKeeSettings.System.getUriFor(MoKeeSettings.System.SYSTEM_PROFILES_ENABLED), false,
                 mSettingsObserver);
     }
 
     public void updateEnabled() {
-        boolean enabled = MKSettings.System.getInt(mContext.getContentResolver(),
-                MKSettings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
+        boolean enabled = MoKeeSettings.System.getInt(mContext.getContentResolver(),
+                MoKeeSettings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
         if (enabled && !mFilterRegistered) {
             Log.v(TAG, "Enabling");
             mContext.registerReceiver(this, mIntentFilter);

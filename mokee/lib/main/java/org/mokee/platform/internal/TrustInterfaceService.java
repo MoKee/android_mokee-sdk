@@ -33,8 +33,8 @@ import android.util.Log;
 import android.util.Pair;
 import android.text.TextUtils;
 
-import mokee.app.MKContextConstants;
-import mokee.providers.MKSettings;
+import mokee.app.MoKeeContextConstants;
+import mokee.providers.MoKeeSettings;
 import mokee.trust.ITrustInterface;
 import mokee.trust.TrustInterface;
 
@@ -47,7 +47,7 @@ import java.util.Date;
 import java.util.NoSuchElementException;
 
 /** @hide **/
-public class TrustInterfaceService extends MKSystemService {
+public class TrustInterfaceService extends MoKeeSystemService {
     private static final String TAG = "MKTrustInterfaceService";
 
     private static final String PLATFORM_SECURITY_PATCHES = "ro.build.version.security_patch";
@@ -75,13 +75,13 @@ public class TrustInterfaceService extends MKSystemService {
 
     @Override
     public String getFeatureDeclaration() {
-        return MKContextConstants.Features.TRUST;
+        return MoKeeContextConstants.Features.TRUST;
     }
 
     @Override
     public void onStart() {
-        if (mContext.getPackageManager().hasSystemFeature(MKContextConstants.Features.TRUST)) {
-            publishBinderService(MKContextConstants.MK_TRUST_INTERFACE, mService);
+        if (mContext.getPackageManager().hasSystemFeature(MoKeeContextConstants.Features.TRUST)) {
+            publishBinderService(MoKeeContextConstants.MK_TRUST_INTERFACE, mService);
         } else {
             Log.wtf(TAG, "MoKee Trust service started by system server but feature xml not" +
                     " declared. Not publishing binder service!");
@@ -220,8 +220,8 @@ public class TrustInterfaceService extends MKSystemService {
     }
 
     private boolean isWarningAllowed(int warning) {
-        return (MKSettings.Secure.getInt(mContext.getContentResolver(),
-                MKSettings.Secure.TRUST_WARNINGS,
+        return (MoKeeSettings.Secure.getInt(mContext.getContentResolver(),
+                MoKeeSettings.Secure.TRUST_WARNINGS,
                 TrustInterface.TRUST_WARN_MAX_VALUE) & warning) != 0;
     }
 
@@ -338,8 +338,8 @@ public class TrustInterfaceService extends MKSystemService {
     }
 
     private boolean hasOnboardedUser() {
-        return MKSettings.System.getInt(mContext.getContentResolver(),
-                MKSettings.System.TRUST_INTERFACE_HINTED, 0) == 1;
+        return MoKeeSettings.System.getInt(mContext.getContentResolver(),
+                MoKeeSettings.System.TRUST_INTERFACE_HINTED, 0) == 1;
     }
 
     private void registerLocaleChangedReceiver() {

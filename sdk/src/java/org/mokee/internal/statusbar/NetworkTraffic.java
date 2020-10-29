@@ -48,7 +48,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 import org.mokee.platform.internal.R;
 
@@ -140,8 +140,8 @@ public class NetworkTraffic extends TextView {
         mConnectivityManager.registerNetworkCallback(request, mNetworkCallback);
     }
 
-    private MKStatusBarItem.DarkReceiver mDarkReceiver =
-            new MKStatusBarItem.DarkReceiver() {
+    private MoKeeStatusBarItem.DarkReceiver mDarkReceiver =
+            new MoKeeStatusBarItem.DarkReceiver() {
         public void onDarkChanged(Rect area, float darkIntensity, int tint) {
             mIconTint = tint;
             setTextColor(mIconTint);
@@ -153,8 +153,8 @@ public class NetworkTraffic extends TextView {
         }
     };
 
-    private MKStatusBarItem.VisibilityReceiver mVisibilityReceiver =
-            new MKStatusBarItem.VisibilityReceiver() {
+    private MoKeeStatusBarItem.VisibilityReceiver mVisibilityReceiver =
+            new MoKeeStatusBarItem.VisibilityReceiver() {
         public void onVisibilityChanged(boolean isVisible) {
             if (mNetworkTrafficIsVisible != isVisible) {
                 mNetworkTrafficIsVisible = isVisible;
@@ -167,8 +167,8 @@ public class NetworkTraffic extends TextView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        MKStatusBarItem.Manager manager =
-                MKStatusBarItem.findManager((View) this);
+        MoKeeStatusBarItem.Manager manager =
+                MoKeeStatusBarItem.findManager((View) this);
         manager.addDarkReceiver(mDarkReceiver);
         manager.addVisibilityReceiver(mVisibilityReceiver);
 
@@ -326,11 +326,11 @@ public class NetworkTraffic extends TextView {
 
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
-            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
-                    MKSettings.Secure.NETWORK_TRAFFIC_MODE),
+            resolver.registerContentObserver(MoKeeSettings.Secure.getUriFor(
+                    MoKeeSettings.Secure.NETWORK_TRAFFIC_MODE),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(MKSettings.Secure.getUriFor(
-                    MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE),
+            resolver.registerContentObserver(MoKeeSettings.Secure.getUriFor(
+                    MoKeeSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE),
                     false, this, UserHandle.USER_ALL);
         }
 
@@ -392,10 +392,10 @@ public class NetworkTraffic extends TextView {
     private void updateSettings() {
         ContentResolver resolver = mContext.getContentResolver();
 
-        mMode = MKSettings.Secure.getIntForUser(resolver,
-                MKSettings.Secure.NETWORK_TRAFFIC_MODE, 3, UserHandle.USER_CURRENT);
-        mAutoHide = MKSettings.Secure.getIntForUser(resolver,
-                MKSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
+        mMode = MoKeeSettings.Secure.getIntForUser(resolver,
+                MoKeeSettings.Secure.NETWORK_TRAFFIC_MODE, 3, UserHandle.USER_CURRENT);
+        mAutoHide = MoKeeSettings.Secure.getIntForUser(resolver,
+                MoKeeSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
         mAutoHideThreshold = AUTOHIDE_THRESHOLD_KILOBYTES;
 
         if (mMode != MODE_DISABLED) {

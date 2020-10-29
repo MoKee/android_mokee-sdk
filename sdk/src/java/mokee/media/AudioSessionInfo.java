@@ -34,8 +34,8 @@ import mokee.os.Concierge.ParcelInfo;
  * an application may create audio effects on the output stream.
  *
  * A list of global audio sessions can be obtained by calling
- * listAudioSessions() via {@link MKAudioManager}, or a component can listen
- * for the {@link MKAudioManager#ACTION_AUDIO_SESSIONS_CHANGED} broadcast.
+ * listAudioSessions() via {@link MoKeeAudioManager}, or a component can listen
+ * for the {@link MoKeeAudioManager#ACTION_AUDIO_SESSIONS_CHANGED} broadcast.
  *
  * @hide
  */

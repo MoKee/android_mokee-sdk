@@ -25,7 +25,7 @@ import android.util.Log;
 
 import androidx.preference.EditTextPreference;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class HostnamePreference extends EditTextPreference {
 
@@ -67,8 +67,8 @@ public class HostnamePreference extends EditTextPreference {
     }
 
     public void persistHostname(String hostname) {
-        MKSettings.Secure.putString(getContext().getContentResolver(),
-                MKSettings.Secure.DEVICE_HOSTNAME, hostname);
+        MoKeeSettings.Secure.putString(getContext().getContentResolver(),
+                MoKeeSettings.Secure.DEVICE_HOSTNAME, hostname);
     }
 
 }

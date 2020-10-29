@@ -25,10 +25,10 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 public class PreBootReceiver extends BroadcastReceiver{
-    private static final String TAG = "MKSettingsReceiver";
+    private static final String TAG = "MoKeeSettingsReceiver";
     private static final boolean LOCAL_LOGV = false;
 
     @Override
@@ -39,12 +39,12 @@ public class PreBootReceiver extends BroadcastReceiver{
 
         ContentResolver contentResolver = context.getContentResolver();
         IContentProvider contentProvider = contentResolver.acquireProvider(
-                MKSettings.AUTHORITY);
+                MoKeeSettings.AUTHORITY);
 
         try{
             contentProvider.call(contentResolver.getPackageName(),
-                    contentResolver.getAttributionTag(), MKSettings.AUTHORITY,
-                    MKSettings.CALL_METHOD_MIGRATE_SETTINGS, null, null);
+                    contentResolver.getAttributionTag(), MoKeeSettings.AUTHORITY,
+                    MoKeeSettings.CALL_METHOD_MIGRATE_SETTINGS, null, null);
         } catch (RemoteException ex) {
             Log.w(TAG, "Failed to trigger settings migration due to RemoteException");
         }

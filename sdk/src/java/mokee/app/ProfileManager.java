@@ -239,7 +239,7 @@ public class ProfileManager {
         sService = getService();
 
         if (context.getPackageManager().hasSystemFeature(
-                mokee.app.MKContextConstants.Features.PROFILES) && sService == null) {
+                mokee.app.MoKeeContextConstants.Features.PROFILES) && sService == null) {
             Log.wtf(TAG, "Unable to get ProfileManagerService. The service either" +
                     " crashed, was not started, or the interface has been called to early in" +
                     " SystemServer init");
@@ -263,7 +263,7 @@ public class ProfileManager {
         if (sService != null) {
             return sService;
         }
-        IBinder b = ServiceManager.getService(MKContextConstants.MK_PROFILE_SERVICE);
+        IBinder b = ServiceManager.getService(MoKeeContextConstants.MK_PROFILE_SERVICE);
         sService = IProfileManager.Stub.asInterface(b);
         return sService;
     }

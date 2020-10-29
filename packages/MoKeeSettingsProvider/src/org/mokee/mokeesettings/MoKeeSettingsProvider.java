@@ -44,7 +44,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +65,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
     private static final Bundle NULL_SETTING = Bundle.forPair("value", null);
 
     // Each defined user has their own settings
-    protected final SparseArray<MKDatabaseHelper> mDbHelpers = new SparseArray<MKDatabaseHelper>();
+    protected final SparseArray<MoKeeDatabaseHelper> mDbHelpers = new SparseArray<MoKeeDatabaseHelper>();
 
     private static final int SYSTEM = 1;
     private static final int SECURE = 2;
@@ -86,17 +86,17 @@ public class MoKeeSettingsProvider extends ContentProvider {
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
     static {
-        sUriMatcher.addURI(MKSettings.AUTHORITY, MKDatabaseHelper.MKTableNames.TABLE_SYSTEM,
+        sUriMatcher.addURI(MoKeeSettings.AUTHORITY, MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM,
                 SYSTEM);
-        sUriMatcher.addURI(MKSettings.AUTHORITY, MKDatabaseHelper.MKTableNames.TABLE_SECURE,
+        sUriMatcher.addURI(MoKeeSettings.AUTHORITY, MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE,
                 SECURE);
-        sUriMatcher.addURI(MKSettings.AUTHORITY, MKDatabaseHelper.MKTableNames.TABLE_GLOBAL,
+        sUriMatcher.addURI(MoKeeSettings.AUTHORITY, MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL,
                 GLOBAL);
-        sUriMatcher.addURI(MKSettings.AUTHORITY, MKDatabaseHelper.MKTableNames.TABLE_SYSTEM +
+        sUriMatcher.addURI(MoKeeSettings.AUTHORITY, MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM +
                 ITEM_MATCHER, SYSTEM_ITEM_NAME);
-        sUriMatcher.addURI(MKSettings.AUTHORITY, MKDatabaseHelper.MKTableNames.TABLE_SECURE +
+        sUriMatcher.addURI(MoKeeSettings.AUTHORITY, MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE +
                 ITEM_MATCHER, SECURE_ITEM_NAME);
-        sUriMatcher.addURI(MKSettings.AUTHORITY, MKDatabaseHelper.MKTableNames.TABLE_GLOBAL +
+        sUriMatcher.addURI(MoKeeSettings.AUTHORITY, MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL +
                 ITEM_MATCHER, GLOBAL_ITEM_NAME);
     }
 
@@ -114,7 +114,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
 
         mUriBuilder = new Uri.Builder();
         mUriBuilder.scheme(ContentResolver.SCHEME_CONTENT);
-        mUriBuilder.authority(MKSettings.AUTHORITY);
+        mUriBuilder.authority(MoKeeSettings.AUTHORITY);
 
         mSharedPrefs = getContext().getSharedPreferences(TAG, Context.MODE_PRIVATE);
 
@@ -143,15 +143,15 @@ public class MoKeeSettingsProvider extends ContentProvider {
     /**
      * Migrates MK settings for all existing users if this has not been run before.
      */
-    private void migrateMKSettingsForExistingUsersIfNeeded() {
-        boolean hasMigratedMKSettings = mSharedPrefs.getBoolean(PREF_HAS_MIGRATED_MK_SETTINGS,
+    private void migrateMoKeeSettingsForExistingUsersIfNeeded() {
+        boolean hasMigratedMoKeeSettings = mSharedPrefs.getBoolean(PREF_HAS_MIGRATED_MK_SETTINGS,
                 false);
 
-        if (!hasMigratedMKSettings) {
+        if (!hasMigratedMoKeeSettings) {
             long startTime = System.currentTimeMillis();
 
             for (UserInfo user : mUserManager.getUsers()) {
-                migrateMKSettingsForUser(user.id);
+                migrateMoKeeSettingsForUser(user.id);
             }
 
             mSharedPrefs.edit().putBoolean(PREF_HAS_MIGRATED_MK_SETTINGS, true).commit();
@@ -166,12 +166,12 @@ public class MoKeeSettingsProvider extends ContentProvider {
      * Migrates MK settings for a specific user.
      * @param userId The id of the user to run MK settings migration for.
      */
-    private void migrateMKSettingsForUser(int userId) {
+    private void migrateMoKeeSettingsForUser(int userId) {
         synchronized (this) {
             if (LOCAL_LOGV) Log.d(TAG, "MK settings will be migrated for user id: " + userId);
 
             // Rename database files (if needed)
-            MKDatabaseHelper dbHelper = mDbHelpers.get(userId);
+            MoKeeDatabaseHelper dbHelper = mDbHelpers.get(userId);
             if (dbHelper != null) {
                 dbHelper.close();
                 mDbHelpers.delete(userId);
@@ -183,18 +183,18 @@ public class MoKeeSettingsProvider extends ContentProvider {
             }
 
             // Migrate system settings
-            int rowsMigrated = migrateMKSettingsForTable(userId,
-                    MKDatabaseHelper.MKTableNames.TABLE_SYSTEM, MKSettings.System.LEGACY_SYSTEM_SETTINGS);
+            int rowsMigrated = migrateMoKeeSettingsForTable(userId,
+                    MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM, MoKeeSettings.System.LEGACY_SYSTEM_SETTINGS);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to MK system table");
 
             // Migrate secure settings
-            rowsMigrated = migrateMKSettingsForTable(userId,
-                    MKDatabaseHelper.MKTableNames.TABLE_SECURE, MKSettings.Secure.LEGACY_SECURE_SETTINGS);
+            rowsMigrated = migrateMoKeeSettingsForTable(userId,
+                    MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE, MoKeeSettings.Secure.LEGACY_SECURE_SETTINGS);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to MK secure table");
 
             // Migrate global settings
-            rowsMigrated = migrateMKSettingsForTable(userId,
-                    MKDatabaseHelper.MKTableNames.TABLE_GLOBAL, MKSettings.Global.LEGACY_GLOBAL_SETTINGS);
+            rowsMigrated = migrateMoKeeSettingsForTable(userId,
+                    MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL, MoKeeSettings.Global.LEGACY_GLOBAL_SETTINGS);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to MK global table");
         }
     }
@@ -203,10 +203,10 @@ public class MoKeeSettingsProvider extends ContentProvider {
      * Migrates MK settings for a specific table and user id.
      * @param userId The id of the user to run MK settings migration for.
      * @param tableName The name of the table to run MK settings migration on.
-     * @param settings An array of keys to migrate from {@link Settings} to {@link MKSettings}
+     * @param settings An array of keys to migrate from {@link Settings} to {@link MoKeeSettings}
      * @return Number of rows migrated.
      */
-    private int migrateMKSettingsForTable(int userId, String tableName, String[] settings) {
+    private int migrateMoKeeSettingsForTable(int userId, String tableName, String[] settings) {
         ContentResolver contentResolver = getContext().getContentResolver();
         ContentValues[] contentValues = new ContentValues[settings.length];
 
@@ -214,15 +214,15 @@ public class MoKeeSettingsProvider extends ContentProvider {
         for (String settingsKey : settings) {
             String settingsValue = null;
 
-            if (tableName.equals(MKDatabaseHelper.MKTableNames.TABLE_SYSTEM)) {
+            if (tableName.equals(MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM)) {
                 settingsValue = Settings.System.getStringForUser(contentResolver, settingsKey,
                         userId);
             }
-            else if (tableName.equals(MKDatabaseHelper.MKTableNames.TABLE_SECURE)) {
+            else if (tableName.equals(MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE)) {
                 settingsValue = Settings.Secure.getStringForUser(contentResolver, settingsKey,
                         userId);
             }
-            else if (tableName.equals(MKDatabaseHelper.MKTableNames.TABLE_GLOBAL)) {
+            else if (tableName.equals(MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL)) {
                 settingsValue = Settings.Global.getStringForUser(contentResolver, settingsKey,
                         userId);
             }
@@ -293,7 +293,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
 
         int callingUserId = UserHandle.getCallingUserId();
         if (args != null) {
-            int reqUser = args.getInt(MKSettings.CALL_METHOD_USER_KEY, callingUserId);
+            int reqUser = args.getInt(MoKeeSettings.CALL_METHOD_USER_KEY, callingUserId);
             if (reqUser != callingUserId) {
                 callingUserId = ActivityManager.handleIncomingUser(Binder.getCallingPid(),
                         Binder.getCallingUid(), reqUser, false, true,
@@ -304,62 +304,62 @@ public class MoKeeSettingsProvider extends ContentProvider {
 
         switch (method) {
             // Migrate methods
-           case MKSettings.CALL_METHOD_MIGRATE_SETTINGS:
-                migrateMKSettingsForExistingUsersIfNeeded();
+           case MoKeeSettings.CALL_METHOD_MIGRATE_SETTINGS:
+                migrateMoKeeSettingsForExistingUsersIfNeeded();
                 return null;
-           case MKSettings.CALL_METHOD_MIGRATE_SETTINGS_FOR_USER:
-                migrateMKSettingsForUser(callingUserId);
+           case MoKeeSettings.CALL_METHOD_MIGRATE_SETTINGS_FOR_USER:
+                migrateMoKeeSettingsForUser(callingUserId);
                 return null;
 
             // Get methods
-            case MKSettings.CALL_METHOD_GET_SYSTEM:
-                return lookupSingleValue(callingUserId, MKSettings.System.CONTENT_URI,
+            case MoKeeSettings.CALL_METHOD_GET_SYSTEM:
+                return lookupSingleValue(callingUserId, MoKeeSettings.System.CONTENT_URI,
                         request);
-            case MKSettings.CALL_METHOD_GET_SECURE:
-                return lookupSingleValue(callingUserId, MKSettings.Secure.CONTENT_URI,
+            case MoKeeSettings.CALL_METHOD_GET_SECURE:
+                return lookupSingleValue(callingUserId, MoKeeSettings.Secure.CONTENT_URI,
                         request);
-            case MKSettings.CALL_METHOD_GET_GLOBAL:
-                return lookupSingleValue(callingUserId, MKSettings.Global.CONTENT_URI,
+            case MoKeeSettings.CALL_METHOD_GET_GLOBAL:
+                return lookupSingleValue(callingUserId, MoKeeSettings.Global.CONTENT_URI,
                         request);
 
             // Put methods
-            case MKSettings.CALL_METHOD_PUT_SYSTEM:
+            case MoKeeSettings.CALL_METHOD_PUT_SYSTEM:
                 enforceWritePermission(mokee.platform.Manifest.permission.WRITE_SETTINGS);
-                callHelperPut(callingUserId, MKSettings.System.CONTENT_URI, request, args);
+                callHelperPut(callingUserId, MoKeeSettings.System.CONTENT_URI, request, args);
                 return null;
-            case MKSettings.CALL_METHOD_PUT_SECURE:
+            case MoKeeSettings.CALL_METHOD_PUT_SECURE:
                 enforceWritePermission(
                         mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
-                callHelperPut(callingUserId, MKSettings.Secure.CONTENT_URI, request, args);
+                callHelperPut(callingUserId, MoKeeSettings.Secure.CONTENT_URI, request, args);
                 return null;
-            case MKSettings.CALL_METHOD_PUT_GLOBAL:
+            case MoKeeSettings.CALL_METHOD_PUT_GLOBAL:
                 enforceWritePermission(
                         mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
-                callHelperPut(callingUserId, MKSettings.Global.CONTENT_URI, request, args);
+                callHelperPut(callingUserId, MoKeeSettings.Global.CONTENT_URI, request, args);
                 return null;
 
             // List methods
-            case MKSettings.CALL_METHOD_LIST_SYSTEM:
-                return callHelperList(callingUserId, MKSettings.System.CONTENT_URI);
-            case MKSettings.CALL_METHOD_LIST_SECURE:
-                return callHelperList(callingUserId, MKSettings.Secure.CONTENT_URI);
-            case MKSettings.CALL_METHOD_LIST_GLOBAL:
-                return callHelperList(callingUserId, MKSettings.Global.CONTENT_URI);
+            case MoKeeSettings.CALL_METHOD_LIST_SYSTEM:
+                return callHelperList(callingUserId, MoKeeSettings.System.CONTENT_URI);
+            case MoKeeSettings.CALL_METHOD_LIST_SECURE:
+                return callHelperList(callingUserId, MoKeeSettings.Secure.CONTENT_URI);
+            case MoKeeSettings.CALL_METHOD_LIST_GLOBAL:
+                return callHelperList(callingUserId, MoKeeSettings.Global.CONTENT_URI);
 
             // Delete methods
-            case MKSettings.CALL_METHOD_DELETE_SYSTEM:
+            case MoKeeSettings.CALL_METHOD_DELETE_SYSTEM:
                 enforceWritePermission(mokee.platform.Manifest.permission.WRITE_SETTINGS);
-                return callHelperDelete(callingUserId, MKSettings.System.CONTENT_URI,
+                return callHelperDelete(callingUserId, MoKeeSettings.System.CONTENT_URI,
                         request);
-            case MKSettings.CALL_METHOD_DELETE_SECURE:
+            case MoKeeSettings.CALL_METHOD_DELETE_SECURE:
                 enforceWritePermission(
                         mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
-                return callHelperDelete(callingUserId, MKSettings.Secure.CONTENT_URI,
+                return callHelperDelete(callingUserId, MoKeeSettings.Secure.CONTENT_URI,
                         request);
-            case MKSettings.CALL_METHOD_DELETE_GLOBAL:
+            case MoKeeSettings.CALL_METHOD_DELETE_GLOBAL:
                 enforceWritePermission(
                         mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
-                return callHelperDelete(callingUserId, MKSettings.Global.CONTENT_URI,
+                return callHelperDelete(callingUserId, MoKeeSettings.Global.CONTENT_URI,
                         request);
         }
 
@@ -473,7 +473,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
         int code = sUriMatcher.match(uri);
         String tableName = getTableNameFromUriMatchCode(code);
 
-        MKDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
+        MoKeeDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
@@ -531,7 +531,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
         String tableName = getTableNameFromUri(uri);
         checkWritePermissions(tableName);
 
-        MKDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
+        MoKeeDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         db.beginTransaction();
@@ -588,14 +588,14 @@ public class MoKeeSettingsProvider extends ContentProvider {
         String tableName = getTableNameFromUri(uri);
         checkWritePermissions(tableName);
 
-        MKDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
+        MoKeeDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
 
         // Validate value if inserting int System table
         final String name = values.getAsString(Settings.NameValueTable.NAME);
         final String value = values.getAsString(Settings.NameValueTable.VALUE);
-        if (MKDatabaseHelper.MKTableNames.TABLE_SYSTEM.equals(tableName)) {
+        if (MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM.equals(tableName)) {
             validateSystemSettingNameValue(name, value);
-        } else if (MKDatabaseHelper.MKTableNames.TABLE_SECURE.equals(tableName)) {
+        } else if (MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE.equals(tableName)) {
             validateSecureSettingValue(name, value);
         }
 
@@ -632,7 +632,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
             String tableName = getTableNameFromUri(uri);
             checkWritePermissions(tableName);
 
-            MKDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
+            MoKeeDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
                     callingUserId));
 
             SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -649,7 +649,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        // NOTE: update() is never called by the front-end MKSettings API, and updates that
+        // NOTE: update() is never called by the front-end MoKeeSettings API, and updates that
         // wind up affecting rows in Secure that are globally shared will not have the
         // intended effect (the update will be invisible to the rest of the system).
         // This should have no practical effect, since writes to the Secure db can only
@@ -668,14 +668,14 @@ public class MoKeeSettingsProvider extends ContentProvider {
         // Validate value if updating System table
         final String name = values.getAsString(Settings.NameValueTable.NAME);
         final String value = values.getAsString(Settings.NameValueTable.VALUE);
-        if (MKDatabaseHelper.MKTableNames.TABLE_SYSTEM.equals(tableName)) {
+        if (MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM.equals(tableName)) {
             validateSystemSettingNameValue(name, value);
-        } else if (MKDatabaseHelper.MKTableNames.TABLE_SECURE.equals(tableName)) {
+        } else if (MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE.equals(tableName)) {
             validateSecureSettingValue(name, value);
         }
 
         int callingUserId = UserHandle.getCallingUserId();
-        MKDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
+        MoKeeDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
                 callingUserId));
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -692,12 +692,12 @@ public class MoKeeSettingsProvider extends ContentProvider {
     // endregion Content Provider Methods
 
     /**
-     * Tries to get a {@link MKDatabaseHelper} for the specified user and if it does not exist, a
-     * new instance of {@link MKDatabaseHelper} is created for the specified user and returned.
+     * Tries to get a {@link MoKeeDatabaseHelper} for the specified user and if it does not exist, a
+     * new instance of {@link MoKeeDatabaseHelper} is created for the specified user and returned.
      * @param callingUser
      * @return
      */
-    private MKDatabaseHelper getOrEstablishDatabase(int callingUser) {
+    private MoKeeDatabaseHelper getOrEstablishDatabase(int callingUser) {
         if (callingUser >= android.os.Process.SYSTEM_UID) {
             if (USER_CHECK_THROWS) {
                 throw new IllegalArgumentException("Uid rather than user handle: " + callingUser);
@@ -708,7 +708,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
 
         long oldId = Binder.clearCallingIdentity();
         try {
-            MKDatabaseHelper dbHelper;
+            MoKeeDatabaseHelper dbHelper;
             synchronized (this) {
                 dbHelper = mDbHelpers.get(callingUser);
             }
@@ -725,12 +725,12 @@ public class MoKeeSettingsProvider extends ContentProvider {
     }
 
     /**
-     * Check if a {@link MKDatabaseHelper} exists for a user and if it doesn't, a new helper is
+     * Check if a {@link MoKeeDatabaseHelper} exists for a user and if it doesn't, a new helper is
      * created and added to the list of tracked database helpers
      * @param userId
      */
     private void establishDbTracking(int userId) {
-        MKDatabaseHelper dbHelper;
+        MoKeeDatabaseHelper dbHelper;
 
         synchronized (this) {
             dbHelper = mDbHelpers.get(userId);
@@ -741,7 +741,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
                 if (LOCAL_LOGV) {
                     Log.i(TAG, "Installing new mk settings db helper for user " + userId);
                 }
-                dbHelper = new MKDatabaseHelper(getContext(), userId);
+                dbHelper = new MoKeeDatabaseHelper(getContext(), userId);
                 mDbHelpers.append(userId, dbHelper);
             }
         }
@@ -760,8 +760,8 @@ public class MoKeeSettingsProvider extends ContentProvider {
      * @throws SecurityException if the caller is forbidden to write.
      */
     private void checkWritePermissions(String tableName) {
-        if ((MKDatabaseHelper.MKTableNames.TABLE_SECURE.equals(tableName) ||
-                MKDatabaseHelper.MKTableNames.TABLE_GLOBAL.equals(tableName)) &&
+        if ((MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE.equals(tableName) ||
+                MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL.equals(tableName)) &&
                 getContext().checkCallingOrSelfPermission(
                         mokee.platform.Manifest.permission.WRITE_SECURE_SETTINGS) !=
                         PackageManager.PERMISSION_GRANTED) {
@@ -812,13 +812,13 @@ public class MoKeeSettingsProvider extends ContentProvider {
         switch (code) {
             case SYSTEM:
             case SYSTEM_ITEM_NAME:
-                return MKDatabaseHelper.MKTableNames.TABLE_SYSTEM;
+                return MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM;
             case SECURE:
             case SECURE_ITEM_NAME:
-                return MKDatabaseHelper.MKTableNames.TABLE_SECURE;
+                return MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE;
             case GLOBAL:
             case GLOBAL_ITEM_NAME:
-                return MKDatabaseHelper.MKTableNames.TABLE_GLOBAL;
+                return MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL;
             default:
                 throw new IllegalArgumentException("Invalid uri match code: " + code);
         }
@@ -832,25 +832,25 @@ public class MoKeeSettingsProvider extends ContentProvider {
      * @return User id
      */
     private int getUserIdForTable(String tableName, int userId) {
-        return MKDatabaseHelper.MKTableNames.TABLE_GLOBAL.equals(tableName) ?
+        return MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL.equals(tableName) ?
                 UserHandle.USER_OWNER : userId;
     }
 
     /**
      * Modify setting version for an updated table before notifying of change. The
-     * {@link MKSettings} class uses these to provide client-side caches.
+     * {@link MoKeeSettings} class uses these to provide client-side caches.
      * @param uri to send notifications for
      * @param userId
      */
     private void notifyChange(Uri uri, String tableName, int userId) {
         String property = null;
-        final boolean isGlobal = tableName.equals(MKDatabaseHelper.MKTableNames.TABLE_GLOBAL);
-        if (tableName.equals(MKDatabaseHelper.MKTableNames.TABLE_SYSTEM)) {
-            property = MKSettings.System.SYS_PROP_MK_SETTING_VERSION;
-        } else if (tableName.equals(MKDatabaseHelper.MKTableNames.TABLE_SECURE)) {
-            property = MKSettings.Secure.SYS_PROP_MK_SETTING_VERSION;
+        final boolean isGlobal = tableName.equals(MoKeeDatabaseHelper.MKTableNames.TABLE_GLOBAL);
+        if (tableName.equals(MoKeeDatabaseHelper.MKTableNames.TABLE_SYSTEM)) {
+            property = MoKeeSettings.System.SYS_PROP_MK_SETTING_VERSION;
+        } else if (tableName.equals(MoKeeDatabaseHelper.MKTableNames.TABLE_SECURE)) {
+            property = MoKeeSettings.Secure.SYS_PROP_MK_SETTING_VERSION;
         } else if (isGlobal) {
-            property = MKSettings.Global.SYS_PROP_MK_SETTING_VERSION;
+            property = MoKeeSettings.Global.SYS_PROP_MK_SETTING_VERSION;
         }
 
         if (property != null) {
@@ -870,7 +870,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
     }
 
     private void validateSystemSettingNameValue(String name, String value) {
-        MKSettings.Validator validator = MKSettings.System.VALIDATORS.get(name);
+        MoKeeSettings.Validator validator = MoKeeSettings.System.VALIDATORS.get(name);
         if (validator == null) {
             throw new IllegalArgumentException("Invalid setting: " + name);
         }
@@ -882,7 +882,7 @@ public class MoKeeSettingsProvider extends ContentProvider {
     }
 
     private void validateSecureSettingValue(String name, String value) {
-        MKSettings.Validator validator = MKSettings.Secure.VALIDATORS.get(name);
+        MoKeeSettings.Validator validator = MoKeeSettings.Secure.VALIDATORS.get(name);
 
         // Not all secure settings have validators, but if a validator exists, the validate method
         // should return true

@@ -32,7 +32,7 @@ import org.mokee.platform.internal.display.TwilightTracker.TwilightState;
 import java.io.PrintWriter;
 import java.util.BitSet;
 
-import mokee.providers.MKSettings;
+import mokee.providers.MoKeeSettings;
 
 import static org.mokee.platform.internal.display.LiveDisplayService.ALL_CHANGED;
 import static org.mokee.platform.internal.display.LiveDisplayService.DISPLAY_CHANGED;
@@ -103,32 +103,32 @@ public abstract class LiveDisplayFeature {
     }
 
     protected final boolean getBoolean(String setting, boolean defaultValue) {
-        return MKSettings.System.getIntForUser(mContext.getContentResolver(),
+        return MoKeeSettings.System.getIntForUser(mContext.getContentResolver(),
                 setting, (defaultValue ? 1 : 0), UserHandle.USER_CURRENT) == 1;
     }
 
     protected final void putBoolean(String setting, boolean value) {
-        MKSettings.System.putIntForUser(mContext.getContentResolver(),
+        MoKeeSettings.System.putIntForUser(mContext.getContentResolver(),
                 setting, (value ? 1 : 0), UserHandle.USER_CURRENT);
     }
 
     protected final int getInt(String setting, int defaultValue) {
-        return MKSettings.System.getIntForUser(mContext.getContentResolver(),
+        return MoKeeSettings.System.getIntForUser(mContext.getContentResolver(),
                 setting, defaultValue, UserHandle.USER_CURRENT);
     }
 
     protected final void putInt(String setting, int value) {
-        MKSettings.System.putIntForUser(mContext.getContentResolver(),
+        MoKeeSettings.System.putIntForUser(mContext.getContentResolver(),
                 setting, value, UserHandle.USER_CURRENT);
     }
 
     protected final String getString(String setting) {
-        return MKSettings.System.getStringForUser(mContext.getContentResolver(),
+        return MoKeeSettings.System.getStringForUser(mContext.getContentResolver(),
                 setting, UserHandle.USER_CURRENT);
     }
 
     protected final void putString(String setting, String value) {
-        MKSettings.System.putStringForUser(mContext.getContentResolver(),
+        MoKeeSettings.System.putStringForUser(mContext.getContentResolver(),
                 setting, value, UserHandle.USER_CURRENT);
     }
 
