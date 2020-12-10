@@ -139,3 +139,23 @@ java_library {
         local_include_dirs: ["sdk/src/java"],
     },
 }
+
+// Minimal mokeeSettings lib for apex use.
+// ============================================================
+
+java_library {
+    name: "org.mokee.platform.mokeesettings",
+
+    // MoKeeSettings is our main target, the rest are deps.
+    srcs: [
+        mokee_sdk_src + "/app/MoKeeContextConstants.java",
+        mokee_sdk_src + "/providers/MoKeeSettings.java",
+        mokee_sdk_src + "/trust/ITrustInterface.aidl",
+        mokee_sdk_src + "/trust/TrustInterface.java",
+    ],
+
+    // List of apex modules that can link against this lib
+    apex_available: [
+        "com.android.tethering",
+    ],
+}
