@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- *               2014-2019 The MoKee Open Source Project
- *               2018-2019 The LineageOS Project
+ *               2014-2020 The MoKee Open Source Project
+ *               2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,6 +136,7 @@ public class PerformanceManagerService extends MoKeeSystemService {
                     if (SystemProperties.get("init.svc.perfd").equals("running") ||
                             SystemProperties.get("init.svc.vendor.perfd").equals("running") ||
                             SystemProperties.get("init.svc.perf-hal-1-0").equals("running") ||
+                            SystemProperties.get("init.svc.perf-hal-2-0").equals("running") ||
                             SystemProperties.get("init.svc.mpdecision").equals("running")) {
                         break;
                     }
