@@ -94,9 +94,22 @@
     <string name="permlab_manageRemotePrefs">menaxho parametrat në distancë</string>
     <string name="permdesc_manageRemotePrefs">Lejon një aplikacion që të menaxhojë parametrat në distancë</string>
     <string name="build_date">Data e ndërtimit</string>
+    <string name="mk_api_level">Niveli i API-së së MoKee</string>
     <string name="mk_version">Versioni i mokee</string>
     <string name="mk_vendor_security_patch">Niveli i korrigjimit të sigurisë së Vendor</string>
+    <string name="unknown">I panjohur</string>
     <string name="app_killed_message">Aplikacioni u mbyll</string>
+    <string name="trust_feature_name">Beso</string>
+    <string name="permlab_trustInterface">hyr në ndërfaqen e Trust</string>
+    <string name="permdesc_trustInterface">Lejon një app të shfaqë paralajmërime dhe sygjerime të Trust</string>
     <string name="trust_notification_channel">Paralajmërime Trust</string>
+    <string name="trust_notification_title_security">Besoji \u2022 sigurinë e Sistemit</string>
+    <string name="trust_notification_content_selinux">SELinux nuk është e zbatuar, siguria juaj është dobësuar</string>
     <string name="trust_notification_content_keys">Ky zhvillim është nënshkruar me çelsa publik</string>
+    <string name="trust_notification_title_onboarding">Zbulo Trust</string>
+    <string name="trust_notification_content_onboarding">Informohu si të sigurohesh që paisja juaj është e sigurtë</string>
+    <string name="trust_notification_action_manage">Menaxho paralajmërimet</string>
+    <string name="license_notification_channel">Sinjalizimet e licencës</string>
+    <string name="license_notification_title">Skedari i vlefshëm i licencës nuk u gjet</string>
+    <string name="license_notification_content">Versionet Premium përpilohen dhe sigurohen drejtpërdrejt nga mirëmbajtësit e pajisjeve, të zhbllokuara me një dhurim prej %d CNY.</string>
 </resources>
