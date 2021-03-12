@@ -26,6 +26,7 @@ java_library {
 
     srcs: [
         mokee_sdk_lib_src + "/phone/*.java",
+        ":spn-info",
     ],
 }
 
