@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.lib.phone;
+package org.mokee.lib.phone;
 
 import java.util.HashMap;
 
