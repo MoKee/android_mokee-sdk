@@ -31,6 +31,7 @@
     <string name="profileGroupEmail">ایمیل</string>
     <string name="profileGroupSMS">پیامک</string>
     <string name="wildcardProfile">غیره</string>
+    <string name="live_display_off">خاموش</string>
     <string name="live_display_night">شب</string>
     <string name="build_date">تاریخ ساخت</string>
     <string name="unknown">نامشخص</string>
