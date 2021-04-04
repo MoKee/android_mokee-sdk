@@ -1,5 +1,6 @@
 /**
  * Copyright (c) 2015, The MoKee Open Source Project
+ * Copyright (C) 2017-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,6 +116,13 @@ public final class MoKeeContextConstants {
     public static final String MK_TRUST_INTERFACE = "mokeetrust";
 
     /**
+     * Update power menu (GlobalActions)
+     *
+     * @hide
+     */
+    public static final String MK_GLOBAL_ACTIONS_SERVICE = "mokeeglobalactions";
+
+    /**
      * Features supported by the MoKee SDK.
      */
     public static class Features {
@@ -197,5 +205,13 @@ public final class MoKeeContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String FOD = "vendor.mokee.biometrics.fingerprint.inscreen";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the mokee globalactions
+         * service utilized by the mokee sdk and MoKeeParts.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String GLOBAL_ACTIONS = "org.mokee.globalactions";
     }
 }

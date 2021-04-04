@@ -109,6 +109,7 @@
         <item>org.mokee.platform.internal.MoKeeAudioService</item>
         <item>org.mokee.platform.internal.TrustInterfaceService</item>
         <item>org.mokee.platform.internal.MoKeeSettingsService</item>
+        <item>org.mokee.platform.internal.MoKeeGlobalActionsService</item>
         <item>org.mokee.platform.internal.LicenseInterfaceService</item>
     </string-array>
 
