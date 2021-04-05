@@ -15,6 +15,16 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="mokee_system_label">MoKee համակարգ</string>
+    <string name="permlab_modifyProfiles">ձևափոխել համակարգի կարգավորումները</string>
+    <string name="profileNameDefault">Լռելյայն</string>
+    <string name="profileNameHome">Հիմնական</string>
+    <string name="profileGroupCalendar">Օրացույց</string>
+    <string name="profileGroupEmail">Էլ. փոստ.</string>
+    <string name="profileGroupSMS">SMS</string>
+    <string name="wildcardProfile">Այլ</string>
     <string name="live_display_off">Անջ.</string>
+    <string name="live_display_day">Օր</string>
     <string name="unknown">Անհայտ</string>
+    <string name="trust_feature_name">ճիշտ</string>
 </resources>

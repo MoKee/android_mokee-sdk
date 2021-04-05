@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2015-2018 The MoKee Open Source Project
+     Copyright (C) 2014-2016 The MoKee Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,8 +14,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">MoKee sistemo</string>
-    <string name="live_display_day">Tago</string>
-    <string name="unknown">Nekonata</string>
+<resources>
+    <string name="app_name">MoKee կարգավորումների պահպանում</string>
 </resources>

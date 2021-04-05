@@ -99,6 +99,7 @@
     <string name="mk_vendor_security_patch">Valmistajan tietoturvakorjauksen taso</string>
     <string name="unknown">Ei tiedossa</string>
     <string name="app_killed_message">Sovellus pysäytetty</string>
+    <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">käytä Trust-käyttöliittymää</string>
     <string name="permdesc_trustInterface">Sallii sovelluksen näyttää Trust-varoituksia ja ehdotuksia</string>
     <string name="trust_notification_channel">Trust-hälytykset</string>

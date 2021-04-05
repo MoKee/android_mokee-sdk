@@ -29,7 +29,9 @@
     <string name="profileNameAutomobile">Motor</string>
     <string name="profileGroupPhone">Foon</string>
     <string name="profileGroupCalendar">Kalender</string>
+    <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">Epos</string>
+    <string name="profileGroupSMS">SMS</string>
     <string name="wildcardProfile">Ander</string>
     <string name="perf_profile_pwrsv">Bespaar krag</string>
     <string name="perf_profile_bal">Gebalanseerd</string>

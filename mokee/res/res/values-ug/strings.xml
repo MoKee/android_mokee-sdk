@@ -20,10 +20,15 @@
     <string name="permlab_useHardwareFramework">قاتتىق دىتال جازىسىنى ئىشلىتىش</string>
     <string name="permlab_protectedApp">قوغدالغان ئەپ تىزىمىگە ئەپ قوشۇش ياكى چىقىرۋېتىش</string>
     <string name="permdesc_protectedApp">ئەپنىڭ باشقا ئەپلەرنى قوغداش تىزىملىكىگە قوشۇشىغا ياكى تاقاپ قۇيىشىغا رۇخسەت قىلىش.</string>
+    <string name="profileNameDefault">كۆڭۈلدىكى</string>
     <string name="profileNameWork">ئىش</string>
     <string name="profileNameHome">باش ئېكران</string>
+    <string name="profileNameSilent">ئۈنسىز</string>
+    <string name="profileNameNight">كېچە</string>
     <string name="profileNameAutomobile">ئاپتوموبىل</string>
+    <string name="profileGroupPhone">تېلېفون</string>
     <string name="profileGroupCalendar">كالېندار</string>
+    <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">ئېلخەت</string>
     <string name="profileGroupSMS">قىسقا ئۇچۇر</string>
     <string name="wildcardProfile">باشقا</string>
@@ -34,8 +39,11 @@
     <string name="perf_profile_bias_perf">تىز</string>
     <string name="live_display_auto">ئاپتوماتېك</string>
     <string name="live_display_auto_summary">كۈن چىققان ۋە كۈن پاتقاندىن كېيىن ئېكران رەڭ تېمپېراتورىسىنى ئۆزلۈكىدىن تەڭشەيدۇ</string>
+    <string name="live_display_off">تاقاق</string>
     <string name="live_display_off_summary">بارلىق تەڭشەشلەرنى چەكلەيدۇ</string>
+    <string name="live_display_day">كۈن</string>
     <string name="live_display_day_summary">كۈندۈز تەڭشەكلىرىنىلا ئىشلىتىدۇ</string>
+    <string name="live_display_night">كېچە</string>
     <string name="live_display_night_summary">كېچە تەڭشەكلىرىنىلا ئىشلىتىدۇ</string>
     <string name="live_display_outdoor">تالا (قۇياش نۇرى)</string>
     <string name="live_display_outdoor_summary">تالا تەڭشەكلىرىنىلا ئىشلىتىدۇ</string>

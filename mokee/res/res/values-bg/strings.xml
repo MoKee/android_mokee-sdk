@@ -99,6 +99,7 @@
     <string name="mk_vendor_security_patch">Ниво на сигурност на доставчик</string>
     <string name="unknown">Неизвестно</string>
     <string name="app_killed_message">Приложението е спряно</string>
+    <string name="trust_feature_name">Trust</string>
     <string name="permlab_trustInterface">достъп до Trust интерфейс</string>
     <string name="permdesc_trustInterface">Позволява на приложението да показка предложения и предупреждения</string>
     <string name="trust_notification_channel">Trust предупреждения</string>

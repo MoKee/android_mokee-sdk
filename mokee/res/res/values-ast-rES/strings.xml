@@ -19,12 +19,16 @@
     <string name="permdesc_modifyProfiles">Permite qu\'una aplicación modifique los perfiles del sistema.</string>
     <string name="permlab_useHardwareFramework">usar framework de hardware</string>
     <string name="permdesc_protectedApp">Permite qu\'una aplicación conseñe a otres como protexíes y blóquiales.</string>
+    <string name="profileNameDefault">Por defeutu</string>
     <string name="profileNameWork">Trabayu</string>
+    <string name="profileNameHome">Home</string>
     <string name="profileNameNight">Nueche</string>
     <string name="profileNameAutomobile">Automóvil</string>
     <string name="profileGroupPhone">Teléfonu</string>
     <string name="profileGroupCalendar">Calendariu</string>
+    <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">Corréu</string>
+    <string name="profileGroupSMS">SMS</string>
     <string name="perf_profile_pwrsv">Aforru d\'enerxía</string>
     <string name="perf_profile_bal">Balanceáu</string>
     <string name="perf_profile_perf">Rindimientu</string>
@@ -35,6 +39,7 @@
     <string name="perf_profile_bias_power_summary">Favorez los aforros d\'enerxía. Llenda la potencia máximo de la CPU y optimízala pa un aforru d\'enerxía empara d\'una llatencia mayor</string>
     <string name="perf_profile_bias_perf_summary">Favorez el rindimientu. Amenorga la llatencia con un consumu d\'enerxía llixeramente aumentáu</string>
     <string name="live_display_auto_summary">Axusta automáticamente la temperatura de color de la pantalla dempués del tapecer y l\'aséu</string>
+    <string name="live_display_off">Non</string>
     <string name="live_display_off_summary">Deshabilita tolos axustes</string>
     <string name="live_display_day">Día</string>
     <string name="live_display_day_summary">Usa namái los axustes de día</string>
