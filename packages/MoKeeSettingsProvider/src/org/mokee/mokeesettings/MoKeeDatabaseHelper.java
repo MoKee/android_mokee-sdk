@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2015, The CyanogenMod Project
+ * Copyright (C) 2015-2016 The CyanogenMod Project
  * Copyright (c) 2015-2018, The MoKee Open Source Project
- * Copyright (c) 2017,2019-2021 The LineageOS Project
+ *               2017-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -546,15 +546,6 @@ public class MoKeeDatabaseHelper extends SQLiteOpenHelper{
 
             loadBooleanSetting(stmt, MoKeeSettings.System.SYSTEM_PROFILES_ENABLED,
                     R.bool.def_profiles_enabled);
-
-            loadIntegerSetting(stmt, MoKeeSettings.System.ENABLE_FORWARD_LOOKUP,
-                    R.integer.def_forward_lookup);
-
-            loadIntegerSetting(stmt, MoKeeSettings.System.ENABLE_PEOPLE_LOOKUP,
-                    R.integer.def_people_lookup);
-
-            loadIntegerSetting(stmt, MoKeeSettings.System.ENABLE_REVERSE_LOOKUP,
-                    R.integer.def_reverse_lookup);
 
             loadBooleanSetting(stmt, MoKeeSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
                     R.bool.def_notification_pulse_custom_enable);

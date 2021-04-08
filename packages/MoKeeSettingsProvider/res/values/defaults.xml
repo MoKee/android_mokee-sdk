@@ -45,15 +45,6 @@
     <!-- Default for MoKeeSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED -->
     <bool name="def_lockscreen_visualizer">false</bool>
 
-    <!-- Default value of MoKeeSettings.System.ENABLE_FORWARD_LOOKUP -->
-    <integer name="def_forward_lookup">1</integer>
-
-    <!-- Default value of MoKeeSettings.System.ENABLE_PEOPLE_LOOKUP -->
-    <integer name="def_people_lookup">1</integer>
-
-    <!-- Default value of MoKeeSettings.System.ENABLE_REVERSE_LOOKUP -->
-    <integer name="def_reverse_lookup">1</integer>
-
     <!-- Defaults for Global -->
 
     <!-- Default for MoKeeSettings.Global.DEVICE_NAME
