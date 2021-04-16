@@ -16,5 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="mokee_system_label">MoKee sistemo</string>
+    <string name="live_display_day">Tago</string>
     <string name="unknown">Nekonata</string>
 </resources>

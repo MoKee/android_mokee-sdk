@@ -21,7 +21,7 @@
     <string name="permlab_useHardwareFramework">gebruik hardeware raamwerk</string>
     <string name="permlab_protectedApp">voegby of verwyder toeps na beskermde toeps</string>
     <string name="permdesc_protectedApp">Laat \'n toep toe om ander toeps as beskermde toep te merk en hulle toe te sluit.</string>
-    <string name="profileNameDefault">Verstek</string>
+    <string name="profileNameDefault">Normaal</string>
     <string name="profileNameWork">Werk</string>
     <string name="profileNameHome">Tuis</string>
     <string name="profileNameSilent">Stil</string>
@@ -29,7 +29,9 @@
     <string name="profileNameAutomobile">Motor</string>
     <string name="profileGroupPhone">Foon</string>
     <string name="profileGroupCalendar">Kalender</string>
+    <string name="profileGroupGmail">Gmail</string>
     <string name="profileGroupEmail">Epos</string>
+    <string name="profileGroupSMS">SMS</string>
     <string name="wildcardProfile">Ander</string>
     <string name="perf_profile_pwrsv">Bespaar krag</string>
     <string name="perf_profile_bal">Gebalanseerd</string>

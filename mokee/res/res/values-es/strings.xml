@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">Sistema MoKee</string>
+    <string name="mokee_system_label">Sistema de MoKee</string>
     <string name="permlab_modifyProfiles">modificar los perfiles del sistema</string>
     <string name="permdesc_modifyProfiles">Permite que una aplicación modifique los perfiles del sistema.</string>
     <string name="permlab_useHardwareFramework">usar marco de hardware</string>
@@ -54,7 +54,7 @@
     <string name="perf_profile_bias_perf_summary">Favorecer el rendimiento. Reduce la latencia con un consumo de energía ligeramente mayor</string>
     <string name="live_display_auto">Automático</string>
     <string name="live_display_auto_summary">Ajustar automáticamente la temperatura del color de pantalla con el amanecer y el anochecer</string>
-    <string name="live_display_off">Desactivado</string>
+    <string name="live_display_off">Apagar</string>
     <string name="live_display_off_summary">Desactivar todos los ajustes</string>
     <string name="live_display_day">Día</string>
     <string name="live_display_day_summary">Utilizar solo los ajustes de día</string>
@@ -95,16 +95,16 @@
     <string name="permdesc_manageRemotePrefs">Permite a una aplicación administrar la configuración remota</string>
     <string name="build_date">Fecha de compilación</string>
     <string name="mk_api_level">Nivel de la API de MoKee</string>
-    <string name="mokee_version">Versión de MoKeeOS</string>
-    <string name="mokee_vendor_security_patch">Parche de seguridad del Fabricante</string>
+    <string name="mokee_version">Versión de MoKee</string>
+    <string name="mokee_vendor_security_patch">Parche de seguridad del proovedor</string>
     <string name="unknown">Desconocido</string>
     <string name="app_killed_message">Aplicación finalizada</string>
     <string name="trust_feature_name">Trust</string>
-    <string name="permlab_trustInterface">acceder a interfaz de Trust</string>
+    <string name="permlab_trustInterface">acceder a la interfaz de Trust</string>
     <string name="permdesc_trustInterface">Permite al panel Trust mostrar advertencias y consejos</string>
     <string name="trust_notification_channel">Alertas del panel Trust</string>
     <string name="trust_notification_title_security">Panel Trust: Seguridad del sistema</string>
-    <string name="trust_notification_content_selinux">El modo SELinux obligatorio está desactivado, la seguridad del dispositivo ha disminuido</string>
+    <string name="trust_notification_content_selinux">SELinux no esta en modo obligatorio, tu seguridad se ha reducido</string>
     <string name="trust_notification_content_keys">Esta compilación está firmada con claves públicas</string>
     <string name="trust_notification_title_onboarding">Descubre el panel Trust</string>
     <string name="trust_notification_content_onboarding">Descubra cómo garantizar la seguridad de su dispositivo</string>

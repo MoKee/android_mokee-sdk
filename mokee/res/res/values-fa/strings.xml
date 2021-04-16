@@ -19,14 +19,20 @@
     <string name="permlab_modifyProfiles">تغییر پروفایل‌های سیستم</string>
     <string name="permdesc_modifyProfiles">به برنامه اجازه می‌دهد تا پروفایل‌های سیستم را تغییر دهد.</string>
     <string name="permlab_useHardwareFramework">استفاده از چارچوب سخت‌افزار</string>
+    <string name="profileNameDefault">پیش‌فرض</string>
     <string name="profileNameWork">کار</string>
     <string name="profileNameHome">خانه</string>
+    <string name="profileNameSilent">بی‌صدا</string>
+    <string name="profileNameNight">شب</string>
     <string name="profileNameAutomobile">خودرو</string>
+    <string name="profileGroupPhone">گوشی</string>
     <string name="profileGroupCalendar">تقویم</string>
     <string name="profileGroupGmail">جیمیل</string>
     <string name="profileGroupEmail">ایمیل</string>
     <string name="profileGroupSMS">پیامک</string>
     <string name="wildcardProfile">غیره</string>
+    <string name="live_display_off">خاموش</string>
+    <string name="live_display_night">شب</string>
     <string name="build_date">تاریخ ساخت</string>
     <string name="unknown">نامشخص</string>
 </resources>

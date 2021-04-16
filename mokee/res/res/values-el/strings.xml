@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">Σύστημα MoKeeOS</string>
+    <string name="mokee_system_label">Σύστημα MoKee</string>
     <string name="permlab_modifyProfiles">τροποποίηση προφίλ συστήματος</string>
     <string name="permdesc_modifyProfiles">Επιτρέπει σε μια εφαρμογή να τροποποιεί τα προφίλ του συστήματος.</string>
     <string name="permlab_useHardwareFramework">χρήση του πλαισίου υλικού</string>
@@ -54,7 +54,7 @@
     <string name="perf_profile_bias_perf_summary">Υψηλή απόδοση. Μείωση καθυστέρησης με ελαφρώς αυξημένη κατανάλωση</string>
     <string name="live_display_auto">Αυτόματο</string>
     <string name="live_display_auto_summary">Αυτόματη ρύθμιση της θερμοκρασίας χρώματος της οθόνης μετά το ηλιοβασίλεμα και την ανατολή του ηλίου</string>
-    <string name="live_display_off">ανενεργό</string>
+    <string name="live_display_off">Ανενεργό</string>
     <string name="live_display_off_summary">Απενεργοποίηση όλων των ρυθμίσεων</string>
     <string name="live_display_day">Ημέρα</string>
     <string name="live_display_day_summary">Χρήση μόνο των ρυθμίσεων ημέρας</string>
@@ -95,7 +95,7 @@
     <string name="permdesc_manageRemotePrefs">Επιτρέπει σε μια εφαρμογή να διαχειριστεί απομακρυσμένες ρυθμίσεις</string>
     <string name="build_date">Ημερομηνία έκδοσης</string>
     <string name="mk_api_level">Επίπεδο MoKee API</string>
-    <string name="mokee_version">Έκδοση MoKeeOS</string>
+    <string name="mokee_version">Έκδοση MoKee</string>
     <string name="mokee_vendor_security_patch">Επίπεδο ενημέρωσης κώδικα ασφαλείας κατασκευαστή</string>
     <string name="unknown">Άγνωστο</string>
     <string name="app_killed_message">Η εφαρμογή τερματίστηκε</string>

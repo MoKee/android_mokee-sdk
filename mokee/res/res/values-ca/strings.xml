@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mokee_system_label">Sistema de MoKeeOS</string>
+    <string name="mokee_system_label">Sistema de MoKee</string>
     <string name="permlab_modifyProfiles">modifica els perfils del sistema</string>
     <string name="permdesc_modifyProfiles">Permet a una aplicació modificar els perfils del sistema.</string>
     <string name="permlab_useHardwareFramework">utilitza el marc de hardware</string>
@@ -26,7 +26,7 @@
     <string name="permdesc_writeSecureSettings">Permet a una aplicació modificar la configuració segura del sistema de MoKee. No utilitzar en aplicacions normals.</string>
     <string name="permlab_protectedApp">afegir i eliminar aplicacions a les aplicacions protegides</string>
     <string name="permdesc_protectedApp">Permet a una aplicació marcar a altres aplicacions com a protegides i bloquejar-les.</string>
-    <string name="profileNameDefault">Per defecte</string>
+    <string name="profileNameDefault">Predeterminat</string>
     <string name="profileNameWork">Feina</string>
     <string name="profileNameHome">Casa</string>
     <string name="profileNameSilent">Silenci</string>
@@ -95,7 +95,7 @@
     <string name="permdesc_manageRemotePrefs">Permet a una aplicació gestionar la configuració remota</string>
     <string name="build_date">Data de compilació</string>
     <string name="mk_api_level">Nivell de l\'API de MoKee</string>
-    <string name="mokee_version">Versió de MoKeeOS</string>
+    <string name="mokee_version">Versió de MoKee</string>
     <string name="mokee_vendor_security_patch">Nivell de pedaç de seguretat del proveïdor</string>
     <string name="unknown">Desconegut</string>
     <string name="app_killed_message">S\'ha matat l\'aplicació</string>

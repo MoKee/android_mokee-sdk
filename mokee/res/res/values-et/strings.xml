@@ -111,5 +111,5 @@
     <string name="trust_notification_action_manage">Halda teateid</string>
     <string name="license_notification_channel">Litsentsi märguanded</string>
     <string name="license_notification_title">Kehtivat litsentsifaili ei leitud</string>
-    <string name="license_notification_content">Premium versioonid kompileeritakse ja edastatakse otse seadme hooldajatelt, vabastades need annetusega %d CNY.</string>
+    <string name="license_notification_content">Kvaliteetversioonid kompileeritakse ja jagatakse seadme hooldajate poolt. Nende kasutamiseks on vaja teha annetus  %d Hiina jüaani.</string>
 </resources>

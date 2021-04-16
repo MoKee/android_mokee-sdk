@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="profileNameSilent">शाँत</string>
+    <string name="profileNameSilent">मौन</string>
     <string name="profileNameNight">रात</string>
     <string name="live_display_off">बंद</string>
     <string name="live_display_day">दिन</string>
