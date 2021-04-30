@@ -1,7 +1,7 @@
 /**
  * Copyright (C) 2015-2016 The CyanogenMod Project
- * Copyright (C) 2015-2019 The MoKee Open Source Project
- *               2017-2020 The LineageOS Project
+ * Copyright (C) 2015-2021 The MoKee Open Source Project
+ *               2017-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1336,6 +1336,17 @@ public final class MoKeeSettings {
                 sBooleanValidator;
 
         /**
+         * Whether the battery LED should be disabled when the battery is fully charged.
+         * The value is boolean (1 or 0).
+         */
+        public static final String BATTERY_LIGHT_FULL_CHARGE_DISABLED =
+                "battery_light_full_charge_disabled";
+
+        /** @hide */
+        public static final Validator BATTERY_LIGHT_FULL_CHARGE_DISABLED_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Whether the battery LED should repeatedly flash when the battery is low
          * on charge. The value is boolean (1 or 0).
          */
@@ -2187,6 +2198,7 @@ public final class MoKeeSettings {
                 MoKeeSettings.System.STYLUS_ICON_ENABLED,
                 MoKeeSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
                 MoKeeSettings.System.BATTERY_LIGHT_ENABLED,
+                MoKeeSettings.System.BATTERY_LIGHT_FULL_CHARGE_DISABLED,
                 MoKeeSettings.System.BATTERY_LIGHT_PULSE,
                 MoKeeSettings.System.BATTERY_LIGHT_LOW_COLOR,
                 MoKeeSettings.System.BATTERY_LIGHT_MEDIUM_COLOR,
@@ -2327,6 +2339,8 @@ public final class MoKeeSettings {
             VALIDATORS.put(BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED,
                     BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_ENABLED, BATTERY_LIGHT_ENABLED_VALIDATOR);
+            VALIDATORS.put(BATTERY_LIGHT_FULL_CHARGE_DISABLED,
+                    BATTERY_LIGHT_FULL_CHARGE_DISABLED_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_PULSE, BATTERY_LIGHT_PULSE_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_LOW_COLOR, BATTERY_LIGHT_LOW_COLOR_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_MEDIUM_COLOR, BATTERY_LIGHT_MEDIUM_COLOR_VALIDATOR);
