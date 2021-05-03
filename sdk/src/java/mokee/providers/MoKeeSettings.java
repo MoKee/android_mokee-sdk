@@ -1097,6 +1097,17 @@ public final class MoKeeSettings {
                 new InclusiveIntegerRangeValidator(0, 9);
 
         /**
+         * Action to perform when the back key is long-pressed.
+         * (Default can be configured via config_longPressOnBackBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         */
+        public static final String KEY_BACK_LONG_PRESS_ACTION = "key_back_long_press_action";
+
+        /** @hide */
+        public static final Validator KEY_BACK_LONG_PRESS_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 9);
+
+        /**
          * Whether to wake the screen with the back key, the value is boolean.
          * 0 = 0ff, 1 = on
          */
@@ -2176,6 +2187,7 @@ public final class MoKeeSettings {
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
                 MoKeeSettings.System.RECEIVE_PUSH_NOTIFICATIONS,
                 MoKeeSettings.System.NAV_BUTTONS,
+                MoKeeSettings.System.KEY_BACK_LONG_PRESS_ACTION,
                 MoKeeSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 MoKeeSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 MoKeeSettings.System.BACK_WAKE_SCREEN,
@@ -2306,6 +2318,7 @@ public final class MoKeeSettings {
             VALIDATORS.put(NAVIGATION_BAR_MENU_ARROW_KEYS,
                     NAVIGATION_BAR_MENU_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_HINT, NAVIGATION_BAR_HINT_VALIDATOR);
+            VALIDATORS.put(KEY_BACK_LONG_PRESS_ACTION, KEY_BACK_LONG_PRESS_ACTION_VALIDATOR);
             VALIDATORS.put(KEY_HOME_LONG_PRESS_ACTION, KEY_HOME_LONG_PRESS_ACTION_VALIDATOR);
             VALIDATORS.put(KEY_HOME_DOUBLE_TAP_ACTION, KEY_HOME_DOUBLE_TAP_ACTION_VALIDATOR);
             VALIDATORS.put(BACK_WAKE_SCREEN, BACK_WAKE_SCREEN_VALIDATOR);
