@@ -218,7 +218,7 @@ public final class MoKeeBatteryLights {
                     UserHandle.USER_ALL);
 
             // Battery light disabled if fully charged
-            resolver.registerContentObserver(LineageSettings.System.getUriFor(
+            resolver.registerContentObserver(MoKeeSettings.System.getUriFor(
                     MoKeeSettings.System.BATTERY_LIGHT_FULL_CHARGE_DISABLED), false, this,
                     UserHandle.USER_ALL);
 
