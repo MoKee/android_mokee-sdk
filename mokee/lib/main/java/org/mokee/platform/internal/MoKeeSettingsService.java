@@ -17,10 +17,8 @@
 package org.mokee.platform.internal;
 
 import android.content.Context;
-import android.os.SystemProperties;
 
 import mokee.app.MoKeeContextConstants;
-import mokee.providers.MoKeeSettings;
 
 /** @hide */
 public class MoKeeSettingsService extends MoKeeSystemService {
@@ -41,14 +39,6 @@ public class MoKeeSettingsService extends MoKeeSystemService {
 
     @Override
     public void onBootPhase(int phase) {
-        if (phase == PHASE_BOOT_COMPLETED) {
-            // Load custom hostname
-            String hostname = MoKeeSettings.Secure.getString(mContext.getContentResolver(),
-                    MoKeeSettings.Secure.DEVICE_HOSTNAME);
-            if (hostname != null) {
-                SystemProperties.set("net.hostname", hostname);
-            }
-        }
     }
 
     @Override
