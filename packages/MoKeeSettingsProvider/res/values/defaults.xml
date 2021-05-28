@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2014-2019 The MoKee Open Source Project
+                   2019-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,6 +31,9 @@
 
     <!-- Default for MoKeeSettings.Secure.ADVANCED_MODE -->
     <bool name="def_advanced_mode">true</bool>
+
+    <!-- Default for MoKeeSettings.Secure.VOLUME_PANEL_ON_LEFT -->
+    <bool name="def_volume_panel_on_left">false</bool>
 
     <!-- Default for MoKeeSettings.System.STATUS_BAR_BATTERY_STYLE
          * 0: Display the battery as icon in portrait mode

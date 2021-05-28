@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2015, The CyanogenMod Project
  * Copyright (c) 2015-2018, The MoKee Open Source Project
- * Copyright (c) 2017, The LineageOS Project
+ * Copyright (c) 2017,2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -508,6 +508,9 @@ public class MoKeeDatabaseHelper extends SQLiteOpenHelper{
 
             loadBooleanSetting(stmt, MoKeeSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
                     R.bool.def_lockscreen_visualizer);
+
+            loadBooleanSetting(stmt, MoKeeSettings.Secure.VOLUME_PANEL_ON_LEFT,
+                    R.bool.def_volume_panel_on_left);
 
             loadStringSetting(stmt,
                     MoKeeSettings.Secure.PROTECTED_COMPONENT_MANAGERS,
