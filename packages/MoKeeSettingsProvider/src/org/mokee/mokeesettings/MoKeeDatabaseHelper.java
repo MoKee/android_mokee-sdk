@@ -388,22 +388,9 @@ public class MoKeeDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 13) {
-            // Update custom charging sound setting
-            if (mUserHandle == UserHandle.USER_OWNER) {
-                db.beginTransaction();
-                SQLiteStatement stmt = null;
-                try {
-                    stmt = db.compileStatement("UPDATE global SET value=? WHERE name=?");
-                    stmt.bindString(1, mContext.getResources()
-                            .getString(R.string.def_power_notifications_ringtone));
-                    stmt.bindString(2, MoKeeSettings.Global.POWER_NOTIFICATIONS_RINGTONE);
-                    stmt.execute();
-                    db.setTransactionSuccessful();
-                } finally {
-                    if (stmt != null) stmt.close();
-                    db.endTransaction();
-                }
-            }
+            /* Was used to migrate MoKeeSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
+             * but this setting has been deprecated
+             */
             upgradeVersion = 13;
         }
 
@@ -574,18 +561,6 @@ public class MoKeeDatabaseHelper extends SQLiteOpenHelper{
             stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
                     + " VALUES(?,?);");
             // Global
-            loadBooleanSetting(stmt,
-                    MoKeeSettings.Global.POWER_NOTIFICATIONS_ENABLED,
-                    R.bool.def_power_notifications_enabled);
-
-            loadBooleanSetting(stmt,
-                    MoKeeSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
-                    R.bool.def_power_notifications_vibrate);
-
-            loadStringSetting(stmt,
-                    MoKeeSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
-                    R.string.def_power_notifications_ringtone);
-
             loadIntegerSetting(stmt, MoKeeSettings.Global.WEATHER_TEMPERATURE_UNIT,
                     R.integer.def_temperature_unit);
         } finally {
