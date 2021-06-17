@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
  * Copyright (C) 2016-2021 The MoKee Open Source Project
- *               2019-2021 The LineageOS Project
+ *               2017-2019,2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -546,8 +546,8 @@ public class LiveDisplayService extends MoKeeSystemService {
         if (counter == 0) {
             //show the notification and don't come back here
             final Intent intent = new Intent(MoKeeSettings.ACTION_LIVEDISPLAY_SETTINGS);
-            PendingIntent result = PendingIntent.getActivity(
-                    mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent result = PendingIntent.getActivity(mContext, 0, intent,
+                    PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
             Notification.Builder builder = new Notification.Builder(mContext)
                     .setContentTitle(mContext.getResources().getString(
                             org.mokee.platform.internal.R.string.live_display_title))
