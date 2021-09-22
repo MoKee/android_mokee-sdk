@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2016 The CyanogenMod Project
  * Copyright (c) 2016, The MoKee Open Source Project
- *               2018 The LineageOS Project
+ *               2018-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,5 +75,6 @@ public class MoKeeMetricsLogger extends MetricsLogger {
     public static final int TILE_AOD = BASE + 46;
     public static final int TILE_POWERSHARE = BASE + 47;
     public static final int TILE_ANTI_FLICKER = BASE + 48;
-    public static final int TILE_SCREENSHOT = BASE + 49;
+    public static final int SYSTEM_BUTTON_SETTINGS = BASE + 49;
+    public static final int TILE_SCREENSHOT = BASE + 50;
 }
