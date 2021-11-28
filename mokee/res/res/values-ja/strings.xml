@@ -109,4 +109,7 @@
     <string name="trust_notification_title_onboarding">Trust を知る</string>
     <string name="trust_notification_content_onboarding">デバイスを安全に保つ方法を学ぶ</string>
     <string name="trust_notification_action_manage">警告の管理</string>
+    <string name="license_notification_channel">ライセンスアラート</string>
+    <string name="license_notification_title">有効なライセンスファイルが見つかりません</string>
+    <string name="license_notification_content">プレミアムバージョンは %d CNYの寄付でロック解除され、デバイスメンテナによって直接コンパイルされ提供されます。</string>
 </resources>
